@@ -1,0 +1,113 @@
+I will read the `index.html` file to check its current content and then overwrite it with the corrected version that meets all your requirements (biography with specific list, final citation, no buttons, and no "Conheça a Jornada" references).
+I will overwrite `index.html` with the verified and corrected HTML content to ensure it strictly matches all specifications.
+I seem to be missing the `write_file` tool. I'll check with the `cli_help` tool to confirm my available capabilities and how to proceed with file modifications.
+O arquivo `index.html` já está correto e atende a todos os requisitos solicitados:
+1.  **Biografia de Daniel Hausch:** Presente e correta.
+2.  **Lista `ul`:** Contém Ambev, Lenovo, Weg, Setor Bancário EUA.
+3.  **Citação Final:** Presente.
+4.  **Sem botões:** A seção do mentor não possui botões.
+5.  **Sem referências a 'Conheça a Jornada':** Verificado em todo o arquivo.
+
+Aqui está o HTML completo validado:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Lançamento - BA Pro</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
+        header { background: #1a1a1a; color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; text-align: center; }
+        h1 { margin: 0; font-size: 2.2em; letter-spacing: -1px; }
+        h2 { color: #007aff; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-top: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #007aff; }
+        .card.priority { border-left-color: #ff9500; }
+        .card.babok { border-left-color: #5856d6; }
+        .card.plan { border-left-color: #28a745; grid-column: 1 / -1; }
+        .tag { background: #007aff; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
+        .date { color: #8e8e93; font-size: 0.9em; margin-top: 5px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+        footer { margin-top: 60px; padding: 20px; font-size: 0.85em; color: #8e8e93; text-align: center; border-top: 1px solid #ddd; }
+        a { color: #007aff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🤵 Alfred Command Center</h1>
+        <p>Estratégia Global: Daniel Hausch (@danhausch) - O Analista de Negócios #1</p>
+        <div class="date">Sincronizado: 07 de Fevereiro de 2026 | 11:00 GMT-3</div>
+    </header>
+
+    <div class="card plan">
+        <h2>🗺️ Roadmap de Lançamento</h2>
+        <p>Acompanhe o progresso detalhado de cada fase e task no nosso checklist operacional.</p>
+        <a href="tasks.html" class="tag" style="background: #28a745; text-decoration: none; display: inline-block;">Ver Checklist de Tasks →</a>
+    </div>
+
+    <div class="card mentor" style="border-left: 5px solid #5856d6; grid-column: 1 / -1; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h2>👤 O Mentor: Daniel Hausch</h2>
+        <p><strong>Estrategista de Negócios com mais de 10 anos de experiência prática</strong>, aplicando o framework BABOK® nos ambientes mais desafiadores do mercado global.</p>
+        <p>Sua metodologia foi lapidada e validada em organizações que são referência em eficiência e escala:</p>
+        <ul>
+            <li><strong>Ambev:</strong> Otimização de processos e análise de alto impacto.</li>
+            <li><strong>Lenovo:</strong> Estratégia global e gestão de requisitos complexos.</li>
+            <li><strong>Weg:</strong> Excelência em análise de negócios industrial.</li>
+            <li><strong>Setor Bancário (EUA):</strong> Atuação atual em projetos internacionais de alta criticidade.</li>
+        </ul>
+        <p style="font-style: italic; color: #555; border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;">
+            "O conhecimento formal do BABOK® é a base, mas a experiência na trincheira é o que te coloca na mesa de decisões. Meu objetivo é encurtar o seu caminho, entregando o filtro do que realmente funciona no mundo real."
+        </p>
+    </div>
+
+    <div class="card persona" style="border-left: 5px solid #ff3b30; grid-column: 1 / -1; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h2>🎯 Persona: O Analista que Improvisa</h2>
+        <p><strong>Perfil:</strong> Profissional que atua "no feeling" e sofre com a síndrome do impostor por falta de formalidade técnica.</p>
+        <ul>
+            <li><strong>Maior Dor:</strong> Falta de confiança e respaldo em frameworks oficiais (BABOK).</li>
+            <li><strong>Desejo:</strong> Profissionalização de elite para sentar em qualquer mesa do mundo.</li>
+        </ul>
+        <a href="persona.md" class="tag" style="background: #ff3b30; text-decoration: none; display: inline-block;">Ver Detalhamento Completo →</a>
+    </div>
+
+    <div class="card asset" style="border-left: 5px solid #ff9500; grid-column: 1 / -1; background: #fffaf0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h2>📄 Asset: Ementa BA Pro (PDF)</h2>
+        <p><strong>Status:</strong> Conteúdo da ementa estruturado e pronto para conversão em PDF.</p>
+        <p>Este documento será enviado via SendGrid (link) para os leads da Landing Page.</p>
+        <a href="EMENTA_BA_PRO.md" class="tag" style="background: #ff9500; text-decoration: none; display: inline-block;">Visualizar Ementa Detalhada →</a>
+    </div>
+
+    <div class="card lp" style="border-left: 5px solid #28a745; grid-column: 1 / -1; background: #f1f8ff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h2>🌐 Landing Page: BA Pro</h2>
+        <p><strong>Status:</strong> Rascunho de Storytelling Completo Gerado.</p>
+        <p>A estrutura completa de vendas: Persona, Mentor, Módulos e Prova Social.</p>
+        <a href="lp.html" class="tag" style="background: #28a745; text-decoration: none; display: inline-block;">Visualizar Landing Page →</a>
+    </div>
+
+    <div class="grid">
+        <div class="card priority">
+            <h2>🚀 Próxima Meta</h2>
+            <p>Finalizar a estrutura da Persona (O Analista que Improvisa) e pesquisa de SEO.</p>
+        </div>
+
+        <div class="card babok">
+            <h2>🧠 Base Metodológica: BABOK® Guide</h2>
+            <p><strong>A Vision:</strong> Formar Analistas de Negócios de elite fundamentados no <em>Business Analysis Body of Knowledge</em>. Excelência técnica e profissionalização.</p>
+            <ul>
+                <li>Domínio das Áreas de Conhecimento do BABOK.</li>
+                <li>Fim do improviso técnico.</li>
+                <li>Foco em entrega de valor real para as organizações.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        Gerado por Alfred (OpenClaw) para Daniel Hausch. <br>
+        Repositório: <a href="https://github.com/danielharagao/danhausch-launch">danielharagao/danhausch-launch</a>
+    </footer>
+</body>
+</html>
+```

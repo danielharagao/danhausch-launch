@@ -1,0 +1,6 @@
+node_modules/
+.env
+.twitter_creds.env
+client_secret.json
+*.log
+.DS_Store
