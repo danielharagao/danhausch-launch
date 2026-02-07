@@ -69,7 +69,28 @@
         p { 
             color: #8e8e93; 
             font-size: 1.1em; 
-            margin-bottom: 40px; 
+            margin-bottom: 20px; 
+        }
+
+        .qr-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .qr-container img {
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
+
+        .qr-label {
+            font-size: 0.85em;
+            color: #8e8e93;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .social-links { 
@@ -115,6 +136,11 @@
         </div>
         <p>Sua pré-inscrição foi recebida com sucesso. Faltam apenas alguns passos para conectar você ao nosso ecossistema.</p>
         
+        <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl" alt="QR Code WhatsApp Group">
+        </div>
+        <span class="qr-label">Ou escaneie para entrar pelo celular</span>
+
         <div class="social-links">
             <a href="https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl" class="btn btn-whatsapp" target="_blank">Entrar no Grupo VIP do WhatsApp</a>
             <a href="https://instagram.com/danhausch" class="btn btn-instagram" target="_blank">Seguir no Instagram</a>
