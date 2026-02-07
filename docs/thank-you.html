@@ -1,236 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrigado | Daniel Hausch</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <title>Quase lá! | Daniel Hausch</title>
     <style>
-        .thank-you-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px 20px;
-            text-align: center;
-        }
-
-        .thank-you-container {
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            animation: bounce 2s infinite;
-        }
-
-        .progress-container {
-            margin: 2rem 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            height: 24px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .progress-bar {
-            background: var(--primary-gradient);
-            width: 95%;
-            height: 100%;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 15px;
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-            animation: fillProgress 1.5s ease-out;
-        }
-
-        .pulse-text {
-            color: #F093FB;
-            /* Accent color from gradient */
-            font-weight: 700;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-        }
-
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 1rem 2rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition-normal);
-            color: white;
-            font-size: 1.1rem;
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-            transform: translateY(-2px);
-        }
-
-        .btn-instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-
-        .btn-instagram:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .btn-youtube {
-            background-color: #FF0000;
-        }
-
-        .btn-youtube:hover {
-            background-color: #CC0000;
-            transform: translateY(-2px);
-        }
-
-        @keyframes fillProgress {
-            from {
-                width: 0%;
-            }
-
-            to {
-                width: 95%;
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-20px);
-            }
-
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .qr-code-container {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            display: inline-block;
-        }
-
-        .qr-code {
-            width: 150px;
-            height: 150px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .qr-code-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
+        :root { --primary: #007aff; --dark: #0a0a0a; --light: #f5f5f7; --gold: #d4af37; --card-bg: #1a1a1a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; color: #fff; background: var(--dark); line-height: 1.6; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .thank-you-card { background: var(--card-bg); padding: 60px 40px; border-radius: 24px; border: 1px solid #222; text-align: center; max-width: 500px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        h1 { font-size: 2.5em; margin-bottom: 10px; letter-spacing: -1px; font-weight: 800; }
+        .progress-container { background: #111; border-radius: 20px; height: 30px; margin: 30px 0; border: 1px solid #333; overflow: hidden; position: relative; }
+        .progress-bar { background: var(--primary); width: 95%; height: 100%; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9em; animation: fill 2s ease-out; }
+        p { color: #8e8e93; font-size: 1.1em; margin-bottom: 40px; }
+        .social-links { display: grid; gap: 15px; }
+        .btn { background: var(--primary); color: white; padding: 18px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; display: block; border: none; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,122,255,0.3); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+        .btn-youtube { background: #FF0000; }
+        @keyframes fill { from { width: 0%; } to { width: 95%; } }
     </style>
 </head>
-
-<body data-theme="dark">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../home/index.html" style="text-decoration: none;">
-                    <span class="logo-text">Dan Hausch</span>
-                </a>
-            </div>
-            <div class="nav-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-                    <span class="theme-icon active" id="darkIcon">🌙</span>
-                    <span class="theme-icon" id="lightIcon">☀️</span>
-                </button>
-            </div>
+<body>
+    <div class="thank-you-card">
+        <div style="font-size: 3em; margin-bottom: 20px;">🎉</div>
+        <h1>Quase lá!</h1>
+        <div class="progress-container">
+            <div class="progress-bar">95%</div>
         </div>
-    </nav>
-
-    <section class="thank-you-section">
-        <div class="thank-you-container">
-            <div class="success-icon">🎉</div>
-            <h1 class="hero-title">Quase lá!</h1>
-
-            <div class="progress-container">
-                <div class="progress-bar">95%</div>
-            </div>
-
-            <p class="section-subtitle">
-                Sua pré-inscrição foi recebida com sucesso. Faltam apenas alguns passos para conectar você ao nosso
-                ecossistema.
-            </p>
-
-            <div class="action-buttons">
-                <div class="qr-code-container">
-                    <img src="../../assets/images/whatsapp-qr.png" alt="WhatsApp Group QR Code" class="qr-code">
-                    <p class="qr-code-label">Ou escaneie para entrar</p>
-                </div>
-
-                <a href="https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl" class="social-btn btn-whatsapp"
-                    target="_blank">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                    </svg>
-                    Entrar no Grupo VIP do WhatsApp
-                </a>
-
-                <a href="https://instagram.com/danhausch" class="social-btn btn-instagram" target="_blank">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                    Seguir no Instagram
-                </a>
-
-                <a href="https://youtube.com/@danhausch" class="social-btn btn-youtube" target="_blank">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-                    </svg>
-                    Inscrever-se no YouTube
-                </a>
-            </div>
+        <p>Sua pré-inscrição foi recebida com sucesso. Faltam apenas alguns passos para conectar você ao nosso ecossistema.</p>
+        
+        <div class="social-links">
+            <a href="https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl" class="btn btn-whatsapp" target="_blank">Entrar no Grupo VIP do WhatsApp</a>
+            <a href="https://instagram.com/danhausch" class="btn btn-instagram" target="_blank">Seguir no Instagram</a>
+            <a href="https://youtube.com/@danhausch" class="btn btn-youtube" target="_blank">Inscrever-se no YouTube</a>
         </div>
-    </section>
-
-    <script src="../../shared/theme.js"></script>
+    </div>
 </body>
-
 </html>
