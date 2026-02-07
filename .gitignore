@@ -1,6 +1,19 @@
+# Launch Assets Only
 node_modules/
 .env
-.twitter_creds.env
-client_secret.json
 *.log
 .DS_Store
+
+# Prevent Alfred system leak
+SOUL.md
+MEMORY.md
+USER.md
+AGENTS.md
+IDENTITY.md
+TOOLS.md
+HEARTBEAT.md
+BOOTSTRAP.md
+SITEMAP.md
+client_secret.json
+.twitter_creds.env
+memory/
