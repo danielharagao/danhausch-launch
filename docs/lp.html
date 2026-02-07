@@ -12,9 +12,17 @@
         .hero h1 { font-size: 3.5em; margin-bottom: 25px; letter-spacing: -2px; line-height: 1.1; font-weight: 800; }
         .hero p { font-size: 1.4em; color: #8e8e93; margin-bottom: 45px; max-width: 750px; margin-left: auto; margin-right: auto; }
         .highlight { color: var(--primary); }
-        .btn { background: var(--primary); color: white; padding: 20px 50px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 1.2em; display: inline-block; cursor: pointer; border: none; transition: all 0.3s; box-shadow: 0 10px 20px rgba(0,122,255,0.3); }
+        .btn { background: var(--primary); color: white; padding: 20px 50px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 1.2em; display: inline-block; cursor: pointer; border: none; transition: all 0.3s; box-shadow: 0 10px 20px rgba(0,122,255,0.3); text-align: center; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,122,255,0.4); }
         
+        /* Novas Seções para o Funil */
+        .trust-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 60px; filter: grayscale(1); opacity: 0.6; }
+        .trust-badges span { font-size: 1.2em; font-weight: 700; color: #fff; border: 1px solid #333; padding: 10px 20px; border-radius: 8px; }
+        
+        .curriculum-preview { background: #111; border-radius: 24px; padding: 40px; margin-top: 40px; border: 1px solid #222; }
+        .curriculum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; text-align: left; }
+        .module-item { background: #1a1a1a; padding: 15px 20px; border-radius: 12px; font-size: 0.9em; border-left: 3px solid var(--primary); }
+
         .pain-points { background: #111; border-radius: 24px; padding: 60px 40px; margin: 40px 0; border: 1px solid #222; text-align: center; }
         .pain-points h2 { font-size: 2.2em; margin-bottom: 30px; }
         
@@ -31,6 +39,11 @@
         input, select { width: 100%; background: #0a0a0a; border: 1px solid #444; padding: 15px; border-radius: 12px; color: white; margin-top: 12px; box-sizing: border-box; font-size: 1em; }
         label { font-size: 0.9em; color: #8e8e93; margin-top: 20px; display: block; text-transform: uppercase; letter-spacing: 1px; }
         .footer { text-align: center; padding: 60px; color: #444; font-size: 0.9em; border-top: 1px solid #111; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2em; }
+            .curriculum-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -39,7 +52,15 @@
         <div style="color: var(--gold); font-weight: bold; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 3px; font-size: 0.9em;">A Profissionalização Definitiva</div>
         <h1>Pare de "achar" e comece a agir como um <span class="highlight">BA de Classe Mundial.</span></h1>
         <p>Domine os métodos e comportamentos de elite para brigar por vagas que pagam em dólar e euro, valores que facilmente ultrapassam os 20 mil reais por mês.</p>
-        <button class="btn" onclick="openModal()">QUERO CONHECER A EMENTA BA PRO</button>
+        
+        <div class="trust-badges">
+            <span>AMBEV</span>
+            <span>LENOVO</span>
+            <span>WEG</span>
+            <span>MIT</span>
+        </div>
+
+        <button class="btn" onclick="openModal()">BAIXAR EMENTA BA PRO (PDF)</button>
     </header>
 
     <section id="dor">
@@ -47,6 +68,17 @@
             <h2>A Síndrome do Impostor tem <span class="highlight">data para acabar.</span></h2>
             <p style="font-size: 1.2em; color: #ccc;">Você é ouvido, mas no fundo teme o momento em que alguém pedirá a base técnica por trás das suas decisões. O medo de não dominar o design, a arquitetura ou a metodologia oficial trava o seu próximo salto de carreira.</p>
             <p style="color: #8e8e93;">O BA Pro entrega as ferramentas e a segurança técnica para você sentar em qualquer mesa do mundo — de startups no Brasil a bancos nos EUA — com autoridade inquestionável.</p>
+
+            <div class="curriculum-preview">
+                <h3 style="color: var(--gold); margin-top: 0;">O que você vai dominar:</h3>
+                <div class="curriculum-grid">
+                    <div class="module-item">Módulo 1: Mentalidade Global & Soft Skills de Elite</div>
+                    <div class="module-item">Módulo 2: Engenharia de Requisitos de Alto Nível</div>
+                    <div class="module-item">Módulo 3: Arquitetura e Design para Analistas</div>
+                    <div class="module-item">Módulo 4: Stakeholder Management Internacional</div>
+                </div>
+                <button class="btn" onclick="openModal()" style="margin-top: 30px; padding: 15px 30px; font-size: 1em;">VER TODOS OS 10 MÓDULOS</button>
+            </div>
         </div>
     </section>
 
