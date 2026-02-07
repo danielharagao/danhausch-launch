@@ -1,4 +1,4 @@
-# Persona: O Analista Teto-de-Vidro (BA Pro)
+# Persona: O Analista que Improvisa (BA Pro)
 
 ## 👤 Perfil Demográfico
 - **Idade:** 28 - 42 anos.
