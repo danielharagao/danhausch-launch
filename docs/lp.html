@@ -99,7 +99,7 @@
         document.getElementById('ementaForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
-            alert('A ementa detalhada do BA Pro foi enviada para o seu e-mail! Cheque sua caixa de entrada e spam.');
+            window.location.href = 'thank-you.html';
             closeModal();
         });
     </script>
