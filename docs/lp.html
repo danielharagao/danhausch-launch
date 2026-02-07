@@ -3,107 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BA Pro | Daniel Hausch</title>
+    <title>BA Pro - A Formação de Elite</title>
     <style>
-        :root { --primary: #007aff; --dark: #0a0a0a; --light: #f5f5f7; --gold: #d4af37; --card-bg: #1a1a1a; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; color: #fff; background: var(--dark); line-height: 1.6; }
-        section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
-        .hero { text-align: center; padding: 120px 20px; }
-        .hero h1 { font-size: 3.5em; margin-bottom: 25px; letter-spacing: -2px; line-height: 1.1; font-weight: 800; }
-        .hero p { font-size: 1.4em; color: #8e8e93; margin-bottom: 45px; max-width: 750px; margin-left: auto; margin-right: auto; }
-        .highlight { color: var(--primary); }
-        .btn { background: var(--primary); color: white; padding: 20px 50px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 1.2em; display: inline-block; cursor: pointer; border: none; transition: all 0.3s; box-shadow: 0 10px 20px rgba(0,122,255,0.3); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,122,255,0.4); }
-        
-        .pain-points { background: #111; border-radius: 24px; padding: 60px 40px; margin: 40px 0; border: 1px solid #222; text-align: center; }
-        .pain-points h2 { font-size: 2.2em; margin-bottom: 30px; }
-        
-        .reputation { background: var(--card-bg); padding: 60px 40px; border-radius: 24px; margin: 60px 0; border-left: 6px solid var(--primary); }
-        .reputation h2 { color: var(--gold); margin-top: 0; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
-        .stat-item { border-top: 1px solid #333; padding-top: 20px; }
-        .stat-item b { font-size: 1.5em; color: var(--primary); display: block; }
-        
-        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-content { background: var(--card-bg); padding: 50px; border-radius: 24px; width: 100%; max-width: 500px; position: relative; border: 1px solid #333; }
-        .close-modal { position: absolute; top: 25px; right: 25px; color: #8e8e93; cursor: pointer; font-size: 1.8em; }
-        
-        input, select { width: 100%; background: #0a0a0a; border: 1px solid #444; padding: 15px; border-radius: 12px; color: white; margin-top: 12px; box-sizing: border-box; font-size: 1em; }
-        label { font-size: 0.9em; color: #8e8e93; margin-top: 20px; display: block; text-transform: uppercase; letter-spacing: 1px; }
-        .footer { text-align: center; padding: 60px; color: #444; font-size: 0.9em; border-top: 1px solid #111; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #f0f0f0; background-color: #0a0a0a; margin: 0; padding: 0; }
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); padding: 100px 20px; text-align: center; border-bottom: 2px solid #007aff; }
+        .hero h1 { font-size: 3.5em; margin: 0; letter-spacing: -2px; color: #fff; }
+        .hero p { font-size: 1.4em; color: #007aff; margin-top: 20px; font-weight: bold; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .promise { background: #111; padding: 40px; border-radius: 12px; border: 1px solid #333; margin-top: -80px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .promise h2 { color: #fff; margin-top: 0; }
+        .cta-box { background: #007aff; color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 40px; }
+        .cta-box h3 { margin: 0; font-size: 1.8em; }
+        .mentor-section { display: flex; gap: 40px; align-items: center; margin-top: 60px; }
+        .mentor-text { flex: 1; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        li::before { content: '✓'; position: absolute; left: 0; color: #007aff; font-weight: bold; }
     </style>
 </head>
 <body>
+    <div class="hero">
+        <h1>BA PRO</h1>
+        <p>A transição definitiva do improviso para a elite estratégica.</p>
+    </div>
 
-    <header class="hero">
-        <div style="color: var(--gold); font-weight: bold; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 3px; font-size: 0.9em;">A Profissionalização Definitiva</div>
-        <h1>Pare de "achar" e comece a agir como um <span class="highlight">BA de Classe Mundial.</span></h1>
-        <p>Domine os métodos, termos e comportamentos que separam os amadores dos Heads e PMs que faturam em dólar e euro.</p>
-        <button class="btn" onclick="openModal()">QUERO CONHECER A EMENTA BA PRO</button>
-    </header>
-
-    <section id="dor">
-        <div class="pain-points">
-            <h2>A Síndrome do Impostor tem <span class="highlight">data para acabar.</span></h2>
-            <p style="font-size: 1.2em; color: #ccc;">Você é ouvido, mas no fundo teme o momento em que alguém pedirá a base técnica por trás das suas decisões. O medo de não dominar o design, a arquitetura ou a metodologia oficial trava o seu próximo salto de carreira.</p>
-            <p style="color: #8e8e93;">O BA Pro entrega as ferramentas e a segurança técnica para você sentar em qualquer mesa do mundo — de startups no Brasil a bancos nos EUA — com autoridade inquestionável.</p>
-        </div>
-    </section>
-
-    <section id="reputacao">
-        <div class="reputation">
-            <h2 style="font-size: 2em; margin-bottom: 20px;"> Daniel Hausch</h2>
-            <p style="font-size: 1.2em;"><strong>10 anos de carreira internacional</strong> lapidados em gigantes como Ambev, Lenovo, Weg e Instituto Eldorado. Formado em Administração, com <strong>MBA e especialização pelo MIT</strong>.</p>
-            <p style="color: #ccc;">Hoje, atua diretamente para o setor bancário dos Estados Unidos, com faturamento superior a R$ 20.000,00 mensais. Ele não ensina o que leu; ensina o que o mercado global exige.</p>
-            
-            <div class="stats">
-                <div class="stat-item"><b>10+ Anos</b> de Trincheira</div>
-                <div class="stat-item"><b>MIT / MBA</b> Acadêmico</div>
-                <div class="stat-item"><b>Global</b> Mercado EUA</div>
-                <div class="stat-item"><b>R$ 20k+</b> Faturamento/mês</div>
+    <div class="container">
+        <div class="promise">
+            <h2>Pare de "achar" e comece a decidir.</h2>
+            <p>A maioria dos Analistas de Negócios no Brasil trabalha baseada no "feeling". Eles entregam tarefas, mas não geram valor estratégico. É por isso que continuam invisíveis para a diretoria.</p>
+            <div style="background: #1a1a1a; padding: 20px; border-left: 5px solid #007aff; margin-top: 30px;">
+                <h3 style="margin: 0; color: #007aff;">A Promessa:</h3>
+                <p style="font-size: 1.3em; color: #fff; margin-bottom: 0;">Domine o framework BABOK® e <strong>brigue por vagas que pagam mais de R$ 20.000,00 por mês</strong>.</p>
             </div>
         </div>
-    </section>
 
-    <div id="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 style="margin-top: 0; color: var(--gold);">Receber Ementa Completa</h2>
-            <p style="color: #8e8e93; font-size: 1em;">Descubra como os 10 módulos do BA Pro vão profissionalizar sua carreira para o mercado global.</p>
-            
-            <form id="ementaForm">
-                <label>Seu e-mail corporativo ou principal</label>
-                <input type="email" id="email" required placeholder="seu@email.com">
-                
-                <label>Você já atua como Business Analyst?</label>
-                <select id="atua">
-                    <option value="sim">Sim, já atuo na área</option>
-                    <option value="nao">Não, estou migrando</option>
-                </select>
+        <div class="mentor-section">
+            <div class="mentor-text">
+                <h2>O Mentor</h2>
+                <p>Daniel Hausch possui mais de 10 anos de experiência prática, aplicando análise de negócios em gigantes como Ambev, Lenovo e Weg.</p>
+                <p>Hoje, atua em projetos internacionais de alta criticidade para o setor bancário dos Estados Unidos. No BA Pro, ele entrega o filtro do que realmente funciona na mesa de decisões global.</p>
+            </div>
+        </div>
 
-                <label>Anos de experiência</label>
-                <input type="text" id="xp" placeholder="Ex: 4 anos">
-
-                <button type="submit" class="btn" style="width: 100%; margin-top: 40px; border-radius: 12px; font-size: 1.1em;">ENVIAR EMENTA EM PDF</button>
-            </form>
+        <div class="cta-box">
+            <h3>Saia do improviso técnico hoje mesmo.</h3>
+            <p>Garanta acesso à ementa completa e mude o patamar da sua carreira.</p>
         </div>
     </div>
-
-    <div class="footer">
-        © 2026 BA Pro | Daniel Hausch Business Analysis Elite.
-    </div>
-
-    <script>
-        function openModal() { document.getElementById('modal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('modal').style.display = 'none'; }
-        
-        document.getElementById('ementaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            alert('A ementa detalhada do BA Pro foi enviada para o seu e-mail! Cheque sua caixa de entrada e spam.');
-            closeModal();
-        });
-    </script>
-
 </body>
 </html>
