@@ -8,8 +8,8 @@ Esta ementa foi estruturada seguindo os padrões de excelência de programas exe
 
 ---
 
-## 📈 O Mercado de Business Analytics (2025-2030)
-O mercado global de Business Analytics está projetado para crescer a uma taxa composta anual (CAGR) de mais de 13%, atingindo patamares onde a capacidade de traduzir dados em decisões não é mais um diferencial, mas um requisito de sobrevivência. Empresas líderes (Fortune 500) já migraram do "Data-Driven" para o "Decision-Driven". O BA Pro prepara você para liderar essa transição.
+## 📈 O Mercado de Business Analysis (2025-2030)
+O mercado global de Business Analysis está projetado para crescer a uma taxa composta anual (CAGR) de mais de 13%, atingindo patamares onde a capacidade de traduzir necessidades de negócio em soluções de valor não é mais um diferencial, mas um requisito de sobrevivência. Empresas líderes (Fortune 500) já migraram do "Data-Driven" para o "Decision-Driven". O BA Pro prepara você para liderar essa transição.
 
 ---
 
