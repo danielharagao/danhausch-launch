@@ -1,61 +1,70 @@
-# Ementa Detalhada: BA Pro
+# 📄 Ementa Executiva & Guia Metodológico: BA Pro
+**O Fim do Amadorismo. A Ascensão da Elite Técnica.**
 
-**O Fim do Improviso. A Ascensão da Elite.**
-
-O **BA Pro** não é apenas mais um curso de análise de negócios. É a transição definitiva para o profissional que deseja trocar o "feeling" pela autoridade técnica do framework BABOK® e da Decision Intelligence. 
-
-Esta ementa foi estruturada seguindo os padrões de excelência de programas executivos do MIT e Harvard, focando em resultados mensuráveis e liderança estratégica.
+O **BA Pro** é um programa de alta performance desenhado para transformar Analistas de Negócios "de feeling" em especialistas de autoridade internacional. Esta ementa segue o rigor técnico do **BABOK® Guide v3** aliado à metodologia de **Decision Intelligence** aplicada em gigantes globais.
 
 ---
 
-## 📈 O Mercado de Business Analysis (2025-2030)
-O mercado global de Business Analysis está projetado para crescer a uma taxa composta anual (CAGR) de mais de 13%, atingindo patamares onde a capacidade de traduzir necessidades de negócio em soluções de valor não é mais um diferencial, mas um requisito de sobrevivência. Empresas líderes (Fortune 500) já migraram do "Data-Driven" para o "Decision-Driven". O BA Pro prepara você para liderar essa transição.
+## 🏛️ Módulo 1: O Framework de Autoridade (BABOK® & Strategy)
+*Foco: Sair da execução operacional e entrar na camada de estratégia.*
+
+*   **Fundamentos de Elite:** A transição do "Anotador de Pedidos" para o "Estrategista de Negócios".
+*   **Domínio do BABOK® v3:** As 6 Áreas de Conhecimento aplicadas (não apenas teóricas).
+    *   *Planejamento e Monitoramento da Análise de Negócios.*
+    *   *Governança de Requisitos e Gestão de Mudanças.*
+*   **Análise de Stakeholders Executivos:** Mapeamento de poder, influência e técnicas de engajamento C-Level.
+*   **Entrega Técnica:** Plano de Abordagem de Análise de Negócios (Padrão Internacional).
+
+## 🧠 Módulo 2: Elicitação de Alta Performance & Discovery
+*Foco: Extrair o que o cliente precisa, não o que ele diz que quer.*
+
+*   **Técnicas Avançadas de Elicitação:** Workshops de facilitação, Entrevistas Estruturadas e Observação Participativa.
+*   **Discovery Contínuo:** Como manter a relevância do produto em ciclos ágeis e tradicionais.
+*   **Análise de Documentos e Processos:** Engenharia reversa para identificar lacunas de valor.
+*   **Entrega Técnica:** Documento de Visão e Mapa de Requisitos Elicitados.
+
+## ⚙️ Módulo 3: Engenharia de Requisitos & Ciclo de Vida
+*Foco: Estruturar a solução com precisão cirúrgica.*
+
+*   **Análise de Requisitos e Design (RADD):** Especificação, Modelagem e Validação.
+*   **Rastreabilidade de Ponta a Ponta:** Como garantir que cada linha de código gera valor de negócio.
+*   **Priorização Baseada em ROI:** Técnicas além do MoSCoW (Kano Model, Valor de Negócio vs. Esforço).
+*   **Arquitetura da Informação para BAs:** Diagramação técnica (UML, BPMN) para comunicação clara com o time de dev.
+*   **Entrega Técnica:** Backlog Priorizado e Matriz de Rastreabilidade.
+
+## 🤖 Módulo 4: Decision Intelligence & IA no Negócio
+*Foco: O futuro da profissão. O Analista como arquiteto de decisões.*
+
+*   **Modelagem de Decisão:** Introdução ao DMN (Decision Model and Notation).
+*   **Decision-Driven vs. Data-Driven:** Por que os dados sozinhos não resolvem o problema.
+*   **IA para Business Analysts:** Como usar LLMs (ChatGPT, Claude) para automação de requisitos e simulação de cenários.
+*   **Redução de Vieses Cognitivos:** Tomada de decisão racional em ambientes de pressão.
+*   **Entrega Técnica:** Modelo de Decisão Estratégica para Problemas Complexos.
+
+## 🎨 Módulo 5: Interface de Decisão & UX para BAs
+*Foco: Falar a língua do produto e do usuário.*
+
+*   **Dicionário Visual do BA:** Os 50 componentes de UI que você precisa conhecer para desenhar soluções.
+*   **Wireframing Estratégico:** Prototipagem de baixa fidelidade para validação rápida de requisitos.
+*   **Usabilidade e Acessibilidade:** Garantindo que a solução técnica seja funcional para o humano.
+*   **Entrega Técnica:** Protótipo Funcional (Wireframe) de uma Solução de Negócio.
+
+## 🌍 Módulo 6: Carreira Global & Atuação Internacional (USD/EUR)
+*Foco: Posicionamento de mercado e faturamento em moeda forte.*
+
+*   **O Mercado dos EUA/Europa:** Diferenças culturais e técnicas na análise de negócios internacional.
+*   **LinkedIn de Autoridade:** Como ser caçado por recrutadores globais.
+*   **Entrevistas Técnicas em Inglês:** Como demonstrar domínio do BABOK® em processos seletivos globais.
+*   **Networking de Elite:** Entrando nos círculos de decisão das Big Techs e Bancos Internacionais.
 
 ---
 
-## 🚀 O que você vai dominar:
-
-### 1. Mindset de Elite e Estratégia Corporativa
-Saia da posição de "anotador de pedidos" e entenda como um Estrategista de Negócios pensa, decide e se posiciona em empresas globais. 
-*   **Diferencial:** Frameworks de análise de valor utilizados pelas maiores consultorias do mundo (McKinsey/BCG).
-
-### 2. O Escudo BABOK® (Business Analysis Body of Knowledge)
-Domínio prático das 6 áreas de conhecimento do IIBA. Você não vai decorar o guia; vai aprender a usar as ferramentas que dão respaldo às suas decisões e garantem conformidade internacional.
-*   **Aplicação:** Estruturação de processos e governança de requisitos.
-
-### 3. Elicitação Avançada e Colaboração Executiva
-Técnicas avançadas para extrair requisitos reais, mesmo de stakeholders difíceis ou em cenários de alta incerteza.
-*   **Métodos:** Facilitação de workshops, análise de documentos e entrevistas estruturadas de alto impacto.
-
-### 4. Engenharia de Requisitos e Entrega de Valor
-Como estruturar backlogs e documentos que os desenvolvedores amam e que a diretoria entende como lucro líquido.
-*   **Foco:** Ciclo de vida do requisito, rastreabilidade e priorização baseada em ROI.
-
-### 5. Decision Intelligence & IA Aplicada
-O uso da Inteligência Artificial como parceira estratégica para simular cenários, reduzir vieses e eliminar o "gap" de decisões no escuro.
-*   **Inovação:** Modelagem de decisão e integração de LLMs no fluxo de análise de negócios.
-
-### 6. Interface de Decisão: UI/UX para BAs (Dicionário Visual)
-Aprenda a falar a língua técnica do produto. Domine os 50 componentes essenciais para desenhar soluções viáveis, profissionais e centradas no usuário.
-*   **Ferramental:** Wireframing estratégico e prototipagem funcional para validação rápida.
-
-### 7. Soft Skills de Mesa e Negociação Executiva
-Comunicação executiva, negociação de prioridades sob pressão e como ter voz ativa (e respeitada) nas reuniões de alto escalão.
-*   **Pilar:** Inteligência emocional aplicada a conflitos de stakeholders.
-
-### 8. Carreira Internacional e Posicionamento (20k+)
-O mapa para atuar em mercados globais (EUA/Europa), faturando acima de R$ 20.000,00 mensais com autoridade técnica e fluência em processos globais.
+## 🤵 Validação Técnica (O Mentor)
+**Daniel Hausch** traz para este programa o filtro de 10 anos de atuação real em ambientes onde o erro custa milhões.
+*   **Manufatura Global:** Weg.
+*   **FMCG & Eficiência:** Ambev.
+*   **Tech & Logística:** Lenovo.
+*   **Fintech & Bancário:** Atuação atual no mercado dos EUA.
 
 ---
-
-## 💰 Investimento na sua Ascensão
-
-O BA Pro é um acelerador de carreira desenhado para se pagar no primeiro trimestre de aplicação prática.
-
-*   **Valor Original:** R$ 2.999,00
-*   **Condição Especial de Lançamento:** **R$ 1.499,00** (ou 12x de R$ 149,00)
-
----
-
-**Mentor: Daniel Hausch**
-*10+ anos de experiência | Ex-Ambev, Lenovo, Weg | Atuação atual no Setor Bancário dos EUA.*
+*Versão 1.0 - Documento Técnico de Referência para Leads.*
