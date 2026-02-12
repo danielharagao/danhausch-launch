@@ -12,14 +12,15 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
         .card:hover { transform: translateY(-5px); }
+        .card.estrategia { border-top: 6px solid #ff2d55; }
         .card.curso { border-top: 6px solid #007aff; }
         .card.conteudo { border-top: 6px solid #ff9500; }
         .card.financeiro { border-top: 6px solid #28a745; }
-        .card.operacional { border-top: 6px solid #5856d6; }
+        .card.tech { border-top: 6px solid #5856d6; }
+        .card.operacional { border-top: 6px solid #8e8e93; }
         .card h3 { margin-top: 0; display: flex; align-items: center; gap: 10px; }
         .date { color: #8e8e93; font-size: 0.9em; margin-top: 5px; }
         footer { margin-top: 60px; padding: 20px; font-size: 0.85em; color: #8e8e93; text-align: center; border-top: 1px solid #ddd; }
-        .tag { background: #007aff; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75em; font-weight: bold; text-transform: uppercase; float: right; }
     </style>
 </head>
 <body>
@@ -30,24 +31,34 @@
     </header>
 
     <div class="grid">
+        <a href="estrategia.html" class="card estrategia">
+            <h3>🎯 Estratégia & Fundamentos</h3>
+            <p>Persona, Modelo de Negócio e Posicionamento de Mercado.</p>
+        </a>
+
         <a href="curso.html" class="card curso">
             <h3>🎓 Hub do Curso</h3>
-            <p>Ementa, Mentor, Persona e requisitos da plataforma de ensino.</p>
+            <p>Ementa, Mentor e ativos educacionais do treinamento.</p>
         </a>
 
         <a href="conteudo.html" class="card conteudo">
             <h3>🎬 Conteúdo & Autoridade</h3>
-            <p>Planejamento de YouTube, Redes Sociais e análises de mercado.</p>
+            <p>Planejamento de YouTube, Redes Sociais e Funis.</p>
         </a>
 
         <a href="financeiro.html" class="card financeiro">
             <h3>💰 Gestão Financeira</h3>
-            <p>Budget de tráfego, ROI, custos fixos e metas de faturamento.</p>
+            <p>Budget, ROI e metas de faturamento.</p>
+        </a>
+
+        <a href="tech.html" class="card tech">
+            <h3>💻 Infraestrutura & Tech</h3>
+            <p>Requirements da plataforma e ferramentas de automação.</p>
         </a>
 
         <a href="tasks.html" class="card operacional">
             <h3>⚙️ Operacional & Tasks</h3>
-            <p>Checklist de atividades, Roadmap e prazos do lançamento.</p>
+            <p>Checklist de atividades e Roadmap do lançamento.</p>
         </a>
     </div>
 
