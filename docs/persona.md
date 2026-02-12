@@ -1,29 +1,21 @@
-# Persona: O Analista que Improvisa (BA Pro)
+# 🎯 Persona: O Analista que Improvisa
 
-## 👤 Perfil Demográfico
-- **Idade:** 28 - 42 anos.
-- **Cargo:** Analista de Negócios/Sistemas Pleno ou Sênior, Product Owner ou Consultor.
-- **Ambiente:** Empresas de médio/grande porte ou consultorias de tecnologia.
-- **Nível Acadêmico:** Pós-graduado ou com certificações técnicas, mas sem certificação IIBA (CBAP/CCBA).
+Este é o perfil central do lead para o **BA Pro**.
 
-## 🧠 Psicografia (O que ele pensa e sente)
+### 👤 Perfil Psicológico
+- **Ocupação:** Analista de Sistemas, Negócios ou Processos em nível Junior/Pleno.
+- **Sentimento:** Sente que "chegou até aqui" por sorte ou esforço bruto, mas falta método.
+- **Frustração:** Não se sente seguro em reuniões com liderança; teme ser questionado sobre a técnica por trás das suas decisões.
 
-### 🔴 Dores e Frustrações
-1. **Invisibilidade Estratégica:** Sente que seu trabalho é visto como "tarefagem" ou documentação burocrática, e não como geração de valor.
-2. **Estagnação Salarial:** Atingiu um teto salarial e não sabe como justificar um aumento para cargos de liderança ou "Staff".
-3. **Sobrecarga TDAH/Operacional:** Perde-se em reuniões intermináveis e documentos gigantescos que ninguém lê.
-4. **Medo da IA:** Teme que ferramentas de IA substituam o analista que apenas "anota requisitos", mas não sabe como usar a IA a seu favor.
-5. **Síndrome do Impostor (Falta de Formalidade):** Sente que sua experiência é "intuitiva" e teme ser exposto por não dominar a terminologia técnica ou frameworks oficiais (BABOK) em discussões com executivos.
+### 🚩 Dores Principais
+1. **Síndrome do Impostor:** Medo de ser exposto como alguém que não domina os fundamentos (BABOK).
+2. **Improviso:** Gasta tempo demais "redescobrindo a roda" em cada projeto.
+3. **Estagnação:** Sente que não sobe para cargos de liderança ou projetos globais por falta de currículo técnico sólido.
 
-### 🟢 Desejos e Aspirações
-1. **Autoridade "Voz na Mesa":** Quer ser o profissional que os stakeholders consultam antes de tomar decisões críticas.
-2. **Domínio do BABOK® Sem Chatice:** Quer aplicar as 30 técnicas do BABOK de forma prática e ágil, não acadêmica.
-3. **Liberdade de Execução:** Busca um método que permita entregar resultados de alto nível com menos esforço manual (usando Decision Intelligence).
+### 🏆 Aspirações
+- **Reconhecimento:** Ser a referência técnica na equipe.
+- **Mobilidade:** Estar preparado para vagas remotas em dólar/euro no setor bancário ou tech.
+- **Poder de Decisão:** Ter argumentos técnicos para influenciar o rumo dos projetos.
 
-## 🛡️ Objeções Comuns
-- "Não tenho tempo para estudar o BABOK, é muito denso."
-- "Minha empresa não valoriza análise de negócios, só querem entrega de código."
-- "Já tentei outros cursos e era só teoria."
-
-## 💎 A Promessa BA Pro
-Transformar o analista operacional em um **Estrategista de Elite**, capaz de desenhar soluções de alto impacto usando o framework BABOK® + Decision Intelligence, garantindo lugar na mesa de decisões.
+---
+*Documento simplificado para foco em copy e anúncios.*
