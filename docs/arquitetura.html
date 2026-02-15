@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausch Architecture & Design | Conceito e Excelência</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c5a059;
+            --bg: #f9f9f9;
+            --text: #333;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            color: var(--secondary);
+            font-style: italic;
+            font-weight: 300;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--secondary);
+        }
+        .cta {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Hausch Arch</div>
+        <div class="tagline">Transformando espaços em experiências atemporais.</div>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Arquitetura de Alto Padrão</h1>
+            <p>Design Minimalista. Execução Impecável.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Residencial</h3>
+                <p>Projetos personalizados que refletem sua identidade e otimizam sua rotina.</p>
+            </div>
+            <div class="card">
+                <h3>Corporativo</h3>
+                <p>Espaços de trabalho pensados para produtividade e impacto de marca.</p>
+            </div>
+            <div class="card">
+                <h3>Interiores</h3>
+                <p>Curadoria de mobiliário e iluminação para criar ambientes sofisticados.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Inicie seu projeto conosco</h2>
+        <p>Atendimento exclusivo em São Paulo e Campinas.</p>
+        <br><br>
+        <a href="#" class="btn">Agendar Consultoria</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Hausch Architecture & Design. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
