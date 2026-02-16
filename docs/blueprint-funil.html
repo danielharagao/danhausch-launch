@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprints do Funil | BA Pro</title>
+    <style>
+        :root { --primary: #007aff; --dark: #0a0a0a; --gold: #d4af37; --card-bg: #1a1a1a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--dark); color: #fff; line-height: 1.6; margin: 0; padding: 40px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { color: var(--gold); border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h2 { color: var(--primary); margin-top: 40px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin: 20px 0; border: 1px solid #333; }
+        code { background: #000; color: #0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+        pre { background: #000; padding: 15px; border-radius: 8px; overflow-x: auto; color: #888; border: 1px solid #222; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .badge { background: var(--primary); color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; font-weight: bold; }
+        .status-on { color: #2ecc71; font-weight: bold; }
+        .status-off { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <p style="color: var(--gold); letter-spacing: 2px; margin: 0;">DOCUMENTAÇÃO TÉCNICA 🤵</p>
+            <h1 style="font-size: 2.5em; border: none;">Arquitetura do Funil BA Pro</h1>
+            <p style="color: #8e8e93;">Status: <span class="status-on">Operacional (v1.0)</span></p>
+        </header>
+
+        <section>
+            <h2>1. Fluxo de Conversão</h2>
+            <div class="card">
+                <p><strong>A. Entrada (Tráfego):</strong> Reels, YouTube ("O Fim do Amadorismo") e LinkedIn.</p>
+                <p><strong>B. Captação (LP):</strong> <code>lp.html</code> hospedada no GitHub Pages.</p>
+                <p><strong>C. Processamento (API):</strong> <code>funnel_backend.py</code> rodando na VPS (Porta 5000).</p>
+                <p><strong>D. Persistência:</strong> Gravação imediata em <code>data/leads.jsonl</code> (Redundância local).</p>
+                <p><strong>E. Automação:</strong> Disparo de e-mail via SendGrid (Aguardando API Key).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Copy Estratégica</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--gold);">Headline Principal</h3>
+                    <p>"Pare de 'achar' e comece a agir como um BA de Classe Mundial."</p>
+                    <small>Foco: Autoridade Técnica + Design de Decisão.</small>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--gold);">Diferenciação</h3>
+                    <p>"O fim do amadorismo: Métodos do MIT e trincheira real da Ambev/Lenovo."</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Detalhes Técnicos (Assets)</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Backend:</strong> Flask (Python 3.10)</li>
+                    <li><strong>Segurança:</strong> Validação de e-mail e sanitização de inputs via API.</li>
+                    <li><strong>Backup:</strong> <code>leads.jsonl</code> - Arquivo append-only para auditoria.</li>
+                    <li><strong>Diagrama:</strong> <code>diagrama_funnel_bapro.png</code> (Gerado via Alfred).</li>
+                </ul>
+                <pre>
+# Status Atual dos Processos
+PID 147893 -> python3 funnel_backend.py (RUNNING)
+Logs: /api/funnel.log
+                </pre>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 60px; color: #444; font-size: 0.8em;">
+            Compilado por Alfred (COO) | 2026-02-16
+        </footer>
+    </div>
+</body>
+</html>
