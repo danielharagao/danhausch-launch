@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário de Assets | BA Pro</title>
+    <style>
+        :root { --primary: #007aff; --dark: #0a0a0a; --gold: #d4af37; --card-bg: #1a1a1a; --success: #2ecc71; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--dark); color: #fff; line-height: 1.6; margin: 0; padding: 40px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { color: var(--gold); border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h2 { color: var(--primary); margin-top: 40px; border-left: 4px solid var(--primary); padding-left: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid #333; transition: transform 0.2s; text-decoration: none; color: inherit; display: block; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card h3 { margin-top: 0; color: var(--gold); font-size: 1.1em; }
+        .card p { font-size: 0.9em; color: #8e8e93; margin-bottom: 15px; }
+        .badge { background: #333; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: bold; text-transform: uppercase; }
+        .status-live { background: var(--success); color: #000; }
+        .status-draft { background: #f1c40f; color: #000; }
+        .url { font-family: monospace; font-size: 0.8em; color: var(--primary); word-break: break-all; }
+        nav { margin-bottom: 20px; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav><a href="index.html">← Voltar ao Command Center</a></nav>
+        <header>
+            <h1>🗂️ Inventário Geral de Assets</h1>
+            <p style="color: #8e8e93;">Todos os links, cópias e ativos técnicos do lançamento do BA Pro.</p>
+        </header>
+
+        <section>
+            <h2>🌐 Landing Pages & Interfaces</h2>
+            <div class="grid">
+                <a href="lp.html" class="card">
+                    <span class="badge status-live">Live</span>
+                    <h3>Landing Page Principal</h3>
+                    <p>Captura de leads e oferta da ementa.</p>
+                    <span class="url">/lp.html</span>
+                </a>
+                <a href="arquitetura.html" class="card">
+                    <span class="badge">Demo</span>
+                    <h3>Demo: Arquitetura LP</h3>
+                    <p>Página de demonstração de conversão.</p>
+                    <span class="url">/arquitetura.html</span>
+                </a>
+                <a href="blueprint-funil.html" class="card">
+                    <span class="badge status-live">Internal</span>
+                    <h3>Blueprint do Funil</h3>
+                    <p>Documentação técnica e diagrama do fluxo.</p>
+                    <span class="url">/blueprint-funil.html</span>
+                </a>
+                <a href="index.html" class="card">
+                    <span class="badge status-live">Internal</span>
+                    <h3>Command Center</h3>
+                    <p>Home principal de governança do Alfred.</p>
+                    <span class="url">/index.html</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>📧 Sequências de E-mail (Copy)</h2>
+            <div class="grid">
+                <a href="emails_v2_executivo.md" class="card">
+                    <span class="badge status-live">v2.0</span>
+                    <h3>Sequência Executiva</h3>
+                    <p>5 e-mails técnicos (Doutrinação & Autoridade).</p>
+                    <span class="url">/emails_v2_executivo.md</span>
+                </a>
+                <a href="emails_aquecimento.md" class="card">
+                    <span class="badge">Backup</span>
+                    <h3>Sequência Original</h3>
+                    <p>Copy base de aquecimento (v1.0).</p>
+                    <span class="url">/emails_aquecimento.md</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>📄 Ativos de Entrega (Downloads)</h2>
+            <div class="grid">
+                <a href="EMENTA_BA_PRO.pdf" class="card">
+                    <span class="badge status-live">PDF</span>
+                    <h3>Ementa Oficial (PDF)</h3>
+                    <p>Ativo enviado no e-mail de boas-vindas.</p>
+                    <span class="url">/EMENTA_BA_PRO.pdf</span>
+                </a>
+                <a href="EMENTA_BA_PRO.md" class="card">
+                    <span class="badge">Source</span>
+                    <h3>Ementa (Markdown)</h3>
+                    <p>Fonte de texto para a ementa detalhada.</p>
+                    <span class="url">/EMENTA_BA_PRO.md</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>📝 Autoridade & Conteúdo Externo</h2>
+            <div class="grid">
+                <a href="https://danhausch.meublog.net/" target="_blank" class="card">
+                    <span class="badge status-live">External</span>
+                    <h3>Blog do Analista</h3>
+                    <p>Canal de autoridade e tráfego orgânico.</p>
+                    <span class="url">danhausch.meublog.net</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚙️ Ativos de Planejamento</h2>
+            <div class="grid">
+                <a href="action-plan.html" class="card">
+                    <span class="badge status-live">v2.0</span>
+                    <h3>Plano de Ação</h3>
+                    <p>Cronograma reverso e atividades críticas.</p>
+                    <span class="url">/action-plan.html</span>
+                </a>
+                <a href="tasks.html" class="card">
+                    <span class="badge">Operational</span>
+                    <h3>Checklist de Tarefas</h3>
+                    <p>Gestão diária de execução técnica.</p>
+                    <span class="url">/tasks.html</span>
+                </a>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 60px; color: #444; font-size: 0.8em;">
+            Inventário Consolidado por Alfred | 2026-02-17
+        </footer>
+    </div>
+</body>
+</html>
