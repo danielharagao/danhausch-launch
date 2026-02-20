@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BA Pro - Vault Map</title>
+  <style>html, body, svg { width: 100%; height: 100%; margin: 0; background: #1a1a1a; color: white; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15.4/dist/browser/index.min.js"></script>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+  <script>
+    const markdown = `
+# 🧠 BA Pro Vault
+## 10_Strategy (Estratégia)
+- [README](https://github.com/danielharagao/vault/blob/main/10_Strategy/README.md)
+- [01_Revisao_Geral](https://github.com/danielharagao/vault/blob/main/10_Strategy/01_Revisao_Geral_Lancamento.md)
+- [Avatar_Persona](https://github.com/danielharagao/vault/blob/main/10_Strategy/Avatar_Persona.md)
+- [Promessa_Oferta](https://github.com/danielharagao/vault/blob/main/10_Strategy/Promessa_Oferta.md)
+## 20_Content (Conteúdo)
+- [README](https://github.com/danielharagao/vault/blob/main/20_Content/README.md)
+- LP
+  - [Landing_Page_Copy](https://github.com/danielharagao/vault/blob/main/20_Content/LP/Landing_Page_Copy.md)
+- Emails (vazio)
+- Ads (vazio)
+- Social (vazio)
+## 30_Product (Produto)
+- [Ementa_Completa](https://github.com/danielharagao/vault/blob/main/30_Product/Ementa_Completa.md)
+## 40_Tech (Tecnologia)
+- [README](https://github.com/danielharagao/vault/blob/main/40_Tech/README.md)
+## 00_Index (Índice Geral)
+- [00_Index](https://github.com/danielharagao/vault/blob/main/00_Index.md)
+`;
+
+    const transformer = new markmap.Transformer();
+    const { root, features } = transformer.transform(markdown);
+    const { Markmap, loadCSS, loadJS } = markmap;
+    
+    Markmap.create('#mindmap', {
+        color: (node) => {
+            // Cores baseadas no nível
+            return ['#007aff', '#d4af37', '#ff3b30', '#4cd964'][node.depth % 4];
+        },
+        duration: 500
+    }, root);
+  </script>
+</body>
+</html>
