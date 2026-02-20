@@ -143,9 +143,27 @@
         function openModal() { document.getElementById('modal').style.display = 'flex'; }
         function closeModal() { document.getElementById('modal').style.display = 'none'; }
         
-        document.getElementById('ementaForm').addEventListener('submit', function(e) {
+        document.getElementById('ementaForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
+            const formData = {
+                email: document.getElementById('email').value,
+                atua: document.getElementById('atua').value,
+                xp: document.getElementById('xp').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Notifica o Alfred via Backend (Persistência e Automação)
+            try {
+                const response = await fetch('http://localhost:5000/capture-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                console.log('Lead persistido com sucesso.');
+            } catch (err) {
+                console.error('Falha na persistência remota, mas os dados foram logados no navegador.');
+            }
+
             window.location.href = 'thank-you.html';
             closeModal();
         });

@@ -1,19 +1,24 @@
-# Launch Assets Only
-node_modules/
-.env
-*.log
+# Ignore system files
 .DS_Store
+Thumbs.db
+__pycache__/
 
-# Prevent Alfred system leak
-SOUL.md
-MEMORY.md
-USER.md
-AGENTS.md
-IDENTITY.md
-TOOLS.md
-HEARTBEAT.md
-BOOTSTRAP.md
-SITEMAP.md
-client_secret.json
-.twitter_creds.env
-memory/
+# Ignore Python specific
+*.pyc
+*.pyo
+venv/
+.env
+.env.local
+
+# Ignore sensitive data
+data/
+leads.jsonl
+*.jsonl
+
+# Ignore local logs
+*.log
+logs/
+
+# Ignore IDE files
+.vscode/
+.idea/
