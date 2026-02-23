@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:sans-serif; max-width:800px; margin:40px auto; line-height:1.6; color:#333; padding:20px;} h1, h2{color:#0056b3;} table{border-collapse:collapse; width:100%; margin-bottom:20px;} th, td{border:1px solid #ddd; padding:8px;} th{background-color:#f2f2f2; text-align:left;}</style></head><body>
+<h1>BA Pro Toolkit - O Kit de Sobrevivência do BA Sênior</h1>
+<p><em>Este pacote contém os 4 frameworks executivos essenciais para um Business Analyst se posicionar como um parceiro de negócio estratégico, eliminando o ruído entre as áreas de negócio e tecnologia.</em></p>
+<hr>
+<h2>1. Documento de Requisitos de Negócio (BRD) - Padrão Executivo</h2>
+<p><strong>Objetivo:</strong> Capturar o &quot;O Quê&quot; e o &quot;Por Quê&quot; de forma direta, sem enrolação. Focado exclusivamente no valor de negócio e alinhamento com os KPIs da diretoria.</p>
+<h3>1.1 Resumo Executivo</h3>
+<p><strong>Visão Geral do Projeto:</strong> [Descreva em até 3 frases o problema que estamos resolvendo e a solução proposta. Ex: Otimizar o tempo de fechamento contábil reduzindo a extração manual de dados de 5 dias para 1 dia.]
+<strong>Objetivos Estratégicos:</strong> [Liste os objetivos vinculados à estratégia da empresa. Ex: Redução de 20% no OPEX anual; Aumento da taxa de conversão no checkout em 5%.]</p>
+<h3>1.2 Escopo</h3>
+<p><strong>In Scope (O que faremos):</strong></p>
+<ul>
+<li>[Entregável ou área de negócio afetada 1]</li>
+<li>[Entregável ou área de negócio afetada 2]</li>
+</ul>
+<p><strong>Out of Scope (O que NÃO faremos):</strong></p>
+<ul>
+<li>[Processo ou sistema que ficará de fora, para evitar scope creep]</li>
+<li>[Integrações não previstas na fase inicial]</li>
+</ul>
+<h3>1.3 Regras de Negócio Core</h3>
+<table>
+<thead>
+<tr>
+<th>ID Regra</th>
+<th>Descrição da Regra</th>
+<th>Razão/Impacto</th>
+<th>Fonte (Quem definiu)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RN01</td>
+<td>[Ex: O limite de crédito não pode ultrapassar 3x o faturamento declarado]</td>
+<td>[Mitigação de risco de inadimplência]</td>
+<td>[Diretoria de Risco]</td>
+</tr>
+<tr>
+<td>RN02</td>
+<td>[Regra 2]</td>
+<td>[Razão 2]</td>
+<td>[Fonte 2]</td>
+</tr>
+</tbody></table>
+<h3>1.4 Premissas e Restrições</h3>
+<ul>
+<li><strong>Premissas (O que assumimos como verdade):</strong> [Ex: A API do ERP legado estará disponível 24/7 sem limitação de requests.]</li>
+<li><strong>Restrições (Limites do projeto):</strong> [Ex: O orçamento máximo é de R$ 500k; o go-live deve ocorrer obrigatoriamente antes da Black Friday.]</li>
+</ul>
+<h3>1.5 Critérios de Sucesso (KPIs do Projeto)</h3>
+<ul>
+<li>[KPI 1: Ex: Redução de 30% no volume de chamados de suporte do Nível 1 no primeiro mês.]</li>
+<li>[KPI 2: Ex: Adoção mínima de 80% da base de usuários ativos até a semana 4.]</li>
+</ul>
+<hr>
+<h2>2. Matriz de Mapeamento de Stakeholders (Poder x Interesse)</h2>
+<p><strong>Objetivo:</strong> Identificar rapidamente as forças políticas do projeto: quem manda, quem apoia e quem pode bloquear a iniciativa, estabelecendo a estratégia de comunicação.</p>
+<table>
+<thead>
+<tr>
+<th>Nome / Papel</th>
+<th>Departamento</th>
+<th>Poder (Alto/Baixo)</th>
+<th>Interesse (Alto/Baixo)</th>
+<th>Classificação</th>
+<th>Estratégia de Engajamento</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[João Silva / Diretor]</td>
+<td>[Vendas]</td>
+<td>[Alto]</td>
+<td>[Alto]</td>
+<td><strong>Promotor / Key Player</strong></td>
+<td><strong>Gerenciar de Perto:</strong> [Envolver nas decisões críticas, daily reports, reuniões de comitê executivo.]</td>
+</tr>
+<tr>
+<td>[Maria Souza / Analista]</td>
+<td>[Operações]</td>
+<td>[Baixo]</td>
+<td>[Alto]</td>
+<td><strong>Defensor / Influenciador</strong></td>
+<td><strong>Manter Informado:</strong> [Garantir que os requisitos dela sejam ouvidos, enviar atualizações semanais de status.]</td>
+</tr>
+<tr>
+<td>[Carlos Lima / Ger. TI]</td>
+<td>[Infra]</td>
+<td>[Alto]</td>
+<td>[Baixo]</td>
+<td><strong>Bloqueador Potencial</strong></td>
+<td><strong>Manter Satisfeito:</strong> [Alinhar arquitetura preventivamente, não sobrecarregar com detalhes não técnicos.]</td>
+</tr>
+<tr>
+<td>[Ana Costa / Estagiária]</td>
+<td>[Marketing]</td>
+<td>[Baixo]</td>
+<td>[Baixo]</td>
+<td><strong>Neutro</strong></td>
+<td><strong>Monitorar:</strong> [Incluir em e-mails gerais de release.]</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>3. Template de User Stories + Acceptance Criteria (Padrão Ágil)</h2>
+<p><strong>Objetivo:</strong> Traduzir requisitos executivos em histórias de usuário que o time técnico compreenda sem ambiguidades, usando o formato BDD (Behavior-Driven Development).</p>
+<h3>Estrutura</h3>
+<ul>
+<li><strong>Épico:</strong> [Nome do Épico. Ex: Novo Checkout Transparente]</li>
+<li><strong>Feature:</strong> [Nome da Feature. Ex: Integração de Pagamento via PIX]</li>
+</ul>
+<h3>A História (User Story)</h3>
+<p><strong>US-[ID]:</strong> [Nome curto da Story]</p>
+<blockquote>
+<p><strong>Como</strong> [persona do usuário. Ex: cliente com carrinho cheio],
+<strong>Eu quero</strong> [ação ou funcionalidade. Ex: selecionar o PIX como método de pagamento],
+<strong>Para que</strong> [valor ou benefício de negócio. Ex: eu conclua a compra de forma instantânea sem precisar de cartão de crédito].</p>
+</blockquote>
+<h3>Critérios de Aceite (Acceptance Criteria - Formato Gherkin)</h3>
+<p><strong>Cenário 1: [Nome do Cenário. Ex: Geração de QR Code PIX com Sucesso]</strong></p>
+<ul>
+<li><strong>Dado que (Given):</strong> [Contexto inicial. Ex: O cliente está na página de checkout e selecionou a opção PIX.]</li>
+<li><strong>Quando (When):</strong> [Ação do usuário. Ex: Ele clica no botão &quot;Finalizar Pedido&quot;.]</li>
+<li><strong>Então (Then):</strong> [Resultado esperado. Ex: O sistema deve exibir um QR Code válido na tela e o código &quot;Copia e Cola&quot; abaixo dele.]</li>
+<li><strong>E (And):</strong> [Condição adicional. Ex: O pedido deve constar no ERP com status &quot;Aguardando Pagamento&quot;.]</li>
+</ul>
+<h3>Definition of Ready (DoR) e Definition of Done (DoD)</h3>
+<ul>
+<li><strong>DoR (Para a Sprint):</strong> [Ex: Protótipo UI anexado; Regras de negócio validadas pelo compliance.]</li>
+<li><strong>DoD (Para Produção):</strong> [Ex: Código revisado (Peer Review); Testes unitários com 80%+ de cobertura; Aprovado em UAT pelo Product Owner.]</li>
+</ul>
+<hr>
+<h2>4. Matriz de Rastreabilidade de Requisitos (RTM)</h2>
+<p><strong>Objetivo:</strong> Garantir a qualidade ponta-a-ponta, provando que nenhum requisito aprovado pelo negócio foi &quot;esquecido&quot; durante o desenvolvimento e que todos possuem testes associados.</p>
+<table>
+<thead>
+<tr>
+<th>ID Requisito Negócio (BRD)</th>
+<th>Descrição do Requisito</th>
+<th>ID User Story (Jira/Azure)</th>
+<th>Módulo / Componente</th>
+<th>ID Caso de Teste (QA)</th>
+<th>Status Cobertura</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BRD-001</td>
+<td>[Pagamento PIX]</td>
+<td>US-105</td>
+<td>[Checkout Web]</td>
+<td>TC-501, TC-502</td>
+<td>[Em Desenvolvimento]</td>
+</tr>
+<tr>
+<td>BRD-002</td>
+<td>[Cálculo Frete Sedex]</td>
+<td>US-108</td>
+<td>[Logística API]</td>
+<td>TC-510</td>
+<td>[Aprovado UAT]</td>
+</tr>
+<tr>
+<td>BRD-003</td>
+<td>[Regra de Desconto B2B]</td>
+<td>US-112</td>
+<td>[Carrinho]</td>
+<td>-</td>
+<td>⚠️ [Pendente de Teste]</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>Este material é parte do framework exclusivo ensinado no <strong>BA Pro</strong>. Aplique esses modelos nos seus projetos e sinta a mudança na forma como a liderança e os desenvolvedores percebem o seu trabalho.</em></p>
+
+</body></html>
