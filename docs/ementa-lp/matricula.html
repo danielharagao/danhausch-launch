@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BA Pro — Candidatura</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container hero">
+    <section class="card" style="max-width:860px;margin:0 auto;">
+      <span class="badge">BA Pro · Etapa de candidatura</span>
+      <h1>Formulário de candidatura (pré-entrevista)</h1>
+      <p>Você está na etapa certa: após baixar a ementa, a candidatura para a formação acontece aqui.</p>
+      <p><strong>Status:</strong> estamos finalizando o formulário longo + fluxo de entrevista. Enquanto isso, deixe seus dados abaixo para entrar na lista prioritária.</p>
+
+      <form id="candidaturaForm" style="display:grid;gap:12px;margin-top:16px;">
+        <label>Nome completo<input type="text" required /></label>
+        <label>E-mail<input type="email" required /></label>
+        <label>WhatsApp<input type="text" required /></label>
+        <label>LinkedIn (opcional)<input type="url" /></label>
+        <label>Experiência atual em BA (resumo)<textarea rows="4" required></textarea></label>
+        <button type="submit" class="btn">Entrar na lista de candidatura</button>
+        <p class="micro" id="status"></p>
+      </form>
+
+      <p class="micro" style="margin-top:16px;">Em breve este link será substituído pela versão completa do formulário de seleção + entrevista.</p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('candidaturaForm');
+    const status = document.getElementById('status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.textContent = 'Recebido ✅ Em instantes vamos liberar a versão completa da candidatura.';
+    });
+  </script>
+</body>
+</html>
