@@ -1,6 +1,6 @@
 // Ajuste estes links antes de publicar
 const CONFIG = {
-  formAction: "https://api.danhausch.cloud/capture-lead",
+  formAction: "https://api.danhausch.cloud/api/capture",
   redirectThankYou: "./obrigado.html",
   ementaPdfUrl: "./BA_PRO_EMENTA.pdf",
   whatsappGroupUrl: "https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl"
