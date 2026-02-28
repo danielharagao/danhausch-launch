@@ -59,6 +59,15 @@ O **BA Pro** é um programa de alta performance desenhado para transformar Anali
 
 ---
 
+## 💰 Investimento
+- **R$ 3.600 à vista**
+- **12x de R$ 360**
+
+## 📝 Matrícula
+- Link oficial: https://lp.danhausch.cloud/matricula
+
+---
+
 ## 🤵 Validação Técnica (O Mentor)
 **Daniel Hausch** traz para este programa o filtro de 10 anos de atuação real em ambientes onde o erro custa milhões.
 *   **Manufatura Global:** Weg.

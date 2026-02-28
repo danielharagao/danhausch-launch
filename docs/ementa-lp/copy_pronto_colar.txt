@@ -1,0 +1,122 @@
+# COPY PRONTO PRA COLAR — BA Pro
+
+> Versão em sequência final para implementação direta no construtor.
+> 
+> Páginas/peças:
+> 1) Página da Ementa (captura)
+> 2) Página de Obrigado (com WhatsApp)
+> 3) E-mail de envio da ementa
+
+---
+
+## 1) PÁGINA DA EMENTA (CAPTURA)
+
+### Hero — título
+**Pare de improvisar. Conheça a ementa do BA Pro.**
+
+### Hero — subtítulo
+Formação ao vivo online para Business Analysts que querem dominar método, processo e ferramentas para entregar com confiança de sênior.
+
+### Bloco de contexto
+Se você sente que está sempre apagando incêndio, sem clareza de processo e sem segurança nas decisões, o BA Pro foi criado para mudar esse jogo.
+
+Em 4 meses, você vai aprender os domínios essenciais do Business Analysis de forma prática e estruturada — para trabalhar com mais consistência, qualidade e postura profissional.
+
+### Bloco “O que você vai aprender”
+- Como desenvolver as competências essenciais de um BA profissional (Underlying Competencies)
+- Como planejar e monitorar o trabalho de BA sem improviso
+- Como conduzir elicitação e colaboração com stakeholders
+- Como gerir o ciclo de vida dos requisitos com rastreabilidade
+- Como fazer análise estratégica para decisões melhores
+- Como transformar necessidade em requisitos e design de solução
+- Como fazer avaliação de solução e melhoria contínua
+
+### Bloco “Para quem é”
+- Profissionais com 5 a 15 anos de experiência
+- BAs em atuação que querem elevar padrão técnico
+- Profissionais migrando para BA e buscando base sólida
+
+### Bloco de autoridade
+Com 10 anos de experiência em empresas como AB-Inbev, Lenovo, M&T Bank, WEG, Instituto Eldorado e UST, formação em Administração, MBA em Inovação (UFSCar), especialização em produtos de IA (MIT) e atuação internacional, Dan traz prática real de mercado para o BA Pro.
+
+### Chamada para formulário
+**Baixe a ementa completa e veja exatamente como a formação foi estruturada.**
+
+### Campos
+- Nome
+- E-mail
+
+### Botão
+**Quero receber a ementa completa**
+
+### Microcopy abaixo do botão
+Ao enviar, você receberá a ementa no seu e-mail com os detalhes da formação e acesso ao link de matrícula.
+
+### Rodapé LGPD
+Respeitamos sua privacidade. Seus dados serão usados apenas para comunicações sobre a formação BA Pro.
+
+---
+
+## 2) PÁGINA DE OBRIGADO (EMENTA + WHATSAPP)
+
+### Hero — título
+**Perfeito — sua ementa do BA Pro está a caminho do seu e-mail.**
+
+### Texto principal
+Acabamos de enviar a ementa completa para você.
+
+Se não encontrar em 2–5 minutos, confira também as abas Spam, Promoções e Atualizações.
+
+### Próxima ação
+Enquanto isso, entre no nosso grupo de WhatsApp de Business Analysts para receber conteúdos, avisos e oportunidades relacionadas ao BA Pro.
+
+### Botão principal
+**Entrar no grupo de WhatsApp**
+
+### Link do botão
+`[INSERIR_LINK_WHATSAPP_AQUI]`
+
+### Texto de apoio
+No grupo, você recebe atualizações da turma, materiais úteis e lembretes importantes sobre o lançamento.
+
+### Bloco de urgência leve (opcional)
+As vagas da turma inicial são limitadas. Quando o carrinho abrir, os detalhes de matrícula estarão no e-mail da ementa.
+
+---
+
+## 3) E-MAIL DE ENVIO DA EMENTA
+
+### Assunto (opção principal)
+**Sua ementa do BA Pro está aqui 📘**
+
+### Preheader
+Acesse agora a ementa oficial da formação BA Pro.
+
+### Corpo do e-mail
+Olá, {{first_name | default:'tudo bem?'}},
+
+Aqui está a ementa completa da formação BA Pro:
+
+👉 **[INSERIR_LINK_DA_EMENTA_AQUI]**
+
+O BA Pro foi desenhado para quem quer parar de improvisar e atuar com método de BA sênior — com mais estrutura, consistência e confiança nas entregas.
+
+O que você vai encontrar na ementa:
+- Estrutura completa da formação
+- Conteúdo por aula e por domínio de BA
+- Formato, calendário e dinâmica
+- Bônus e condições da turma
+
+Se fizer sentido para você, no final da ementa há o link para matrícula.
+
+Abraço,
+Dan
+
+### Rodapé opcional
+Se você não solicitou este material, pode desconsiderar este e-mail.
+
+---
+
+## Placeholders para substituir
+- `[INSERIR_LINK_WHATSAPP_AQUI]`
+- `[INSERIR_LINK_DA_EMENTA_AQUI]`
