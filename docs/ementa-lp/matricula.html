@@ -3,38 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BA Pro — Candidatura</title>
+  <title>BA Pro — Candidatura & Entrevista</title>
   <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .grid{display:grid;gap:12px}.two{grid-template-columns:1fr 1fr}.muted{opacity:.8;font-size:.95rem}
+    .slot-list{display:grid;gap:8px;max-height:260px;overflow:auto;padding:8px;border:1px solid #2b2f3a;border-radius:10px}
+    .slot{display:flex;gap:8px;align-items:center}
+    @media(max-width:760px){.two{grid-template-columns:1fr}}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #2b2f3a;background:#10131a;color:#fff}
+  </style>
 </head>
 <body>
   <main class="container hero">
-    <section class="card" style="max-width:860px;margin:0 auto;">
-      <span class="badge">BA Pro · Etapa de candidatura</span>
-      <h1>Formulário de candidatura (pré-entrevista)</h1>
-      <p>Você está na etapa certa: após baixar a ementa, a candidatura para a formação acontece aqui.</p>
-      <p><strong>Status:</strong> estamos finalizando o formulário longo + fluxo de entrevista. Enquanto isso, deixe seus dados abaixo para entrar na lista prioritária.</p>
+    <section class="card" style="max-width:920px;margin:0 auto;">
+      <span class="badge">BA Pro · Processo seletivo</span>
+      <h1>Candidatura + agendamento de entrevista</h1>
+      <p class="muted">Fluxo: candidatura completa → entrevista de 20 min (sexta, 14h–19h) → avaliação final.</p>
 
-      <form id="candidaturaForm" style="display:grid;gap:12px;margin-top:16px;">
-        <label>Nome completo<input type="text" required /></label>
-        <label>E-mail<input type="email" required /></label>
-        <label>WhatsApp<input type="text" required /></label>
-        <label>LinkedIn (opcional)<input type="url" /></label>
-        <label>Experiência atual em BA (resumo)<textarea rows="4" required></textarea></label>
-        <button type="submit" class="btn">Entrar na lista de candidatura</button>
-        <p class="micro" id="status"></p>
+      <form id="applyForm" class="grid" style="margin-top:14px;">
+        <div class="grid two">
+          <label>Nome completo *<input id="name" required /></label>
+          <label>E-mail *<input id="email" type="email" required /></label>
+        </div>
+        <div class="grid two">
+          <label>WhatsApp *<input id="whatsapp" required /></label>
+          <label>LinkedIn<input id="linkedin" placeholder="https://linkedin.com/in/..." /></label>
+        </div>
+        <label>Experiência atual em BA (resumo) *<textarea id="experience" rows="4" required></textarea></label>
+        <label>Objetivo com o BA Pro *<textarea id="objective" rows="3" required></textarea></label>
+        <label>Disponibilidade / observações<textarea id="availability_notes" rows="2"></textarea></label>
+
+        <h3 style="margin-top:8px">Escolha seu horário de entrevista</h3>
+        <p class="muted">Somente sextas, janelas de 20 minutos.</p>
+        <div id="slots" class="slot-list">Carregando horários...</div>
+
+        <button id="submitBtn" type="submit" class="btn">Enviar candidatura e agendar entrevista</button>
+        <p id="status" class="micro"></p>
       </form>
-
-      <p class="micro" style="margin-top:16px;">Em breve este link será substituído pela versão completa do formulário de seleção + entrevista.</p>
     </section>
   </main>
 
   <script>
-    const form = document.getElementById('candidaturaForm');
-    const status = document.getElementById('status');
-    form.addEventListener('submit', (e) => {
+    const API = 'https://api.danhausch.cloud/api/matricula';
+    const slotsWrap = document.getElementById('slots');
+    const statusEl = document.getElementById('status');
+    let selectedSlot = null;
+
+    async function loadSlots() {
+      try {
+        const res = await fetch(`${API}/slots`);
+        const data = await res.json();
+        if (!data.slots || !data.slots.length) {
+          slotsWrap.innerHTML = 'Sem horários disponíveis no momento.';
+          return;
+        }
+        slotsWrap.innerHTML = data.slots.slice(0, 24).map((s, i) => `
+          <label class="slot">
+            <input type="radio" name="slot" value="${s.start_utc}" ${i===0?'checked':''} />
+            <span>${s.start_local} → ${s.end_local}</span>
+          </label>
+        `).join('');
+        selectedSlot = data.slots[0].start_utc;
+        document.querySelectorAll('input[name="slot"]').forEach(el => {
+          el.addEventListener('change', e => selectedSlot = e.target.value);
+        });
+      } catch (e) {
+        slotsWrap.innerHTML = 'Falha ao carregar horários. Atualize a página.';
+      }
+    }
+
+    document.getElementById('applyForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      status.textContent = 'Recebido ✅ Em instantes vamos liberar a versão completa da candidatura.';
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      statusEl.textContent = '';
+
+      try {
+        const payload = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          whatsapp: document.getElementById('whatsapp').value.trim(),
+          linkedin: document.getElementById('linkedin').value.trim(),
+          experience: document.getElementById('experience').value.trim(),
+          objective: document.getElementById('objective').value.trim(),
+          availability_notes: document.getElementById('availability_notes').value.trim(),
+          slot_start_utc: selectedSlot,
+          source: 'ba-pro-matricula'
+        };
+
+        const res = await fetch(`${API}/apply`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || 'Falha ao enviar candidatura');
+
+        statusEl.style.color = '#8ff0a4';
+        statusEl.textContent = 'Candidatura enviada e entrevista agendada ✅ Confira seu e-mail.';
+        if (data.calendar_event_link) {
+          statusEl.innerHTML += ` <a href="${data.calendar_event_link}" target="_blank" rel="noopener">Abrir evento</a>`;
+        }
+      } catch (err) {
+        statusEl.style.color = '#ff9f9f';
+        statusEl.textContent = err.message || 'Erro ao agendar. Tente novamente.';
+        await loadSlots();
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar candidatura e agendar entrevista';
+      }
     });
+
+    loadSlots();
   </script>
 </body>
 </html>
