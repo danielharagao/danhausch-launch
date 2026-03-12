@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human Grind — Registro</title>
+  <style>
+    :root{--bg:#0b0b0f;--card:#14141c;--text:#f5f7ff;--muted:#a3a9bd;--accent:#ff7a18}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#24243a 0%,var(--bg) 50%);color:var(--text)}
+    .wrap{min-height:100svh;display:grid;place-items:center;padding:24px}
+    .card{width:min(960px,100%);background:var(--card);border:1px solid #252534;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr}
+    .photo{width:100%;height:100%;object-fit:cover;min-height:420px}
+    .content{padding:34px}
+    h1{margin:0 0 10px;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1}
+    p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.55}
+    .badge{display:inline-block;margin-bottom:14px;padding:7px 12px;border-radius:999px;background:rgba(255,122,24,.12);color:#ffb178;border:1px solid rgba(255,122,24,.35);font-weight:700;font-size:.82rem}
+    .footer{padding:14px 20px;border-top:1px solid #252534;color:#8d93a9;font-size:.86rem}
+    @media (max-width:800px){.hero{grid-template-columns:1fr}.photo{min-height:360px}.content{padding:24px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="hero">
+        <img class="photo" src="./assets/img/encontro-human-grind.jpg" alt="Foto do encontro Human Grind" />
+        <div class="content">
+          <span class="badge">Momento Especial</span>
+          <h1>Human Grind — Pessoas que fazem acontecer</h1>
+          <p>
+            Um registro de conexão, energia e comunidade. Essa página foi criada para celebrar o encontro
+            e manter viva a memória desse momento com o time.
+          </p>
+        </div>
+      </div>
+      <div class="footer">© Dan Hausch • BA Pro</div>
+    </section>
+  </main>
+</body>
+</html>
