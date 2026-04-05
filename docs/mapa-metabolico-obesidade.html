@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa Metabólico da Obesidade — Guia Prático</title>
+  <style>
+    :root {
+      --bg:#0b1220; --card:#121c30; --muted:#94a3b8; --txt:#e2e8f0;
+      --a:#38bdf8; --b:#22c55e; --c:#f59e0b; --d:#f87171;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#08101d,#0b1220);color:var(--txt)}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    h1{font-size:clamp(1.6rem,2.6vw,2.4rem);margin:0 0 8px}
+    p{line-height:1.55}
+    .lead{color:var(--muted);margin-bottom:20px}
+    .grid{display:grid;gap:14px}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+    .card{background:var(--card);border:1px solid #23314f;border-radius:14px;padding:16px}
+    .pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.8rem;border:1px solid #334155;color:#cbd5e1}
+    .map{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .node{padding:12px;border-radius:10px;border:1px solid #2b3a5d;background:#0f172a}
+    .node h3{margin:0 0 6px;font-size:1rem}
+    .n1{border-left:4px solid var(--a)} .n2{border-left:4px solid var(--b)}
+    .n3{border-left:4px solid var(--c)} .n4{border-left:4px solid var(--d)}
+    ul{margin:8px 0 0 18px}
+    .cols{display:grid;gap:12px}
+    @media(min-width:760px){.cols{grid-template-columns:1fr 1fr}}
+    .small{font-size:.92rem;color:#cbd5e1}
+    .cta{background:#0f172a;border:1px dashed #334155;padding:12px;border-radius:10px}
+    .foot{margin-top:18px;color:#94a3b8;font-size:.85rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="pill">Estudo guiado • Educação em saúde</span>
+    <h1>Mapa Metabólico da Obesidade</h1>
+    <p class="lead">Visão integrada dos principais eixos biológicos e comportamentais que sustentam ganho de peso, inflamação e dificuldade de emagrecimento.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>1) Núcleo do mapa (como a obesidade se sustenta)</h2>
+        <div class="map">
+          <article class="node n1">
+            <h3>Resistência à insulina</h3>
+            <p class="small">Excesso calórico + sedentarismo + privação de sono elevam insulina basal e favorecem armazenamento de gordura.</p>
+          </article>
+          <article class="node n2">
+            <h3>Disfunção adipocitária</h3>
+            <p class="small">Adipócito hipertrofiado secreta citocinas pró-inflamatórias e piora sinalização metabólica.</p>
+          </article>
+          <article class="node n3">
+            <h3>Inflamação crônica de baixo grau</h3>
+            <p class="small">TNF-α, IL-6 e estresse oxidativo perpetuam resistência à insulina e risco cardiometabólico.</p>
+          </article>
+          <article class="node n4">
+            <h3>Eixo neuro-hormonal</h3>
+            <p class="small">Leptina/ghrelina/cortisol alterados aumentam fome hedônica, compulsão e recaída.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>2) Aceleradores</h2>
+        <ul>
+          <li>Ultraprocessados e alta densidade energética</li>
+          <li>Sono insuficiente e estresse crônico</li>
+          <li>Baixo gasto energético diário</li>
+          <li>Microbiota intestinal desfavorável</li>
+          <li>Predisposição genética/epigenética</li>
+        </ul>
+        <div class="cta">
+          <strong>Resumo:</strong> obesidade não é apenas “falta de força de vontade”; é um estado biológico adaptativo e multifatorial.
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:14px">
+      <h2>3) Consequências metabólicas principais</h2>
+      <div class="cols">
+        <ul>
+          <li>Esteatose hepática metabólica (fígado gorduroso)</li>
+          <li>Pré-diabetes/DM2</li>
+          <li>Dislipidemia aterogênica</li>
+          <li>Hipertensão arterial</li>
+        </ul>
+        <ul>
+          <li>Síndrome metabólica</li>
+          <li>Apneia do sono</li>
+          <li>Maior risco cardiovascular</li>
+          <li>Piora de saúde mental e qualidade de vida</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>4) Estratégia de reversão (abordagem em camadas)</h2>
+      <ol>
+        <li><strong>Base comportamental:</strong> sono, rotina alimentar, atividade física, manejo de estresse.</li>
+        <li><strong>Base nutricional:</strong> déficit calórico sustentável, proteína adequada, fibra, redução de ultraprocessados.</li>
+        <li><strong>Base clínica:</strong> individualizar comorbidades, exames, terapia medicamentosa quando indicada.</li>
+        <li><strong>Base de manutenção:</strong> prevenção de recaída, ambiente favorável e monitoramento longitudinal.</li>
+      </ol>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>5) Métricas para autoaprendizado</h2>
+      <ul>
+        <li>Peso, circunferência abdominal e tendência semanal (não só dia a dia)</li>
+        <li>Pressão arterial e qualidade do sono</li>
+        <li>Exames: glicemia, HbA1c, TG/HDL, enzimas hepáticas (com profissional)</li>
+        <li>Adesão comportamental: passos/dia, treino/semana, padrão alimentar</li>
+      </ul>
+    </section>
+
+    <p class="foot">Material educacional. Não substitui avaliação médica individual.</p>
+  </div>
+</body>
+</html>
