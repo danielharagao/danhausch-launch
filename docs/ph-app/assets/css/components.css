@@ -1,0 +1,60 @@
+.stack { display: grid; gap: 12px; margin-top: 12px; }
+label { display: grid; gap: 6px; font-size: .9rem; color: var(--muted); }
+input, select, button {
+  font: inherit;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+input, select { padding: 10px; background: var(--bg-soft); color: var(--text); }
+input[type="range"] { padding: 0; }
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid color-mix(in oklab, var(--accent) 70%, #fff 20%);
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.btn.ghost { background: transparent; color: var(--text); }
+.btn.danger { background: var(--danger); border-color: transparent; }
+.btn:hover { filter: brightness(1.06); }
+
+.row { display: flex; gap: 8px; align-items: center; }
+.row.between { justify-content: space-between; }
+
+.tabs { padding: 6px; display: flex; gap: 6px; overflow-x: auto; }
+.tab { background: transparent; color: var(--muted); padding: 10px 12px; cursor: pointer; border: 1px solid transparent; white-space: nowrap; }
+.tab.is-active { color: var(--text); border-color: var(--line); background: var(--bg-soft); }
+
+.preset-box { margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 14px; display: grid; gap: 10px; }
+
+#timelineSlider { width: 100%; margin: 10px 0; }
+.event-list { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 8px; color: var(--muted); }
+.event-list li strong { color: var(--text); }
+
+.network-canvas {
+  margin-top: 12px;
+  min-height: 280px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.network-node {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.network-node:hover { border-color: var(--accent); }
+.network-node .meta { color: var(--muted); font-size: .82rem; }
+.detail-box { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }
+
+.driver-list { margin-top: 12px; display: grid; gap: 10px; }
+.driver-item { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--bg-soft); }
+.driver-item header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.bar { height: 8px; border-radius: 999px; background: color-mix(in oklab, var(--line) 78%, transparent); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--warn), var(--danger)); }

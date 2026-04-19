@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predictive History · War Room</title>
+  <meta name="description" content="Predictive History War Room: cenários, rede, drivers de risco e playback interativo." />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar card">
+      <div>
+        <p class="eyebrow">Predictive History</p>
+        <h1>War Room</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn ghost" aria-label="Alternar tema">☾ Tema</button>
+        <button id="savePresetBtn" class="btn">Salvar preset</button>
+      </div>
+    </header>
+
+    <aside class="filters card">
+      <h2>Filtros Avançados</h2>
+      <form id="filtersForm" class="stack">
+        <label>Horizonte
+          <select name="horizon">
+            <option value="7">7 dias</option>
+            <option value="30" selected>30 dias</option>
+            <option value="90">90 dias</option>
+          </select>
+        </label>
+
+        <label>Região
+          <select name="region">
+            <option value="all" selected>Todas</option>
+            <option value="north">Norte</option>
+            <option value="south">Sul</option>
+            <option value="east">Leste</option>
+            <option value="west">Oeste</option>
+          </select>
+        </label>
+
+        <label>Segmento
+          <select name="segment">
+            <option value="all" selected>Todos</option>
+            <option value="b2b">B2B</option>
+            <option value="b2c">B2C</option>
+            <option value="public">Setor público</option>
+          </select>
+        </label>
+
+        <label>Risco mínimo: <span id="riskThresholdValue">40</span>
+          <input type="range" name="riskThreshold" min="0" max="100" value="40" />
+        </label>
+
+        <label>Buscar entidade
+          <input type="search" name="query" placeholder="Pessoa, supernó, bloco" />
+        </label>
+
+        <div class="row">
+          <button type="submit" class="btn">Aplicar</button>
+          <button id="resetFiltersBtn" type="button" class="btn ghost">Resetar</button>
+        </div>
+      </form>
+
+      <section class="preset-box">
+        <h3>Presets locais</h3>
+        <div class="row">
+          <select id="presetSelect"></select>
+          <button id="loadPresetBtn" class="btn ghost">Carregar</button>
+        </div>
+        <button id="deletePresetBtn" class="btn danger">Excluir preset</button>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <nav class="tabs card" id="tabs" role="tablist" aria-label="Visões">
+        <button class="tab is-active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+        <button class="tab" data-tab="timeline" role="tab" aria-selected="false">Timeline & Playback</button>
+        <button class="tab" data-tab="network" role="tab" aria-selected="false">Network Explorer</button>
+        <button class="tab" data-tab="drivers" role="tab" aria-selected="false">Drivers de Risco</button>
+      </nav>
+
+      <section class="panel-grid tab-panel is-active" data-panel="overview">
+        <article class="kpi card"><p>Risco médio</p><strong id="kpiRisk">--</strong></article>
+        <article class="kpi card"><p>Entidades críticas</p><strong id="kpiCritical">--</strong></article>
+        <article class="kpi card"><p>Supernós ativos</p><strong id="kpiSupernodes">--</strong></article>
+        <article class="kpi card"><p>Eventos em janela</p><strong id="kpiEvents">--</strong></article>
+      </section>
+
+      <section class="tab-panel" data-panel="timeline">
+        <article class="card">
+          <div class="row between">
+            <h2>Timeline de cenários</h2>
+            <div class="row">
+              <button id="playBtn" class="btn">▶ Play</button>
+              <button id="pauseBtn" class="btn ghost">⏸ Pause</button>
+            </div>
+          </div>
+          <input id="timelineSlider" type="range" min="0" max="0" step="1" value="0" />
+          <div class="row between">
+            <small id="timelineLabel">--</small>
+            <small id="scenarioScore">Score: --</small>
+          </div>
+          <ul id="timelineEvents" class="event-list"></ul>
+        </article>
+      </section>
+
+      <section class="tab-panel" data-panel="network">
+        <article class="card">
+          <div class="row between">
+            <h2>Explorer de rede</h2>
+            <small id="networkBreadcrumb">Nível: rede completa</small>
+          </div>
+          <div id="networkCanvas" class="network-canvas"></div>
+          <aside id="networkDetail" class="detail-box"></aside>
+        </article>
+      </section>
+
+      <section class="tab-panel" data-panel="drivers">
+        <article class="card">
+          <h2>Painel explicável: Drivers de risco</h2>
+          <div id="driversList" class="driver-list"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
