@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predictive History · UI Prototype</title>
+  <style>
+    :root{
+      --bg:#0a0f1f;--panel:#121a33;--panel2:#0f1730;--line:#2a3762;--txt:#e8eefc;--muted:#9db0de;
+      --ok:#70e8a8;--warn:#ffd166;--bad:#ff6b6b;--accent:#7cb1ff;--focus:#8ac6ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b1022,#090d1a);color:var(--txt)}
+    .wrap{max-width:1240px;margin:0 auto;padding:16px}
+    .top{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+    .title{font-weight:700}
+    .muted{color:var(--muted);font-size:.92rem}
+    .chips,.btn-row,.tabs,.filters{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{font-size:.78rem;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#172246;color:#d8e4ff}
+    .chip.active{background:#294a8e;border-color:#4d6fbe}
+    .layout{display:grid;grid-template-columns:280px 1fr 350px;gap:12px;margin-top:12px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+    h2{font-size:1rem;margin:0 0 10px}
+    h3{font-size:.9rem;margin:10px 0 8px;color:var(--accent)}
+    .btn{display:inline-block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#172246;color:#dbe7ff;font-size:.82rem;cursor:pointer}
+    .btn:hover{border-color:#4f65a8}
+    .btn.primary{background:#24458a}
+    .btn.active{background:#2d5ab2;border-color:#6286d6}
+    .btn:focus-visible,.chip:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+    .kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .kpi{background:var(--panel2);border:1px solid var(--line);padding:10px;border-radius:10px}
+    .kpi b{display:block;font-size:1.1rem}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    .map{height:260px;border:1px dashed #41508a;border-radius:10px;background:radial-gradient(600px 220px at 30% 20%,#1a2750 0,#101836 60%);padding:10px;display:flex;flex-direction:column;justify-content:space-between}
+    .map-title{font-size:.9rem;color:#c5d5ff}
+    .map-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .mini{background:#0e1738;border:1px solid #2f427a;border-radius:8px;padding:8px;font-size:.8rem}
+    .timeline{margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+    input[type=range]{width:100%}
+    .list{display:grid;gap:7px}
+    .item{border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--panel2);font-size:.88rem}
+    .tree .item{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .tree .item.active{border-color:#5b77c7;background:#172246}
+    .badge{font-size:.72rem;border:1px solid var(--line);padding:3px 7px;border-radius:999px;color:#c9d7ff}
+    .chart{height:120px;border:1px dashed #3f4d80;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#adc0f4;background:#0d1430;text-align:center;padding:8px}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .footer{margin-top:12px;color:var(--muted);font-size:.82rem}
+    code{white-space:normal;word-break:break-word}
+    @media(max-width:1080px){.layout{grid-template-columns:1fr}.right{order:3}.left{order:2}.center{order:1}}
+    @media(max-width:640px){.kpis,.grid-2,.map-summary{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="title">War Room · Predictive History (Prototype clicável)</div>
+        <div class="muted">Drill-down: Pessoa → Supernó → Bloco · Cenários com incerteza e leitura executiva</div>
+      </div>
+      <div class="chips" id="layerChips">
+        <button class="chip active" data-layer="Política">Layer: Política</button>
+        <button class="chip active" data-layer="Econômica">Layer: Econômica</button>
+        <button class="chip" data-layer="Étnica">Layer: Étnica</button>
+        <button class="chip active" data-layer="Info">Layer: Info</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="panel left">
+        <h2>1) Explorer de Rede</h2>
+        <div class="btn-row" style="margin-bottom:10px">
+          <button class="btn" id="collapseTree">Contrair tudo</button>
+          <button class="btn primary" id="expandTree">Expandir supernó</button>
+        </div>
+        <div class="tree list" id="nodeTree">
+          <button class="item active" data-node="eua"><span>🇺🇸 EUA (Bloco Estado)</span><span class="badge">macro</span></button>
+          <button class="item" data-node="rep"><span>↳ Partido Republicano</span><span class="badge">supernó</span></button>
+          <button class="item" data-node="trump"><span>↳ Donald Trump</span><span class="badge">pessoa</span></button>
+          <button class="item" data-node="wh"><span>↳ Casa Branca</span><span class="badge">supernó</span></button>
+          <button class="item" data-node="china"><span>🇨🇳 China</span><span class="badge">macro</span></button>
+          <button class="item" data-node="russia"><span>🇷🇺 Rússia</span><span class="badge">macro</span></button>
+        </div>
+
+        <h3>Nó selecionado</h3>
+        <div class="list" id="nodeStats"></div>
+      </aside>
+
+      <main class="panel center">
+        <div class="tabs" role="tablist" aria-label="Visões principais" style="margin-bottom:10px">
+          <button class="btn active" data-tab="tab-sim" role="tab">Simulação</button>
+          <button class="btn" data-tab="tab-risk" role="tab">Riscos</button>
+          <button class="btn" data-tab="tab-events" role="tab">Eventos</button>
+        </div>
+
+        <div id="tab-sim" class="tab-panel active">
+          <h2>2) Mapa Global + Simulação</h2>
+          <div class="filters" style="margin-bottom:10px">
+            <select id="regionFilter" class="btn" aria-label="Região">
+              <option value="global">Região: Global</option>
+              <option value="americas">Américas</option>
+              <option value="emea">EMEA</option>
+              <option value="apac">APAC</option>
+            </select>
+            <select id="horizonFilter" class="btn" aria-label="Horizonte">
+              <option value="24">Horizonte: 24 meses</option>
+              <option value="12">12 meses</option>
+              <option value="6">6 meses</option>
+            </select>
+          </div>
+
+          <div class="kpis" id="kpiGrid"></div>
+
+          <div class="map" style="margin-top:10px">
+            <div class="map-title" id="mapTitle">Mapa/Grafo Multiplex · Cenário baseline</div>
+            <div class="map-summary" id="mapSummary"></div>
+          </div>
+
+          <div class="timeline">
+            <div class="muted" id="timeLabel">Tempo: T0 (presente)</div>
+            <input id="timeSlider" type="range" min="-12" max="12" value="0" />
+            <div class="btn-row" style="margin-top:8px" id="scenarioBtns">
+              <button class="btn primary active" data-scenario="baseline">Baseline</button>
+              <button class="btn" data-scenario="sanctions">Sanções</button>
+              <button class="btn" data-scenario="energy">Choque energia</button>
+              <button class="btn" data-scenario="election">Eleição polarizada</button>
+            </div>
+          </div>
+
+          <h3>3) Resultado da simulação (Monte Carlo)</h3>
+          <div class="chart" id="chartBox"></div>
+        </div>
+
+        <div id="tab-risk" class="tab-panel">
+          <h2>Visão de Riscos por Categoria</h2>
+          <div class="grid-2" id="riskCards"></div>
+        </div>
+
+        <div id="tab-events" class="tab-panel">
+          <h2>Linha de Eventos Simulados</h2>
+          <div class="list" id="eventList"></div>
+        </div>
+      </main>
+
+      <aside class="panel right">
+        <h2>4) Painel de Inteligência</h2>
+        <h3 id="whyTitle">Por que o risco subiu?</h3>
+        <div class="list" id="whyList"></div>
+
+        <h3>Alertas</h3>
+        <div class="list" id="alertList"></div>
+
+        <h3>Eventos gatilho (timeline)</h3>
+        <div class="list" id="triggerList"></div>
+      </aside>
+    </div>
+
+    <section class="panel" style="margin-top:12px">
+      <h2>Checklist UX Decisions + Rationale (curto)</h2>
+      <div class="list">
+        <div class="item">✅ <b>Arquitetura em 3 colunas</b> para leitura executiva: contexto (esquerda), análise principal (centro), explicabilidade/alertas (direita).</div>
+        <div class="item">✅ <b>Tabs por intenção</b> (Simulação, Riscos, Eventos) para reduzir carga cognitiva e organizar decisões por tarefa.</div>
+        <div class="item">✅ <b>Slider temporal com feedback imediato</b> (T-12→T+12) para reforçar causalidade temporal e facilitar storytelling analítico.</div>
+        <div class="item">✅ <b>Cenários com estados simulados</b> (baseline/sanções/energia/eleição) para comparação rápida sem backend pronto.</div>
+        <div class="item">✅ <b>Filtros mínimos viáveis</b> (Região/Horizonte/Layers) para validar utilidade antes de adicionar filtros complexos.</div>
+        <div class="item">✅ <b>Mobile-first adaptativo</b>: layout colapsa para 1 coluna e preserva legibilidade dos principais KPIs.</div>
+      </div>
+
+      <h3>Próximos passos para integração com API</h3>
+      <div class="list">
+        <div class="item">1) Substituir dados mock por endpoint <code>/simulation/run</code> com payload: cenário, camada, horizonte e timestamp.</div>
+        <div class="item">2) Integrar <code>/network/nodes/:id</code> para preencher painel “Nó selecionado” e permitir drill-down real no explorer.</div>
+        <div class="item">3) Conectar <code>/risk/drivers</code> e <code>/alerts</code> para alimentar explicações e alertas em tempo quase real.</div>
+        <div class="item">4) Persistir estado de UI em query params (<code>?scenario=sanctions&t=3&tab=risk</code>) para share de análise.</div>
+        <div class="item">5) Evoluir gráfico de incerteza para biblioteca (ECharts/Plotly) com bandas P10/P50/P90 e comparação multi-cenário.</div>
+      </div>
+    </section>
+
+    <div class="footer">Prototype v1 · HTML/CSS/JS puro para validação rápida de UX antes de implementação React.</div>
+  </div>
+
+  <script>
+    const scenarios = {
+      baseline: {
+        name: 'Baseline',
+        kpis: [
+          ['Risco de conflito', 0.63, 'bad', '+0.08 vs semana'],
+          ['Estabilidade institucional', 0.49, 'warn', '-0.05'],
+          ['Polarização social', 0.71, 'bad', 'alta'],
+          ['Resiliência econômica', 0.58, 'ok', 'média']
+        ],
+        why: ['Queda de coesão em coalizão X (+18%)','Aumento de saliência étnica região Y (+12%)','Choque de energia em importadores líquidos (+9%)','Ruído informacional em período eleitoral (+7%)']
+      },
+      sanctions: {
+        name: 'Sanções',
+        kpis: [
+          ['Risco de conflito', 0.69, 'bad', '+0.14 vs semana'],
+          ['Estabilidade institucional', 0.43, 'bad', '-0.11'],
+          ['Polarização social', 0.75, 'bad', 'muito alta'],
+          ['Resiliência econômica', 0.46, 'warn', 'pressão']
+        ],
+        why: ['Retaliação comercial cruzada (+21%)','Pressão em cadeias logísticas (+17%)','Stress fiscal em parceiros periféricos (+11%)','Escalada diplomática em fóruns multilaterais (+8%)']
+      },
+      energy: {
+        name: 'Choque energia',
+        kpis: [
+          ['Risco de conflito', 0.66, 'bad', '+0.10 vs semana'],
+          ['Estabilidade institucional', 0.47, 'warn', '-0.07'],
+          ['Polarização social', 0.68, 'bad', 'alta'],
+          ['Resiliência econômica', 0.41, 'bad', 'baixa']
+        ],
+        why: ['Inflação de energia e protestos urbanos (+16%)','Disputa por subsídios estratégicos (+13%)','Aumento de risco de apagões regionais (+10%)','Reprecificação de commodities (+9%)']
+      },
+      election: {
+        name: 'Eleição polarizada',
+        kpis: [
+          ['Risco de conflito', 0.72, 'bad', '+0.16 vs semana'],
+          ['Estabilidade institucional', 0.39, 'bad', '-0.15'],
+          ['Polarização social', 0.82, 'bad', 'extrema'],
+          ['Resiliência econômica', 0.52, 'warn', 'volátil']
+        ],
+        why: ['Narrativas extremadas em alta frequência (+24%)','Contestação de legitimidade eleitoral (+19%)','Aumento de violência política localizada (+14%)','Fragmentação de coalizões de centro (+10%)']
+      }
+    };
+
+    const nodes = {
+      eua:[8.7,5.1,7.9,4.2], rep:[7.2,6.0,6.8,3.9], trump:[8.9,5.8,7.1,3.5], wh:[8.1,4.4,8.4,5.1], china:[9.1,3.9,8.8,7.3], russia:[8.4,5.7,8.2,5.8]
+    };
+
+    const kpiGrid = document.getElementById('kpiGrid');
+    const whyList = document.getElementById('whyList');
+    const chartBox = document.getElementById('chartBox');
+    const mapTitle = document.getElementById('mapTitle');
+    const mapSummary = document.getElementById('mapSummary');
+    const timeSlider = document.getElementById('timeSlider');
+    const timeLabel = document.getElementById('timeLabel');
+    const nodeStats = document.getElementById('nodeStats');
+
+    let currentScenario = 'baseline';
+    let currentTime = 0;
+
+    function renderScenario(){
+      const data = scenarios[currentScenario];
+      kpiGrid.innerHTML = data.kpis.map(([name,val,cls,delta]) => `<div class="kpi">${name}<b class="${cls}">${val.toFixed(2)}</b><span class="muted">${delta}</span></div>`).join('');
+      whyList.innerHTML = data.why.map((w,i)=>`<div class="item">${i+1}. ${w}</div>`).join('');
+      mapTitle.textContent = `Mapa/Grafo Multiplex · Cenário ${data.name}`;
+      mapSummary.innerHTML = `<div class="mini">Entidades ativas: <b>${120 + currentTime*2}</b></div><div class="mini">Pontes críticas: <b>${7 + Math.max(0,currentTime)}</b></div><div class="mini">Incerteza média: <b>${(0.22 + Math.abs(currentTime)/100).toFixed(2)}</b></div>`;
+      chartBox.textContent = `Fan Chart simulado (${data.name}) · t=${currentTime} · faixas P10/P50/P90 variam com cenário e tempo`;
+    }
+
+    function renderNode(node='eua'){
+      const [infl,vul,veto,coes] = nodes[node] || nodes.eua;
+      nodeStats.innerHTML = `
+        <div class="item">Influência: <b class="ok">${infl.toFixed(1)}</b></div>
+        <div class="item">Vulnerabilidade: <b class="warn">${vul.toFixed(1)}</b></div>
+        <div class="item">Capacidade de veto: <b>${veto.toFixed(1)}</b></div>
+        <div class="item">Coesão interna: <b class="bad">${coes.toFixed(1)}</b></div>`;
+    }
+
+    function renderStaticPanels(){
+      document.getElementById('alertList').innerHTML = [
+        '⚠️ Nó-ponte "A" virou gargalo crítico',
+        '⚠️ Bloco "B" com probabilidade de fragmentação 0.42',
+        '✅ Janela de negociação aberta em C (72h)'
+      ].map(v=>`<div class="item">${v}</div>`).join('');
+
+      document.getElementById('triggerList').innerHTML = [
+        'T-3: anúncio de sanções setoriais',
+        'T-2: protestos coordenados',
+        'T-1: ruptura de acordo comercial',
+        'T0: escalada de narrativa identitária'
+      ].map(v=>`<div class="item">${v}</div>`).join('');
+
+      document.getElementById('riskCards').innerHTML = [
+        ['Institucional', 'Médio-alto', 'bad'],
+        ['Geoenergético', 'Alto', 'bad'],
+        ['Financeiro', 'Médio', 'warn'],
+        ['Informacional', 'Médio-alto', 'warn']
+      ].map(([n,v,c])=>`<div class="item">${n}<br><b class="${c}">${v}</b></div>`).join('');
+
+      document.getElementById('eventList').innerHTML = [
+        'T+1: votação emergencial em parlamento nacional',
+        'T+2: resposta coordenada de bloco regional',
+        'T+4: oscilação abrupta de commodities',
+        'T+6: janela de mediação internacional'
+      ].map(v=>`<div class="item">${v}</div>`).join('');
+    }
+
+    document.getElementById('scenarioBtns').addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-scenario]');
+      if(!btn) return;
+      currentScenario = btn.dataset.scenario;
+      document.querySelectorAll('#scenarioBtns .btn').forEach(b=>b.classList.toggle('active',b===btn));
+      renderScenario();
+    });
+
+    timeSlider.addEventListener('input', ()=>{
+      currentTime = Number(timeSlider.value);
+      timeLabel.textContent = `Tempo: T${currentTime>0?'+':''}${currentTime}`;
+      renderScenario();
+    });
+
+    document.getElementById('nodeTree').addEventListener('click', (e)=>{
+      const item = e.target.closest('[data-node]');
+      if(!item) return;
+      document.querySelectorAll('#nodeTree .item').forEach(i=>i.classList.remove('active'));
+      item.classList.add('active');
+      renderNode(item.dataset.node);
+    });
+
+    document.querySelector('[data-tab="tab-sim"]').closest('.tabs').addEventListener('click', (e)=>{
+      const b = e.target.closest('[data-tab]');
+      if(!b) return;
+      document.querySelectorAll('.tabs .btn').forEach(x=>x.classList.toggle('active',x===b));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById(b.dataset.tab).classList.add('active');
+    });
+
+    document.getElementById('layerChips').addEventListener('click', (e)=>{
+      const chip = e.target.closest('.chip');
+      if(!chip) return;
+      chip.classList.toggle('active');
+    });
+
+    document.getElementById('collapseTree').addEventListener('click', ()=>{
+      document.querySelectorAll('#nodeTree .item').forEach((el,i)=>el.style.display = i===0 || i>=4 ? 'flex':'none');
+    });
+
+    document.getElementById('expandTree').addEventListener('click', ()=>{
+      document.querySelectorAll('#nodeTree .item').forEach(el=>el.style.display = 'flex');
+    });
+
+    document.getElementById('regionFilter').addEventListener('change', renderScenario);
+    document.getElementById('horizonFilter').addEventListener('change', renderScenario);
+
+    renderNode();
+    renderScenario();
+    renderStaticPanels();
+  </script>
+</body>
+</html>
