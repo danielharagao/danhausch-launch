@@ -118,23 +118,22 @@ ON narratives USING ivfflat (embedding vector_cosine_ops)
 WITH (lists = 100);
 
 -- ========== Hypertable tuning (TimescaleDB) ==========
-
-ALTER TABLE events SET (
-  timescaledb.compress,
-  timescaledb.compress_segmentby = 'event_type,source_system',
-  timescaledb.compress_orderby = 'event_time DESC'
-);
-
-SELECT add_compression_policy('events', INTERVAL '30 days', if_not_exists => TRUE);
-SELECT add_retention_policy('events', INTERVAL '2 years', if_not_exists => TRUE);
-
-ALTER TABLE indicators SET (
-  timescaledb.compress,
-  timescaledb.compress_segmentby = 'entity_kind,indicator_type',
-  timescaledb.compress_orderby = 'indicator_time DESC'
-);
-
-SELECT add_compression_policy('indicators', INTERVAL '30 days', if_not_exists => TRUE);
-SELECT add_retention_policy('indicators', INTERVAL '2 years', if_not_exists => TRUE);
+-- NOTE: disabled by default because schema v1 keeps regular tables (non-hypertable).
+-- Enable when events/indicators are migrated to hypertables.
+-- ALTER TABLE events SET (
+--   timescaledb.compress,
+--   timescaledb.compress_segmentby = 'event_type,source_system',
+--   timescaledb.compress_orderby = 'event_time DESC'
+-- );
+-- SELECT add_compression_policy('events', INTERVAL '30 days', if_not_exists => TRUE);
+-- SELECT add_retention_policy('events', INTERVAL '2 years', if_not_exists => TRUE);
+--
+-- ALTER TABLE indicators SET (
+--   timescaledb.compress,
+--   timescaledb.compress_segmentby = 'entity_kind,indicator_type',
+--   timescaledb.compress_orderby = 'indicator_time DESC'
+-- );
+-- SELECT add_compression_policy('indicators', INTERVAL '30 days', if_not_exists => TRUE);
+-- SELECT add_retention_policy('indicators', INTERVAL '2 years', if_not_exists => TRUE);
 
 COMMIT;

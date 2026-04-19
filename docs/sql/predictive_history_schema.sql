@@ -160,8 +160,10 @@ CREATE TABLE IF NOT EXISTS simulation_steps (
 );
 
 -- Convert high-volume temporal tables to hypertables
-SELECT create_hypertable('events', 'event_time', if_not_exists => TRUE);
-SELECT create_hypertable('indicators', 'indicator_time', if_not_exists => TRUE);
+-- NOTE: kept as regular tables by default to preserve UUID PK-only model in v1.
+-- If enabling hypertables later, adjust unique constraints/PK to include partitioning column.
+-- SELECT create_hypertable('events', 'event_time', if_not_exists => TRUE);
+-- SELECT create_hypertable('indicators', 'indicator_time', if_not_exists => TRUE);
 
 -- updated_at triggers
 CREATE TRIGGER trg_players_updated_at
