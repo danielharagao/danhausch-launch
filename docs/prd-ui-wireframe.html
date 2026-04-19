@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predictive History · UI Wireframe</title>
+  <style>
+    :root{
+      --bg:#0a0f1f;--panel:#121a33;--panel2:#0f1730;--line:#2a3762;--txt:#e8eefc;--muted:#9db0de;
+      --ok:#70e8a8;--warn:#ffd166;--bad:#ff6b6b;--accent:#7cb1ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b1022,#090d1a);color:var(--txt)}
+    .wrap{max-width:1240px;margin:0 auto;padding:16px}
+    .top{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+    .title{font-weight:700}
+    .muted{color:var(--muted);font-size:.92rem}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{font-size:.78rem;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#172246;color:#d8e4ff}
+    .layout{display:grid;grid-template-columns:280px 1fr 350px;gap:12px;margin-top:12px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+    h2{font-size:1rem;margin:0 0 10px}
+    h3{font-size:.9rem;margin:10px 0 8px;color:var(--accent)}
+    .btn{display:inline-block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#172246;color:#dbe7ff;font-size:.82rem}
+    .btn.primary{background:#24458a}
+    .btn-row{display:flex;gap:8px;flex-wrap:wrap}
+    .kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .kpi{background:var(--panel2);border:1px solid var(--line);padding:10px;border-radius:10px}
+    .kpi b{display:block;font-size:1.1rem}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+    .map{height:280px;border:1px dashed #41508a;border-radius:10px;background:radial-gradient(600px 220px at 30% 20%,#1a2750 0,#101836 60%);display:flex;align-items:center;justify-content:center;color:#b9c8f1}
+    .timeline{margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+    input[type=range]{width:100%}
+    .list{display:grid;gap:7px}
+    .item{border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--panel2);font-size:.88rem}
+    .tree .item{display:flex;justify-content:space-between;align-items:center}
+    .badge{font-size:.72rem;border:1px solid var(--line);padding:3px 7px;border-radius:999px;color:#c9d7ff}
+    .chart{height:120px;border:1px dashed #3f4d80;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#adc0f4;background:#0d1430}
+    .footer{margin-top:12px;color:var(--muted);font-size:.82rem}
+    @media(max-width:1080px){.layout{grid-template-columns:1fr}.right{order:3}.left{order:2}.center{order:1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="title">War Room · Predictive History (Wireframe)</div>
+        <div class="muted">Drill-down: Pessoa → Supernó → Bloco · Simulação com incerteza</div>
+      </div>
+      <div class="chips">
+        <span class="chip">Layer: Política</span>
+        <span class="chip">Layer: Econômica</span>
+        <span class="chip">Layer: Étnica</span>
+        <span class="chip">Layer: Info</span>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="panel left">
+        <h2>1) Explorer de Rede</h2>
+        <div class="btn-row" style="margin-bottom:10px">
+          <span class="btn">Contrair tudo</span>
+          <span class="btn primary">Expandir supernó</span>
+        </div>
+        <div class="tree list">
+          <div class="item"><span>🇺🇸 EUA (Bloco Estado)</span><span class="badge">macro</span></div>
+          <div class="item"><span>↳ Partido Republicano</span><span class="badge">supernó</span></div>
+          <div class="item"><span>↳ Donald Trump</span><span class="badge">pessoa</span></div>
+          <div class="item"><span>↳ Casa Branca</span><span class="badge">supernó</span></div>
+          <div class="item"><span>🇨🇳 China</span><span class="badge">macro</span></div>
+          <div class="item"><span>🇷🇺 Rússia</span><span class="badge">macro</span></div>
+        </div>
+
+        <h3>Nó selecionado</h3>
+        <div class="list">
+          <div class="item">Influência: <b class="ok">8.7</b></div>
+          <div class="item">Vulnerabilidade: <b class="warn">5.1</b></div>
+          <div class="item">Capacidade de veto: <b>7.9</b></div>
+          <div class="item">Coesão interna: <b class="bad">4.2</b></div>
+        </div>
+      </aside>
+
+      <main class="panel center">
+        <h2>2) Mapa Global + Simulação</h2>
+        <div class="kpis">
+          <div class="kpi">Risco de conflito <b class="bad">0.63</b><span class="muted">+0.08 vs semana</span></div>
+          <div class="kpi">Estabilidade institucional <b class="warn">0.49</b><span class="muted">-0.05</span></div>
+          <div class="kpi">Polarização social <b class="bad">0.71</b><span class="muted">alta</span></div>
+          <div class="kpi">Resiliência econômica <b class="ok">0.58</b><span class="muted">média</span></div>
+        </div>
+
+        <div class="map" style="margin-top:10px">[ Mapa/Grafo Multiplex Interativo ]</div>
+
+        <div class="timeline">
+          <div class="muted">Tempo (t-12 → t+12)</div>
+          <input type="range" min="-12" max="12" value="0" />
+          <div class="btn-row" style="margin-top:8px">
+            <span class="btn primary">Rodar cenário</span>
+            <span class="btn">Baseline</span>
+            <span class="btn">Sanções</span>
+            <span class="btn">Choque energia</span>
+            <span class="btn">Eleição polarizada</span>
+          </div>
+        </div>
+
+        <h3>3) Resultado da simulação (Monte Carlo)</h3>
+        <div class="chart">[ Fan Chart · intervalos de incerteza ]</div>
+      </main>
+
+      <aside class="panel right">
+        <h2>4) Painel de Inteligência</h2>
+        <h3>Por que o risco subiu?</h3>
+        <div class="list">
+          <div class="item">1. Queda de coesão em coalizão X <span class="bad">(+18%)</span></div>
+          <div class="item">2. Aumento de saliência étnica região Y <span class="bad">(+12%)</span></div>
+          <div class="item">3. Choque de energia em importadores líquidos <span class="warn">(+9%)</span></div>
+          <div class="item">4. Ruído informacional em período eleitoral <span class="warn">(+7%)</span></div>
+        </div>
+
+        <h3>Alertas</h3>
+        <div class="list">
+          <div class="item">⚠️ Nó-ponte "A" virou gargalo crítico</div>
+          <div class="item">⚠️ Bloco "B" com probabilidade de fragmentação 0.42</div>
+          <div class="item">✅ Janela de negociação aberta em C (72h)</div>
+        </div>
+
+        <h3>Eventos gatilho (timeline)</h3>
+        <div class="list">
+          <div class="item">T-3: anúncio de sanções setoriais</div>
+          <div class="item">T-2: protestos coordenados</div>
+          <div class="item">T-1: ruptura de acordo comercial</div>
+          <div class="item">T0: escalada de narrativa identitária</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">Wireframe v1 · Objetivo: validar UX/fluxo antes da implementação final (React + graph engine).</div>
+  </div>
+</body>
+</html>
