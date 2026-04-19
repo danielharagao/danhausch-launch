@@ -1,0 +1,15 @@
+services:
+  db:
+    image: timescale/timescaledb-ha:pg17
+    container_name: predictive-history-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: predictive_history
+    ports:
+      - "5432:5432"
+    volumes:
+      - ph_db_data:/home/postgres/pgdata/data
+
+volumes:
+  ph_db_data:
