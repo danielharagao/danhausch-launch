@@ -1,7 +1,7 @@
 const API_CONFIG_KEY = "phAppApiConfigV1";
 
 const DEFAULT_CONFIG = {
-  baseUrl: "http://187.77.48.10:8010",
+  baseUrl: "https://api.danhausch.cloud",
   token: "",
   timeoutMs: 6000
 };
