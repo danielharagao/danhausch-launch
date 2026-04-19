@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRD · Predictive History</title>
+  <meta name="description" content="PRD do sistema de modelagem matemática de contexto global político, social e econômico com grafos, teoria dos jogos e predictive history." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121933;
+      --text: #e9ecf8;
+      --muted: #aeb7d6;
+      --accent: #6ea8fe;
+      --ok: #7be495;
+      --warn: #ffd166;
+      --danger: #ff6b6b;
+      --border: #283154;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 700px at 10% -10%, #1a2350 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 18px 64px; }
+    .hero {
+      background: linear-gradient(135deg, #1a2450 0%, #0f1632 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    h1,h2,h3 { margin: 0 0 10px; line-height: 1.2; }
+    h1 { font-size: 1.95rem; }
+    h2 { font-size: 1.25rem; margin-top: 24px; }
+    h3 { font-size: 1.05rem; margin-top: 16px; color: var(--accent); }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip {
+      font-size: .82rem;
+      background: #1c264f;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #d6defb;
+    }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; margin-top: 14px; }
+    .card {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    @media (min-width: 820px) {
+      .span-6 { grid-column: span 6; }
+      .span-4 { grid-column: span 4; }
+      .span-8 { grid-column: span 8; }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: .95rem;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 600; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #0f1430;
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 7px;
+      color: #cde0ff;
+    }
+    .kpi { font-size: .9rem; color: var(--muted); }
+    .tag-ok { color: var(--ok); font-weight: 600; }
+    .tag-warn { color: var(--warn); font-weight: 600; }
+    .tag-danger { color: var(--danger); font-weight: 600; }
+    footer { margin-top: 28px; color: var(--muted); font-size: .9rem; }
+    a { color: #8cc0ff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>PRD · Predictive History</h1>
+      <p class="muted"><strong>Produto:</strong> Plataforma de modelagem matemática de contexto global político, social e econômico, com foco em previsão probabilística de cenários.</p>
+      <div class="chips">
+        <span class="chip">Multiagente</span>
+        <span class="chip">Grafo Multiplex Dinâmico</span>
+        <span class="chip">Teoria dos Jogos</span>
+        <span class="chip">Camada Étnica</span>
+        <span class="chip">Simulação de Cenários</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card span-8">
+        <h2>1) Objetivo (BLUF)</h2>
+        <p>Construir um motor que estime <strong>trajetórias prováveis</strong> (não eventos exatos) para risco de conflito, estabilidade institucional, mudanças de coalizão e resiliência econômica, a partir de dados históricos e estado atual da rede global.</p>
+
+        <h2>2) Escopo V1</h2>
+        <ul>
+          <li>Modelo de dados unificado para players, grupos, relações e eventos.</li>
+          <li>Rede em camadas: política, econômica, social/informacional e étnica.</li>
+          <li>Motor de simulação por passos de tempo (t).</li>
+          <li>Cenários com choques exógenos (sanções, energia, eleições, crise).</li>
+          <li>Dashboard de risco e evolução de métricas.</li>
+        </ul>
+      </article>
+
+      <article class="card span-4">
+        <h2>3) Resultado esperado</h2>
+        <p class="kpi">Saídas principais por janela temporal:</p>
+        <ul>
+          <li>Prob. de conflito (interno/externo)</li>
+          <li>Índice de estabilidade institucional</li>
+          <li>Polarização social / saliência étnica</li>
+          <li>Reconfiguração de coalizões</li>
+          <li>Stress macroeconômico</li>
+        </ul>
+      </article>
+
+      <article class="card span-12">
+        <h2>4) Modelo conceitual</h2>
+        <table>
+          <thead><tr><th>Camada</th><th>Nós</th><th>Arestas</th><th>Exemplos de sinal</th></tr></thead>
+          <tbody>
+            <tr><td>Política</td><td>Estados, partidos, elites</td><td>aliança, rivalidade, influência</td><td><span class="tag-ok">+</span> acordo · <span class="tag-danger">−</span> hostilidade</td></tr>
+            <tr><td>Econômica</td><td>Estados, empresas, blocos</td><td>comércio, dívida, dependência energética</td><td><span class="tag-ok">+</span> integração · <span class="tag-danger">−</span> sanção</td></tr>
+            <tr><td>Social/Info</td><td>mídia, comunidades, líderes</td><td>narrativa, confiança, desinformação</td><td><span class="tag-ok">+</span> coesão · <span class="tag-danger">−</span> radicalização</td></tr>
+            <tr><td>Étnica</td><td>grupos étnicos + distribuição local</td><td>afinidade, grievance, tensão histórica</td><td><span class="tag-ok">+</span> cooperação · <span class="tag-danger">−</span> tensão</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card span-6">
+        <h2>5) Banco de dados (recomendação V1)</h2>
+        <p><strong>PostgreSQL</strong> como base única, com extensões:</p>
+        <ul>
+          <li><code>TimescaleDB</code> para séries temporais.</li>
+          <li><code>pgvector</code> para embeddings de narrativas/notícias.</li>
+        </ul>
+        <p class="muted">Adicionar Neo4j só quando análises de grafos em escala forem gargalo.</p>
+      </article>
+
+      <article class="card span-6">
+        <h2>6) Estruturas mínimas</h2>
+        <ul>
+          <li><code>players</code>, <code>groups</code>, <code>memberships</code></li>
+          <li><code>relations</code> (layer, weight, signed, directed)</li>
+          <li><code>events</code>, <code>indicators</code></li>
+          <li><code>narratives</code> (texto + embedding)</li>
+          <li><code>simulation_runs</code>, <code>simulation_steps</code></li>
+        </ul>
+      </article>
+
+      <article class="card span-12">
+        <h2>7) Dinâmica do motor (cada passo t)</h2>
+        <ol>
+          <li>Atualiza estado dos players (recursos, legitimidade, risco, coesão).</li>
+          <li>Calcula payoff multicritério (poder, segurança, riqueza, identidade).</li>
+          <li>Escolha de ação por agente (cooperar, competir, neutralizar, coalizar).</li>
+          <li>Atualiza rede multiplex e pesos das arestas.</li>
+          <li>Aplica choque exógeno, se houver.</li>
+          <li>Registra métricas de saída e estado.</li>
+        </ol>
+      </article>
+
+      <article class="card span-12">
+        <h2>8) Critérios de sucesso</h2>
+        <ul>
+          <li><strong>Backtesting:</strong> reproduzir padrões de eventos históricos com erro aceitável.</li>
+          <li><strong>Robustez:</strong> sensibilidade controlada a parâmetros críticos.</li>
+          <li><strong>Explicabilidade:</strong> cada previsão deve indicar fatores contribuintes.</li>
+          <li><strong>Operacional:</strong> geração de cenários em minutos, não horas.</li>
+        </ul>
+      </article>
+
+      <article class="card span-12">
+        <h2>9) Cenário-base para validação</h2>
+        <p><strong>Sanções + choque de energia + eleição polarizada</strong></p>
+        <p class="muted">Saídas alvo: risco de ruptura institucional, conflito interno, mudança de blocos e impacto em inflação/desemprego/apoio político.</p>
+      </article>
+    </section>
+
+    <footer>
+      PRD draft v1 · Predictive History · Dan + Alfred
+    </footer>
+  </div>
+</body>
+</html>
