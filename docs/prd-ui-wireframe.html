@@ -134,7 +134,23 @@
       </aside>
     </div>
 
-    <div class="footer">Wireframe v1 · Objetivo: validar UX/fluxo antes da implementação final (React + graph engine).</div>
+    <section class="panel" style="margin-top:12px">
+      <h2>5) Schema do Banco (V1)</h2>
+      <div class="muted" style="margin-bottom:8px">Stack recomendado: PostgreSQL + TimescaleDB + pgvector</div>
+      <div class="list">
+        <div class="item"><code>players(id, type, name, country_code, ideology_score, risk_aversion, power_index, created_at)</code></div>
+        <div class="item"><code>groups(id, type, name, parent_group_id, region_code)</code></div>
+        <div class="item"><code>memberships(player_id, group_id, role, weight, start_date, end_date)</code></div>
+        <div class="item"><code>relations(id, src_id, dst_id, layer, relation_type, weight, signed, directed, ts)</code></div>
+        <div class="item"><code>events(id, event_type, location, start_ts, end_ts, severity, tags_json, source_ref)</code></div>
+        <div class="item"><code>indicators(id, entity_type, entity_id, indicator_name, ts, value)</code> <span class="badge">Timescale</span></div>
+        <div class="item"><code>narratives(id, entity_type, entity_id, ts, text, embedding)</code> <span class="badge">pgvector</span></div>
+        <div class="item"><code>simulation_runs(id, scenario_name, params_json, seed, created_at)</code></div>
+        <div class="item"><code>simulation_steps(id, run_id, step, metrics_json, state_hash, created_at)</code></div>
+      </div>
+    </section>
+
+    <div class="footer">Wireframe v2 · Objetivo: validar UX/fluxo + schema de dados antes da implementação final (React + graph engine).</div>
   </div>
 </body>
 </html>
