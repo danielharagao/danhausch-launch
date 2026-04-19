@@ -6,6 +6,14 @@ export const state = {
   frameIndex: 0,
   playbackTimer: null,
   networkLevel: "people",
+  adapter: null,
+  selectedNodeId: null,
+  selectedNodeLevel: null,
+  networkFocus: {
+    people: null,
+    supernodes: null,
+    blocks: null
+  },
   filters: {
     horizon: "30",
     region: "all",

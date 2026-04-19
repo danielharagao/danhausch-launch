@@ -53,6 +53,22 @@ input[type="range"] { padding: 0; }
 .network-node .meta { color: var(--muted); font-size: .82rem; }
 .detail-box { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }
 
+.network-svg { width: 100%; height: 420px; display: block; }
+.network-svg text { fill: var(--text); font-size: 11px; pointer-events: none; }
+.network-node-dot { cursor: pointer; }
+.network-node-dot:hover circle { filter: brightness(1.1); }
+.network-empty { margin: 16px; color: var(--muted); }
+.node-json {
+  background: color-mix(in oklab, var(--bg-soft) 85%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  max-height: 170px;
+  overflow: auto;
+  color: var(--text);
+  font-size: .78rem;
+}
+
 .driver-list { margin-top: 12px; display: grid; gap: 10px; }
 .driver-item { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--bg-soft); }
 .driver-item header { display: flex; justify-content: space-between; margin-bottom: 8px; }
