@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predictive History · MVP</title>
+  <style>
+    :root{--bg:#0b1020;--card:#121933;--line:#27335d;--txt:#e8edff;--muted:#a7b3d9;--acc:#7db2ff;--ok:#78e5a6}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b1020;color:var(--txt)}
+    .wrap{max-width:980px;margin:0 auto;padding:20px}
+    .hero,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+    h1,h2{margin:0 0 10px}.muted{color:var(--muted)}
+    .links{display:grid;gap:10px}
+    a{display:block;padding:12px;border-radius:10px;border:1px solid var(--line);background:#172246;color:#dbe7ff;text-decoration:none}
+    a:hover{border-color:var(--acc)}
+    code{font-family:ui-monospace,Menlo,Consolas,monospace;background:#0e1430;border:1px solid var(--line);padding:2px 6px;border-radius:6px}
+    .ok{color:var(--ok);font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Predictive History · MVP</h1>
+      <p class="muted">MVP consolidado com PRD, protótipo de UI e schema de dados inicial.</p>
+      <p class="ok">Status: concluído e publicado no GitHub Pages.</p>
+    </section>
+
+    <section class="card">
+      <h2>Entregáveis</h2>
+      <div class="links">
+        <a href="/danhausch-launch/prd-contexto-global.html">1) PRD (Contexto global + abordagem)</a>
+        <a href="/danhausch-launch/prd-ui-wireframe.html">2) Wireframe UI (com schema no HTML)</a>
+        <a href="/danhausch-launch/prd-ui-prototype.html">3) Protótipo clicável (tabs/filtros/slider)</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Camada de Dados (SQL)</h2>
+      <p class="muted">Arquivos no repositório <code>docs/sql/</code>:</p>
+      <ul>
+        <li><code>predictive_history_schema.sql</code> (DDL base + Timescale + pgvector)</li>
+        <li><code>predictive_history_indexes.sql</code> (constraints, índices e políticas)</li>
+        <li><code>README.md</code> (decisões e evolução)</li>
+      </ul>
+      <p class="muted">Obs.: arquivos SQL ficam no GitHub repo (fonte canônica), enquanto a UI está no Pages.</p>
+    </section>
+
+    <section class="card">
+      <h2>Próximo passo recomendado</h2>
+      <p>Conectar o protótipo a uma API mínima: <code>/api/scenario/run</code>, <code>/api/network/snapshot</code>, <code>/api/explain/top-drivers</code>.</p>
+    </section>
+  </div>
+</body>
+</html>
