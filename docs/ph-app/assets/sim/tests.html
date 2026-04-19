@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PH Simulation Engine - Testes Básicos</title>
+  <style>
+    body { font-family: Inter, system-ui, Arial, sans-serif; margin: 24px; background: #0f172a; color: #e2e8f0; }
+    h1 { font-size: 1.2rem; }
+    .ok { color: #22c55e; }
+    .fail { color: #ef4444; }
+    pre { background: #111827; padding: 12px; border-radius: 8px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Predictive History Simulation — Testes</h1>
+  <div id="results"></div>
+  <pre id="log"></pre>
+
+  <script src="./engine.js"></script>
+  <script>
+    async function loadSeed() {
+      const res = await fetch('./seed.json');
+      if (!res.ok) throw new Error('Falha ao carregar seed.json');
+      return res.json();
+    }
+
+    function assert(condition, message) {
+      if (!condition) throw new Error(message);
+    }
+
+    function in01(v) {
+      return typeof v === 'number' && v >= 0 && v <= 1;
+    }
+
+    function print(line) {
+      document.getElementById('log').textContent += line + '\n';
+    }
+
+    async function run() {
+      const results = document.getElementById('results');
+      let pass = 0;
+      let fail = 0;
+
+      function report(name, fn) {
+        try {
+          fn();
+          const p = document.createElement('p');
+          p.className = 'ok';
+          p.textContent = '✅ ' + name;
+          results.appendChild(p);
+          pass++;
+        } catch (err) {
+          const p = document.createElement('p');
+          p.className = 'fail';
+          p.textContent = '❌ ' + name + ' -> ' + err.message;
+          results.appendChild(p);
+          fail++;
+        }
+      }
+
+      const seed = await loadSeed();
+      const sim = PHSim.createSimulator(seed, { rngSeed: 42 });
+
+      report('Instancia simulador', () => {
+        assert(typeof sim.step === 'function', 'sim.step ausente');
+        assert(typeof sim.run === 'function', 'sim.run ausente');
+      });
+
+      const frame = sim.step();
+      report('step() retorna KPIs válidos', () => {
+        assert(frame && frame.kpis, 'frame/kpis ausente');
+        assert(in01(frame.kpis.riskConflict), 'riskConflict fora de faixa');
+        assert(in01(frame.kpis.institutionalStability), 'institutionalStability fora de faixa');
+        assert(in01(frame.kpis.polarization), 'polarization fora de faixa');
+        assert(in01(frame.kpis.economicResilience), 'economicResilience fora de faixa');
+      });
+
+      report('Exogeneidade: choque externo altera histórico', () => {
+        const before = sim.getState().appliedShocks.length;
+        sim.step({ exogenousShocks: [sim.shockLibrary.disinformationSpike] });
+        const after = sim.getState().appliedShocks.length;
+        assert(after > before, 'choque não foi aplicado');
+      });
+
+      report('Explicabilidade retorna top drivers', () => {
+        const exp = sim.explain(4);
+        assert(Array.isArray(exp.topDrivers), 'topDrivers não é array');
+        assert(exp.topDrivers.length === 4, 'quantidade de drivers incorreta');
+        assert(typeof exp.topDrivers[0].driver === 'string', 'driver inválido');
+      });
+
+      report('Monte Carlo retorna intervalo de confiança', () => {
+        const mc = PHSim.monteCarlo(seed, { runs: 40, steps: 6, baseSeed: 100 });
+        const k = mc.summary.riskConflict;
+        assert(k && k.ci, 'ci ausente');
+        assert(in01(k.ci.lower) && in01(k.ci.upper), 'IC fora de faixa [0,1]');
+        assert(k.ci.lower <= k.ci.upper, 'IC invertido');
+      });
+
+      print('Passou: ' + pass + ' | Falhou: ' + fail);
+      print('Estado final resumido:');
+      print(JSON.stringify(sim.computeKpis(), null, 2));
+    }
+
+    run().catch((err) => {
+      const p = document.createElement('p');
+      p.className = 'fail';
+      p.textContent = 'Erro fatal nos testes: ' + err.message;
+      document.getElementById('results').appendChild(p);
+      print(err.stack || String(err));
+    });
+  </script>
+</body>
+</html>

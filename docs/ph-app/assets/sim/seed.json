@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "name": "Predictive History Seed Dataset",
+    "version": "1.0.0",
+    "timeUnit": "month",
+    "description": "Synthetic socio-political baseline for client-side simulations"
+  },
+  "players": [
+    {
+      "id": "gov",
+      "name": "Central Government",
+      "type": "institution",
+      "power": 0.82,
+      "cohesion": 0.64,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.72
+    },
+    {
+      "id": "opposition",
+      "name": "Opposition Coalition",
+      "type": "political",
+      "power": 0.61,
+      "cohesion": 0.52,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.38,
+      "resourceBase": 0.47
+    },
+    {
+      "id": "military",
+      "name": "Armed Forces",
+      "type": "security",
+      "power": 0.73,
+      "cohesion": 0.78,
+      "legitimacy": 0.49,
+      "economyInfluence": 0.21,
+      "resourceBase": 0.65
+    },
+    {
+      "id": "business",
+      "name": "Business Federation",
+      "type": "economic",
+      "power": 0.56,
+      "cohesion": 0.59,
+      "legitimacy": 0.44,
+      "economyInfluence": 0.82,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "civic",
+      "name": "Civic Networks",
+      "type": "civil",
+      "power": 0.46,
+      "cohesion": 0.63,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.27,
+      "resourceBase": 0.41
+    },
+    {
+      "id": "media",
+      "name": "Media Bloc",
+      "type": "information",
+      "power": 0.52,
+      "cohesion": 0.45,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.22,
+      "resourceBase": 0.36
+    }
+  ],
+  "groups": [
+    {
+      "id": "urban-middle",
+      "name": "Urban Middle Class",
+      "size": 0.28,
+      "grievance": 0.42,
+      "mobilization": 0.39,
+      "trustInstitutions": 0.46,
+      "economicExposure": 0.58,
+      "identityPole": -0.25
+    },
+    {
+      "id": "rural-workers",
+      "name": "Rural Workers",
+      "size": 0.31,
+      "grievance": 0.55,
+      "mobilization": 0.34,
+      "trustInstitutions": 0.41,
+      "economicExposure": 0.63,
+      "identityPole": 0.35
+    },
+    {
+      "id": "youth",
+      "name": "Urban Youth",
+      "size": 0.19,
+      "grievance": 0.49,
+      "mobilization": 0.62,
+      "trustInstitutions": 0.33,
+      "economicExposure": 0.52,
+      "identityPole": -0.55
+    },
+    {
+      "id": "public-sector",
+      "name": "Public Sector Workers",
+      "size": 0.14,
+      "grievance": 0.37,
+      "mobilization": 0.44,
+      "trustInstitutions": 0.57,
+      "economicExposure": 0.47,
+      "identityPole": 0.18
+    },
+    {
+      "id": "informal",
+      "name": "Informal Economy",
+      "size": 0.08,
+      "grievance": 0.67,
+      "mobilization": 0.36,
+      "trustInstitutions": 0.29,
+      "economicExposure": 0.77,
+      "identityPole": 0.52
+    }
+  ],
+  "relations": [
+    {
+      "source": "gov",
+      "target": "opposition",
+      "type": "rivalry",
+      "influence": -0.76,
+      "volatility": 0.43
+    },
+    {
+      "source": "gov",
+      "target": "military",
+      "type": "alliance",
+      "influence": 0.58,
+      "volatility": 0.21
+    },
+    {
+      "source": "gov",
+      "target": "business",
+      "type": "coordination",
+      "influence": 0.33,
+      "volatility": 0.37
+    },
+    {
+      "source": "opposition",
+      "target": "civic",
+      "type": "coalition",
+      "influence": 0.41,
+      "volatility": 0.46
+    },
+    {
+      "source": "media",
+      "target": "gov",
+      "type": "scrutiny",
+      "influence": -0.29,
+      "volatility": 0.52
+    },
+    {
+      "source": "media",
+      "target": "opposition",
+      "type": "amplification",
+      "influence": 0.22,
+      "volatility": 0.61
+    },
+    {
+      "source": "business",
+      "target": "opposition",
+      "type": "hedging",
+      "influence": 0.17,
+      "volatility": 0.54
+    },
+    {
+      "source": "military",
+      "target": "civic",
+      "type": "deterrence",
+      "influence": -0.19,
+      "volatility": 0.48
+    }
+  ],
+  "events": [
+    {
+      "id": "inflation-wave",
+      "name": "Inflation Wave",
+      "atStep": 3,
+      "scope": "economy",
+      "intensity": 0.18,
+      "effects": {
+        "groups.grievance": 0.08,
+        "groups.trustInstitutions": -0.05,
+        "players.legitimacy": -0.04,
+        "macro.gdpTrend": -0.11,
+        "macro.inflation": 0.15
+      }
+    },
+    {
+      "id": "anti-corruption-drive",
+      "name": "Anti-Corruption Drive",
+      "atStep": 5,
+      "scope": "institutional",
+      "intensity": 0.14,
+      "effects": {
+        "players.legitimacy": 0.06,
+        "groups.trustInstitutions": 0.05,
+        "relations.influence": 0.02,
+        "macro.investmentConfidence": 0.07
+      }
+    },
+    {
+      "id": "regional-border-incident",
+      "name": "Regional Border Incident",
+      "atStep": 8,
+      "scope": "security",
+      "intensity": 0.21,
+      "effects": {
+        "players.power": 0.03,
+        "groups.mobilization": 0.04,
+        "relations.volatility": 0.09,
+        "macro.tradeFlow": -0.08
+      }
+    }
+  ],
+  "macro": {
+    "gdpTrend": 0.03,
+    "inflation": 0.07,
+    "unemployment": 0.11,
+    "investmentConfidence": 0.46,
+    "tradeFlow": 0.52,
+    "fiscalSpace": 0.41
+  }
+}
