@@ -69,14 +69,29 @@ function baselineFrame(sim) {
   return buildFrame(0, kpis, explainability, [], state);
 }
 
-export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngSeed = 1337 } = {}) {
+export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngSeed = 1337, apiClient = null } = {}) {
   if (!window.PHSim) {
     throw new Error("PHSim indisponível. Verifique o carregamento de assets/sim/engine.js");
   }
 
-  const resp = await fetch(seedUrl);
-  if (!resp.ok) throw new Error(`Falha ao carregar seed: ${resp.status}`);
-  const seed = await resp.json();
+  let seed = null;
+  let mode = "local";
+
+  if (apiClient?.isEnabled?.()) {
+    try {
+      await apiClient.health();
+      seed = await apiClient.getSeed();
+      mode = "api";
+    } catch (err) {
+      console.warn("API indisponível; fallback local ativado.", err?.message || err);
+    }
+  }
+
+  if (!seed) {
+    const resp = await fetch(seedUrl);
+    if (!resp.ok) throw new Error(`Falha ao carregar seed: ${resp.status}`);
+    seed = await resp.json();
+  }
 
   const sim = window.PHSim.createSimulator(seed, { rngSeed });
   const frames = [baselineFrame(sim)];
@@ -204,6 +219,9 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     ensureFrame,
     getKpiCards,
     getDrivers,
-    getNetwork
+    getNetwork,
+    getStatus() {
+      return { mode };
+    }
   };
 }

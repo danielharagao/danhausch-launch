@@ -1,4 +1,5 @@
 import { state, loadPresets, savePreset, deletePreset } from "./state.js";
+import { createApiClient, loadApiConfig, saveApiConfig } from "./api-client.js";
 
 const $ = (s) => document.querySelector(s);
 
@@ -198,6 +199,49 @@ export function initPresets() {
   });
 
   fill();
+}
+
+export function initApiConfig() {
+  const form = $("#apiConfigForm");
+  if (!form) return;
+
+  const status = $("#apiStatus");
+  const cfg = loadApiConfig();
+  form.elements.apiBaseUrl.value = cfg.baseUrl || "";
+  form.elements.apiToken.value = cfg.token || "";
+  form.elements.apiTimeoutMs.value = String(cfg.timeoutMs || 6000);
+
+  const mode = state.adapter?.getStatus?.().mode || "local";
+  status.textContent = `Modo atual: ${mode === "api" ? "API" : "Local"}`;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    saveApiConfig({
+      baseUrl: String(data.get("apiBaseUrl") || ""),
+      token: String(data.get("apiToken") || ""),
+      timeoutMs: Number(data.get("apiTimeoutMs") || 6000)
+    });
+    status.textContent = "Config salva. Recarregue para aplicar.";
+  });
+
+  $("#apiTestBtn").addEventListener("click", async () => {
+    const testClient = createApiClient({
+      baseUrl: form.elements.apiBaseUrl.value,
+      token: form.elements.apiToken.value,
+      timeoutMs: Number(form.elements.apiTimeoutMs.value || 6000)
+    });
+    if (!testClient.isEnabled()) {
+      status.textContent = "API desativada (base URL vazia).";
+      return;
+    }
+    try {
+      await testClient.health();
+      status.textContent = "Conexão OK.";
+    } catch (err) {
+      status.textContent = `Falha: ${err.message}`;
+    }
+  });
 }
 
 export function renderAll() {

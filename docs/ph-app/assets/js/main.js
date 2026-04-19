@@ -1,6 +1,7 @@
 import { loadTheme, saveTheme, state } from "./state.js";
 import { createPHAdapter } from "./sim-adapter.js";
-import { initFilters, initNetwork, initPresets, initTabs, initTimeline, renderAll } from "./ui.js";
+import { createApiClient, loadApiConfig } from "./api-client.js";
+import { initApiConfig, initFilters, initNetwork, initPresets, initTabs, initTimeline, renderAll } from "./ui.js";
 
 function initTheme() {
   const root = document.documentElement;
@@ -15,9 +16,12 @@ function initTheme() {
 
 async function bootstrap() {
   initTheme();
+
+  const apiClient = createApiClient(loadApiConfig());
   state.adapter = await createPHAdapter({
     seedUrl: "./assets/sim/seed.json",
-    rngSeed: 1337
+    rngSeed: 1337,
+    apiClient
   });
 
   initTabs();
@@ -25,6 +29,7 @@ async function bootstrap() {
   initTimeline();
   initNetwork();
   initPresets();
+  initApiConfig();
   renderAll();
 }
 
