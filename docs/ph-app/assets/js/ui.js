@@ -26,6 +26,8 @@ export function initTabs() {
 export function initFilters() {
   const form = $("#filtersForm");
   const riskInput = form.querySelector('[name="riskThreshold"]');
+  riskInput.value = String(state.filters.riskThreshold ?? 0);
+  $("#riskThresholdValue").textContent = String(state.filters.riskThreshold ?? 0);
   riskInput.addEventListener("input", () => {
     $("#riskThresholdValue").textContent = riskInput.value;
   });
@@ -45,9 +47,9 @@ export function initFilters() {
 
   $("#resetFiltersBtn").addEventListener("click", () => {
     form.reset();
-    riskInput.value = "40";
-    $("#riskThresholdValue").textContent = "40";
-    state.filters = { horizon: "30", region: "all", segment: "all", riskThreshold: 40, query: "" };
+    riskInput.value = "0";
+    $("#riskThresholdValue").textContent = "0";
+    state.filters = { horizon: "30", region: "all", segment: "all", riskThreshold: 0, query: "" };
     renderAll();
   });
 }
@@ -114,9 +116,13 @@ export function renderNetwork() {
   const crumb = $("#networkBreadcrumb");
 
   const data = state.adapter.getNetwork(adapterFrame(), state.networkLevel, state.filters);
-  canvas.innerHTML = data
-    .map((node) => `<button class="network-node" data-id="${node.id}"><strong>${node.label}</strong><div class="meta">Risco ${node.risk}%</div></button>`)
-    .join("");
+  if (!data.length) {
+    canvas.innerHTML = `<div class="muted">Sem nós para o filtro atual. Dica: clique em "Resetar" nos filtros.</div>`;
+  } else {
+    canvas.innerHTML = data
+      .map((node) => `<button class="network-node" data-id="${node.id}"><strong>${node.label}</strong><div class="meta">Risco ${node.risk}%</div></button>`)
+      .join("");
+  }
 
   crumb.textContent = `Nível: ${state.networkLevel}`;
   detail.innerHTML = "Clique em um nó para detalhar. Use drill-down: pessoa → supernó → bloco.";

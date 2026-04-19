@@ -38,10 +38,18 @@ function joinQuery(params = {}) {
 export function loadApiConfig() {
   try {
     const parsed = JSON.parse(localStorage.getItem(API_CONFIG_KEY) || "{}");
+    let baseUrl = normalizeBaseUrl(parsed.baseUrl);
+
+    // UX-first: if the app is on HTTPS and saved API is HTTP, disable API automatically
+    // to avoid mixed-content failures and keep local mode working without user setup.
+    if (window.location.protocol === "https:" && baseUrl.startsWith("http://")) {
+      baseUrl = "";
+    }
+
     return {
       ...DEFAULT_CONFIG,
       ...parsed,
-      baseUrl: normalizeBaseUrl(parsed.baseUrl)
+      baseUrl
     };
   } catch {
     return { ...DEFAULT_CONFIG };

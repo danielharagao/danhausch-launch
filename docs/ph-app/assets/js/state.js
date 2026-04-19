@@ -18,7 +18,7 @@ export const state = {
     horizon: "30",
     region: "all",
     segment: "all",
-    riskThreshold: 40,
+    riskThreshold: 0,
     query: ""
   }
 };
