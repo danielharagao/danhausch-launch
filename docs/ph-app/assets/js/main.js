@@ -1,7 +1,7 @@
 import { loadTheme, saveTheme, state } from "./state.js";
 import { createPHAdapter } from "./sim-adapter.js";
 import { createApiClient, loadApiConfig } from "./api-client.js";
-import { initApiConfig, initFilters, initNetwork, initPresets, initTabs, initTimeline, renderAll } from "./ui.js";
+import { initFilters, initNetwork, initPresets, initTabs, initTimeline, renderAll } from "./ui.js";
 
 function initTheme() {
   const root = document.documentElement;
@@ -29,7 +29,6 @@ async function bootstrap() {
   initTimeline();
   initNetwork();
   initPresets();
-  initApiConfig();
   renderAll();
 }
 

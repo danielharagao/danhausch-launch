@@ -52,8 +52,8 @@
           </select>
         </label>
 
-        <label>Risco mínimo: <span id="riskThresholdValue">40</span>
-          <input type="range" name="riskThreshold" min="0" max="100" value="40" />
+        <label>Risco mínimo: <span id="riskThresholdValue">0</span>
+          <input type="range" name="riskThreshold" min="0" max="100" value="0" />
         </label>
 
         <label>Buscar entidade
@@ -73,26 +73,6 @@
           <button id="loadPresetBtn" class="btn ghost">Carregar</button>
         </div>
         <button id="deletePresetBtn" class="btn danger">Excluir preset</button>
-      </section>
-
-      <section class="preset-box">
-        <h3>Conexão API</h3>
-        <form id="apiConfigForm" class="stack">
-          <label>Base URL
-            <input type="url" name="apiBaseUrl" placeholder="https://api.exemplo.com" />
-          </label>
-          <label>Token (opcional)
-            <input type="password" name="apiToken" placeholder="Bearer token" />
-          </label>
-          <label>Timeout (ms)
-            <input type="number" name="apiTimeoutMs" min="1000" step="500" value="6000" />
-          </label>
-          <div class="row">
-            <button type="submit" class="btn">Salvar API</button>
-            <button type="button" id="apiTestBtn" class="btn ghost">Testar</button>
-          </div>
-          <small id="apiStatus">Modo atual: Local</small>
-        </form>
       </section>
     </aside>
 
