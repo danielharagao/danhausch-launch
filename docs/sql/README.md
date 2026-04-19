@@ -27,19 +27,41 @@
 
 ## Estratégia de evolução
 
-1. **Versionamento por migrações**
-   - Tratar estes arquivos como baseline v1.
-   - Próximas mudanças em migrations incrementais (`V2__...`, `V3__...`) para preservar rastreabilidade.
+### Roadmap V2 (implementado)
 
-2. **Particionamento e retenção por domínio**
-   - Ajustar políticas de compressão/retenção por criticidade (ex.: eventos brutos curtos, indicadores agregados longos).
+1. **Migração avançada**
+   - `migrations/V2__predictive_history_advanced.sql` adiciona integridade temporal forte com `EXCLUDE USING gist`.
 
-3. **Integridade temporal avançada**
-   - Futuro: adicionar `EXCLUDE USING gist` para evitar sobreposição de intervalos por chave de negócio.
+2. **Camadas auxiliares de domínio**
+   - Novas dimensões para etnia (`ethnicity_catalog`, `player_ethnicity_history`) e taxonomia narrativa (`narrative_themes`, `narrative_theme_links`).
 
-4. **Performance progressiva**
-   - Revisar `lists` dos índices `ivfflat` conforme volume real.
-   - Criar materialized views para métricas e features de treinamento recorrentes.
+3. **Lineage e auditoria**
+   - `data_lineage_jobs` + `data_lineage_entities` para rastrear origem operacional.
+   - `audit_entity_changes` + triggers para trilha de mudanças em entidades críticas.
 
-5. **Governança de dados**
-   - Incluir trilha de lineage (origem, job_id, versão do parser/modelo) e regras de qualidade automatizadas (dbt/tests ou checks SQL).
+4. **Feature views analíticas**
+   - Views prontas para modelagem e monitoramento:
+     - `vw_player_influence_features`
+     - `vw_region_risk_features`
+     - `vw_coalition_stability_features`
+
+5. **Seed e queries de referência**
+   - `seed/predictive_history_seed.sql` com dados coerentes para cenários analíticos.
+   - `QUERIES.md` com consultas-chave de influência, risco regional, ruptura e tendência temporal.
+
+### Roadmap V3 (próximos passos)
+
+1. **Qualidade de dados automatizada**
+   - Testes SQL/dbt (unicidade, não sobreposição, anomalias de distribuição e nullability crítica).
+
+2. **Serving layer para ML/BI**
+   - Materialized views incrementais + refresh policies para features de baixa latência.
+
+3. **Observabilidade de pipelines**
+   - Métricas de freshness, volume, atraso e taxa de erro por fonte.
+
+4. **Evolução de busca vetorial**
+   - Ajuste dinâmico de ANN (`ivfflat`/`hnsw`) e estratégia de reindex por crescimento de corpus.
+
+5. **Governança e segurança**
+   - Row-level security por tenant/equipe, mascaramento de atributos sensíveis e políticas de retenção por classe de dado.
