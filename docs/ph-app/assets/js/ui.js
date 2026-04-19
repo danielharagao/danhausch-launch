@@ -218,7 +218,7 @@ export function initApiConfig() {
   form.elements.apiTimeoutMs.value = String(cfg.timeoutMs || 6000);
 
   const mode = state.adapter?.getStatus?.().mode || "local";
-  status.textContent = `Modo atual: ${mode === "api" ? "API" : "Local"}`;
+  status.textContent = `Modo atual: ${mode === "api" ? "API (hardcoded)" : "Local (fallback)"}`;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
