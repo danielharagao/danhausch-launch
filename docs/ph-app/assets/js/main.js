@@ -1,4 +1,5 @@
-import { loadTheme, saveTheme } from "./state.js";
+import { loadTheme, saveTheme, state } from "./state.js";
+import { createPHAdapter } from "./sim-adapter.js";
 import { initFilters, initNetwork, initPresets, initTabs, initTimeline, renderAll } from "./ui.js";
 
 function initTheme() {
@@ -12,8 +13,13 @@ function initTheme() {
   });
 }
 
-function bootstrap() {
+async function bootstrap() {
   initTheme();
+  state.adapter = await createPHAdapter({
+    seedUrl: "./assets/sim/seed.json",
+    rngSeed: 1337
+  });
+
   initTabs();
   initFilters();
   initTimeline();
@@ -22,4 +28,11 @@ function bootstrap() {
   renderAll();
 }
 
-bootstrap();
+bootstrap().catch((err) => {
+  console.error("Falha no bootstrap:", err);
+  const root = document.querySelector(".main-content") || document.body;
+  const box = document.createElement("article");
+  box.className = "card";
+  box.innerHTML = `<h2>Erro ao iniciar simulação</h2><p>${err.message}</p>`;
+  root.prepend(box);
+});
