@@ -1,47 +1,42 @@
-# Predictive History · War Room (GitHub Pages)
+# Predictive History · War Room
 
-A app `docs/ph-app/` agora opera em dois modos:
+App operacional de simulação e leitura de risco geopolítico.
 
-- **Local (fallback padrão):** `engine.js` + `seed.json`
-- **API (quando disponível):** usa backend HTTP real; se falhar, volta para local sem quebrar a UI.
+## Fonte de dados padrão
+- Seed ativa: `assets/sim/seed.v5.json`
+- Engine: `assets/sim/engine.js`
+- Adapter: `assets/js/sim-adapter.js`
 
-## O que foi integrado
+## KPIs (o que significa “risco”)
+1. `riskConflict` → risco relativo de escalada de conflito
+2. `institutionalStability` → robustez de governança institucional
+3. `polarization` → fragmentação/atrito social-político
+4. `economicResilience` → capacidade macro de absorver choques
 
-- `assets/js/api-client.js`
-  - Config persistida em `localStorage`
-  - Base URL configurável
-  - Token opcional em `Authorization: Bearer <token>`
-  - Timeout configurável
-  - Teste de saúde (`/health`, `/api/health`, `/ph/health`)
+> Escala exibida é relativa ao modelo (0–100), útil para comparar cenários.
 
-- `assets/js/sim-adapter.js`
-  - Recebe `apiClient`
-  - Tenta `health + seed` via API
-  - Se API indisponível, usa seed local automaticamente
-  - Expõe `getStatus()` com `mode: "api" | "local"`
+## Como simular
+1. Abra `/ph-app/`
+2. Use **Timeline & Playback** para avançar no tempo
+3. Aplique filtros por tipo/região e quick views
+4. Leia:
+   - **Overview** (KPI)
+   - **Network** (estrutura e conectividade)
+   - **Drivers** (fatores causais dominantes)
 
-- `assets/js/ui.js` + `index.html`
-  - Filtros diretos por tipo de entidade (`country`, `leader`, `person`, `company`, `institution`)
-  - Filtro dinâmico de região com base no snapshot real
-  - Quick views: **Só países**, **Só líderes**, **Só empresas**, **Top 50 influenciadores**
-  - Painel de detalhe enriquecido com papel, afiliações e conexões críticas
-  - Layout ajustado para mobile
+## Filtros e visões
+- Tipos: `country`, `leader`, `person`, `company`, `institution`
+- Quick views:
+  - Só países
+  - Só líderes
+  - Só empresas
+  - Top influenciadores
 
-- `assets/js/main.js`
-  - Inicializa `apiClient` antes do adapter
+## Boas práticas
+- Sempre comparar no mínimo 2 cenários
+- Registrar hipóteses e gatilhos de confirmação/negação
+- Evitar leitura determinística de um único frame
 
-## Endpoints esperados (seed/health)
-
-O frontend tenta, nesta ordem:
-
-- Health: `/health` → `/api/health` → `/ph/health`
-- Seed: `/ph/seed` → `/api/ph/seed` → `/seed`
-
-> Mesmo com API configurada, qualquer falha mantém o app funcional no modo local.
-
-## Como usar
-
-1. Abra `docs/ph-app/index.html`.
-2. (Opcional) Em **Conexão API**, informe a Base URL e Token.
-3. Clique em **Salvar API** e recarregue.
-4. Use **Testar** para validar o backend.
+## Referências de documentação
+- Manual operacional: `/ph-graph/MANUAL.md`
+- Manual web: `/ph-graph/manual-futuristas-historiadores.html`

@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manual · Predictive History Graph</title>
+  <title>Manual · Predictive History</title>
   <style>
-    :root{--bg:#0b1020;--card:#121933;--line:#2a3762;--txt:#e8eefc;--muted:#a8b6df;--acc:#7cb1ff;--ok:#79e3a6}
+    :root{--bg:#0b1020;--card:#121933;--line:#2a3762;--txt:#e8eefc;--muted:#a8b6df;--ok:#79e3a6}
     *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
     .wrap{max-width:980px;margin:0 auto;padding:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
     h1,h2,h3{margin:0 0 10px} p,li{color:var(--txt)} .muted{color:var(--muted)} code{background:#0e1533;border:1px solid var(--line);padding:2px 6px;border-radius:6px}
@@ -15,82 +15,67 @@
 <body>
   <div class="wrap">
     <section class="card">
-      <h1>Manual de Uso · Futuristas & Historiadores</h1>
-      <p class="muted">Sistema: Predictive History Graph Explorer</p>
-      <p class="ok">Objetivo: transformar dados históricos e estruturais em leitura de trajetórias prováveis (não adivinhação).</p>
-      <p><a href="/danhausch-launch/ph-graph/">Abrir interface de grafos</a></p>
+      <h1>Manual de Uso · Predictive History</h1>
+      <p class="muted">Futuristas & Historiadores · versão operacional</p>
+      <p class="ok">Objetivo: usar rede + simulação para projetar trajetórias prováveis, não “adivinhar o futuro”.</p>
+      <p>
+        <a href="/danhausch-launch/ph-app/">Abrir War Room</a> ·
+        <a href="/danhausch-launch/ph-graph/">Abrir Grafo</a>
+      </p>
     </section>
 
     <section class="card">
-      <h2>1) Como pensar o modelo</h2>
+      <h2>1) O que significa “risco” no app</h2>
       <ul>
-        <li><strong>Nós</strong> = pessoas, supernós (agregações), blocos.</li>
-        <li><strong>Arestas</strong> = relações (cooperação, rivalidade, dependência, influência).</li>
-        <li><strong>Camadas</strong> = people / supernodes / blocks.</li>
-        <li><strong>Regra de ouro</strong>: o modelo estima <em>probabilidades condicionais</em>, não eventos exatos.</li>
+        <li><strong>Risco de conflito</strong> (<code>riskConflict</code>): pressão para escalada de confronto.</li>
+        <li><strong>Estabilidade institucional</strong> (<code>institutionalStability</code>): robustez de governança.</li>
+        <li><strong>Polarização</strong> (<code>polarization</code>): fragmentação social/política.</li>
+        <li><strong>Resiliência econômica</strong> (<code>economicResilience</code>): capacidade de absorver choques.</li>
       </ul>
+      <p class="muted">Escalas em % são relativas ao modelo (comparação entre cenários), não probabilidade literal de evento único.</p>
     </section>
 
     <section class="card">
-      <h2>2) Fluxo de uso (rápido)</h2>
+      <h2>2) Como simular (passo a passo)</h2>
       <ol>
-        <li>Acesse <code>/ph-graph/</code>.</li>
-        <li>Escolha a camada: <strong>people</strong>, <strong>supernodes</strong> ou <strong>blocks</strong>.</li>
-        <li>Use zoom/pan para explorar clusters.</li>
-        <li>Clique em um nó para ver conexões e atributos no painel lateral.</li>
-        <li>Compare densidade e centralidade visual entre camadas.</li>
+        <li>Abra <code>/ph-app/</code> e defina a pergunta de decisão.</li>
+        <li>Use <strong>Timeline & Playback</strong> para avançar no tempo.</li>
+        <li>Aplique filtros por <strong>tipo</strong> e <strong>região</strong>.</li>
+        <li>Use quick views: <strong>Só países</strong>, <strong>Só líderes</strong>, <strong>Só empresas</strong>, <strong>Top influenciadores</strong>.</li>
+        <li>Compare KPIs + Drivers + Network antes de concluir.</li>
       </ol>
     </section>
 
     <section class="card">
-      <h2>3) Leitura para historiadores</h2>
+      <h2>3) Leitura da rede</h2>
       <ul>
-        <li>Busque <strong>continuidade estrutural</strong>: quais blocos permanecem centrais ao longo do tempo?</li>
-        <li>Observe <strong>rupturas</strong>: perda súbita de conexões de um nó-ponte.</li>
-        <li>Compare padrão atual com ciclos anteriores (pré-crise, crise, recomposição).</li>
-        <li>Use supernós para síntese macro; volte para people para evidência micro.</li>
+        <li><strong>Nó</strong>: ator (país, líder, empresa, instituição).</li>
+        <li><strong>Aresta</strong>: relação (cooperação, rivalidade, dependência, influência, governança).</li>
+        <li><strong>Densidade</strong>: grau de interconexão do recorte visível.</li>
+      </ul>
+      <p>Heurística útil: nó-ponte muito conectado + alta volatilidade = ponto de ruptura potencial.</p>
+    </section>
+
+    <section class="card">
+      <h2>4) Uso por perfil</h2>
+      <h3>Historiadores</h3>
+      <ul>
+        <li>Comparar padrão atual com períodos análogos.</li>
+        <li>Identificar continuidade, ruptura e recomposição.</li>
+      </ul>
+      <h3>Futuristas</h3>
+      <ul>
+        <li>Identificar sinais fracos e aceleração de periferia.</li>
+        <li>Testar cenários de choque e mapear gatilhos.</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2>4) Leitura para futuristas</h2>
+      <h2>5) Limites e cautelas</h2>
       <ul>
-        <li>Mapeie <strong>sinais fracos</strong>: nós periféricos ganhando conexões rapidamente.</li>
-        <li>Teste hipóteses: “se nó X perder ponte com Y, que bloco absorve influência?”</li>
-        <li>Monitore fragilidade: alta dependência de poucos nós críticos.</li>
-        <li>Combine visual de rede + drivers de risco no War Room (<code>/ph-app/</code>).</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>5) Protocolo analítico recomendado (5 passos)</h2>
-      <ol>
-        <li><strong>Descrever</strong> estado da rede (nós, arestas, densidade).</li>
-        <li><strong>Diagnosticar</strong> atores-ponte e vulnerabilidades.</li>
-        <li><strong>Comparar</strong> com período histórico análogo.</li>
-        <li><strong>Projetar</strong> 2–3 cenários plausíveis.</li>
-        <li><strong>Decidir</strong> gatilhos de monitoramento e ação.</li>
-      </ol>
-    </section>
-
-    <section class="card">
-      <h2>6) Limites e cautelas</h2>
-      <ul>
-        <li>Não tratar saída como profecia.</li>
-        <li>Relação visual forte ≠ causalidade automática.</li>
-        <li>Dados incompletos podem subestimar atores informais.</li>
-        <li>Atualize o dataset com frequência para evitar “inércia analítica”.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>7) Checklist de sessão de análise</h2>
-      <ul>
-        <li>[ ] Definir pergunta (ex.: risco de ruptura de coalizão)</li>
-        <li>[ ] Escolher camada inicial (macro ou micro)</li>
-        <li>[ ] Identificar 3 nós críticos e 2 pontes</li>
-        <li>[ ] Registrar hipótese principal + hipótese alternativa</li>
-        <li>[ ] Definir indicadores de confirmação/negação</li>
+        <li>Não é previsão determinística.</li>
+        <li>Correlação visual não implica causalidade.</li>
+        <li>Qualidade da inferência depende da atualização de dados.</li>
       </ul>
     </section>
   </div>
