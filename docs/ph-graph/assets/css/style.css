@@ -52,7 +52,9 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
+.topbar-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
 
 h1,h2,h3,p { margin: 0; }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; color: var(--muted); }
@@ -64,7 +66,9 @@ h1,h2,h3,p { margin: 0; }
   min-height: calc(100vh - 98px);
 }
 .panel { padding: 1rem; }
-.controls label { display: block; margin: .45rem 0; }
+.controls label { display: grid; gap: .3rem; margin: .45rem 0; }
+.controls select { width: 100%; background: var(--bg-soft); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: .5rem; }
+.quick-views { display: grid; gap: .5rem; margin-top: .65rem; }
 .section { margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--line); }
 .metrics { display: grid; grid-template-columns: 1fr; gap: .5rem; margin-top: .6rem; }
 .metrics article { padding: .5rem .65rem; border: 1px solid var(--line); border-radius: 10px; background: color-mix(in oklab, var(--bg-soft) 90%, transparent); }
@@ -90,4 +94,12 @@ h1,h2,h3,p { margin: 0; }
 @media (max-width: 1024px) {
   .layout { grid-template-columns: 1fr; }
   #graphCanvas { min-height: 420px; }
+}
+
+@media (max-width: 680px) {
+  .topbar { margin: .6rem; }
+  .layout { padding: 0 .6rem .6rem; gap: .6rem; min-height: auto; }
+  .panel { padding: .8rem; }
+  #graphCanvas { min-height: 320px; }
+  .quick-views { grid-template-columns: 1fr 1fr; }
 }

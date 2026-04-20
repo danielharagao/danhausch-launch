@@ -6,6 +6,7 @@ export class ForceGraph {
     this.nodes = [];
     this.edges = [];
     this.visibleLayers = new Set(['people', 'supernodes', 'blocks']);
+    this.nodeFilter = null;
     this.selectedNodeId = null;
     this.hoverNodeId = null;
     this.transform = { x: 0, y: 0, k: 1 };
@@ -27,11 +28,23 @@ export class ForceGraph {
     this.visibleLayers = new Set(layers);
   }
 
+  setNodeFilter(filterFn) {
+    this.nodeFilter = typeof filterFn === 'function' ? filterFn : null;
+  }
+
   setSelectedNode(id) {
     this.selectedNodeId = id;
     if (this.onSelect) {
-      this.onSelect(this.nodes.find((n) => n.id === id) || null, this.getConnectedNodes(id));
+      const node = this.nodes.find((n) => n.id === id) || null;
+      const connected = this.getConnectedNodes(id);
+      const edges = this.getConnectedEdges(id);
+      this.onSelect(node, connected, edges);
     }
+  }
+
+  getConnectedEdges(id) {
+    if (!id) return [];
+    return this.edges.filter((e) => e.source === id || e.target === id);
   }
 
   getConnectedNodes(id) {
@@ -44,7 +57,7 @@ export class ForceGraph {
   }
 
   visibleNodes() {
-    return this.nodes.filter((n) => this.visibleLayers.has(n.layer));
+    return this.nodes.filter((n) => this.visibleLayers.has(n.layer) && (!this.nodeFilter || this.nodeFilter(n)));
   }
 
   visibleEdges() {

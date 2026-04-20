@@ -21,73 +21,46 @@ const DRIVER_LABELS = {
   gdpTrend: "Tendência do PIB"
 };
 
+const ENTITY_TYPES = ["country", "leader", "person", "company", "institution"];
+
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }
 
-function asNumber(v, fallback = 0) {
-  const n = Number(v);
-  return Number.isFinite(n) ? n : fallback;
-}
-
 function toPct(v) {
-  return Math.round(clamp(asNumber(v, 0), 0, 1) * 100);
+  return Math.round(clamp(v, 0, 1) * 100);
 }
 
-function scoreGroup(g = {}) {
-  const grievance = asNumber(g.grievance, 0.5);
-  const mobilization = asNumber(g.mobilization, 0.5);
-  const trust = asNumber(g.trustInstitutions ?? g.trust, 0.5);
-  return toPct(grievance * 0.45 + mobilization * 0.35 + (1 - trust) * 0.2);
+function scoreGroup(g) {
+  return toPct(g.grievance * 0.45 + g.mobilization * 0.35 + (1 - g.trustInstitutions) * 0.20);
 }
 
-function scorePlayer(p = {}) {
-  const legitimacy = asNumber(p.legitimacy, 0.5);
-  const cohesion = asNumber(p.cohesion, 0.5);
-  const power = asNumber(p.power, 0.5);
-  const resourceBase = asNumber(p.resourceBase ?? p.resources, 0.5);
-  return toPct((1 - legitimacy) * 0.45 + (1 - cohesion) * 0.25 + power * 0.15 + (1 - resourceBase) * 0.15);
+function scorePlayer(p) {
+  return toPct((1 - p.legitimacy) * 0.45 + (1 - p.cohesion) * 0.25 + p.power * 0.15 + (1 - p.resourceBase) * 0.15);
 }
 
-function scoreRelation(r = {}) {
-  const volatility = asNumber(r.volatility, 0.5);
-  const influence = asNumber(r.influence, 0);
-  return toPct(volatility * 0.6 + Math.max(0, -influence) * 0.4);
-}
-
-function scoreNodeByLayer(node = {}, layer) {
-  if (typeof node.risk === "number") return toPct(node.risk);
-  if (layer === "people") return scoreGroup(node);
-  if (layer === "supernodes") return scorePlayer(node);
-  if (layer === "blocks") return scoreRelation(node);
-  return toPct(asNumber(node.volatility ?? node.grievance ?? node.power, 0.5));
+function scoreRelation(r) {
+  return toPct(r.volatility * 0.6 + Math.max(0, -r.influence) * 0.4);
 }
 
 function mapEvent(ev) {
-  const direction = asNumber(ev.intensity, 0) >= 0.18 ? "+alto" : "+moderado";
+  const direction = ev.intensity >= 0.18 ? "+alto" : "+moderado";
   return {
     time: `Step ${ev.step}`,
-    title: `${ev.name || "Evento"} [${ev.scope || "generic"}]`,
+    title: `${ev.name} [${ev.scope}]`,
     impact: direction
   };
 }
 
 function buildFrame(step, kpis, explainability, eventsApplied, snapshot) {
-  const safe = {
-    riskConflict: asNumber(kpis?.riskConflict, 0),
-    institutionalStability: asNumber(kpis?.institutionalStability, 0),
-    polarization: asNumber(kpis?.polarization, 0),
-    economicResilience: asNumber(kpis?.economicResilience, 0)
-  };
-
   return {
     id: step,
     label: step === 0 ? "T0 · Seed" : `T+${step}`,
-    score: toPct((safe.riskConflict + safe.polarization + (1 - safe.institutionalStability) + (1 - safe.economicResilience)) / 4),
-    events: (eventsApplied || []).map(mapEvent),
-    kpis: safe,
-    explainability: explainability || { timestamp: step, topDrivers: [] },
-    snapshot: snapshot || {}
+    score: toPct((kpis.riskConflict + kpis.polarization + (1 - kpis.institutionalStability) + (1 - kpis.economicResilience)) / 4),
+    events: eventsApplied.map(mapEvent),
+    kpis,
+    explainability,
+    snapshot
   };
 }
 
@@ -98,92 +71,40 @@ function baselineFrame(sim) {
   return buildFrame(0, kpis, explainability, [], state);
 }
 
-function normalizeLayerNode(raw = {}, layer, idx) {
-  const id = String(raw.id ?? raw.key ?? `${layer}-${idx}`);
-  const label = String(raw.label ?? raw.name ?? raw.title ?? id);
-  const region = String(raw.region ?? raw.type ?? raw.segment ?? layer);
-  const attrs = raw.attrs && typeof raw.attrs === "object" ? raw.attrs : {
-    ...raw,
-    id: undefined,
-    key: undefined,
-    label: undefined,
-    name: undefined,
-    title: undefined,
-    region: undefined,
-    layer: undefined,
-    risk: undefined
+function inferEntityType(rawType, attrs = {}) {
+  const direct = String(attrs.entityType || attrs.entity_type || rawType || "").toLowerCase();
+  if (ENTITY_TYPES.includes(direct)) return direct;
+
+  const name = String(attrs.name || "").toLowerCase();
+  if (/president|prime minister|chancellor|rei|presidente/.test(name)) return "leader";
+
+  const map = {
+    economic: "company",
+    political: "leader",
+    security: "institution",
+    civil: "person",
+    information: "person",
+    group: "person",
+    block: "institution",
+    institution: "institution"
   };
 
-  return {
-    id,
-    label,
-    region,
-    risk: scoreNodeByLayer(raw, layer),
-    attrs
-  };
+  return map[direct] || "institution";
 }
 
-function makePeople(groups = []) {
-  return groups.map((g, idx) => ({
-    id: String(g.id ?? `group-${idx}`),
-    label: g.name || g.label || `Group ${idx + 1}`,
-    region: "groups",
-    segment: "social",
-    risk: scoreGroup(g),
-    supernode: "players",
-    block: "relations",
-    attrs: {
-      grievance: toPct(g.grievance),
-      mobilization: toPct(g.mobilization),
-      trustInstitutions: toPct(g.trustInstitutions),
-      size: Math.round(asNumber(g.size, 0) * 100)
-    }
-  }));
+function normalizeRegion(value) {
+  return String(value || "global").toLowerCase();
 }
 
-function makeSupernodes(players = []) {
-  return players.map((p, idx) => ({
-    id: String(p.id ?? `player-${idx}`),
-    label: p.name || p.label || `Player ${idx + 1}`,
-    region: p.type || "institution",
-    risk: scorePlayer(p),
-    blocks: ["relations"],
-    attrs: {
-      power: toPct(p.power),
-      cohesion: toPct(p.cohesion),
-      legitimacy: toPct(p.legitimacy),
-      resourceBase: toPct(p.resourceBase)
-    }
-  }));
-}
-
-function makeBlocks(relations = []) {
-  return relations.map((r, idx) => ({
-    id: String(r.id ?? `${r.source ?? "src"}->${r.target ?? "dst"}-${idx}`),
-    label: `${r.source ?? "?"} → ${r.target ?? "?"}`,
-    region: r.type || "relation",
-    risk: scoreRelation(r),
-    attrs: {
-      influence: Math.round(asNumber(r.influence, 0) * 100),
-      volatility: toPct(r.volatility),
-      type: r.type || "relation"
-    }
-  }));
-}
-
-function buildLayerNetwork(snapshot = {}) {
-  const fallback = {
-    people: makePeople(snapshot.groups || []),
-    supernodes: makeSupernodes(snapshot.players || []),
-    blocks: makeBlocks(snapshot.relations || [])
-  };
-
-  const layers = snapshot.layers || {};
-  const people = Array.isArray(layers.people) ? layers.people.map((n, i) => normalizeLayerNode(n, "people", i)) : fallback.people;
-  const supernodes = Array.isArray(layers.supernodes) ? layers.supernodes.map((n, i) => normalizeLayerNode(n, "supernodes", i)) : fallback.supernodes;
-  const blocks = Array.isArray(layers.blocks) ? layers.blocks.map((n, i) => normalizeLayerNode(n, "blocks", i)) : fallback.blocks;
-
-  return { people, supernodes, blocks };
+function normalizeQuickView(data, quickView) {
+  if (!quickView || quickView === "all") return data;
+  if (quickView === "countries") return data.filter((n) => n.entityType === "country");
+  if (quickView === "leaders") return data.filter((n) => n.entityType === "leader");
+  if (quickView === "companies") return data.filter((n) => n.entityType === "company");
+  if (quickView === "influencers") {
+    return [...data].sort((a, b) => b.influence - a.influence).slice(0, 50);
+  }
+  return data;
 }
 
 export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngSeed = 1337, apiClient = null } = {}) {
@@ -236,21 +157,18 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     const horizon = Number(filters?.horizon || 30);
     const stepsInWindow = horizonToSteps(horizon);
     const inWindow = frames.slice(0, Math.max(1, Math.min(frames.length, stepsInWindow + 1)));
-    const eventCount = inWindow.reduce((acc, f) => acc + (f.events || []).length, 0);
-
-    const groups = frame?.snapshot?.groups || frame?.snapshot?.layers?.people || [];
-    const players = frame?.snapshot?.players || frame?.snapshot?.layers?.supernodes || [];
+    const eventCount = inWindow.reduce((acc, f) => acc + f.events.length, 0);
 
     return {
-      kpiRisk: `${toPct(frame?.kpis?.riskConflict)}%`,
-      kpiCritical: String(groups.filter((g) => scoreGroup(g) >= Number(filters?.riskThreshold || 40)).length),
-      kpiSupernodes: String(players.length),
+      kpiRisk: `${toPct(frame.kpis.riskConflict)}%`,
+      kpiCritical: String((frame.snapshot.groups || []).filter((g) => scoreGroup(g) >= Number(filters?.riskThreshold || 40)).length),
+      kpiSupernodes: String((frame.snapshot.players || []).length),
       kpiEvents: String(eventCount)
     };
   }
 
   function getDrivers(frame) {
-    const list = frame?.explainability?.topDrivers || [];
+    const list = frame.explainability?.topDrivers || [];
     const total = list.reduce((acc, d) => acc + Math.abs(d.signedImpact || 0), 0) || 1;
 
     return list.map((d) => {
@@ -265,18 +183,107 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     });
   }
 
-  function getNetwork(frame, level, filters) {
-    const network = buildLayerNetwork(frame?.snapshot || {});
-    let out = network[level] || [];
-    const query = String(filters?.query || "").toLowerCase().trim();
+  function makePeople(groups) {
+    return groups.map((g) => ({
+      id: g.id,
+      label: g.name,
+      entityType: inferEntityType("group", g),
+      region: normalizeRegion(g.region || g.country || "society"),
+      role: g.role || "Grupo social estratégico",
+      affiliations: ["Sociedade civil"],
+      risk: scoreGroup(g),
+      influence: scoreGroup(g) + toPct(g.mobilization || 0),
+      connections: [],
+      attrs: {
+        grievance: toPct(g.grievance),
+        mobilization: toPct(g.mobilization),
+        trustInstitutions: toPct(g.trustInstitutions),
+        size: Math.round(g.size * 100)
+      }
+    }));
+  }
 
-    if (filters?.region && filters.region !== "all") {
-      out = out.filter((n) => n.region === filters.region || (filters.region === "groups" && n.region === "groups"));
+  function makeSupernodes(players) {
+    return players.map((p) => ({
+      id: p.id,
+      label: p.name,
+      entityType: inferEntityType(p.type, p),
+      region: normalizeRegion(p.region || p.country || p.type),
+      role: p.role || p.title || p.type,
+      affiliations: [p.type, "Rede institucional"],
+      risk: scorePlayer(p),
+      influence: scorePlayer(p) + toPct(p.power || 0),
+      connections: [],
+      attrs: {
+        power: toPct(p.power),
+        cohesion: toPct(p.cohesion),
+        legitimacy: toPct(p.legitimacy),
+        resourceBase: toPct(p.resourceBase)
+      }
+    }));
+  }
+
+  function makeBlocks(relations) {
+    return relations.map((r, idx) => ({
+      id: `${r.source}->${r.target}-${idx}`,
+      label: `${r.source} → ${r.target}`,
+      entityType: "institution",
+      region: normalizeRegion(r.region || r.type),
+      role: "Conexão crítica",
+      affiliations: [r.type],
+      risk: scoreRelation(r),
+      influence: scoreRelation(r) + toPct(Math.abs(r.influence || 0)),
+      connections: [],
+      attrs: {
+        influence: Math.round(r.influence * 100),
+        volatility: toPct(r.volatility),
+        type: r.type
+      }
+    }));
+  }
+
+  function bindConnections(nodes, relations) {
+    const byId = new Map(nodes.map((n) => [n.id, n]));
+    for (const rel of relations || []) {
+      if (byId.has(rel.source) && byId.has(rel.target)) {
+        byId.get(rel.source).connections.push(rel.target);
+        byId.get(rel.target).connections.push(rel.source);
+      }
+    }
+    return nodes;
+  }
+
+  function getNetwork(frame, level, filters) {
+    const { groups = [], players = [], relations = [] } = frame.snapshot || {};
+
+    const people = bindConnections(makePeople(groups), []);
+    const supernodes = bindConnections(makeSupernodes(players), relations);
+    const blocks = makeBlocks(relations);
+
+    const data = { people, supernodes, blocks };
+    let out = data[level] || [];
+
+    if (filters?.entityType && filters.entityType !== "all") {
+      out = out.filter((n) => n.entityType === filters.entityType);
     }
 
+    if (filters?.region && filters.region !== "all") {
+      out = out.filter((n) => n.region === filters.region);
+    }
+
+    const query = String(filters?.query || "").toLowerCase().trim();
     if (query) out = out.filter((n) => JSON.stringify(n).toLowerCase().includes(query));
     if (filters?.riskThreshold != null) out = out.filter((n) => n.risk >= Number(filters.riskThreshold));
+
+    out = normalizeQuickView(out, filters?.quickView || "all");
     return out;
+  }
+
+  function getRegions(frame) {
+    const { groups = [], players = [], relations = [] } = frame.snapshot || {};
+    const set = new Set();
+    [...makePeople(groups), ...makeSupernodes(players), ...makeBlocks(relations)].forEach((n) => set.add(n.region));
+    return [...set].filter(Boolean).sort();
   }
 
   return {
@@ -286,6 +293,7 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     getKpiCards,
     getDrivers,
     getNetwork,
+    getRegions,
     getStatus() {
       return { mode };
     }

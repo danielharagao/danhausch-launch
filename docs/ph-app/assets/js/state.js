@@ -16,8 +16,9 @@ export const state = {
   },
   filters: {
     horizon: "30",
+    entityType: "all",
     region: "all",
-    segment: "all",
+    quickView: "all",
     riskThreshold: 0,
     query: ""
   }

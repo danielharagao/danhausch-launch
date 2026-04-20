@@ -26,6 +26,11 @@ export function initTabs() {
 export function initFilters() {
   const form = $("#filtersForm");
   const riskInput = form.querySelector('[name="riskThreshold"]');
+  const regionSelect = form.querySelector('[name="region"]');
+
+  const regions = state.adapter.getRegions(adapterFrame());
+  regionSelect.innerHTML = '<option value="all" selected>Todas</option>' + regions.map((r) => `<option value="${r}">${r}</option>`).join("");
+
   riskInput.value = String(state.filters.riskThreshold ?? 0);
   $("#riskThresholdValue").textContent = String(state.filters.riskThreshold ?? 0);
   riskInput.addEventListener("input", () => {
@@ -37,19 +42,30 @@ export function initFilters() {
     const data = new FormData(form);
     state.filters = {
       horizon: data.get("horizon"),
-      region: data.get("region"),
-      segment: data.get("segment"),
+      entityType: data.get("entityType") || "all",
+      region: data.get("region") || "all",
+      quickView: state.filters.quickView || "all",
       riskThreshold: Number(data.get("riskThreshold")),
       query: String(data.get("query") || "").toLowerCase().trim()
     };
     renderAll();
   });
 
+  const quickViews = $("#quickViews");
+  quickViews.querySelectorAll("button[data-quick]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.filters.quickView = btn.dataset.quick;
+      quickViews.querySelectorAll("button").forEach((el) => el.classList.toggle("is-active", el === btn));
+      renderAll();
+    });
+  });
+
   $("#resetFiltersBtn").addEventListener("click", () => {
     form.reset();
     riskInput.value = "0";
     $("#riskThresholdValue").textContent = "0";
-    state.filters = { horizon: "30", region: "all", segment: "all", riskThreshold: 0, query: "" };
+    state.filters = { horizon: "30", entityType: "all", region: "all", quickView: "all", riskThreshold: 0, query: "" };
+    quickViews.querySelectorAll("button").forEach((el) => el.classList.remove("is-active"));
     renderAll();
   });
 }
@@ -110,6 +126,14 @@ export function initNetwork() {
   renderNetwork();
 }
 
+function criticalConnectionsFor(node, data) {
+  return (node.connections || [])
+    .map((id) => data.find((n) => n.id === id))
+    .filter(Boolean)
+    .sort((a, b) => b.risk - a.risk)
+    .slice(0, 6);
+}
+
 export function renderNetwork() {
   const canvas = $("#networkCanvas");
   const detail = $("#networkDetail");
@@ -120,7 +144,7 @@ export function renderNetwork() {
     canvas.innerHTML = `<div class="muted">Sem nós para o filtro atual. Dica: clique em "Resetar" nos filtros.</div>`;
   } else {
     canvas.innerHTML = data
-      .map((node) => `<button class="network-node" data-id="${node.id}"><strong>${node.label}</strong><div class="meta">Risco ${node.risk}%</div></button>`)
+      .map((node) => `<button class="network-node" data-id="${node.id}"><strong>${node.label}</strong><div class="meta">${node.entityType} · ${node.region || "global"} · risco ${node.risk}%</div></button>`)
       .join("");
   }
 
@@ -130,11 +154,21 @@ export function renderNetwork() {
   canvas.querySelectorAll(".network-node").forEach((el) => {
     el.addEventListener("click", () => {
       const node = data.find((d) => d.id === el.dataset.id);
+      const critical = criticalConnectionsFor(node, data)
+        .map((n) => `<li>${n.label} <small>(risco ${n.risk}%)</small></li>`)
+        .join("");
+
+      const affiliations = (node.affiliations || []).map((x) => `<li>${x}</li>`).join("");
+
       detail.innerHTML = `
         <h3>${node.label}</h3>
-        <p>ID: ${node.id}</p>
-        <p>Risco: <strong>${node.risk}%</strong></p>
-        <p>Região/tipo: ${node.region || "n/a"}</p>
+        <p><strong>Papel:</strong> ${node.role || "n/a"}</p>
+        <p><strong>Tipo:</strong> ${node.entityType || "n/a"} · <strong>Região:</strong> ${node.region || "n/a"}</p>
+        <p><strong>Risco:</strong> ${node.risk}%</p>
+        <h4>Afiliações</h4>
+        <ul>${affiliations || "<li>Sem afiliações mapeadas.</li>"}</ul>
+        <h4>Conexões críticas</h4>
+        <ul>${critical || "<li>Sem conexões críticas no recorte atual.</li>"}</ul>
         <pre class="node-json">${JSON.stringify(node.attrs || {}, null, 2)}</pre>
         <div class="row">
           <button class="btn ghost" id="downBtn">Drill-down</button>
@@ -189,7 +223,7 @@ export function initPresets() {
     const selected = select.value;
     const preset = loadPresets().find((p) => p.name === selected);
     if (!preset) return;
-    state.filters = preset.filters;
+    state.filters = { ...state.filters, ...preset.filters };
     const form = $("#filtersForm");
     Object.entries(state.filters).forEach(([k, v]) => {
       if (form.elements[k]) form.elements[k].value = String(v);

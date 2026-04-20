@@ -33,24 +33,29 @@
           </select>
         </label>
 
-        <label>Recorte
-          <select name="region">
-            <option value="all" selected>Todos</option>
-            <option value="groups">Grupos sociais</option>
-            <option value="institution">Instituições</option>
-            <option value="political">Atores políticos</option>
-            <option value="economic">Atores econômicos</option>
-            <option value="security">Atores de segurança</option>
-            <option value="civil">Atores civis</option>
-            <option value="information">Atores de informação</option>
+        <label>Tipo de entidade
+          <select name="entityType">
+            <option value="all" selected>Todas</option>
+            <option value="country">country</option>
+            <option value="leader">leader</option>
+            <option value="person">person</option>
+            <option value="company">company</option>
+            <option value="institution">institution</option>
           </select>
         </label>
 
-        <label>Segmento
-          <select name="segment">
-            <option value="all" selected>Todos</option>
+        <label>Região
+          <select name="region">
+            <option value="all" selected>Todas</option>
           </select>
         </label>
+
+        <div class="quick-views" id="quickViews">
+          <button type="button" class="btn ghost" data-quick="countries">Só países</button>
+          <button type="button" class="btn ghost" data-quick="leaders">Só líderes</button>
+          <button type="button" class="btn ghost" data-quick="companies">Só empresas</button>
+          <button type="button" class="btn ghost" data-quick="influencers">Top 50 influenciadores</button>
+        </div>
 
         <label>Risco mínimo: <span id="riskThresholdValue">0</span>
           <input type="range" name="riskThreshold" min="0" max="100" value="0" />

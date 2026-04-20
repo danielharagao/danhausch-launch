@@ -21,9 +21,11 @@ A app `docs/ph-app/` agora opera em dois modos:
   - Expõe `getStatus()` com `mode: "api" | "local"`
 
 - `assets/js/ui.js` + `index.html`
-  - Nova seção **Conexão API** (Base URL, Token, Timeout)
-  - Botões **Salvar API** e **Testar**
-  - Indicação de modo atual
+  - Filtros diretos por tipo de entidade (`country`, `leader`, `person`, `company`, `institution`)
+  - Filtro dinâmico de região com base no snapshot real
+  - Quick views: **Só países**, **Só líderes**, **Só empresas**, **Top 50 influenciadores**
+  - Painel de detalhe enriquecido com papel, afiliações e conexões críticas
+  - Layout ajustado para mobile
 
 - `assets/js/main.js`
   - Inicializa `apiClient` antes do adapter

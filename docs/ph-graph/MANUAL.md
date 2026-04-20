@@ -8,9 +8,10 @@
 ## Uso rápido
 1. Abra `/ph-graph/`.
 2. Alterne camada (`people`, `supernodes`, `blocks`).
-3. Use zoom/pan.
-4. Clique no nó para detalhe lateral.
-5. Compare densidade e conexões entre camadas.
+3. Use filtros diretos por **tipo de entidade** (`country`, `leader`, `person`, `company`, `institution`) e **região**.
+4. Acione quick views: **Só países**, **Só líderes**, **Só empresas**, **Top 50 influenciadores**.
+5. Clique no nó para detalhe lateral (papel, afiliações e conexões críticas).
+6. Compare densidade e conexões entre camadas.
 
 ## Método analítico (curto)
 - **Descrever** rede atual

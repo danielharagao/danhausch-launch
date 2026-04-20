@@ -9,7 +9,7 @@
     "topbar topbar"
     "filters main";
 }
-.topbar { grid-area: topbar; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+.topbar { grid-area: topbar; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
 .filters { grid-area: filters; padding: 16px; align-self: start; position: sticky; top: 14px; }
 .main-content { grid-area: main; display: grid; gap: 16px; }
 
@@ -31,4 +31,10 @@
   }
   .filters { position: static; }
   .panel-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .app-shell { padding: 10px; gap: 10px; }
+  .topbar, .filters { padding: 12px; }
+  .panel-grid { grid-template-columns: 1fr; }
 }

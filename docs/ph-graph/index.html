@@ -28,6 +28,31 @@
       <label><input type="checkbox" data-layer="blocks" checked /> Blocos</label>
 
       <div class="section">
+        <h3>Filtros diretos</h3>
+        <label>Tipo de entidade
+          <select id="entityTypeFilter">
+            <option value="all" selected>Todas</option>
+            <option value="country">country</option>
+            <option value="leader">leader</option>
+            <option value="person">person</option>
+            <option value="company">company</option>
+            <option value="institution">institution</option>
+          </select>
+        </label>
+        <label>Região
+          <select id="regionFilter">
+            <option value="all" selected>Todas</option>
+          </select>
+        </label>
+        <div class="quick-views" id="quickViews">
+          <button class="btn ghost" data-quick="countries" type="button">Só países</button>
+          <button class="btn ghost" data-quick="leaders" type="button">Só líderes</button>
+          <button class="btn ghost" data-quick="companies" type="button">Só empresas</button>
+          <button class="btn ghost" data-quick="influencers" type="button">Top 50 influenciadores</button>
+        </div>
+      </div>
+
+      <div class="section">
         <h3>Métricas</h3>
         <div class="metrics">
           <article><span>Nós</span><strong id="metricNodes">--</strong></article>
