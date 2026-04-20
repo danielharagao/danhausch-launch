@@ -189,7 +189,7 @@
     },
     {
       "id": "lula",
-      "name": "Luiz Inácio Lula da Silva",
+      "name": "Luiz In\u00e1cio Lula da Silva",
       "type": "leader",
       "power": 0.74,
       "cohesion": 0.58,
@@ -755,7 +755,7 @@
     },
     {
       "id": "turkiye",
-      "name": "Türkiye",
+      "name": "T\u00fcrkiye",
       "type": "country",
       "power": 0.65,
       "cohesion": 0.56,
@@ -777,7 +777,7 @@
     },
     {
       "id": "tr_treasury",
-      "name": "Türkiye Treasury and Finance",
+      "name": "T\u00fcrkiye Treasury and Finance",
       "type": "institution",
       "power": 0.54,
       "cohesion": 0.56,
@@ -1391,1647 +1391,1475 @@
       "source": "albanese",
       "target": "australia",
       "type": "governanca",
-      "influence": 0.63,
-      "volatility": 0.36,
-      "pairType": "leader-country"
+      "pairType": "leader-country",
+      "influence": 0.64,
+      "volatility": 0.35,
+      "region": "global"
     },
     {
       "source": "arg_bcra",
       "target": "argentina",
       "type": "dependencia",
-      "influence": 0.62,
+      "pairType": "institution-country",
+      "influence": 0.63,
       "volatility": 0.31,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "arg_treasury",
       "target": "argentina",
       "type": "dependencia",
-      "influence": 0.54,
-      "volatility": 0.33,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.53,
+      "volatility": 0.34,
+      "region": "global"
     },
     {
       "source": "argentina",
       "target": "arg_bcra",
       "type": "governanca",
-      "influence": 0.5,
+      "pairType": "country-institution",
+      "influence": 0.51,
       "volatility": 0.34,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "argentina",
       "target": "arg_treasury",
       "type": "governanca",
-      "influence": 0.48,
+      "pairType": "country-institution",
+      "influence": 0.47,
       "volatility": 0.34,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "argentina",
       "target": "brazil",
       "type": "cooperacao",
-      "influence": 0.44,
-      "volatility": 0.36,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.45,
+      "volatility": 0.35,
+      "region": "global"
     },
     {
       "source": "argentina",
       "target": "china",
       "type": "dependencia",
-      "influence": 0.51,
-      "volatility": 0.39,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.52,
+      "volatility": 0.37,
+      "region": "global"
     },
     {
       "source": "argentina",
       "target": "imf",
       "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.43,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.59,
+      "volatility": 0.4,
+      "region": "global"
     },
     {
       "source": "aus_rba",
       "target": "australia",
       "type": "dependencia",
+      "pairType": "institution-country",
       "influence": 0.58,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "aus_treasury",
       "target": "australia",
       "type": "dependencia",
+      "pairType": "institution-country",
       "influence": 0.6,
-      "volatility": 0.32,
-      "pairType": "institution-country"
+      "volatility": 0.33,
+      "region": "global"
     },
     {
       "source": "australia",
       "target": "aus_rba",
       "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.33,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "australia",
       "target": "aus_treasury",
       "type": "governanca",
+      "pairType": "country-institution",
       "influence": 0.45,
       "volatility": 0.34,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "australia",
       "target": "china",
       "type": "dependencia",
+      "pairType": "country-country",
       "influence": 0.5,
-      "volatility": 0.41,
-      "pairType": "country-country"
+      "volatility": 0.38,
+      "region": "global"
     },
     {
       "source": "br_bcb",
       "target": "brazil",
       "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.3,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.59,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "br_fazenda",
       "target": "brazil",
       "type": "dependencia",
+      "pairType": "institution-country",
       "influence": 0.58,
-      "volatility": 0.32,
-      "pairType": "institution-country"
+      "volatility": 0.33,
+      "region": "global"
     },
     {
       "source": "brazil",
       "target": "argentina",
       "type": "cooperacao",
+      "pairType": "country-country",
       "influence": 0.46,
-      "volatility": 0.35,
-      "pairType": "country-country"
+      "volatility": 0.34,
+      "region": "global"
     },
     {
       "source": "brazil",
       "target": "br_bcb",
       "type": "governanca",
-      "influence": 0.52,
-      "volatility": 0.33,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.53,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "brazil",
       "target": "br_fazenda",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.32,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.3,
+      "region": "global"
     },
     {
       "source": "brazil",
       "target": "china",
       "type": "cooperacao",
-      "influence": 0.42,
-      "volatility": 0.33,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.41,
+      "volatility": 0.3,
+      "region": "global"
     },
     {
       "source": "ca_boc",
       "target": "canada",
       "type": "dependencia",
-      "influence": 0.64,
+      "pairType": "institution-country",
+      "influence": 0.65,
       "volatility": 0.29,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "ca_finance",
       "target": "canada",
       "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.32,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.34,
+      "region": "global"
     },
     {
       "source": "canada",
       "target": "ca_boc",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.33,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "canada",
       "target": "ca_finance",
       "type": "governanca",
-      "influence": 0.5,
+      "pairType": "country-institution",
+      "influence": 0.51,
       "volatility": 0.35,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "canada",
       "target": "mexico",
       "type": "cooperacao",
-      "influence": 0.35,
+      "pairType": "country-country",
+      "influence": 0.34,
       "volatility": 0.32,
-      "pairType": "country-country"
+      "region": "global"
     },
     {
       "source": "canada",
       "target": "us",
       "type": "dependencia",
-      "influence": 0.65,
-      "volatility": 0.28,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.66,
+      "volatility": 0.29,
+      "region": "global"
     },
     {
       "source": "carney",
       "target": "canada",
       "type": "governanca",
+      "pairType": "leader-country",
       "influence": 0.68,
-      "volatility": 0.34,
-      "pairType": "leader-country"
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "argentina",
       "type": "influencia",
-      "influence": 0.43,
-      "volatility": 0.4,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.44,
+      "volatility": 0.38,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "australia",
       "type": "influencia",
-      "influence": 0.44,
-      "volatility": 0.43,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.41,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "brazil",
       "type": "influencia",
-      "influence": 0.44,
+      "pairType": "country-country",
+      "influence": 0.43,
       "volatility": 0.38,
-      "pairType": "country-country"
+      "region": "global"
     },
     {
       "source": "china",
       "target": "cn_ndrc",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.34,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.35,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "cn_pbc",
       "type": "governanca",
+      "pairType": "country-institution",
       "influence": 0.51,
-      "volatility": 0.31,
-      "pairType": "country-institution"
+      "volatility": 0.3,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "india",
       "type": "rivalidade",
-      "influence": -0.46,
-      "volatility": 0.55,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": -0.45,
+      "volatility": 0.56,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "indonesia",
       "type": "influencia",
-      "influence": 0.46,
-      "volatility": 0.38,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.45,
+      "volatility": 0.36,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "japan",
       "type": "rivalidade",
-      "influence": -0.45,
-      "volatility": 0.54,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": -0.46,
+      "volatility": 0.56,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "russia",
       "type": "cooperacao",
+      "pairType": "country-country",
       "influence": 0.44,
-      "volatility": 0.37,
-      "pairType": "country-country"
+      "volatility": 0.34,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "saudi",
       "type": "cooperacao",
-      "influence": 0.42,
+      "pairType": "country-country",
+      "influence": 0.43,
       "volatility": 0.33,
-      "pairType": "country-country"
+      "region": "global"
+    },
+    {
+      "source": "china",
+      "target": "sco",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.56,
+      "volatility": 0.34,
+      "region": "eurasia"
     },
     {
       "source": "china",
       "target": "southafrica",
       "type": "influencia",
+      "pairType": "country-country",
       "influence": 0.41,
-      "volatility": 0.37,
-      "pairType": "country-country"
+      "volatility": 0.35,
+      "region": "global"
     },
     {
       "source": "china",
       "target": "us",
       "type": "rivalidade",
-      "influence": -0.73,
+      "pairType": "country-country",
+      "influence": -0.74,
       "volatility": 0.61,
-      "pairType": "country-country"
+      "region": "global"
     },
     {
       "source": "cn_ndrc",
       "target": "china",
       "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.31,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "cn_pbc",
       "target": "china",
       "type": "dependencia",
-      "influence": 0.63,
-      "volatility": 0.32,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.64,
+      "volatility": 0.33,
+      "region": "global"
     },
     {
       "source": "de_buba",
       "target": "germany",
       "type": "dependencia",
-      "influence": 0.55,
-      "volatility": 0.3,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "de_finance",
       "target": "germany",
       "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.3,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "ec",
       "target": "eu-country",
       "type": "dependencia",
-      "influence": 0.57,
+      "pairType": "institution-country",
+      "influence": 0.58,
       "volatility": 0.29,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "ecb",
       "target": "eu-country",
       "type": "dependencia",
-      "influence": 0.6,
+      "pairType": "institution-country",
+      "influence": 0.61,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
+    },
+    {
+      "source": "eg_cbe",
+      "target": "egypt",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.32,
+      "region": "middle-east"
+    },
+    {
+      "source": "eg_mof",
+      "target": "egypt",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.56,
+      "volatility": 0.33,
+      "region": "middle-east"
+    },
+    {
+      "source": "egypt",
+      "target": "arab_league",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.56,
+      "volatility": 0.34,
+      "region": "middle-east"
+    },
+    {
+      "source": "egypt",
+      "target": "eg_cbe",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.34,
+      "region": "middle-east"
+    },
+    {
+      "source": "egypt",
+      "target": "eg_mof",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.34,
+      "region": "middle-east"
+    },
+    {
+      "source": "egypt",
+      "target": "imf",
+      "type": "dependencia",
+      "pairType": "country-institution",
+      "influence": 0.62,
+      "volatility": 0.42,
+      "region": "middle-east"
     },
     {
       "source": "erdogan",
       "target": "turkiye",
       "type": "governanca",
-      "influence": 0.7,
-      "volatility": 0.36,
-      "pairType": "leader-country"
+      "pairType": "leader-country",
+      "influence": 0.69,
+      "volatility": 0.34,
+      "region": "global"
     },
     {
       "source": "eu",
       "target": "g20",
       "type": "cooperacao",
+      "pairType": "institution-institution",
       "influence": 0.55,
-      "volatility": 0.24,
-      "pairType": "institution-institution"
+      "volatility": 0.25,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "ec",
       "type": "governanca",
+      "pairType": "country-institution",
       "influence": 0.48,
-      "volatility": 0.35,
-      "pairType": "country-institution"
+      "volatility": 0.36,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "ecb",
       "type": "dependencia",
-      "influence": 0.69,
-      "volatility": 0.29,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.68,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "france",
       "type": "governanca",
+      "pairType": "country-country",
       "influence": 0.55,
-      "volatility": 0.27,
-      "pairType": "country-country"
+      "volatility": 0.29,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "germany",
       "type": "governanca",
-      "influence": 0.6,
-      "volatility": 0.25,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.61,
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "italy",
       "type": "governanca",
-      "influence": 0.54,
-      "volatility": 0.29,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.55,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "russia",
       "type": "rivalidade",
-      "influence": -0.6,
-      "volatility": 0.58,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": -0.61,
+      "volatility": 0.59,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "turkiye",
       "type": "influencia",
+      "pairType": "country-country",
       "influence": 0.42,
-      "volatility": 0.42,
-      "pairType": "country-country"
+      "volatility": 0.4,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "uk",
       "type": "cooperacao",
-      "influence": 0.41,
-      "volatility": 0.35,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.4,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "eu-country",
       "target": "us",
       "type": "cooperacao",
-      "influence": 0.61,
-      "volatility": 0.34,
-      "pairType": "country-country"
+      "pairType": "country-country",
+      "influence": 0.6,
+      "volatility": 0.33,
+      "region": "global"
     },
     {
       "source": "fr_bdf",
       "target": "france",
       "type": "dependencia",
-      "influence": 0.58,
-      "volatility": 0.31,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "fr_finance",
       "target": "france",
       "type": "dependencia",
-      "influence": 0.59,
+      "pairType": "institution-country",
+      "influence": 0.6,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "france",
       "target": "eu-country",
       "type": "cooperacao",
-      "influence": 0.53,
+      "pairType": "country-country",
+      "influence": 0.52,
       "volatility": 0.25,
-      "pairType": "country-country"
+      "region": "global"
     },
     {
       "source": "france",
       "target": "fr_bdf",
       "type": "governanca",
-      "influence": 0.47,
-      "volatility": 0.34,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.46,
+      "volatility": 0.35,
+      "region": "global"
     },
     {
       "source": "france",
       "target": "fr_finance",
       "type": "governanca",
-      "influence": 0.48,
+      "pairType": "country-institution",
+      "influence": 0.47,
       "volatility": 0.34,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "argentina",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.46,
-      "volatility": 0.29,
-      "pairType": "institution-country"
+      "volatility": 0.28,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "australia",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.47,
-      "volatility": 0.27,
-      "pairType": "institution-country"
+      "volatility": 0.26,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "brazil",
       "type": "cooperacao",
-      "influence": 0.45,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.44,
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "canada",
       "type": "cooperacao",
-      "influence": 0.44,
+      "pairType": "institution-country",
+      "influence": 0.43,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "china",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.46,
-      "volatility": 0.29,
-      "pairType": "institution-country"
+      "volatility": 0.28,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "eu-country",
       "type": "cooperacao",
-      "influence": 0.48,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.49,
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "france",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.47,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "germany",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.47,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "imf",
       "type": "cooperacao",
-      "influence": 0.59,
-      "volatility": 0.25,
-      "pairType": "institution-institution"
+      "pairType": "institution-institution",
+      "influence": 0.6,
+      "volatility": 0.26,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "india",
       "type": "cooperacao",
-      "influence": 0.47,
-      "volatility": 0.31,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.48,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "indonesia",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.45,
       "volatility": 0.31,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "italy",
       "type": "cooperacao",
-      "influence": 0.44,
-      "volatility": 0.31,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.43,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "japan",
       "type": "cooperacao",
-      "influence": 0.46,
+      "pairType": "institution-country",
+      "influence": 0.47,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "mexico",
       "type": "cooperacao",
-      "influence": 0.48,
+      "pairType": "institution-country",
+      "influence": 0.49,
       "volatility": 0.31,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "russia",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.44,
-      "volatility": 0.29,
-      "pairType": "institution-country"
+      "volatility": 0.28,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "saudi",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.46,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "southafrica",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.44,
-      "volatility": 0.3,
-      "pairType": "institution-country"
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "southkorea",
       "type": "cooperacao",
-      "influence": 0.43,
+      "pairType": "institution-country",
+      "influence": 0.42,
       "volatility": 0.3,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "turkiye",
       "type": "cooperacao",
-      "influence": 0.44,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.43,
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "uk",
       "type": "cooperacao",
-      "influence": 0.48,
-      "volatility": 0.28,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.49,
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "us",
       "type": "cooperacao",
+      "pairType": "institution-country",
       "influence": 0.49,
-      "volatility": 0.29,
-      "pairType": "institution-country"
+      "volatility": 0.27,
+      "region": "global"
     },
     {
       "source": "g20",
       "target": "worldbank",
       "type": "cooperacao",
-      "influence": 0.55,
-      "volatility": 0.25,
-      "pairType": "institution-institution"
+      "pairType": "institution-institution",
+      "influence": 0.56,
+      "volatility": 0.27,
+      "region": "global"
+    },
+    {
+      "source": "gazprom",
+      "target": "russia",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.7,
+      "volatility": 0.39,
+      "region": "russia"
     },
     {
       "source": "germany",
       "target": "de_buba",
       "type": "governanca",
+      "pairType": "country-institution",
       "influence": 0.5,
       "volatility": 0.33,
-      "pairType": "country-institution"
+      "region": "global"
     },
     {
       "source": "germany",
       "target": "de_finance",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.32,
-      "pairType": "country-institution"
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.31,
+      "region": "global"
     },
     {
       "source": "germany",
       "target": "eu-country",
       "type": "cooperacao",
+      "pairType": "country-country",
       "influence": 0.58,
-      "volatility": 0.26,
-      "pairType": "country-country"
+      "volatility": 0.28,
+      "region": "global"
     },
     {
       "source": "id_bi",
       "target": "indonesia",
       "type": "dependencia",
-      "influence": 0.54,
-      "volatility": 0.31,
-      "pairType": "institution-country"
+      "pairType": "institution-country",
+      "influence": 0.53,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "id_finance",
       "target": "indonesia",
       "type": "dependencia",
-      "influence": 0.56,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "imf",
-      "target": "argentina",
-      "type": "governanca",
-      "influence": 0.45,
-      "volatility": 0.38,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "in_finance",
-      "target": "india",
-      "type": "dependencia",
-      "influence": 0.59,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "in_rbi",
-      "target": "india",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "india",
-      "target": "china",
-      "type": "rivalidade",
-      "influence": -0.52,
-      "volatility": 0.58,
-      "pairType": "country-country"
-    },
-    {
-      "source": "india",
-      "target": "in_finance",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "india",
-      "target": "in_rbi",
-      "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "india",
-      "target": "indonesia",
-      "type": "cooperacao",
-      "influence": 0.39,
-      "volatility": 0.35,
-      "pairType": "country-country"
-    },
-    {
-      "source": "india",
-      "target": "russia",
-      "type": "cooperacao",
-      "influence": 0.42,
-      "volatility": 0.36,
-      "pairType": "country-country"
-    },
-    {
-      "source": "india",
-      "target": "saudi",
-      "type": "dependencia",
-      "influence": 0.51,
-      "volatility": 0.37,
-      "pairType": "country-country"
-    },
-    {
-      "source": "indonesia",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.54,
-      "volatility": 0.37,
-      "pairType": "country-country"
-    },
-    {
-      "source": "indonesia",
-      "target": "id_bi",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "indonesia",
-      "target": "id_finance",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.32,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "indonesia",
-      "target": "india",
-      "type": "cooperacao",
-      "influence": 0.37,
-      "volatility": 0.35,
-      "pairType": "country-country"
-    },
-    {
-      "source": "indonesia",
-      "target": "wto",
-      "type": "cooperacao",
-      "influence": 0.42,
-      "volatility": 0.27,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "ishiba",
-      "target": "japan",
-      "type": "governanca",
-      "influence": 0.62,
-      "volatility": 0.35,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "it_bdi",
-      "target": "italy",
-      "type": "dependencia",
-      "influence": 0.55,
-      "volatility": 0.29,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "it_mef",
-      "target": "italy",
-      "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.33,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "italy",
-      "target": "eu-country",
-      "type": "cooperacao",
-      "influence": 0.48,
-      "volatility": 0.29,
-      "pairType": "country-country"
-    },
-    {
-      "source": "italy",
-      "target": "it_bdi",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "italy",
-      "target": "it_mef",
-      "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.32,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "japan",
-      "target": "china",
-      "type": "rivalidade",
-      "influence": -0.4,
-      "volatility": 0.53,
-      "pairType": "country-country"
-    },
-    {
-      "source": "japan",
-      "target": "jp_boj",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "japan",
-      "target": "jp_mof",
-      "type": "governanca",
-      "influence": 0.51,
-      "volatility": 0.32,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "japan",
-      "target": "southkorea",
-      "type": "cooperacao",
-      "influence": 0.35,
-      "volatility": 0.38,
-      "pairType": "country-country"
-    },
-    {
-      "source": "japan",
-      "target": "us",
-      "type": "cooperacao",
-      "influence": 0.61,
-      "volatility": 0.26,
-      "pairType": "country-country"
-    },
-    {
-      "source": "japan",
-      "target": "wto",
-      "type": "cooperacao",
-      "influence": 0.45,
-      "volatility": 0.26,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "jp_boj",
-      "target": "japan",
-      "type": "dependencia",
-      "influence": 0.64,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "jp_mof",
-      "target": "japan",
-      "type": "dependencia",
-      "influence": 0.56,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "kr_bok",
-      "target": "southkorea",
-      "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "kr_mof",
-      "target": "southkorea",
-      "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.33,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "leejm",
-      "target": "southkorea",
-      "type": "governanca",
-      "influence": 0.64,
-      "volatility": 0.38,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "lula",
-      "target": "brazil",
-      "type": "governanca",
-      "influence": 0.72,
-      "volatility": 0.38,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "macron",
-      "target": "france",
-      "type": "governanca",
-      "influence": 0.64,
-      "volatility": 0.36,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "mbs",
-      "target": "saudi",
-      "type": "governanca",
-      "influence": 0.8,
-      "volatility": 0.3,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "meloni",
-      "target": "italy",
-      "type": "governanca",
-      "influence": 0.7,
-      "volatility": 0.35,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "merz",
-      "target": "germany",
-      "type": "governanca",
-      "influence": 0.59,
-      "volatility": 0.35,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "mexico",
-      "target": "canada",
-      "type": "cooperacao",
-      "influence": 0.35,
-      "volatility": 0.29,
-      "pairType": "country-country"
-    },
-    {
-      "source": "mexico",
-      "target": "mx_banxico",
-      "type": "governanca",
-      "influence": 0.52,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "mexico",
-      "target": "mx_hacienda",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "mexico",
-      "target": "us",
-      "type": "dependencia",
-      "influence": 0.68,
-      "volatility": 0.39,
-      "pairType": "country-country"
-    },
-    {
-      "source": "milei",
-      "target": "argentina",
-      "type": "governanca",
-      "influence": 0.65,
-      "volatility": 0.42,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "modi",
-      "target": "india",
-      "type": "governanca",
-      "influence": 0.77,
-      "volatility": 0.32,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "mx_banxico",
-      "target": "mexico",
-      "type": "dependencia",
-      "influence": 0.54,
-      "volatility": 0.3,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "mx_hacienda",
-      "target": "mexico",
-      "type": "dependencia",
-      "influence": 0.58,
-      "volatility": 0.3,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "opec",
-      "target": "g20",
-      "type": "influencia",
-      "influence": 0.53,
-      "volatility": 0.4,
-      "pairType": "institution-institution"
-    },
-    {
-      "source": "prabowo",
-      "target": "indonesia",
-      "type": "governanca",
-      "influence": 0.66,
-      "volatility": 0.34,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "putin",
-      "target": "russia",
-      "type": "governanca",
-      "influence": 0.79,
-      "volatility": 0.32,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "ramaphosa",
-      "target": "southafrica",
-      "type": "governanca",
-      "influence": 0.61,
-      "volatility": 0.38,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "ru_cbr",
-      "target": "russia",
-      "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "ru_finance",
-      "target": "russia",
-      "type": "dependencia",
-      "influence": 0.58,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "russia",
-      "target": "china",
-      "type": "cooperacao",
-      "influence": 0.46,
-      "volatility": 0.34,
-      "pairType": "country-country"
-    },
-    {
-      "source": "russia",
-      "target": "eu-country",
-      "type": "rivalidade",
-      "influence": -0.56,
-      "volatility": 0.58,
-      "pairType": "country-country"
-    },
-    {
-      "source": "russia",
-      "target": "india",
-      "type": "cooperacao",
-      "influence": 0.43,
-      "volatility": 0.36,
-      "pairType": "country-country"
-    },
-    {
-      "source": "russia",
-      "target": "ru_cbr",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "russia",
-      "target": "ru_finance",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "russia",
-      "target": "us",
-      "type": "rivalidade",
-      "influence": -0.66,
-      "volatility": 0.56,
-      "pairType": "country-country"
-    },
-    {
-      "source": "sa_mof",
-      "target": "saudi",
-      "type": "dependencia",
-      "influence": 0.56,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "sa_sama",
-      "target": "saudi",
-      "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.29,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "saudi",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.5,
-      "volatility": 0.33,
-      "pairType": "country-country"
-    },
-    {
-      "source": "saudi",
-      "target": "india",
-      "type": "dependencia",
-      "influence": 0.54,
-      "volatility": 0.37,
-      "pairType": "country-country"
-    },
-    {
-      "source": "saudi",
-      "target": "sa_mof",
-      "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "saudi",
-      "target": "sa_sama",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "sheinbaum",
-      "target": "mexico",
-      "type": "governanca",
-      "influence": 0.66,
-      "volatility": 0.39,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "southafrica",
-      "target": "au",
-      "type": "governanca",
-      "influence": 0.45,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "southafrica",
-      "target": "china",
-      "type": "cooperacao",
-      "influence": 0.38,
-      "volatility": 0.33,
-      "pairType": "country-country"
-    },
-    {
-      "source": "southafrica",
-      "target": "za_sarb",
-      "type": "governanca",
-      "influence": 0.51,
-      "volatility": 0.32,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "southafrica",
-      "target": "za_treasury",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "southkorea",
-      "target": "japan",
-      "type": "cooperacao",
-      "influence": 0.35,
-      "volatility": 0.4,
-      "pairType": "country-country"
-    },
-    {
-      "source": "southkorea",
-      "target": "kr_bok",
-      "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.35,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "southkorea",
-      "target": "kr_mof",
-      "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "southkorea",
-      "target": "us",
-      "type": "cooperacao",
-      "influence": 0.59,
-      "volatility": 0.29,
-      "pairType": "country-country"
-    },
-    {
-      "source": "starmer",
-      "target": "uk",
-      "type": "governanca",
-      "influence": 0.6,
-      "volatility": 0.35,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "tr_cbrt",
-      "target": "turkiye",
-      "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.3,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "tr_treasury",
-      "target": "turkiye",
-      "type": "dependencia",
-      "influence": 0.59,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "trump",
-      "target": "us",
-      "type": "governanca",
-      "influence": 0.78,
-      "volatility": 0.4,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "turkiye",
-      "target": "eu-country",
-      "type": "cooperacao",
-      "influence": 0.37,
-      "volatility": 0.41,
-      "pairType": "country-country"
-    },
-    {
-      "source": "turkiye",
-      "target": "nato",
-      "type": "cooperacao",
-      "influence": 0.42,
-      "volatility": 0.4,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "turkiye",
-      "target": "tr_cbrt",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "turkiye",
-      "target": "tr_treasury",
-      "type": "governanca",
-      "influence": 0.48,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "uk",
-      "target": "eu-country",
-      "type": "cooperacao",
-      "influence": 0.37,
-      "volatility": 0.36,
-      "pairType": "country-country"
-    },
-    {
-      "source": "uk",
-      "target": "uk_boe",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.32,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "uk",
-      "target": "uk_hmt",
-      "type": "governanca",
-      "influence": 0.51,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "uk_boe",
-      "target": "uk",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.33,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "uk_hmt",
-      "target": "uk",
-      "type": "dependencia",
+      "pairType": "institution-country",
       "influence": 0.56,
       "volatility": 0.33,
-      "pairType": "institution-country"
+      "region": "global"
     },
     {
-      "source": "un",
-      "target": "g20",
-      "type": "governanca",
-      "influence": 0.47,
-      "volatility": 0.3,
-      "pairType": "institution-institution"
-    },
-    {
-      "source": "us",
-      "target": "canada",
-      "type": "cooperacao",
-      "influence": 0.55,
-      "volatility": 0.25,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "china",
-      "type": "rivalidade",
-      "influence": -0.73,
-      "volatility": 0.64,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "eu-country",
-      "type": "cooperacao",
-      "influence": 0.62,
-      "volatility": 0.32,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "japan",
-      "type": "cooperacao",
-      "influence": 0.6,
-      "volatility": 0.26,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "mexico",
-      "type": "influencia",
-      "influence": 0.54,
-      "volatility": 0.38,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "nato",
-      "type": "governanca",
-      "influence": 0.59,
-      "volatility": 0.31,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "us",
-      "target": "russia",
-      "type": "rivalidade",
-      "influence": -0.7,
-      "volatility": 0.61,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "southkorea",
-      "type": "cooperacao",
-      "influence": 0.58,
-      "volatility": 0.29,
-      "pairType": "country-country"
-    },
-    {
-      "source": "us",
-      "target": "us_fed",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.34,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "us",
-      "target": "us_treasury",
-      "type": "governanca",
-      "influence": 0.51,
-      "volatility": 0.33,
-      "pairType": "country-institution"
-    },
-    {
-      "source": "us_fed",
-      "target": "us",
-      "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.31,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "us_treasury",
-      "target": "us",
-      "type": "dependencia",
-      "influence": 0.58,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "vonderleyen",
-      "target": "eu-country",
-      "type": "governanca",
-      "influence": 0.57,
-      "volatility": 0.36,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "wto",
-      "target": "g20",
-      "type": "governanca",
-      "influence": 0.46,
-      "volatility": 0.31,
-      "pairType": "institution-institution"
-    },
-    {
-      "source": "xi",
-      "target": "china",
-      "type": "governanca",
-      "influence": 0.86,
-      "volatility": 0.33,
-      "pairType": "leader-country"
-    },
-    {
-      "source": "za_sarb",
-      "target": "southafrica",
-      "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "za_treasury",
-      "target": "southafrica",
-      "type": "dependencia",
-      "influence": 0.58,
-      "volatility": 0.32,
-      "pairType": "institution-country"
-    },
-    {
-      "source": "netanyahu",
+      "source": "il_boi",
       "target": "israel",
-      "type": "governanca",
-      "influence": 0.79,
-      "volatility": 0.46,
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.61,
+      "volatility": 0.33,
       "region": "middle-east"
     },
     {
       "source": "il_mof",
       "target": "israel",
       "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.31,
+      "pairType": "institution-country",
+      "influence": 0.56,
+      "volatility": 0.32,
       "region": "middle-east"
     },
     {
-      "source": "israel",
-      "target": "il_mof",
+      "source": "imf",
+      "target": "argentina",
       "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.34,
+      "pairType": "institution-country",
+      "influence": 0.45,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "imf",
+      "target": "egypt",
+      "type": "governanca",
+      "pairType": "institution-country",
+      "influence": 0.46,
+      "volatility": 0.39,
       "region": "middle-east"
     },
     {
-      "source": "il_boi",
-      "target": "israel",
+      "source": "in_finance",
+      "target": "india",
       "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.31,
-      "region": "middle-east"
-    },
-    {
-      "source": "israel",
-      "target": "il_boi",
-      "type": "governanca",
-      "influence": 0.49,
+      "pairType": "institution-country",
+      "influence": 0.59,
       "volatility": 0.34,
-      "region": "middle-east"
+      "region": "global"
     },
     {
-      "source": "khamenei",
-      "target": "iran",
+      "source": "in_rbi",
+      "target": "india",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.61,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "china",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.53,
+      "volatility": 0.6,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "in_finance",
       "type": "governanca",
-      "influence": 0.82,
-      "volatility": 0.41,
+      "pairType": "country-institution",
+      "influence": 0.5,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "in_rbi",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.5,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "indonesia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.4,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "india",
+      "target": "saudi",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.52,
+      "volatility": 0.38,
+      "region": "global"
+    },
+    {
+      "source": "indonesia",
+      "target": "china",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.55,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "indonesia",
+      "target": "id_bi",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "indonesia",
+      "target": "id_finance",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "indonesia",
+      "target": "india",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.38,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "indonesia",
+      "target": "wto",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.42,
+      "volatility": 0.26,
+      "region": "global"
+    },
+    {
+      "source": "ir_cbi",
+      "target": "iran",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.35,
       "region": "middle-east"
     },
     {
       "source": "ir_moea",
       "target": "iran",
       "type": "dependencia",
-      "influence": 0.56,
+      "pairType": "institution-country",
+      "influence": 0.55,
       "volatility": 0.33,
-      "region": "middle-east"
-    },
-    {
-      "source": "iran",
-      "target": "ir_moea",
-      "type": "governanca",
-      "influence": 0.47,
-      "volatility": 0.36,
-      "region": "middle-east"
-    },
-    {
-      "source": "ir_cbi",
-      "target": "iran",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.34,
       "region": "middle-east"
     },
     {
       "source": "iran",
       "target": "ir_cbi",
       "type": "governanca",
-      "influence": 0.46,
-      "volatility": 0.37,
+      "pairType": "country-institution",
+      "influence": 0.45,
+      "volatility": 0.35,
       "region": "middle-east"
     },
     {
-      "source": "mbz",
-      "target": "uae",
+      "source": "iran",
+      "target": "ir_moea",
       "type": "governanca",
-      "influence": 0.76,
-      "volatility": 0.29,
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.35,
       "region": "middle-east"
     },
     {
-      "source": "uae_mof",
-      "target": "uae",
-      "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.3,
+      "source": "iran",
+      "target": "israel",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.72,
+      "volatility": 0.69,
       "region": "middle-east"
     },
     {
-      "source": "uae",
-      "target": "uae_mof",
+      "source": "iran",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.48,
+      "volatility": 0.4,
+      "region": "eurasia"
+    },
+    {
+      "source": "iran",
+      "target": "saudi",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.41,
+      "volatility": 0.58,
+      "region": "middle-east"
+    },
+    {
+      "source": "iran",
+      "target": "sco",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.34,
+      "region": "eurasia"
+    },
+    {
+      "source": "ishiba",
+      "target": "japan",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.32,
-      "region": "middle-east"
+      "pairType": "leader-country",
+      "influence": 0.63,
+      "volatility": 0.33,
+      "region": "global"
     },
     {
-      "source": "uae_cbu",
-      "target": "uae",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.29,
-      "region": "middle-east"
-    },
-    {
-      "source": "uae",
-      "target": "uae_cbu",
+      "source": "israel",
+      "target": "il_boi",
       "type": "governanca",
-      "influence": 0.5,
-      "volatility": 0.31,
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.34,
       "region": "middle-east"
     },
     {
-      "source": "tamim",
-      "target": "qatar",
+      "source": "israel",
+      "target": "il_mof",
       "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.33,
+      "region": "middle-east"
+    },
+    {
+      "source": "israel",
+      "target": "us",
+      "type": "cooperacao",
+      "pairType": "country-country",
       "influence": 0.72,
       "volatility": 0.31,
       "region": "middle-east"
     },
     {
+      "source": "it_bdi",
+      "target": "italy",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "it_mef",
+      "target": "italy",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "italy",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.49,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "italy",
+      "target": "it_bdi",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "italy",
+      "target": "it_mef",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "china",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.4,
+      "volatility": 0.55,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "jp_boj",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "jp_mof",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.52,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "southkorea",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.35,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "us",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.61,
+      "volatility": 0.26,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "wto",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.44,
+      "volatility": 0.28,
+      "region": "global"
+    },
+    {
+      "source": "jp_boj",
+      "target": "japan",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.64,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "jp_mof",
+      "target": "japan",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.55,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "khamenei",
+      "target": "iran",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.81,
+      "volatility": 0.39,
+      "region": "middle-east"
+    },
+    {
+      "source": "kr_bok",
+      "target": "southkorea",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.59,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "kr_mof",
+      "target": "southkorea",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "leejm",
+      "target": "southkorea",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.64,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "lula",
+      "target": "brazil",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.72,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "macron",
+      "target": "france",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.63,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "mbs",
+      "target": "saudi",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.8,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "mbz",
+      "target": "uae",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.77,
+      "volatility": 0.29,
+      "region": "middle-east"
+    },
+    {
+      "source": "meloni",
+      "target": "italy",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.7,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "merz",
+      "target": "germany",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.58,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "mexico",
+      "target": "canada",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.34,
+      "volatility": 0.27,
+      "region": "global"
+    },
+    {
+      "source": "mexico",
+      "target": "mx_banxico",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.53,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "mexico",
+      "target": "mx_hacienda",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "mexico",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.69,
+      "volatility": 0.38,
+      "region": "global"
+    },
+    {
+      "source": "milei",
+      "target": "argentina",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.65,
+      "volatility": 0.4,
+      "region": "global"
+    },
+    {
+      "source": "modi",
+      "target": "india",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.77,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "mx_banxico",
+      "target": "mexico",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.53,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "mx_hacienda",
+      "target": "mexico",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.59,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "netanyahu",
+      "target": "israel",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.78,
+      "volatility": 0.4,
+      "region": "middle-east"
+    },
+    {
+      "source": "opec",
+      "target": "g20",
+      "type": "influencia",
+      "pairType": "institution-institution",
+      "influence": 0.53,
+      "volatility": 0.39,
+      "region": "global"
+    },
+    {
+      "source": "prabowo",
+      "target": "indonesia",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.65,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "putin",
+      "target": "ru_security_council",
+      "type": "governanca",
+      "pairType": "leader-institution",
+      "influence": 0.76,
+      "volatility": 0.33,
+      "region": "russia"
+    },
+    {
+      "source": "putin",
+      "target": "russia",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.78,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
       "source": "qa_finance",
       "target": "qatar",
       "type": "dependencia",
-      "influence": 0.56,
+      "pairType": "institution-country",
+      "influence": 0.55,
+      "volatility": 0.31,
+      "region": "middle-east"
+    },
+    {
+      "source": "qa_qcb",
+      "target": "qatar",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.32,
+      "region": "middle-east"
+    },
+    {
+      "source": "qatar",
+      "target": "eu-country",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.52,
+      "volatility": 0.35,
+      "region": "middle-east"
+    },
+    {
+      "source": "qatar",
+      "target": "gcc",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.52,
       "volatility": 0.3,
       "region": "middle-east"
     },
@@ -3039,289 +2867,703 @@
       "source": "qatar",
       "target": "qa_finance",
       "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.32,
-      "region": "middle-east"
-    },
-    {
-      "source": "qa_qcb",
-      "target": "qatar",
-      "type": "dependencia",
-      "influence": 0.6,
-      "volatility": 0.29,
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.33,
       "region": "middle-east"
     },
     {
       "source": "qatar",
       "target": "qa_qcb",
       "type": "governanca",
+      "pairType": "country-institution",
       "influence": 0.49,
-      "volatility": 0.31,
+      "volatility": 0.3,
       "region": "middle-east"
     },
     {
-      "source": "sisi",
-      "target": "egypt",
+      "source": "ramaphosa",
+      "target": "southafrica",
       "type": "governanca",
-      "influence": 0.75,
-      "volatility": 0.43,
-      "region": "middle-east"
-    },
-    {
-      "source": "eg_mof",
-      "target": "egypt",
-      "type": "dependencia",
-      "influence": 0.57,
-      "volatility": 0.33,
-      "region": "middle-east"
-    },
-    {
-      "source": "egypt",
-      "target": "eg_mof",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.35,
-      "region": "middle-east"
-    },
-    {
-      "source": "eg_cbe",
-      "target": "egypt",
-      "type": "dependencia",
+      "pairType": "leader-country",
       "influence": 0.62,
-      "volatility": 0.32,
-      "region": "middle-east"
+      "volatility": 0.35,
+      "region": "global"
     },
     {
-      "source": "egypt",
-      "target": "eg_cbe",
-      "type": "governanca",
-      "influence": 0.49,
-      "volatility": 0.34,
-      "region": "middle-east"
-    },
-    {
-      "source": "putin",
-      "target": "ru_security_council",
-      "type": "governanca",
-      "influence": 0.76,
-      "volatility": 0.34,
-      "region": "russia"
-    },
-    {
-      "source": "ru_security_council",
+      "source": "ru_cbr",
       "target": "russia",
-      "type": "seguranca",
-      "influence": 0.68,
-      "volatility": 0.46,
-      "region": "russia"
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.59,
+      "volatility": 0.32,
+      "region": "global"
     },
     {
       "source": "ru_energy_min",
       "target": "russia",
       "type": "dependencia",
-      "influence": 0.66,
+      "pairType": "institution-country",
+      "influence": 0.65,
       "volatility": 0.38,
       "region": "russia"
     },
     {
-      "source": "gazprom",
+      "source": "ru_finance",
       "target": "russia",
-      "type": "energia",
-      "influence": 0.71,
-      "volatility": 0.42,
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "ru_security_council",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.67,
+      "volatility": 0.38,
       "region": "russia"
+    },
+    {
+      "source": "russia",
+      "target": "china",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.45,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "russia",
+      "target": "eu-country",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.55,
+      "volatility": 0.59,
+      "region": "global"
     },
     {
       "source": "russia",
       "target": "gazprom",
       "type": "governanca",
-      "influence": 0.62,
-      "volatility": 0.37,
+      "pairType": "country-company",
+      "influence": 0.63,
+      "volatility": 0.36,
       "region": "russia"
     },
     {
-      "source": "saudi",
-      "target": "gcc",
-      "type": "governanca",
-      "influence": 0.62,
-      "volatility": 0.28,
-      "region": "middle-east"
-    },
-    {
-      "source": "uae",
-      "target": "gcc",
+      "source": "russia",
+      "target": "india",
       "type": "cooperacao",
-      "influence": 0.58,
-      "volatility": 0.27,
-      "region": "middle-east"
-    },
-    {
-      "source": "qatar",
-      "target": "gcc",
-      "type": "cooperacao",
-      "influence": 0.52,
+      "pairType": "country-country",
+      "influence": 0.43,
       "volatility": 0.33,
-      "region": "middle-east"
-    },
-    {
-      "source": "egypt",
-      "target": "arab_league",
-      "type": "governanca",
-      "influence": 0.56,
-      "volatility": 0.35,
-      "region": "middle-east"
-    },
-    {
-      "source": "saudi",
-      "target": "arab_league",
-      "type": "influencia",
-      "influence": 0.49,
-      "volatility": 0.36,
-      "region": "middle-east"
-    },
-    {
-      "source": "iran",
-      "target": "israel",
-      "type": "rivalidade",
-      "influence": -0.73,
-      "volatility": 0.72,
-      "region": "middle-east"
-    },
-    {
-      "source": "iran",
-      "target": "saudi",
-      "type": "rivalidade",
-      "influence": -0.41,
-      "volatility": 0.59,
-      "region": "middle-east"
-    },
-    {
-      "source": "saudi",
-      "target": "iran",
-      "type": "rivalidade",
-      "influence": -0.37,
-      "volatility": 0.58,
-      "region": "middle-east"
-    },
-    {
-      "source": "israel",
-      "target": "us",
-      "type": "cooperacao",
-      "influence": 0.71,
-      "volatility": 0.33,
-      "region": "middle-east"
-    },
-    {
-      "source": "us",
-      "target": "israel",
-      "type": "cooperacao",
-      "influence": 0.68,
-      "volatility": 0.31,
-      "region": "middle-east"
-    },
-    {
-      "source": "iran",
-      "target": "russia",
-      "type": "cooperacao",
-      "influence": 0.49,
-      "volatility": 0.47,
-      "region": "eurasia"
+      "region": "global"
     },
     {
       "source": "russia",
       "target": "iran",
       "type": "cooperacao",
-      "influence": 0.44,
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.39,
+      "region": "eurasia"
+    },
+    {
+      "source": "russia",
+      "target": "opec",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.58,
+      "volatility": 0.34,
+      "region": "eurasia"
+    },
+    {
+      "source": "russia",
+      "target": "ru_cbr",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.5,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "russia",
+      "target": "ru_finance",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.47,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "russia",
+      "target": "sco",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.56,
+      "volatility": 0.3,
+      "region": "eurasia"
+    },
+    {
+      "source": "russia",
+      "target": "us",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.66,
+      "volatility": 0.56,
+      "region": "global"
+    },
+    {
+      "source": "sa_mof",
+      "target": "saudi",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.55,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "sa_sama",
+      "target": "saudi",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "saudi",
+      "target": "arab_league",
+      "type": "influencia",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.37,
+      "region": "middle-east"
+    },
+    {
+      "source": "saudi",
+      "target": "china",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.49,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "saudi",
+      "target": "gcc",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.63,
+      "volatility": 0.31,
+      "region": "middle-east"
+    },
+    {
+      "source": "saudi",
+      "target": "india",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.53,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "saudi",
+      "target": "iran",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.36,
+      "volatility": 0.59,
+      "region": "middle-east"
+    },
+    {
+      "source": "saudi",
+      "target": "russia",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.58,
+      "volatility": 0.39,
+      "region": "eurasia"
+    },
+    {
+      "source": "saudi",
+      "target": "sa_mof",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "saudi",
+      "target": "sa_sama",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "sheinbaum",
+      "target": "mexico",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.65,
+      "volatility": 0.38,
+      "region": "global"
+    },
+    {
+      "source": "sisi",
+      "target": "egypt",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.75,
+      "volatility": 0.4,
+      "region": "middle-east"
+    },
+    {
+      "source": "southafrica",
+      "target": "au",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.45,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "southafrica",
+      "target": "china",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.38,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "southafrica",
+      "target": "za_sarb",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.52,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "southafrica",
+      "target": "za_treasury",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "southkorea",
+      "target": "japan",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.35,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "southkorea",
+      "target": "kr_bok",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.5,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "southkorea",
+      "target": "kr_mof",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "southkorea",
+      "target": "us",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.6,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "starmer",
+      "target": "uk",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.59,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "tamim",
+      "target": "qatar",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.72,
+      "volatility": 0.32,
+      "region": "middle-east"
+    },
+    {
+      "source": "tr_cbrt",
+      "target": "turkiye",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "tr_treasury",
+      "target": "turkiye",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "trump",
+      "target": "us",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.77,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "turkiye",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.38,
+      "volatility": 0.38,
+      "region": "global"
+    },
+    {
+      "source": "turkiye",
+      "target": "nato",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.43,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "turkiye",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.39,
       "volatility": 0.45,
       "region": "eurasia"
     },
     {
-      "source": "qatar",
-      "target": "eu-country",
-      "type": "energia",
-      "influence": 0.53,
-      "volatility": 0.34,
+      "source": "turkiye",
+      "target": "tr_cbrt",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "turkiye",
+      "target": "tr_treasury",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.48,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "uae",
+      "target": "gcc",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.59,
+      "volatility": 0.26,
       "region": "middle-east"
     },
     {
       "source": "uae",
       "target": "india",
       "type": "cooperacao",
+      "pairType": "country-country",
       "influence": 0.46,
+      "volatility": 0.31,
+      "region": "middle-east"
+    },
+    {
+      "source": "uae",
+      "target": "uae_cbu",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.5,
+      "volatility": 0.29,
+      "region": "middle-east"
+    },
+    {
+      "source": "uae",
+      "target": "uae_mof",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.31,
+      "region": "middle-east"
+    },
+    {
+      "source": "uae_cbu",
+      "target": "uae",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.61,
       "volatility": 0.3,
       "region": "middle-east"
     },
     {
-      "source": "egypt",
-      "target": "imf",
+      "source": "uae_mof",
+      "target": "uae",
       "type": "dependencia",
-      "influence": 0.63,
-      "volatility": 0.49,
+      "pairType": "institution-country",
+      "influence": 0.56,
+      "volatility": 0.3,
       "region": "middle-east"
     },
     {
-      "source": "imf",
-      "target": "egypt",
-      "type": "governanca",
-      "influence": 0.45,
-      "volatility": 0.44,
-      "region": "middle-east"
-    },
-    {
-      "source": "russia",
-      "target": "opec",
+      "source": "uk",
+      "target": "eu-country",
       "type": "cooperacao",
-      "influence": 0.59,
-      "volatility": 0.38,
-      "region": "eurasia"
-    },
-    {
-      "source": "saudi",
-      "target": "russia",
-      "type": "energia",
-      "influence": 0.57,
-      "volatility": 0.41,
-      "region": "eurasia"
-    },
-    {
-      "source": "russia",
-      "target": "sco",
-      "type": "cooperacao",
-      "influence": 0.55,
-      "volatility": 0.34,
-      "region": "eurasia"
-    },
-    {
-      "source": "china",
-      "target": "sco",
-      "type": "governanca",
-      "influence": 0.57,
+      "pairType": "country-country",
+      "influence": 0.37,
       "volatility": 0.33,
-      "region": "eurasia"
-    },
-    {
-      "source": "iran",
-      "target": "sco",
-      "type": "cooperacao",
-      "influence": 0.48,
-      "volatility": 0.39,
-      "region": "eurasia"
-    },
-    {
-      "source": "turkiye",
-      "target": "russia",
-      "type": "cooperacao",
-      "influence": 0.39,
-      "volatility": 0.54,
-      "region": "eurasia"
+      "region": "global"
     },
     {
       "source": "uk",
       "target": "iran",
       "type": "rivalidade",
+      "pairType": "country-country",
       "influence": -0.31,
-      "volatility": 0.52,
+      "volatility": 0.55,
       "region": "middle-east"
+    },
+    {
+      "source": "uk",
+      "target": "uk_boe",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "uk",
+      "target": "uk_hmt",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "uk_boe",
+      "target": "uk",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "uk_hmt",
+      "target": "uk",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.35,
+      "region": "global"
+    },
+    {
+      "source": "un",
+      "target": "g20",
+      "type": "governanca",
+      "pairType": "institution-institution",
+      "influence": 0.47,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "canada",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.54,
+      "volatility": 0.24,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "china",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.72,
+      "volatility": 0.65,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.61,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "israel",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.67,
+      "volatility": 0.32,
+      "region": "middle-east"
+    },
+    {
+      "source": "us",
+      "target": "japan",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.6,
+      "volatility": 0.25,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "mexico",
+      "type": "influencia",
+      "pairType": "country-country",
+      "influence": 0.54,
+      "volatility": 0.38,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "nato",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.59,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "russia",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.7,
+      "volatility": 0.63,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "southkorea",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.59,
+      "volatility": 0.28,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "us_fed",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "us_treasury",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "us_fed",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "us_treasury",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.59,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "vonderleyen",
+      "target": "eu-country",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.56,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "wto",
+      "target": "g20",
+      "type": "governanca",
+      "pairType": "institution-institution",
+      "influence": 0.47,
+      "volatility": 0.3,
+      "region": "global"
+    },
+    {
+      "source": "xi",
+      "target": "china",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.86,
+      "volatility": 0.34,
+      "region": "global"
+    },
+    {
+      "source": "za_sarb",
+      "target": "southafrica",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "za_treasury",
+      "target": "southafrica",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.34,
+      "region": "global"
     }
   ],
   "events": [
