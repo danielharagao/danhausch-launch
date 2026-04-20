@@ -22,6 +22,7 @@ const DRIVER_LABELS = {
 };
 
 const ENTITY_TYPES = ["country", "leader", "person", "company", "institution"];
+const MAX_NETWORK_RESULTS = 140;
 
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
@@ -276,6 +277,11 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     if (filters?.riskThreshold != null) out = out.filter((n) => n.risk >= Number(filters.riskThreshold));
 
     out = normalizeQuickView(out, filters?.quickView || "all");
+
+    out = [...out]
+      .sort((a, b) => (b.influence || 0) - (a.influence || 0) || (b.risk || 0) - (a.risk || 0))
+      .slice(0, MAX_NETWORK_RESULTS);
+
     return out;
   }
 

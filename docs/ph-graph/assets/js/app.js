@@ -7,6 +7,8 @@ const LAYER_META = {
 };
 
 const ENTITY_TYPES = ['country', 'leader', 'person', 'company', 'institution'];
+const TOP_INFLUENCERS_LIMIT = 60;
+const MAX_VISIBLE_NODES = 220;
 
 const typeColors = {
   institution: '#5ea6ff', political: '#ff8c6f', security: '#f871c8', economic: '#ffd166', civil: '#5de2b1', information: '#9f8cff', group: '#7dcfff', block: '#3dd3a5',
@@ -240,7 +242,7 @@ function renderDetails(node, connected, connectedEdges = []) {
 }
 
 async function init() {
-  const seedUrl = '../ph-app/assets/sim/seed.v3.json';
+  const seedUrl = '../ph-app/assets/sim/seed.v4.json';
   const seed = await fetch(seedUrl).then((r) => r.json());
   const data = buildGraphData(seed);
 
@@ -266,16 +268,28 @@ async function init() {
   const getLayers = () => new Set(layerBoxes.filter((i) => i.checked).map((i) => i.dataset.layer));
 
   const applyFilters = () => {
+    const influencerIds = new Set(
+      [...data.nodes]
+        .sort((a, b) => b.influenceRank - a.influenceRank)
+        .slice(0, TOP_INFLUENCERS_LIMIT)
+        .map((node) => node.id)
+    );
+
+    const rankedIds = new Set(
+      [...data.nodes]
+        .sort((a, b) => b.influenceRank - a.influenceRank)
+        .slice(0, MAX_VISIBLE_NODES)
+        .map((node) => node.id)
+    );
+
     graph.setNodeFilter((n) => {
+      if (!rankedIds.has(n.id)) return false;
       if (filters.entityType !== 'all' && n.entityType !== filters.entityType) return false;
       if (filters.region !== 'all' && n.region !== filters.region) return false;
       if (filters.quick === 'countries' && n.entityType !== 'country') return false;
       if (filters.quick === 'leaders' && n.entityType !== 'leader') return false;
       if (filters.quick === 'companies' && n.entityType !== 'company') return false;
-      if (filters.quick === 'influencers') {
-        const rankTop = [...data.nodes].sort((a, b) => b.influenceRank - a.influenceRank).slice(0, 50).map((node) => node.id);
-        if (!rankTop.includes(n.id)) return false;
-      }
+      if (filters.quick === 'influencers' && !influencerIds.has(n.id)) return false;
       return true;
     });
 

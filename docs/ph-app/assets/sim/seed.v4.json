@@ -1,0 +1,1885 @@
+{
+  "meta": {
+    "name": "Predictive History Seed Dataset V4 - Strategic Companies & Global Key People",
+    "version": "4.0.0",
+    "timeUnit": "month",
+    "description": "Expanded synthetic baseline with strategic companies by domain and influential global people, with typed person/company/country relations",
+    "snapshotDate": "2026-04-20"
+  },
+  "players": [
+    {
+      "id": "un",
+      "name": "United Nations",
+      "type": "institution",
+      "power": 0.71,
+      "cohesion": 0.52,
+      "legitimacy": 0.74,
+      "economyInfluence": 0.42,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "eu",
+      "name": "European Union",
+      "type": "institution",
+      "power": 0.78,
+      "cohesion": 0.61,
+      "legitimacy": 0.7,
+      "economyInfluence": 0.81,
+      "resourceBase": 0.73
+    },
+    {
+      "id": "g20",
+      "name": "G20",
+      "type": "institution",
+      "power": 0.83,
+      "cohesion": 0.49,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.88,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "type": "country",
+      "power": 0.94,
+      "cohesion": 0.58,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.93,
+      "resourceBase": 0.86
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "type": "country",
+      "power": 0.92,
+      "cohesion": 0.72,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.91,
+      "resourceBase": 0.89
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "type": "country",
+      "power": 0.84,
+      "cohesion": 0.6,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.79,
+      "resourceBase": 0.83
+    },
+    {
+      "id": "russia",
+      "name": "Russia",
+      "type": "country",
+      "power": 0.79,
+      "cohesion": 0.66,
+      "legitimacy": 0.42,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.86
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "type": "country",
+      "power": 0.74,
+      "cohesion": 0.71,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.78,
+      "resourceBase": 0.7
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "type": "country",
+      "power": 0.73,
+      "cohesion": 0.68,
+      "legitimacy": 0.7,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "type": "country",
+      "power": 0.71,
+      "cohesion": 0.62,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.66
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "type": "country",
+      "power": 0.7,
+      "cohesion": 0.59,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "type": "country",
+      "power": 0.65,
+      "cohesion": 0.57,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "type": "country",
+      "power": 0.67,
+      "cohesion": 0.69,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "type": "country",
+      "power": 0.63,
+      "cohesion": 0.7,
+      "legitimacy": 0.72,
+      "economyInfluence": 0.64,
+      "resourceBase": 0.68
+    },
+    {
+      "id": "southkorea",
+      "name": "South Korea",
+      "type": "country",
+      "power": 0.66,
+      "cohesion": 0.63,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.63
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia",
+      "type": "country",
+      "power": 0.64,
+      "cohesion": 0.61,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.66
+    },
+    {
+      "id": "saudi",
+      "name": "Saudi Arabia",
+      "type": "country",
+      "power": 0.69,
+      "cohesion": 0.71,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.88
+    },
+    {
+      "id": "turkiye",
+      "name": "Turkiye",
+      "type": "country",
+      "power": 0.64,
+      "cohesion": 0.55,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "southafrica",
+      "name": "South Africa",
+      "type": "country",
+      "power": 0.58,
+      "cohesion": 0.49,
+      "legitimacy": 0.53,
+      "economyInfluence": 0.52,
+      "resourceBase": 0.57
+    },
+    {
+      "id": "brazil",
+      "name": "Brazil",
+      "type": "country",
+      "power": 0.68,
+      "cohesion": 0.54,
+      "legitimacy": 0.59,
+      "economyInfluence": 0.64,
+      "resourceBase": 0.72
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "type": "country",
+      "power": 0.62,
+      "cohesion": 0.53,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.6,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina",
+      "type": "country",
+      "power": 0.53,
+      "cohesion": 0.44,
+      "legitimacy": 0.47,
+      "economyInfluence": 0.49,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "trump",
+      "name": "Donald Trump",
+      "type": "leader",
+      "power": 0.78,
+      "cohesion": 0.42,
+      "legitimacy": 0.5,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "xi",
+      "name": "Xi Jinping",
+      "type": "leader",
+      "power": 0.86,
+      "cohesion": 0.76,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.77
+    },
+    {
+      "id": "modi",
+      "name": "Narendra Modi",
+      "type": "leader",
+      "power": 0.8,
+      "cohesion": 0.66,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "putin",
+      "name": "Vladimir Putin",
+      "type": "leader",
+      "power": 0.82,
+      "cohesion": 0.71,
+      "legitimacy": 0.43,
+      "economyInfluence": 0.6,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "vonderleyen",
+      "name": "Ursula von der Leyen",
+      "type": "leader",
+      "power": 0.61,
+      "cohesion": 0.55,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "guterres",
+      "name": "Antonio Guterres",
+      "type": "leader",
+      "power": 0.49,
+      "cohesion": 0.52,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.32,
+      "resourceBase": 0.44
+    },
+    {
+      "id": "elon",
+      "name": "Elon Musk",
+      "type": "person",
+      "power": 0.77,
+      "cohesion": 0.46,
+      "legitimacy": 0.47,
+      "economyInfluence": 0.83,
+      "resourceBase": 0.81
+    },
+    {
+      "id": "samaltman",
+      "name": "Sam Altman",
+      "type": "person",
+      "power": 0.58,
+      "cohesion": 0.51,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "jensen",
+      "name": "Jensen Huang",
+      "type": "person",
+      "power": 0.56,
+      "cohesion": 0.6,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.63
+    },
+    {
+      "id": "lagarde",
+      "name": "Christine Lagarde",
+      "type": "person",
+      "power": 0.55,
+      "cohesion": 0.64,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.57
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "type": "company",
+      "power": 0.7,
+      "cohesion": 0.76,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.83,
+      "resourceBase": 0.79
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "type": "company",
+      "power": 0.72,
+      "cohesion": 0.78,
+      "legitimacy": 0.68,
+      "economyInfluence": 0.85,
+      "resourceBase": 0.81
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "type": "company",
+      "power": 0.69,
+      "cohesion": 0.74,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.81,
+      "resourceBase": 0.76
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "type": "company",
+      "power": 0.68,
+      "cohesion": 0.69,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.82,
+      "resourceBase": 0.77
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "type": "company",
+      "power": 0.65,
+      "cohesion": 0.63,
+      "legitimacy": 0.49,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.7
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "type": "company",
+      "power": 0.66,
+      "cohesion": 0.73,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.79,
+      "resourceBase": 0.73
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "type": "company",
+      "power": 0.64,
+      "cohesion": 0.75,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.77,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "type": "company",
+      "power": 0.63,
+      "cohesion": 0.72,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "company",
+      "power": 0.56,
+      "cohesion": 0.59,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "type": "company",
+      "power": 0.62,
+      "cohesion": 0.57,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.65
+    },
+    {
+      "id": "xcorp",
+      "name": "X Corp",
+      "type": "company",
+      "power": 0.5,
+      "cohesion": 0.51,
+      "legitimacy": 0.35,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.47
+    },
+    {
+      "id": "aramco",
+      "name": "Saudi Aramco",
+      "type": "company",
+      "power": 0.67,
+      "cohesion": 0.79,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.88
+    },
+    {
+      "id": "exxon",
+      "name": "ExxonMobil",
+      "type": "company",
+      "power": 0.62,
+      "cohesion": 0.71,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.74
+    },
+    {
+      "id": "shell",
+      "name": "Shell",
+      "type": "company",
+      "power": 0.6,
+      "cohesion": 0.69,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.72
+    },
+    {
+      "id": "lockheed",
+      "name": "Lockheed Martin",
+      "type": "company",
+      "power": 0.61,
+      "cohesion": 0.76,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.66
+    },
+    {
+      "id": "bae",
+      "name": "BAE Systems",
+      "type": "company",
+      "power": 0.54,
+      "cohesion": 0.7,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.49,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "norinco",
+      "name": "NORINCO",
+      "type": "company",
+      "power": 0.52,
+      "cohesion": 0.68,
+      "legitimacy": 0.38,
+      "economyInfluence": 0.45,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "jpmorgan",
+      "name": "JPMorgan Chase",
+      "type": "company",
+      "power": 0.63,
+      "cohesion": 0.74,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.75
+    },
+    {
+      "id": "blackrock",
+      "name": "BlackRock",
+      "type": "company",
+      "power": 0.61,
+      "cohesion": 0.72,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.78,
+      "resourceBase": 0.74
+    },
+    {
+      "id": "icbc",
+      "name": "ICBC",
+      "type": "company",
+      "power": 0.58,
+      "cohesion": 0.66,
+      "legitimacy": 0.5,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.7
+    },
+    {
+      "id": "maersk",
+      "name": "Maersk",
+      "type": "company",
+      "power": 0.55,
+      "cohesion": 0.67,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "dhl",
+      "name": "DHL",
+      "type": "company",
+      "power": 0.53,
+      "cohesion": 0.68,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "cosco",
+      "name": "COSCO Shipping",
+      "type": "company",
+      "power": 0.54,
+      "cohesion": 0.64,
+      "legitimacy": 0.44,
+      "economyInfluence": 0.6,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "disney",
+      "name": "Disney",
+      "type": "company",
+      "power": 0.51,
+      "cohesion": 0.63,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.55,
+      "resourceBase": 0.52
+    },
+    {
+      "id": "comcast",
+      "name": "Comcast/NBCUniversal",
+      "type": "company",
+      "power": 0.5,
+      "cohesion": 0.62,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.53,
+      "resourceBase": 0.5
+    },
+    {
+      "id": "bytedance",
+      "name": "ByteDance",
+      "type": "company",
+      "power": 0.57,
+      "cohesion": 0.61,
+      "legitimacy": 0.46,
+      "economyInfluence": 0.65,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "biden",
+      "name": "Joe Biden",
+      "type": "leader",
+      "power": 0.72,
+      "cohesion": 0.46,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.59,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "lula",
+      "name": "Luiz Inacio Lula da Silva",
+      "type": "leader",
+      "power": 0.66,
+      "cohesion": 0.56,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "zelensky",
+      "name": "Volodymyr Zelenskyy",
+      "type": "leader",
+      "power": 0.64,
+      "cohesion": 0.62,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.42,
+      "resourceBase": 0.49
+    },
+    {
+      "id": "mbs",
+      "name": "Mohammed bin Salman",
+      "type": "leader",
+      "power": 0.77,
+      "cohesion": 0.73,
+      "legitimacy": 0.53,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.84
+    },
+    {
+      "id": "powell",
+      "name": "Jerome Powell",
+      "type": "person",
+      "power": 0.62,
+      "cohesion": 0.69,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "georgieva",
+      "name": "Kristalina Georgieva",
+      "type": "person",
+      "power": 0.54,
+      "cohesion": 0.63,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.5
+    },
+    {
+      "id": "fink",
+      "name": "Larry Fink",
+      "type": "person",
+      "power": 0.58,
+      "cohesion": 0.61,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "dimon",
+      "name": "Jamie Dimon",
+      "type": "person",
+      "power": 0.59,
+      "cohesion": 0.64,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.63
+    },
+    {
+      "id": "nadella",
+      "name": "Satya Nadella",
+      "type": "person",
+      "power": 0.57,
+      "cohesion": 0.72,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "pichai",
+      "name": "Sundar Pichai",
+      "type": "person",
+      "power": 0.53,
+      "cohesion": 0.7,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "timcook",
+      "name": "Tim Cook",
+      "type": "person",
+      "power": 0.55,
+      "cohesion": 0.71,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.7,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "type": "company",
+      "power": 0.61,
+      "cohesion": 0.66,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "type": "company",
+      "power": 0.58,
+      "cohesion": 0.63,
+      "legitimacy": 0.46,
+      "economyInfluence": 0.64,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "type": "company",
+      "power": 0.56,
+      "cohesion": 0.7,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "type": "company",
+      "power": 0.54,
+      "cohesion": 0.73,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "chevron",
+      "name": "Chevron",
+      "type": "company",
+      "power": 0.59,
+      "cohesion": 0.7,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "total",
+      "name": "TotalEnergies",
+      "type": "company",
+      "power": 0.57,
+      "cohesion": 0.68,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "gazprom",
+      "name": "Gazprom",
+      "type": "company",
+      "power": 0.56,
+      "cohesion": 0.65,
+      "legitimacy": 0.38,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.78
+    },
+    {
+      "id": "northrop",
+      "name": "Northrop Grumman",
+      "type": "company",
+      "power": 0.57,
+      "cohesion": 0.72,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.52,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "rtx",
+      "name": "RTX",
+      "type": "company",
+      "power": 0.55,
+      "cohesion": 0.69,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.5,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "intel",
+      "name": "Intel",
+      "type": "company",
+      "power": 0.6,
+      "cohesion": 0.67,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "type": "company",
+      "power": 0.57,
+      "cohesion": 0.68,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.64,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "type": "company",
+      "power": 0.62,
+      "cohesion": 0.74,
+      "legitimacy": 0.68,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "smic",
+      "name": "SMIC",
+      "type": "company",
+      "power": 0.55,
+      "cohesion": 0.64,
+      "legitimacy": 0.43,
+      "economyInfluence": 0.6,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "goldman",
+      "name": "Goldman Sachs",
+      "type": "company",
+      "power": 0.56,
+      "cohesion": 0.7,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "hsbc",
+      "name": "HSBC",
+      "type": "company",
+      "power": 0.55,
+      "cohesion": 0.66,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "visa",
+      "name": "Visa",
+      "type": "company",
+      "power": 0.58,
+      "cohesion": 0.71,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "ups",
+      "name": "UPS",
+      "type": "company",
+      "power": 0.54,
+      "cohesion": 0.68,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "fedex",
+      "name": "FedEx",
+      "type": "company",
+      "power": 0.53,
+      "cohesion": 0.66,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.56,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "msc",
+      "name": "MSC",
+      "type": "company",
+      "power": 0.56,
+      "cohesion": 0.65,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "type": "company",
+      "power": 0.52,
+      "cohesion": 0.64,
+      "legitimacy": 0.59,
+      "economyInfluence": 0.54,
+      "resourceBase": 0.51
+    },
+    {
+      "id": "wbd",
+      "name": "Warner Bros. Discovery",
+      "type": "company",
+      "power": 0.49,
+      "cohesion": 0.58,
+      "legitimacy": 0.5,
+      "economyInfluence": 0.49,
+      "resourceBase": 0.47
+    },
+    {
+      "id": "newscorp",
+      "name": "News Corp",
+      "type": "company",
+      "power": 0.48,
+      "cohesion": 0.59,
+      "legitimacy": 0.47,
+      "economyInfluence": 0.46,
+      "resourceBase": 0.45
+    }
+  ],
+  "groups": [
+    {
+      "id": "north-america-middle",
+      "name": "North America Middle Class",
+      "size": 0.12,
+      "grievance": 0.43,
+      "mobilization": 0.47,
+      "trustInstitutions": 0.51,
+      "economicExposure": 0.59,
+      "identityPole": -0.22
+    },
+    {
+      "id": "eu-urban",
+      "name": "EU Urban Professionals",
+      "size": 0.09,
+      "grievance": 0.36,
+      "mobilization": 0.44,
+      "trustInstitutions": 0.62,
+      "economicExposure": 0.54,
+      "identityPole": -0.18
+    },
+    {
+      "id": "south-asia-workers",
+      "name": "South Asia Workers",
+      "size": 0.18,
+      "grievance": 0.58,
+      "mobilization": 0.42,
+      "trustInstitutions": 0.46,
+      "economicExposure": 0.71,
+      "identityPole": 0.31
+    },
+    {
+      "id": "east-asia-manufacturing",
+      "name": "East Asia Manufacturing Labor",
+      "size": 0.15,
+      "grievance": 0.49,
+      "mobilization": 0.39,
+      "trustInstitutions": 0.52,
+      "economicExposure": 0.73,
+      "identityPole": 0.16
+    },
+    {
+      "id": "latam-informal",
+      "name": "Latin America Informal Economy",
+      "size": 0.12,
+      "grievance": 0.66,
+      "mobilization": 0.41,
+      "trustInstitutions": 0.34,
+      "economicExposure": 0.78,
+      "identityPole": 0.47
+    },
+    {
+      "id": "mena-youth",
+      "name": "MENA Urban Youth",
+      "size": 0.1,
+      "grievance": 0.62,
+      "mobilization": 0.59,
+      "trustInstitutions": 0.33,
+      "economicExposure": 0.69,
+      "identityPole": 0.52
+    },
+    {
+      "id": "africa-rural",
+      "name": "Sub-Saharan Rural Households",
+      "size": 0.11,
+      "grievance": 0.61,
+      "mobilization": 0.35,
+      "trustInstitutions": 0.38,
+      "economicExposure": 0.74,
+      "identityPole": 0.39
+    },
+    {
+      "id": "global-migrant",
+      "name": "Global Migrant Workforce",
+      "size": 0.07,
+      "grievance": 0.57,
+      "mobilization": 0.53,
+      "trustInstitutions": 0.37,
+      "economicExposure": 0.82,
+      "identityPole": -0.06
+    },
+    {
+      "id": "global-investors",
+      "name": "Global Institutional Investors",
+      "size": 0.04,
+      "grievance": 0.28,
+      "mobilization": 0.3,
+      "trustInstitutions": 0.66,
+      "economicExposure": 0.52,
+      "identityPole": -0.41
+    },
+    {
+      "id": "digital-natives",
+      "name": "Global Digital Natives",
+      "size": 0.02,
+      "grievance": 0.51,
+      "mobilization": 0.68,
+      "trustInstitutions": 0.29,
+      "economicExposure": 0.49,
+      "identityPole": -0.58
+    }
+  ],
+  "relations": [
+    {
+      "source": "un",
+      "target": "g20",
+      "type": "governanca",
+      "influence": 0.46,
+      "volatility": 0.28
+    },
+    {
+      "source": "un",
+      "target": "us",
+      "type": "governanca",
+      "influence": 0.31,
+      "volatility": 0.34
+    },
+    {
+      "source": "un",
+      "target": "china",
+      "type": "governanca",
+      "influence": 0.29,
+      "volatility": 0.37
+    },
+    {
+      "source": "eu",
+      "target": "g20",
+      "type": "cooperacao",
+      "influence": 0.54,
+      "volatility": 0.22
+    },
+    {
+      "source": "g20",
+      "target": "india",
+      "type": "cooperacao",
+      "influence": 0.49,
+      "volatility": 0.3
+    },
+    {
+      "source": "us",
+      "target": "china",
+      "type": "rivalidade",
+      "influence": -0.72,
+      "volatility": 0.62
+    },
+    {
+      "source": "us",
+      "target": "russia",
+      "type": "rivalidade",
+      "influence": -0.68,
+      "volatility": 0.59
+    },
+    {
+      "source": "china",
+      "target": "russia",
+      "type": "cooperacao",
+      "influence": 0.41,
+      "volatility": 0.4
+    },
+    {
+      "source": "india",
+      "target": "china",
+      "type": "rivalidade",
+      "influence": -0.49,
+      "volatility": 0.56
+    },
+    {
+      "source": "eu",
+      "target": "russia",
+      "type": "rivalidade",
+      "influence": -0.57,
+      "volatility": 0.58
+    },
+    {
+      "source": "us",
+      "target": "eu",
+      "type": "cooperacao",
+      "influence": 0.63,
+      "volatility": 0.33
+    },
+    {
+      "source": "us",
+      "target": "japan",
+      "type": "cooperacao",
+      "influence": 0.58,
+      "volatility": 0.27
+    },
+    {
+      "source": "us",
+      "target": "southkorea",
+      "type": "cooperacao",
+      "influence": 0.55,
+      "volatility": 0.31
+    },
+    {
+      "source": "china",
+      "target": "indonesia",
+      "type": "influencia",
+      "influence": 0.46,
+      "volatility": 0.39
+    },
+    {
+      "source": "china",
+      "target": "saudi",
+      "type": "cooperacao",
+      "influence": 0.38,
+      "volatility": 0.33
+    },
+    {
+      "source": "brazil",
+      "target": "argentina",
+      "type": "cooperacao",
+      "influence": 0.44,
+      "volatility": 0.35
+    },
+    {
+      "source": "mexico",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.67,
+      "volatility": 0.41
+    },
+    {
+      "source": "canada",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.28
+    },
+    {
+      "source": "australia",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.49,
+      "volatility": 0.46
+    },
+    {
+      "source": "trump",
+      "target": "us",
+      "type": "governanca",
+      "influence": 0.79,
+      "volatility": 0.52
+    },
+    {
+      "source": "xi",
+      "target": "china",
+      "type": "governanca",
+      "influence": 0.86,
+      "volatility": 0.33
+    },
+    {
+      "source": "modi",
+      "target": "india",
+      "type": "governanca",
+      "influence": 0.82,
+      "volatility": 0.36
+    },
+    {
+      "source": "putin",
+      "target": "russia",
+      "type": "governanca",
+      "influence": 0.84,
+      "volatility": 0.32
+    },
+    {
+      "source": "vonderleyen",
+      "target": "eu",
+      "type": "governanca",
+      "influence": 0.64,
+      "volatility": 0.29
+    },
+    {
+      "source": "guterres",
+      "target": "un",
+      "type": "governanca",
+      "influence": 0.58,
+      "volatility": 0.26
+    },
+    {
+      "source": "elon",
+      "target": "tesla",
+      "type": "governanca",
+      "influence": 0.78,
+      "volatility": 0.43
+    },
+    {
+      "source": "elon",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.43,
+      "volatility": 0.51
+    },
+    {
+      "source": "elon",
+      "target": "xcorp",
+      "type": "governanca",
+      "influence": 0.72,
+      "volatility": 0.46
+    },
+    {
+      "source": "samaltman",
+      "target": "openai",
+      "type": "governanca",
+      "influence": 0.74,
+      "volatility": 0.41
+    },
+    {
+      "source": "jensen",
+      "target": "nvidia",
+      "type": "governanca",
+      "influence": 0.77,
+      "volatility": 0.24
+    },
+    {
+      "source": "lagarde",
+      "target": "eu",
+      "type": "influencia",
+      "influence": 0.51,
+      "volatility": 0.31
+    },
+    {
+      "source": "apple",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.61,
+      "volatility": 0.55
+    },
+    {
+      "source": "microsoft",
+      "target": "openai",
+      "type": "cooperacao",
+      "influence": 0.68,
+      "volatility": 0.37
+    },
+    {
+      "source": "alphabet",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.52,
+      "volatility": 0.48
+    },
+    {
+      "source": "amazon",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.49,
+      "volatility": 0.42
+    },
+    {
+      "source": "meta",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.41,
+      "volatility": 0.61
+    },
+    {
+      "source": "nvidia",
+      "target": "tsmc",
+      "type": "dependencia",
+      "influence": 0.73,
+      "volatility": 0.49
+    },
+    {
+      "source": "tsmc",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.56,
+      "volatility": 0.44
+    },
+    {
+      "source": "samsung",
+      "target": "southkorea",
+      "type": "dependencia",
+      "influence": 0.65,
+      "volatility": 0.32
+    },
+    {
+      "source": "openai",
+      "target": "microsoft",
+      "type": "dependencia",
+      "influence": 0.59,
+      "volatility": 0.47
+    },
+    {
+      "source": "aramco",
+      "target": "saudi",
+      "type": "governanca",
+      "influence": 0.79,
+      "volatility": 0.26
+    },
+    {
+      "source": "exxon",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.44,
+      "volatility": 0.39
+    },
+    {
+      "source": "shell",
+      "target": "eu",
+      "type": "influencia",
+      "influence": 0.42,
+      "volatility": 0.36
+    },
+    {
+      "source": "saudi",
+      "target": "india",
+      "type": "dependencia",
+      "influence": 0.53,
+      "volatility": 0.38
+    },
+    {
+      "source": "lockheed",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.66,
+      "volatility": 0.33
+    },
+    {
+      "source": "bae",
+      "target": "uk",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.3
+    },
+    {
+      "source": "norinco",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.68,
+      "volatility": 0.28
+    },
+    {
+      "source": "jpmorgan",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.54,
+      "volatility": 0.37
+    },
+    {
+      "source": "blackrock",
+      "target": "eu",
+      "type": "influencia",
+      "influence": 0.47,
+      "volatility": 0.35
+    },
+    {
+      "source": "icbc",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.61,
+      "volatility": 0.29
+    },
+    {
+      "source": "maersk",
+      "target": "eu",
+      "type": "dependencia",
+      "influence": 0.45,
+      "volatility": 0.31
+    },
+    {
+      "source": "dhl",
+      "target": "germany",
+      "type": "dependencia",
+      "influence": 0.54,
+      "volatility": 0.26
+    },
+    {
+      "source": "cosco",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.64,
+      "volatility": 0.36
+    },
+    {
+      "source": "disney",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.34,
+      "volatility": 0.43
+    },
+    {
+      "source": "comcast",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.31,
+      "volatility": 0.45
+    },
+    {
+      "source": "bytedance",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.52,
+      "volatility": 0.58
+    },
+    {
+      "source": "us",
+      "target": "nvidia",
+      "type": "governanca",
+      "influence": 0.37,
+      "volatility": 0.49
+    },
+    {
+      "source": "china",
+      "target": "bytedance",
+      "type": "governanca",
+      "influence": 0.42,
+      "volatility": 0.53
+    },
+    {
+      "source": "eu",
+      "target": "meta",
+      "type": "governanca",
+      "influence": 0.35,
+      "volatility": 0.47
+    },
+    {
+      "source": "india",
+      "target": "openai",
+      "type": "cooperacao",
+      "influence": 0.32,
+      "volatility": 0.41
+    },
+    {
+      "source": "g20",
+      "target": "jpmorgan",
+      "type": "cooperacao",
+      "influence": 0.29,
+      "volatility": 0.34
+    },
+    {
+      "source": "timcook",
+      "target": "apple",
+      "type": "governanca",
+      "influence": 0.81,
+      "volatility": 0.18,
+      "pairType": "person-company"
+    },
+    {
+      "source": "nadella",
+      "target": "microsoft",
+      "type": "governanca",
+      "influence": 0.83,
+      "volatility": 0.17,
+      "pairType": "person-company"
+    },
+    {
+      "source": "pichai",
+      "target": "alphabet",
+      "type": "governanca",
+      "influence": 0.79,
+      "volatility": 0.22,
+      "pairType": "person-company"
+    },
+    {
+      "source": "dimon",
+      "target": "jpmorgan",
+      "type": "governanca",
+      "influence": 0.84,
+      "volatility": 0.2,
+      "pairType": "person-company"
+    },
+    {
+      "source": "fink",
+      "target": "blackrock",
+      "type": "governanca",
+      "influence": 0.82,
+      "volatility": 0.23,
+      "pairType": "person-company"
+    },
+    {
+      "source": "mbs",
+      "target": "aramco",
+      "type": "governanca",
+      "influence": 0.77,
+      "volatility": 0.29,
+      "pairType": "person-company"
+    },
+    {
+      "source": "powell",
+      "target": "jpmorgan",
+      "type": "influencia",
+      "influence": 0.37,
+      "volatility": 0.41,
+      "pairType": "person-company"
+    },
+    {
+      "source": "samaltman",
+      "target": "microsoft",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.44,
+      "pairType": "person-company"
+    },
+    {
+      "source": "timcook",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.36,
+      "volatility": 0.35,
+      "pairType": "person-country"
+    },
+    {
+      "source": "nadella",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.33,
+      "volatility": 0.32,
+      "pairType": "person-country"
+    },
+    {
+      "source": "pichai",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.31,
+      "volatility": 0.34,
+      "pairType": "person-country"
+    },
+    {
+      "source": "lula",
+      "target": "brazil",
+      "type": "governanca",
+      "influence": 0.77,
+      "volatility": 0.39,
+      "pairType": "person-country"
+    },
+    {
+      "source": "zelensky",
+      "target": "eu",
+      "type": "cooperacao",
+      "influence": 0.52,
+      "volatility": 0.58,
+      "pairType": "person-country"
+    },
+    {
+      "source": "mbs",
+      "target": "saudi",
+      "type": "governanca",
+      "influence": 0.83,
+      "volatility": 0.27,
+      "pairType": "person-country"
+    },
+    {
+      "source": "powell",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.64,
+      "volatility": 0.36,
+      "pairType": "person-country"
+    },
+    {
+      "source": "georgieva",
+      "target": "g20",
+      "type": "influencia",
+      "influence": 0.41,
+      "volatility": 0.33,
+      "pairType": "person-country"
+    },
+    {
+      "source": "elon",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.45,
+      "volatility": 0.53,
+      "pairType": "person-country"
+    },
+    {
+      "source": "asml",
+      "target": "eu",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.37,
+      "pairType": "company-country"
+    },
+    {
+      "source": "intel",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.58,
+      "volatility": 0.34,
+      "pairType": "company-country"
+    },
+    {
+      "source": "smic",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.71,
+      "volatility": 0.31,
+      "pairType": "company-country"
+    },
+    {
+      "source": "gazprom",
+      "target": "russia",
+      "type": "dependencia",
+      "influence": 0.82,
+      "volatility": 0.24,
+      "pairType": "company-country"
+    },
+    {
+      "source": "chevron",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.43,
+      "volatility": 0.38,
+      "pairType": "company-country"
+    },
+    {
+      "source": "total",
+      "target": "france",
+      "type": "dependencia",
+      "influence": 0.49,
+      "volatility": 0.35,
+      "pairType": "company-country"
+    },
+    {
+      "source": "hsbc",
+      "target": "uk",
+      "type": "dependencia",
+      "influence": 0.51,
+      "volatility": 0.34,
+      "pairType": "company-country"
+    },
+    {
+      "source": "visa",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.47,
+      "volatility": 0.33,
+      "pairType": "company-country"
+    },
+    {
+      "source": "ups",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.55,
+      "volatility": 0.28,
+      "pairType": "company-country"
+    },
+    {
+      "source": "msc",
+      "target": "eu",
+      "type": "dependencia",
+      "influence": 0.44,
+      "volatility": 0.3,
+      "pairType": "company-country"
+    },
+    {
+      "source": "netflix",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.35,
+      "volatility": 0.42,
+      "pairType": "company-country"
+    },
+    {
+      "source": "newscorp",
+      "target": "us",
+      "type": "influencia",
+      "influence": 0.33,
+      "volatility": 0.46,
+      "pairType": "company-country"
+    },
+    {
+      "source": "nvidia",
+      "target": "asml",
+      "type": "dependencia",
+      "influence": 0.69,
+      "volatility": 0.41,
+      "pairType": "company-company"
+    },
+    {
+      "source": "intel",
+      "target": "asml",
+      "type": "dependencia",
+      "influence": 0.66,
+      "volatility": 0.39,
+      "pairType": "company-company"
+    },
+    {
+      "source": "amd",
+      "target": "tsmc",
+      "type": "dependencia",
+      "influence": 0.74,
+      "volatility": 0.46,
+      "pairType": "company-company"
+    },
+    {
+      "source": "microsoft",
+      "target": "nvidia",
+      "type": "cooperacao",
+      "influence": 0.61,
+      "volatility": 0.35,
+      "pairType": "company-company"
+    },
+    {
+      "source": "amazon",
+      "target": "microsoft",
+      "type": "rivalidade",
+      "influence": -0.41,
+      "volatility": 0.49,
+      "pairType": "company-company"
+    },
+    {
+      "source": "tencent",
+      "target": "bytedance",
+      "type": "rivalidade",
+      "influence": -0.36,
+      "volatility": 0.55,
+      "pairType": "company-company"
+    },
+    {
+      "source": "exxon",
+      "target": "chevron",
+      "type": "cooperacao",
+      "influence": 0.29,
+      "volatility": 0.34,
+      "pairType": "company-company"
+    },
+    {
+      "source": "aramco",
+      "target": "gazprom",
+      "type": "cooperacao",
+      "influence": 0.33,
+      "volatility": 0.47,
+      "pairType": "company-company"
+    },
+    {
+      "source": "jpmorgan",
+      "target": "blackrock",
+      "type": "cooperacao",
+      "influence": 0.31,
+      "volatility": 0.36,
+      "pairType": "company-company"
+    },
+    {
+      "source": "ups",
+      "target": "fedex",
+      "type": "rivalidade",
+      "influence": -0.44,
+      "volatility": 0.43,
+      "pairType": "company-company"
+    },
+    {
+      "source": "disney",
+      "target": "netflix",
+      "type": "rivalidade",
+      "influence": -0.52,
+      "volatility": 0.57,
+      "pairType": "company-company"
+    },
+    {
+      "source": "elon",
+      "target": "samaltman",
+      "type": "rivalidade",
+      "influence": -0.48,
+      "volatility": 0.67,
+      "pairType": "person-person"
+    },
+    {
+      "source": "elon",
+      "target": "jensen",
+      "type": "cooperacao",
+      "influence": 0.39,
+      "volatility": 0.48,
+      "pairType": "person-person"
+    },
+    {
+      "source": "timcook",
+      "target": "nadella",
+      "type": "cooperacao",
+      "influence": 0.28,
+      "volatility": 0.31,
+      "pairType": "person-person"
+    },
+    {
+      "source": "dimon",
+      "target": "fink",
+      "type": "cooperacao",
+      "influence": 0.35,
+      "volatility": 0.29,
+      "pairType": "person-person"
+    },
+    {
+      "source": "xi",
+      "target": "putin",
+      "type": "cooperacao",
+      "influence": 0.44,
+      "volatility": 0.39,
+      "pairType": "person-person"
+    },
+    {
+      "source": "trump",
+      "target": "biden",
+      "type": "rivalidade",
+      "influence": -0.73,
+      "volatility": 0.72,
+      "pairType": "person-person"
+    },
+    {
+      "source": "modi",
+      "target": "lula",
+      "type": "cooperacao",
+      "influence": 0.34,
+      "volatility": 0.37,
+      "pairType": "person-person"
+    },
+    {
+      "source": "vonderleyen",
+      "target": "lagarde",
+      "type": "cooperacao",
+      "influence": 0.42,
+      "volatility": 0.26,
+      "pairType": "person-person"
+    }
+  ],
+  "events": [
+    {
+      "id": "ai-governance-accord",
+      "name": "AI Governance Accord",
+      "atStep": 4,
+      "scope": "institutional",
+      "intensity": 0.17,
+      "effects": {
+        "players.legitimacy": 0.03,
+        "relations.volatility": -0.04,
+        "macro.investmentConfidence": 0.05,
+        "groups.trustInstitutions": 0.03
+      }
+    },
+    {
+      "id": "energy-shipping-shock",
+      "name": "Energy and Shipping Shock",
+      "atStep": 7,
+      "scope": "economy",
+      "intensity": 0.22,
+      "effects": {
+        "macro.inflation": 0.12,
+        "macro.tradeFlow": -0.1,
+        "groups.grievance": 0.06,
+        "relations.volatility": 0.07
+      }
+    },
+    {
+      "id": "debt-refinancing-window",
+      "name": "Debt Refinancing Window",
+      "atStep": 10,
+      "scope": "finance",
+      "intensity": 0.15,
+      "effects": {
+        "macro.fiscalSpace": 0.08,
+        "macro.investmentConfidence": 0.04,
+        "groups.trustInstitutions": 0.02,
+        "players.legitimacy": 0.02
+      }
+    }
+  ],
+  "macro": {
+    "gdpTrend": 0.035,
+    "inflation": 0.062,
+    "unemployment": 0.097,
+    "investmentConfidence": 0.52,
+    "tradeFlow": 0.63,
+    "fiscalSpace": 0.43
+  }
+}

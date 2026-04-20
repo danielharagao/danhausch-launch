@@ -5,7 +5,7 @@ export const state = {
   activeTab: "overview",
   frameIndex: 0,
   playbackTimer: null,
-  networkLevel: "people",
+  networkLevel: "supernodes",
   adapter: null,
   selectedNodeId: null,
   selectedNodeLevel: null,
