@@ -10,6 +10,18 @@
     return Math.max(min, Math.min(max, v));
   }
 
+  function toNumber(v, fallback) {
+    var n = Number(v);
+    return Number.isFinite(n) ? n : fallback;
+  }
+
+  function firstDefined(values, fallback) {
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] !== undefined && values[i] !== null) return values[i];
+    }
+    return fallback;
+  }
+
   // Mulberry32 deterministic PRNG (seedable)
   function createRng(seed) {
     var t = seed >>> 0;
@@ -73,6 +85,139 @@
     }
   }
 
+  function normalizePlayer(raw, i) {
+    raw = raw || {};
+    return {
+      id: String(firstDefined([raw.id, raw.key, raw.code], 'player-' + i)),
+      name: String(firstDefined([raw.name, raw.label, raw.title], 'Player ' + (i + 1))),
+      type: String(firstDefined([raw.type, raw.category, raw.layer], 'institution')),
+      power: clamp(toNumber(firstDefined([raw.power, raw.capacity, raw.influence, raw.attrs && raw.attrs.power], 0.5), 0.5), 0, 1),
+      cohesion: clamp(toNumber(firstDefined([raw.cohesion, raw.coordination, raw.attrs && raw.attrs.cohesion], 0.5), 0.5), 0, 1),
+      legitimacy: clamp(toNumber(firstDefined([raw.legitimacy, raw.trust, raw.attrs && raw.attrs.legitimacy], 0.5), 0.5), 0, 1),
+      economyInfluence: clamp(toNumber(firstDefined([raw.economyInfluence, raw.economicInfluence, raw.attrs && raw.attrs.economyInfluence], 0.5), 0.5), 0, 1),
+      resourceBase: clamp(toNumber(firstDefined([raw.resourceBase, raw.resources, raw.attrs && raw.attrs.resourceBase], 0.5), 0.5), 0, 1),
+      layer: raw.layer || 'supernodes'
+    };
+  }
+
+  function normalizeGroup(raw, i) {
+    raw = raw || {};
+    return {
+      id: String(firstDefined([raw.id, raw.key, raw.code], 'group-' + i)),
+      name: String(firstDefined([raw.name, raw.label, raw.title], 'Group ' + (i + 1))),
+      size: clamp(toNumber(firstDefined([raw.size, raw.weight, raw.populationWeight, raw.attrs && raw.attrs.size], 0.1), 0.1), 0, 1),
+      grievance: clamp(toNumber(firstDefined([raw.grievance, raw.discontent, raw.attrs && raw.attrs.grievance], 0.5), 0.5), 0, 1),
+      mobilization: clamp(toNumber(firstDefined([raw.mobilization, raw.activation, raw.attrs && raw.attrs.mobilization], 0.5), 0.5), 0, 1),
+      trustInstitutions: clamp(toNumber(firstDefined([raw.trustInstitutions, raw.trust, raw.institutionalTrust, raw.attrs && raw.attrs.trustInstitutions], 0.5), 0.5), 0, 1),
+      economicExposure: clamp(toNumber(firstDefined([raw.economicExposure, raw.exposure, raw.attrs && raw.attrs.economicExposure], 0.5), 0.5), 0, 1),
+      identityPole: clamp(toNumber(firstDefined([raw.identityPole, raw.ideology, raw.pole, raw.attrs && raw.attrs.identityPole], 0), 0), -1, 1),
+      layer: raw.layer || 'people'
+    };
+  }
+
+  function normalizeRelation(raw, i) {
+    raw = raw || {};
+    return {
+      id: String(firstDefined([raw.id], 'relation-' + i)),
+      source: String(firstDefined([raw.source, raw.from, raw.src], 'unknown-source')),
+      target: String(firstDefined([raw.target, raw.to, raw.dst], 'unknown-target')),
+      type: String(firstDefined([raw.type, raw.kind, raw.relationType], 'relation')),
+      influence: clamp(toNumber(firstDefined([raw.influence, raw.weight, raw.signal, raw.attrs && raw.attrs.influence], 0), 0), -1, 1),
+      volatility: clamp(toNumber(firstDefined([raw.volatility, raw.uncertainty, raw.attrs && raw.attrs.volatility], 0.5), 0.5), 0, 1),
+      layer: raw.layer || 'blocks'
+    };
+  }
+
+  function normalizeEvent(raw, i) {
+    raw = raw || {};
+    return {
+      id: String(firstDefined([raw.id], 'event-' + i)),
+      name: String(firstDefined([raw.name, raw.title], 'Unnamed Event')),
+      atStep: Math.max(1, Math.round(toNumber(firstDefined([raw.atStep, raw.step, raw.t], 1), 1))),
+      scope: String(firstDefined([raw.scope, raw.type], 'generic')),
+      intensity: clamp(toNumber(firstDefined([raw.intensity, raw.weight], 1), 1), 0, 1),
+      effects: raw.effects && typeof raw.effects === 'object' ? raw.effects : {}
+    };
+  }
+
+  function normalizeSeed(seedData) {
+    var seed = seedData || {};
+    var entities = seed.entities || {};
+    var layers = seed.layers || {};
+
+    var rawPlayers = firstDefined([
+      seed.players,
+      entities.players,
+      entities.actors,
+      layers.supernodes,
+      seed.supernodes,
+      seed.actors,
+      []
+    ], []);
+
+    var rawGroups = firstDefined([
+      seed.groups,
+      entities.groups,
+      entities.segments,
+      layers.people,
+      seed.people,
+      seed.segments,
+      []
+    ], []);
+
+    var rawRelations = firstDefined([
+      seed.relations,
+      entities.relations,
+      entities.edges,
+      layers.blocks,
+      seed.blocks,
+      seed.edges,
+      []
+    ], []);
+
+    var rawEvents = firstDefined([
+      seed.events,
+      seed.shocks,
+      entities.events,
+      seed.timeline && seed.timeline.events,
+      []
+    ], []);
+
+    var macroSource = firstDefined([
+      seed.macro,
+      entities.macro,
+      seed.context && seed.context.macro,
+      seed.indicators,
+      {}
+    ], {});
+
+    var players = (rawPlayers || []).map(normalizePlayer);
+    var groups = (rawGroups || []).map(normalizeGroup);
+    var relations = (rawRelations || []).map(normalizeRelation);
+    var events = (rawEvents || []).map(normalizeEvent);
+
+    return {
+      meta: seed.meta || {},
+      players: players,
+      groups: groups,
+      relations: relations,
+      events: events,
+      layers: {
+        people: deepClone(layers.people || groups),
+        supernodes: deepClone(layers.supernodes || players),
+        blocks: deepClone(layers.blocks || relations)
+      },
+      macro: {
+        gdpTrend: clamp(toNumber(firstDefined([macroSource.gdpTrend, macroSource.growthTrend], 0), 0), -1, 1),
+        inflation: clamp(toNumber(firstDefined([macroSource.inflation, macroSource.cpi], 0.1), 0.1), 0, 1),
+        unemployment: clamp(toNumber(firstDefined([macroSource.unemployment, macroSource.joblessness], 0.1), 0.1), 0, 1),
+        investmentConfidence: clamp(toNumber(firstDefined([macroSource.investmentConfidence, macroSource.investorConfidence], 0.5), 0.5), 0, 1),
+        tradeFlow: clamp(toNumber(firstDefined([macroSource.tradeFlow, macroSource.trade], 0.5), 0.5), 0, 1),
+        fiscalSpace: clamp(toNumber(firstDefined([macroSource.fiscalSpace, macroSource.fiscal], 0.5), 0.5), 0, 1)
+      }
+    };
+  }
+
   function defaultShockLibrary() {
     return {
       commodityCrash: {
@@ -109,10 +254,10 @@
   }
 
   function computeKpis(state) {
-    var institutions = state.players;
-    var groups = state.groups;
-    var relations = state.relations;
-    var macro = state.macro;
+    var institutions = state.players || [];
+    var groups = state.groups || [];
+    var relations = state.relations || [];
+    var macro = state.macro || {};
 
     var avgGrievance = weightedMean(groups, 'grievance', 'size');
     var avgMobilization = weightedMean(groups, 'mobilization', 'size');
@@ -132,9 +277,9 @@
     })));
 
     var economicStress = clamp(
-      (clamp(macro.inflation, 0, 1) * 0.35) +
-      (clamp(macro.unemployment, 0, 1) * 0.35) +
-      ((1 - clamp(macro.investmentConfidence, 0, 1)) * 0.3),
+      (clamp(macro.inflation || 0, 0, 1) * 0.35) +
+      (clamp(macro.unemployment || 0, 0, 1) * 0.35) +
+      ((1 - clamp(macro.investmentConfidence || 0, 0, 1)) * 0.3),
       0,
       1
     );
@@ -167,8 +312,8 @@
 
     var economicResilience = clamp(
       (1 - economicStress) * 0.50 +
-      clamp(macro.tradeFlow, 0, 1) * 0.20 +
-      clamp(macro.fiscalSpace, 0, 1) * 0.20 +
+      clamp(macro.tradeFlow || 0, 0, 1) * 0.20 +
+      clamp(macro.fiscalSpace || 0, 0, 1) * 0.20 +
       avg(institutions.map(function (p) { return p.resourceBase; })) * 0.10,
       0,
       1
@@ -182,10 +327,10 @@
     };
   }
 
-  function buildDriverSet(state, kpis) {
-    var groups = state.groups;
-    var relations = state.relations;
-    var players = state.players;
+  function buildDriverSet(state) {
+    var groups = state.groups || [];
+    var relations = state.relations || [];
+    var players = state.players || [];
 
     return {
       avgGroupGrievance: weightedMean(groups, 'grievance', 'size'),
@@ -197,12 +342,12 @@
       })),
       avgLegitimacy: avg(players.map(function (p) { return p.legitimacy; })),
       avgCohesion: avg(players.map(function (p) { return p.cohesion; })),
-      inflation: clamp(state.macro.inflation, 0, 1),
-      unemployment: clamp(state.macro.unemployment, 0, 1),
-      investmentConfidence: clamp(state.macro.investmentConfidence, 0, 1),
-      tradeFlow: clamp(state.macro.tradeFlow, 0, 1),
-      fiscalSpace: clamp(state.macro.fiscalSpace, 0, 1),
-      gdpTrend: clamp(state.macro.gdpTrend, -1, 1)
+      inflation: clamp((state.macro && state.macro.inflation) || 0, 0, 1),
+      unemployment: clamp((state.macro && state.macro.unemployment) || 0, 0, 1),
+      investmentConfidence: clamp((state.macro && state.macro.investmentConfidence) || 0, 0, 1),
+      tradeFlow: clamp((state.macro && state.macro.tradeFlow) || 0, 0, 1),
+      fiscalSpace: clamp((state.macro && state.macro.fiscalSpace) || 0, 0, 1),
+      gdpTrend: clamp((state.macro && state.macro.gdpTrend) || 0, -1, 1)
     };
   }
 
@@ -244,21 +389,51 @@
     };
   }
 
+  function normalizePath(path) {
+    if (path.indexOf('institutions.') === 0 || path.indexOf('actors.') === 0 || path.indexOf('supernodes.') === 0) {
+      return 'players.' + path.split('.').slice(1).join('.');
+    }
+    if (path.indexOf('segments.') === 0 || path.indexOf('people.') === 0 || path.indexOf('communities.') === 0) {
+      return 'groups.' + path.split('.').slice(1).join('.');
+    }
+    if (path.indexOf('edges.') === 0 || path.indexOf('links.') === 0 || path.indexOf('blocks.') === 0) {
+      return 'relations.' + path.split('.').slice(1).join('.');
+    }
+    if (path.indexOf('context.') === 0 || path.indexOf('indicators.') === 0) {
+      return 'macro.' + path.split('.').slice(1).join('.');
+    }
+    return path;
+  }
+
+  function normalizeField(scope, field) {
+    if (scope === 'groups') {
+      if (field === 'trust' || field === 'institutionalTrust') return 'trustInstitutions';
+      if (field === 'weight' || field === 'populationWeight') return 'size';
+      if (field === 'discontent') return 'grievance';
+    }
+    if (scope === 'players') {
+      if (field === 'resources') return 'resourceBase';
+      if (field === 'economicInfluence') return 'economyInfluence';
+    }
+    return field;
+  }
+
   function applyEffect(state, keyPath, effectValue, intensity, noise) {
+    var normalizedPath = normalizePath(keyPath);
     var delta = (effectValue || 0) * (intensity || 1) * (1 + noise);
 
-    if (keyPath.indexOf('groups.') === 0) {
-      var gField = keyPath.split('.')[1];
+    if (normalizedPath.indexOf('groups.') === 0) {
+      var gField = normalizeField('groups', normalizedPath.split('.')[1]);
       applyDeltaToCollection(state.groups, gField, delta);
       return;
     }
-    if (keyPath.indexOf('players.') === 0) {
-      var pField = keyPath.split('.')[1];
+    if (normalizedPath.indexOf('players.') === 0) {
+      var pField = normalizeField('players', normalizedPath.split('.')[1]);
       applyDeltaToCollection(state.players, pField, delta);
       return;
     }
-    if (keyPath.indexOf('relations.') === 0) {
-      var rField = keyPath.split('.')[1];
+    if (normalizedPath.indexOf('relations.') === 0) {
+      var rField = normalizeField('relations', normalizedPath.split('.')[1]);
       for (var i = 0; i < state.relations.length; i++) {
         if (rField === 'influence') {
           state.relations[i].influence = clamp(state.relations[i].influence + delta, -1, 1);
@@ -268,8 +443,8 @@
       }
       return;
     }
-    if (keyPath.indexOf('macro.') === 0) {
-      var mField = keyPath.split('.')[1];
+    if (normalizedPath.indexOf('macro.') === 0) {
+      var mField = normalizeField('macro', normalizedPath.split('.')[1]);
       var current = typeof state.macro[mField] === 'number' ? state.macro[mField] : 0;
       if (mField === 'gdpTrend') {
         state.macro[mField] = clamp(current + delta, -1, 1);
@@ -313,7 +488,7 @@
 
   function applyShock(state, shock, rng, options) {
     var noiseSigma = (options && options.effectNoiseSigma) || 0.1;
-    var effects = shock.effects || {};
+    var effects = (shock && shock.effects) || {};
 
     Object.keys(effects).forEach(function (keyPath) {
       var noise = randn(rng) * noiseSigma;
@@ -335,14 +510,17 @@
     var opts = options || {};
     var seed = typeof opts.rngSeed === 'number' ? opts.rngSeed : 1337;
     var rng = createRng(seed);
+    var normalized = normalizeSeed(seedData);
 
     var state = {
       step: 0,
-      players: deepClone(seedData.players || []),
-      groups: deepClone(seedData.groups || []),
-      relations: deepClone(seedData.relations || []),
-      macro: deepClone(seedData.macro || {}),
-      scheduledEvents: deepClone(seedData.events || []),
+      meta: deepClone(normalized.meta || {}),
+      players: deepClone(normalized.players || []),
+      groups: deepClone(normalized.groups || []),
+      relations: deepClone(normalized.relations || []),
+      layers: deepClone(normalized.layers || {}),
+      macro: deepClone(normalized.macro || {}),
+      scheduledEvents: deepClone(normalized.events || []),
       appliedShocks: [],
       history: []
     };
@@ -364,7 +542,7 @@
 
       var exogenous = cfg.exogenousShocks || [];
       for (var j = 0; j < exogenous.length; j++) {
-        applyShock(state, exogenous[j], rng, opts);
+        applyShock(state, normalizeEvent(exogenous[j], j), rng, opts);
       }
 
       var kpis = computeKpis(state);
@@ -388,7 +566,7 @@
     }
 
     function injectShock(shock) {
-      applyShock(state, shock, rng, opts);
+      applyShock(state, normalizeEvent(shock, 0), rng, opts);
       return snapshot();
     }
 
@@ -436,7 +614,7 @@
       var arr = metrics[k].slice().sort(function (a, b) { return a - b; });
       var mean = avg(arr);
       var sd = stdDev(arr);
-      var z = 1.96; // normal approx for 95%; keep simple by design
+      var z = 1.96;
       var sem = sd / Math.sqrt(arr.length || 1);
 
       summary[k] = {
@@ -471,7 +649,8 @@
     computeKpis: computeKpis,
     monteCarlo: monteCarlo,
     explainState: explainState,
-    createRng: createRng
+    createRng: createRng,
+    normalizeSeed: normalizeSeed
   };
 
   if (typeof module !== 'undefined' && module.exports) {

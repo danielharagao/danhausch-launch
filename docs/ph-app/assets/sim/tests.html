@@ -27,6 +27,24 @@
       return res.json();
     }
 
+    function makeV3SeedFromV1(v1) {
+      return {
+        meta: { ...(v1.meta || {}), version: '3.0.0' },
+        entities: {
+          players: (v1.players || []).map((p) => ({ ...p, attrs: { power: p.power, cohesion: p.cohesion, legitimacy: p.legitimacy, resourceBase: p.resourceBase } })),
+          groups: (v1.groups || []).map((g) => ({ ...g, trust: g.trustInstitutions, weight: g.size })),
+          relations: (v1.relations || []).map((r) => ({ ...r, from: r.source, to: r.target }))
+        },
+        layers: {
+          people: (v1.groups || []).map((g) => ({ id: g.id, label: g.name, region: 'groups', grievance: g.grievance, mobilization: g.mobilization, trustInstitutions: g.trustInstitutions })),
+          supernodes: (v1.players || []).map((p) => ({ id: p.id, label: p.name, region: p.type, power: p.power, cohesion: p.cohesion, legitimacy: p.legitimacy, resourceBase: p.resourceBase })),
+          blocks: (v1.relations || []).map((r, idx) => ({ id: `b-${idx}`, label: `${r.source} -> ${r.target}`, region: r.type, influence: r.influence, volatility: r.volatility }))
+        },
+        events: v1.events,
+        context: { macro: v1.macro }
+      };
+    }
+
     function assert(condition, message) {
       if (!condition) throw new Error(message);
     }
@@ -92,6 +110,10 @@
       const drivers = adapter.getDrivers(f3);
       const net = adapter.getNetwork(f3, 'people', { riskThreshold: 0, query: '' });
 
+      const seedV3 = makeV3SeedFromV1(seed);
+      const simV3 = PHSim.createSimulator(seedV3, { rngSeed: 11 });
+      const frameV3 = simV3.step();
+
       report('Adapter cria frames sem dados mockados', () => {
         assert(f0 && f3, 'frames ausentes');
         assert(typeof f3.score === 'number', 'score inválido');
@@ -101,6 +123,26 @@
       report('Adapter expõe drivers e rede', () => {
         assert(Array.isArray(drivers) && drivers.length > 0, 'drivers vazio');
         assert(Array.isArray(net) && net.length > 0, 'rede vazia');
+      });
+
+      report('Engine aceita seed V3 (entities/layers)', () => {
+        assert(frameV3 && frameV3.kpis, 'frame V3 ausente');
+        assert(in01(frameV3.kpis.riskConflict), 'riskConflict V3 fora de faixa');
+      });
+
+      const adapterV3 = await createPHAdapter({
+        apiClient: {
+          isEnabled: () => true,
+          health: async () => ({ ok: true }),
+          getSeed: async () => seedV3
+        }
+      });
+      const f1v3 = adapterV3.getFrame(1);
+      const netBlocksV3 = adapterV3.getNetwork(f1v3, 'blocks', { riskThreshold: 0, query: '' });
+
+      report('Adapter processa V3 e layers de network', () => {
+        assert(Array.isArray(netBlocksV3), 'network V3 inválida');
+        assert(netBlocksV3.length > 0, 'network blocks V3 vazia');
       });
 
       print('Passou: ' + pass + ' | Falhou: ' + fail);
