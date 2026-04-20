@@ -1,9 +1,9 @@
 {
   "meta": {
-    "name": "Predictive History Seed Dataset V4 - Global Entities + Recent Events",
+    "name": "Predictive History Seed Dataset V4 - G20 Full Coverage",
     "version": "4.0.0",
     "timeUnit": "month",
-    "description": "V3 baseline extended with dense real-world event timeline (2020-2025) mapped to macro/actors/relations",
+    "description": "Expanded baseline with full G20 country coverage (including EU), state-leader-institution triads, bloc-level structure and recent base events for forecasting.",
     "snapshotDate": "2026-04-20"
   },
   "players": [
@@ -11,683 +11,1003 @@
       "id": "un",
       "name": "United Nations",
       "type": "institution",
-      "power": 0.71,
-      "cohesion": 0.52,
-      "legitimacy": 0.74,
-      "economyInfluence": 0.42,
-      "resourceBase": 0.58
-    },
-    {
-      "id": "eu",
-      "name": "European Union",
-      "type": "institution",
-      "power": 0.78,
-      "cohesion": 0.61,
-      "legitimacy": 0.7,
-      "economyInfluence": 0.81,
-      "resourceBase": 0.73
+      "power": 0.72,
+      "cohesion": 0.53,
+      "legitimacy": 0.75,
+      "economyInfluence": 0.43,
+      "resourceBase": 0.59
     },
     {
       "id": "g20",
       "name": "G20",
       "type": "institution",
-      "power": 0.83,
-      "cohesion": 0.49,
-      "legitimacy": 0.67,
-      "economyInfluence": 0.88,
+      "power": 0.86,
+      "cohesion": 0.51,
+      "legitimacy": 0.68,
+      "economyInfluence": 0.89,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "eu",
+      "name": "European Union",
+      "type": "institution",
+      "power": 0.8,
+      "cohesion": 0.63,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.83,
+      "resourceBase": 0.75
+    },
+    {
+      "id": "nato",
+      "name": "NATO",
+      "type": "institution",
+      "power": 0.76,
+      "cohesion": 0.67,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.41,
       "resourceBase": 0.69
     },
     {
-      "id": "us",
-      "name": "United States",
-      "type": "country",
-      "power": 0.94,
-      "cohesion": 0.58,
-      "legitimacy": 0.62,
-      "economyInfluence": 0.93,
-      "resourceBase": 0.86
-    },
-    {
-      "id": "china",
-      "name": "China",
-      "type": "country",
-      "power": 0.92,
-      "cohesion": 0.72,
-      "legitimacy": 0.57,
-      "economyInfluence": 0.91,
-      "resourceBase": 0.89
-    },
-    {
-      "id": "india",
-      "name": "India",
-      "type": "country",
-      "power": 0.84,
-      "cohesion": 0.6,
-      "legitimacy": 0.63,
-      "economyInfluence": 0.79,
-      "resourceBase": 0.83
-    },
-    {
-      "id": "russia",
-      "name": "Russia",
-      "type": "country",
-      "power": 0.79,
-      "cohesion": 0.66,
-      "legitimacy": 0.42,
-      "economyInfluence": 0.66,
-      "resourceBase": 0.86
-    },
-    {
-      "id": "japan",
-      "name": "Japan",
-      "type": "country",
-      "power": 0.74,
-      "cohesion": 0.71,
-      "legitimacy": 0.69,
-      "economyInfluence": 0.78,
-      "resourceBase": 0.7
-    },
-    {
-      "id": "germany",
-      "name": "Germany",
-      "type": "country",
-      "power": 0.73,
-      "cohesion": 0.68,
-      "legitimacy": 0.7,
-      "economyInfluence": 0.76,
-      "resourceBase": 0.67
-    },
-    {
-      "id": "france",
-      "name": "France",
-      "type": "country",
-      "power": 0.71,
-      "cohesion": 0.62,
-      "legitimacy": 0.65,
-      "economyInfluence": 0.72,
+      "id": "imf",
+      "name": "IMF",
+      "type": "institution",
+      "power": 0.69,
+      "cohesion": 0.64,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.77,
       "resourceBase": 0.66
     },
     {
-      "id": "uk",
-      "name": "United Kingdom",
-      "type": "country",
-      "power": 0.7,
-      "cohesion": 0.59,
-      "legitimacy": 0.64,
-      "economyInfluence": 0.73,
-      "resourceBase": 0.64
-    },
-    {
-      "id": "italy",
-      "name": "Italy",
-      "type": "country",
+      "id": "worldbank",
+      "name": "World Bank",
+      "type": "institution",
       "power": 0.65,
-      "cohesion": 0.57,
-      "legitimacy": 0.6,
-      "economyInfluence": 0.66,
-      "resourceBase": 0.6
-    },
-    {
-      "id": "canada",
-      "name": "Canada",
-      "type": "country",
-      "power": 0.67,
-      "cohesion": 0.69,
-      "legitimacy": 0.71,
-      "economyInfluence": 0.68,
-      "resourceBase": 0.67
-    },
-    {
-      "id": "australia",
-      "name": "Australia",
-      "type": "country",
-      "power": 0.63,
-      "cohesion": 0.7,
-      "legitimacy": 0.72,
-      "economyInfluence": 0.64,
-      "resourceBase": 0.68
-    },
-    {
-      "id": "southkorea",
-      "name": "South Korea",
-      "type": "country",
-      "power": 0.66,
-      "cohesion": 0.63,
+      "cohesion": 0.62,
       "legitimacy": 0.66,
       "economyInfluence": 0.71,
       "resourceBase": 0.63
     },
     {
-      "id": "indonesia",
-      "name": "Indonesia",
-      "type": "country",
-      "power": 0.64,
-      "cohesion": 0.61,
-      "legitimacy": 0.65,
-      "economyInfluence": 0.62,
-      "resourceBase": 0.66
-    },
-    {
-      "id": "saudi",
-      "name": "Saudi Arabia",
-      "type": "country",
-      "power": 0.69,
-      "cohesion": 0.71,
-      "legitimacy": 0.56,
-      "economyInfluence": 0.74,
-      "resourceBase": 0.88
-    },
-    {
-      "id": "turkiye",
-      "name": "Turkiye",
-      "type": "country",
-      "power": 0.64,
-      "cohesion": 0.55,
-      "legitimacy": 0.48,
-      "economyInfluence": 0.57,
-      "resourceBase": 0.59
-    },
-    {
-      "id": "southafrica",
-      "name": "South Africa",
-      "type": "country",
+      "id": "wto",
+      "name": "WTO",
+      "type": "institution",
       "power": 0.58,
       "cohesion": 0.49,
-      "legitimacy": 0.53,
-      "economyInfluence": 0.52,
-      "resourceBase": 0.57
+      "legitimacy": 0.6,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.52
     },
     {
-      "id": "brazil",
-      "name": "Brazil",
-      "type": "country",
-      "power": 0.68,
-      "cohesion": 0.54,
-      "legitimacy": 0.59,
-      "economyInfluence": 0.64,
-      "resourceBase": 0.72
-    },
-    {
-      "id": "mexico",
-      "name": "Mexico",
-      "type": "country",
-      "power": 0.62,
-      "cohesion": 0.53,
+      "id": "opec",
+      "name": "OPEC+",
+      "type": "institution",
+      "power": 0.67,
+      "cohesion": 0.58,
       "legitimacy": 0.56,
-      "economyInfluence": 0.6,
-      "resourceBase": 0.62
+      "economyInfluence": 0.79,
+      "resourceBase": 0.82
+    },
+    {
+      "id": "au",
+      "name": "African Union",
+      "type": "institution",
+      "power": 0.57,
+      "cohesion": 0.46,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.48,
+      "resourceBase": 0.54
     },
     {
       "id": "argentina",
       "name": "Argentina",
       "type": "country",
-      "power": 0.53,
+      "power": 0.54,
+      "cohesion": 0.45,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.5,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "milei",
+      "name": "Javier Milei",
+      "type": "leader",
+      "power": 0.67,
       "cohesion": 0.44,
-      "legitimacy": 0.47,
+      "legitimacy": 0.46,
       "economyInfluence": 0.49,
+      "resourceBase": 0.52
+    },
+    {
+      "id": "arg_treasury",
+      "name": "Argentina Economy Ministry",
+      "type": "institution",
+      "power": 0.53,
+      "cohesion": 0.46,
+      "legitimacy": 0.44,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.47
+    },
+    {
+      "id": "arg_bcra",
+      "name": "Central Bank of Argentina",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.51,
+      "legitimacy": 0.42,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.45
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "type": "country",
+      "power": 0.64,
+      "cohesion": 0.71,
+      "legitimacy": 0.73,
+      "economyInfluence": 0.65,
+      "resourceBase": 0.69
+    },
+    {
+      "id": "albanese",
+      "name": "Anthony Albanese",
+      "type": "leader",
+      "power": 0.62,
+      "cohesion": 0.66,
+      "legitimacy": 0.68,
+      "economyInfluence": 0.56,
+      "resourceBase": 0.57
+    },
+    {
+      "id": "aus_treasury",
+      "name": "Australian Treasury",
+      "type": "institution",
+      "power": 0.55,
+      "cohesion": 0.65,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "aus_rba",
+      "name": "Reserve Bank of Australia",
+      "type": "institution",
+      "power": 0.59,
+      "cohesion": 0.71,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.73,
       "resourceBase": 0.55
     },
     {
-      "id": "trump",
-      "name": "Donald Trump",
+      "id": "brazil",
+      "name": "Brazil",
+      "type": "country",
+      "power": 0.69,
+      "cohesion": 0.55,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.65,
+      "resourceBase": 0.73
+    },
+    {
+      "id": "lula",
+      "name": "Luiz Inacio Lula da Silva",
       "type": "leader",
-      "power": 0.78,
-      "cohesion": 0.42,
-      "legitimacy": 0.5,
-      "economyInfluence": 0.62,
-      "resourceBase": 0.64
+      "power": 0.74,
+      "cohesion": 0.58,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "br_fazenda",
+      "name": "Brazil Finance Ministry",
+      "type": "institution",
+      "power": 0.57,
+      "cohesion": 0.56,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "br_bcb",
+      "name": "Central Bank of Brazil",
+      "type": "institution",
+      "power": 0.61,
+      "cohesion": 0.63,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "canada",
+      "name": "Canada",
+      "type": "country",
+      "power": 0.68,
+      "cohesion": 0.7,
+      "legitimacy": 0.72,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.68
+    },
+    {
+      "id": "carney",
+      "name": "Mark Carney",
+      "type": "leader",
+      "power": 0.68,
+      "cohesion": 0.64,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.59,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "ca_finance",
+      "name": "Finance Canada",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.67,
+      "legitimacy": 0.7,
+      "economyInfluence": 0.64,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "ca_boc",
+      "name": "Bank of Canada",
+      "type": "institution",
+      "power": 0.6,
+      "cohesion": 0.72,
+      "legitimacy": 0.73,
+      "economyInfluence": 0.75,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "type": "country",
+      "power": 0.93,
+      "cohesion": 0.73,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.92,
+      "resourceBase": 0.9
     },
     {
       "id": "xi",
       "name": "Xi Jinping",
       "type": "leader",
-      "power": 0.86,
-      "cohesion": 0.76,
+      "power": 0.87,
+      "cohesion": 0.77,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.78
+    },
+    {
+      "id": "cn_ndrc",
+      "name": "NDRC",
+      "type": "institution",
+      "power": 0.72,
+      "cohesion": 0.78,
       "legitimacy": 0.54,
+      "economyInfluence": 0.84,
+      "resourceBase": 0.74
+    },
+    {
+      "id": "cn_pbc",
+      "name": "People's Bank of China",
+      "type": "institution",
+      "power": 0.66,
+      "cohesion": 0.74,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.81,
+      "resourceBase": 0.68
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "type": "country",
+      "power": 0.72,
+      "cohesion": 0.63,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "macron",
+      "name": "Emmanuel Macron",
+      "type": "leader",
+      "power": 0.65,
+      "cohesion": 0.54,
+      "legitimacy": 0.5,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "fr_finance",
+      "name": "French Finance Ministry",
+      "type": "institution",
+      "power": 0.55,
+      "cohesion": 0.6,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.65,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "fr_bdf",
+      "name": "Banque de France",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.68,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.7,
+      "resourceBase": 0.53
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "type": "country",
+      "power": 0.74,
+      "cohesion": 0.69,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.77,
+      "resourceBase": 0.68
+    },
+    {
+      "id": "merz",
+      "name": "Friedrich Merz",
+      "type": "leader",
+      "power": 0.62,
+      "cohesion": 0.57,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.55,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "de_finance",
+      "name": "German Finance Ministry",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.64,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "de_buba",
+      "name": "Bundesbank",
+      "type": "institution",
+      "power": 0.6,
+      "cohesion": 0.71,
+      "legitimacy": 0.74,
       "economyInfluence": 0.72,
-      "resourceBase": 0.77
+      "resourceBase": 0.57
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "type": "country",
+      "power": 0.85,
+      "cohesion": 0.61,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.8,
+      "resourceBase": 0.84
     },
     {
       "id": "modi",
       "name": "Narendra Modi",
       "type": "leader",
-      "power": 0.8,
+      "power": 0.81,
+      "cohesion": 0.67,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.7
+    },
+    {
+      "id": "in_finance",
+      "name": "India Finance Ministry",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.6,
+      "legitimacy": 0.59,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "in_rbi",
+      "name": "Reserve Bank of India",
+      "type": "institution",
+      "power": 0.63,
+      "cohesion": 0.72,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia",
+      "type": "country",
+      "power": 0.65,
+      "cohesion": 0.62,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "prabowo",
+      "name": "Prabowo Subianto",
+      "type": "leader",
+      "power": 0.69,
+      "cohesion": 0.63,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.55,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "id_finance",
+      "name": "Indonesia Finance Ministry",
+      "type": "institution",
+      "power": 0.54,
+      "cohesion": 0.61,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.6,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "id_bi",
+      "name": "Bank Indonesia",
+      "type": "institution",
+      "power": 0.59,
+      "cohesion": 0.68,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.7,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "type": "country",
+      "power": 0.66,
+      "cohesion": 0.58,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "meloni",
+      "name": "Giorgia Meloni",
+      "type": "leader",
+      "power": 0.71,
+      "cohesion": 0.59,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.53,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "it_mef",
+      "name": "Italian Economy Ministry",
+      "type": "institution",
+      "power": 0.54,
+      "cohesion": 0.57,
+      "legitimacy": 0.59,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.53
+    },
+    {
+      "id": "it_bdi",
+      "name": "Bank of Italy",
+      "type": "institution",
+      "power": 0.57,
       "cohesion": 0.66,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "type": "country",
+      "power": 0.75,
+      "cohesion": 0.72,
+      "legitimacy": 0.7,
+      "economyInfluence": 0.79,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "ishiba",
+      "name": "Shigeru Ishiba",
+      "type": "leader",
+      "power": 0.63,
+      "cohesion": 0.62,
       "legitimacy": 0.6,
-      "economyInfluence": 0.66,
-      "resourceBase": 0.69
+      "economyInfluence": 0.55,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "jp_mof",
+      "name": "Japan Finance Ministry",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.69,
+      "legitimacy": 0.68,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "jp_boj",
+      "name": "Bank of Japan",
+      "type": "institution",
+      "power": 0.62,
+      "cohesion": 0.74,
+      "legitimacy": 0.72,
+      "economyInfluence": 0.78,
+      "resourceBase": 0.57
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "type": "country",
+      "power": 0.63,
+      "cohesion": 0.54,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.63
+    },
+    {
+      "id": "sheinbaum",
+      "name": "Claudia Sheinbaum",
+      "type": "leader",
+      "power": 0.68,
+      "cohesion": 0.57,
+      "legitimacy": 0.59,
+      "economyInfluence": 0.54,
+      "resourceBase": 0.57
+    },
+    {
+      "id": "mx_hacienda",
+      "name": "Mexico Finance Ministry",
+      "type": "institution",
+      "power": 0.53,
+      "cohesion": 0.55,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.53
+    },
+    {
+      "id": "mx_banxico",
+      "name": "Bank of Mexico",
+      "type": "institution",
+      "power": 0.57,
+      "cohesion": 0.67,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "russia",
+      "name": "Russia",
+      "type": "country",
+      "power": 0.8,
+      "cohesion": 0.67,
+      "legitimacy": 0.41,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.87
     },
     {
       "id": "putin",
       "name": "Vladimir Putin",
       "type": "leader",
-      "power": 0.82,
-      "cohesion": 0.71,
+      "power": 0.83,
+      "cohesion": 0.72,
+      "legitimacy": 0.42,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.72
+    },
+    {
+      "id": "ru_finance",
+      "name": "Russia Finance Ministry",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.64,
       "legitimacy": 0.43,
-      "economyInfluence": 0.6,
-      "resourceBase": 0.71
+      "economyInfluence": 0.63,
+      "resourceBase": 0.59
+    },
+    {
+      "id": "ru_cbr",
+      "name": "Bank of Russia",
+      "type": "institution",
+      "power": 0.6,
+      "cohesion": 0.69,
+      "legitimacy": 0.47,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.61
+    },
+    {
+      "id": "saudi",
+      "name": "Saudi Arabia",
+      "type": "country",
+      "power": 0.7,
+      "cohesion": 0.72,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.75,
+      "resourceBase": 0.89
+    },
+    {
+      "id": "mbs",
+      "name": "Mohammed bin Salman",
+      "type": "leader",
+      "power": 0.82,
+      "cohesion": 0.74,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.71,
+      "resourceBase": 0.83
+    },
+    {
+      "id": "sa_mof",
+      "name": "Saudi Finance Ministry",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.7,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.66
+    },
+    {
+      "id": "sa_sama",
+      "name": "Saudi Central Bank",
+      "type": "institution",
+      "power": 0.6,
+      "cohesion": 0.75,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "southafrica",
+      "name": "South Africa",
+      "type": "country",
+      "power": 0.59,
+      "cohesion": 0.5,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.53,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "ramaphosa",
+      "name": "Cyril Ramaphosa",
+      "type": "leader",
+      "power": 0.63,
+      "cohesion": 0.5,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.48,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "za_treasury",
+      "name": "South Africa Treasury",
+      "type": "institution",
+      "power": 0.52,
+      "cohesion": 0.53,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.57,
+      "resourceBase": 0.51
+    },
+    {
+      "id": "za_sarb",
+      "name": "South African Reserve Bank",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.65,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.68,
+      "resourceBase": 0.53
+    },
+    {
+      "id": "southkorea",
+      "name": "South Korea",
+      "type": "country",
+      "power": 0.67,
+      "cohesion": 0.64,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "leejm",
+      "name": "Lee Jae-myung",
+      "type": "leader",
+      "power": 0.64,
+      "cohesion": 0.56,
+      "legitimacy": 0.54,
+      "economyInfluence": 0.52,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "kr_mof",
+      "name": "Korea Economy and Finance Ministry",
+      "type": "institution",
+      "power": 0.55,
+      "cohesion": 0.62,
+      "legitimacy": 0.63,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "kr_bok",
+      "name": "Bank of Korea",
+      "type": "institution",
+      "power": 0.59,
+      "cohesion": 0.7,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.73,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "turkiye",
+      "name": "Turkiye",
+      "type": "country",
+      "power": 0.65,
+      "cohesion": 0.56,
+      "legitimacy": 0.49,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.6
+    },
+    {
+      "id": "erdogan",
+      "name": "Recep Tayyip Erdogan",
+      "type": "leader",
+      "power": 0.76,
+      "cohesion": 0.61,
+      "legitimacy": 0.45,
+      "economyInfluence": 0.55,
+      "resourceBase": 0.63
+    },
+    {
+      "id": "tr_treasury",
+      "name": "Turkiye Treasury and Finance",
+      "type": "institution",
+      "power": 0.54,
+      "cohesion": 0.56,
+      "legitimacy": 0.48,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "tr_cbrt",
+      "name": "Central Bank of the Republic of Turkiye",
+      "type": "institution",
+      "power": 0.58,
+      "cohesion": 0.62,
+      "legitimacy": 0.5,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "type": "country",
+      "power": 0.71,
+      "cohesion": 0.6,
+      "legitimacy": 0.65,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.65
+    },
+    {
+      "id": "starmer",
+      "name": "Keir Starmer",
+      "type": "leader",
+      "power": 0.63,
+      "cohesion": 0.58,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.53,
+      "resourceBase": 0.54
+    },
+    {
+      "id": "uk_hmt",
+      "name": "UK Treasury",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.61,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.55
+    },
+    {
+      "id": "uk_boe",
+      "name": "Bank of England",
+      "type": "institution",
+      "power": 0.61,
+      "cohesion": 0.7,
+      "legitimacy": 0.69,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.56
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "type": "country",
+      "power": 0.95,
+      "cohesion": 0.57,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.94,
+      "resourceBase": 0.87
+    },
+    {
+      "id": "trump",
+      "name": "Donald Trump",
+      "type": "leader",
+      "power": 0.79,
+      "cohesion": 0.43,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.65
+    },
+    {
+      "id": "us_treasury",
+      "name": "U.S. Treasury",
+      "type": "institution",
+      "power": 0.67,
+      "cohesion": 0.59,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.82,
+      "resourceBase": 0.62
+    },
+    {
+      "id": "us_fed",
+      "name": "Federal Reserve",
+      "type": "institution",
+      "power": 0.7,
+      "cohesion": 0.73,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.87,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "eu-country",
+      "name": "European Union (Member Bloc)",
+      "type": "country",
+      "power": 0.79,
+      "cohesion": 0.62,
+      "legitimacy": 0.7,
+      "economyInfluence": 0.82,
+      "resourceBase": 0.74
     },
     {
       "id": "vonderleyen",
       "name": "Ursula von der Leyen",
       "type": "leader",
-      "power": 0.61,
-      "cohesion": 0.55,
-      "legitimacy": 0.62,
-      "economyInfluence": 0.58,
-      "resourceBase": 0.55
-    },
-    {
-      "id": "guterres",
-      "name": "Antonio Guterres",
-      "type": "leader",
-      "power": 0.49,
-      "cohesion": 0.52,
-      "legitimacy": 0.71,
-      "economyInfluence": 0.32,
-      "resourceBase": 0.44
-    },
-    {
-      "id": "elon",
-      "name": "Elon Musk",
-      "type": "person",
-      "power": 0.77,
-      "cohesion": 0.46,
-      "legitimacy": 0.47,
-      "economyInfluence": 0.83,
-      "resourceBase": 0.81
-    },
-    {
-      "id": "samaltman",
-      "name": "Sam Altman",
-      "type": "person",
-      "power": 0.58,
-      "cohesion": 0.51,
-      "legitimacy": 0.52,
-      "economyInfluence": 0.69,
-      "resourceBase": 0.59
-    },
-    {
-      "id": "jensen",
-      "name": "Jensen Huang",
-      "type": "person",
-      "power": 0.56,
-      "cohesion": 0.6,
-      "legitimacy": 0.61,
-      "economyInfluence": 0.74,
-      "resourceBase": 0.63
-    },
-    {
-      "id": "lagarde",
-      "name": "Christine Lagarde",
-      "type": "person",
-      "power": 0.55,
-      "cohesion": 0.64,
-      "legitimacy": 0.66,
-      "economyInfluence": 0.68,
-      "resourceBase": 0.57
-    },
-    {
-      "id": "apple",
-      "name": "Apple",
-      "type": "company",
-      "power": 0.7,
-      "cohesion": 0.76,
+      "power": 0.62,
+      "cohesion": 0.56,
       "legitimacy": 0.63,
-      "economyInfluence": 0.83,
-      "resourceBase": 0.79
+      "economyInfluence": 0.59,
+      "resourceBase": 0.56
     },
     {
-      "id": "microsoft",
-      "name": "Microsoft",
-      "type": "company",
-      "power": 0.72,
-      "cohesion": 0.78,
-      "legitimacy": 0.68,
-      "economyInfluence": 0.85,
-      "resourceBase": 0.81
-    },
-    {
-      "id": "alphabet",
-      "name": "Alphabet",
-      "type": "company",
-      "power": 0.69,
-      "cohesion": 0.74,
-      "legitimacy": 0.58,
-      "economyInfluence": 0.81,
-      "resourceBase": 0.76
-    },
-    {
-      "id": "amazon",
-      "name": "Amazon",
-      "type": "company",
-      "power": 0.68,
-      "cohesion": 0.69,
-      "legitimacy": 0.56,
-      "economyInfluence": 0.82,
-      "resourceBase": 0.77
-    },
-    {
-      "id": "meta",
-      "name": "Meta",
-      "type": "company",
-      "power": 0.65,
-      "cohesion": 0.63,
-      "legitimacy": 0.49,
-      "economyInfluence": 0.74,
-      "resourceBase": 0.7
-    },
-    {
-      "id": "nvidia",
-      "name": "NVIDIA",
-      "type": "company",
-      "power": 0.66,
-      "cohesion": 0.73,
-      "legitimacy": 0.67,
-      "economyInfluence": 0.79,
-      "resourceBase": 0.73
-    },
-    {
-      "id": "tsmc",
-      "name": "TSMC",
-      "type": "company",
+      "id": "ec",
+      "name": "European Commission",
+      "type": "institution",
       "power": 0.64,
-      "cohesion": 0.75,
-      "legitimacy": 0.69,
-      "economyInfluence": 0.77,
-      "resourceBase": 0.71
-    },
-    {
-      "id": "samsung",
-      "name": "Samsung Electronics",
-      "type": "company",
-      "power": 0.63,
-      "cohesion": 0.72,
-      "legitimacy": 0.65,
-      "economyInfluence": 0.73,
-      "resourceBase": 0.69
-    },
-    {
-      "id": "openai",
-      "name": "OpenAI",
-      "type": "company",
-      "power": 0.56,
-      "cohesion": 0.59,
-      "legitimacy": 0.6,
-      "economyInfluence": 0.71,
-      "resourceBase": 0.58
-    },
-    {
-      "id": "tesla",
-      "name": "Tesla",
-      "type": "company",
-      "power": 0.62,
-      "cohesion": 0.57,
-      "legitimacy": 0.48,
-      "economyInfluence": 0.66,
-      "resourceBase": 0.65
-    },
-    {
-      "id": "xcorp",
-      "name": "X Corp",
-      "type": "company",
-      "power": 0.5,
-      "cohesion": 0.51,
-      "legitimacy": 0.35,
-      "economyInfluence": 0.58,
-      "resourceBase": 0.47
-    },
-    {
-      "id": "aramco",
-      "name": "Saudi Aramco",
-      "type": "company",
-      "power": 0.67,
-      "cohesion": 0.79,
-      "legitimacy": 0.55,
-      "economyInfluence": 0.76,
-      "resourceBase": 0.88
-    },
-    {
-      "id": "exxon",
-      "name": "ExxonMobil",
-      "type": "company",
-      "power": 0.62,
-      "cohesion": 0.71,
-      "legitimacy": 0.51,
-      "economyInfluence": 0.69,
-      "resourceBase": 0.74
-    },
-    {
-      "id": "shell",
-      "name": "Shell",
-      "type": "company",
-      "power": 0.6,
-      "cohesion": 0.69,
-      "legitimacy": 0.54,
-      "economyInfluence": 0.67,
-      "resourceBase": 0.72
-    },
-    {
-      "id": "lockheed",
-      "name": "Lockheed Martin",
-      "type": "company",
-      "power": 0.61,
-      "cohesion": 0.76,
-      "legitimacy": 0.52,
-      "economyInfluence": 0.58,
-      "resourceBase": 0.66
-    },
-    {
-      "id": "bae",
-      "name": "BAE Systems",
-      "type": "company",
-      "power": 0.54,
-      "cohesion": 0.7,
-      "legitimacy": 0.55,
-      "economyInfluence": 0.49,
-      "resourceBase": 0.58
-    },
-    {
-      "id": "norinco",
-      "name": "NORINCO",
-      "type": "company",
-      "power": 0.52,
-      "cohesion": 0.68,
-      "legitimacy": 0.38,
-      "economyInfluence": 0.45,
-      "resourceBase": 0.56
-    },
-    {
-      "id": "jpmorgan",
-      "name": "JPMorgan Chase",
-      "type": "company",
-      "power": 0.63,
-      "cohesion": 0.74,
-      "legitimacy": 0.6,
-      "economyInfluence": 0.76,
-      "resourceBase": 0.75
-    },
-    {
-      "id": "blackrock",
-      "name": "BlackRock",
-      "type": "company",
-      "power": 0.61,
-      "cohesion": 0.72,
-      "legitimacy": 0.58,
-      "economyInfluence": 0.78,
-      "resourceBase": 0.74
-    },
-    {
-      "id": "icbc",
-      "name": "ICBC",
-      "type": "company",
-      "power": 0.58,
-      "cohesion": 0.66,
-      "legitimacy": 0.5,
-      "economyInfluence": 0.67,
-      "resourceBase": 0.7
-    },
-    {
-      "id": "maersk",
-      "name": "Maersk",
-      "type": "company",
-      "power": 0.55,
-      "cohesion": 0.67,
-      "legitimacy": 0.64,
-      "economyInfluence": 0.62,
-      "resourceBase": 0.59
-    },
-    {
-      "id": "dhl",
-      "name": "DHL",
-      "type": "company",
-      "power": 0.53,
-      "cohesion": 0.68,
-      "legitimacy": 0.65,
-      "economyInfluence": 0.58,
-      "resourceBase": 0.56
-    },
-    {
-      "id": "cosco",
-      "name": "COSCO Shipping",
-      "type": "company",
-      "power": 0.54,
-      "cohesion": 0.64,
-      "legitimacy": 0.44,
-      "economyInfluence": 0.6,
+      "cohesion": 0.6,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.75,
       "resourceBase": 0.61
     },
     {
-      "id": "disney",
-      "name": "Disney",
-      "type": "company",
-      "power": 0.51,
-      "cohesion": 0.63,
-      "legitimacy": 0.61,
-      "economyInfluence": 0.55,
-      "resourceBase": 0.52
-    },
-    {
-      "id": "comcast",
-      "name": "Comcast/NBCUniversal",
-      "type": "company",
-      "power": 0.5,
-      "cohesion": 0.62,
-      "legitimacy": 0.52,
-      "economyInfluence": 0.53,
-      "resourceBase": 0.5
-    },
-    {
-      "id": "bytedance",
-      "name": "ByteDance",
-      "type": "company",
-      "power": 0.57,
-      "cohesion": 0.61,
-      "legitimacy": 0.46,
-      "economyInfluence": 0.65,
-      "resourceBase": 0.62
+      "id": "ecb",
+      "name": "European Central Bank",
+      "type": "institution",
+      "power": 0.67,
+      "cohesion": 0.72,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.82,
+      "resourceBase": 0.63
     }
   ],
   "groups": [
     {
       "id": "north-america-middle",
       "name": "North America Middle Class",
-      "size": 0.12,
-      "grievance": 0.43,
-      "mobilization": 0.47,
-      "trustInstitutions": 0.51,
-      "economicExposure": 0.59,
-      "identityPole": -0.22
+      "size": 0.1,
+      "grievance": 0.44,
+      "mobilization": 0.48,
+      "trustInstitutions": 0.5,
+      "economicExposure": 0.58,
+      "identityPole": -0.21
     },
     {
       "id": "eu-urban",
       "name": "EU Urban Professionals",
-      "size": 0.09,
-      "grievance": 0.36,
-      "mobilization": 0.44,
-      "trustInstitutions": 0.62,
-      "economicExposure": 0.54,
-      "identityPole": -0.18
+      "size": 0.08,
+      "grievance": 0.35,
+      "mobilization": 0.45,
+      "trustInstitutions": 0.63,
+      "economicExposure": 0.53,
+      "identityPole": -0.17
     },
     {
-      "id": "south-asia-workers",
-      "name": "South Asia Workers",
-      "size": 0.18,
-      "grievance": 0.58,
+      "id": "latin-america-informal",
+      "name": "Latin America Informal Workers",
+      "size": 0.11,
+      "grievance": 0.67,
       "mobilization": 0.42,
-      "trustInstitutions": 0.46,
-      "economicExposure": 0.71,
-      "identityPole": 0.31
+      "trustInstitutions": 0.33,
+      "economicExposure": 0.79,
+      "identityPole": 0.46
     },
     {
-      "id": "east-asia-manufacturing",
-      "name": "East Asia Manufacturing Labor",
-      "size": 0.15,
-      "grievance": 0.49,
-      "mobilization": 0.39,
-      "trustInstitutions": 0.52,
-      "economicExposure": 0.73,
-      "identityPole": 0.16
-    },
-    {
-      "id": "latam-informal",
-      "name": "Latin America Informal Economy",
+      "id": "east-asia-export",
+      "name": "East Asia Export Workforce",
       "size": 0.12,
-      "grievance": 0.66,
-      "mobilization": 0.41,
-      "trustInstitutions": 0.34,
-      "economicExposure": 0.78,
-      "identityPole": 0.47
+      "grievance": 0.47,
+      "mobilization": 0.38,
+      "trustInstitutions": 0.53,
+      "economicExposure": 0.74,
+      "identityPole": 0.14
+    },
+    {
+      "id": "south-asia-youth",
+      "name": "South Asia Youth Voters",
+      "size": 0.13,
+      "grievance": 0.59,
+      "mobilization": 0.56,
+      "trustInstitutions": 0.43,
+      "economicExposure": 0.72,
+      "identityPole": 0.28
     },
     {
       "id": "mena-youth",
       "name": "MENA Urban Youth",
-      "size": 0.1,
+      "size": 0.09,
       "grievance": 0.62,
-      "mobilization": 0.59,
-      "trustInstitutions": 0.33,
+      "mobilization": 0.6,
+      "trustInstitutions": 0.34,
       "economicExposure": 0.69,
-      "identityPole": 0.52
+      "identityPole": 0.51
     },
     {
       "id": "africa-rural",
       "name": "Sub-Saharan Rural Households",
-      "size": 0.11,
+      "size": 0.1,
       "grievance": 0.61,
-      "mobilization": 0.35,
-      "trustInstitutions": 0.38,
-      "economicExposure": 0.74,
-      "identityPole": 0.39
-    },
-    {
-      "id": "global-migrant",
-      "name": "Global Migrant Workforce",
-      "size": 0.07,
-      "grievance": 0.57,
-      "mobilization": 0.53,
-      "trustInstitutions": 0.37,
-      "economicExposure": 0.82,
-      "identityPole": -0.06
+      "mobilization": 0.36,
+      "trustInstitutions": 0.39,
+      "economicExposure": 0.75,
+      "identityPole": 0.38
     },
     {
       "id": "global-investors",
       "name": "Global Institutional Investors",
       "size": 0.04,
-      "grievance": 0.28,
-      "mobilization": 0.3,
-      "trustInstitutions": 0.66,
-      "economicExposure": 0.52,
-      "identityPole": -0.41
+      "grievance": 0.27,
+      "mobilization": 0.31,
+      "trustInstitutions": 0.67,
+      "economicExposure": 0.53,
+      "identityPole": -0.4
     },
     {
-      "id": "digital-natives",
-      "name": "Global Digital Natives",
-      "size": 0.02,
-      "grievance": 0.51,
-      "mobilization": 0.68,
-      "trustInstitutions": 0.29,
-      "economicExposure": 0.49,
-      "identityPole": -0.58
+      "id": "global-migrant",
+      "name": "Global Migrant Workforce",
+      "size": 0.07,
+      "grievance": 0.58,
+      "mobilization": 0.54,
+      "trustInstitutions": 0.36,
+      "economicExposure": 0.83,
+      "identityPole": -0.05
+    },
+    {
+      "id": "energy-consumers",
+      "name": "Energy-Importing Consumers",
+      "size": 0.08,
+      "grievance": 0.55,
+      "mobilization": 0.4,
+      "trustInstitutions": 0.42,
+      "economicExposure": 0.81,
+      "identityPole": 0.11
+    },
+    {
+      "id": "food-insecure",
+      "name": "Food-Insecure Households",
+      "size": 0.08,
+      "grievance": 0.7,
+      "mobilization": 0.44,
+      "trustInstitutions": 0.3,
+      "economicExposure": 0.86,
+      "identityPole": 0.35
     }
   ],
   "relations": [
@@ -695,881 +1015,1401 @@
       "source": "un",
       "target": "g20",
       "type": "governanca",
-      "influence": 0.46,
-      "volatility": 0.28
+      "influence": 0.47,
+      "volatility": 0.29
     },
     {
-      "source": "un",
-      "target": "us",
-      "type": "governanca",
-      "influence": 0.31,
-      "volatility": 0.34
+      "source": "g20",
+      "target": "imf",
+      "type": "cooperacao",
+      "influence": 0.58,
+      "volatility": 0.24
     },
     {
-      "source": "un",
-      "target": "china",
-      "type": "governanca",
-      "influence": 0.29,
-      "volatility": 0.37
+      "source": "g20",
+      "target": "worldbank",
+      "type": "cooperacao",
+      "influence": 0.55,
+      "volatility": 0.23
     },
     {
       "source": "eu",
       "target": "g20",
       "type": "cooperacao",
-      "influence": 0.54,
-      "volatility": 0.22
+      "influence": 0.56,
+      "volatility": 0.23
+    },
+    {
+      "source": "opec",
+      "target": "g20",
+      "type": "influencia",
+      "influence": 0.51,
+      "volatility": 0.41
+    },
+    {
+      "source": "wto",
+      "target": "g20",
+      "type": "governanca",
+      "influence": 0.41,
+      "volatility": 0.33
+    },
+    {
+      "source": "milei",
+      "target": "argentina",
+      "type": "governanca",
+      "influence": 0.66,
+      "volatility": 0.44
+    },
+    {
+      "source": "arg_treasury",
+      "target": "argentina",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "argentina",
+      "target": "arg_treasury",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "arg_bcra",
+      "target": "argentina",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "argentina",
+      "target": "arg_bcra",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "argentina",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "albanese",
+      "target": "australia",
+      "type": "governanca",
+      "influence": 0.61,
+      "volatility": 0.36
+    },
+    {
+      "source": "aus_treasury",
+      "target": "australia",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "australia",
+      "target": "aus_treasury",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "aus_rba",
+      "target": "australia",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "australia",
+      "target": "aus_rba",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "australia",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "lula",
+      "target": "brazil",
+      "type": "governanca",
+      "influence": 0.73,
+      "volatility": 0.39
+    },
+    {
+      "source": "br_fazenda",
+      "target": "brazil",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "brazil",
+      "target": "br_fazenda",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "br_bcb",
+      "target": "brazil",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "brazil",
+      "target": "br_bcb",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "brazil",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "carney",
+      "target": "canada",
+      "type": "governanca",
+      "influence": 0.67,
+      "volatility": 0.36
+    },
+    {
+      "source": "ca_finance",
+      "target": "canada",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "canada",
+      "target": "ca_finance",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "ca_boc",
+      "target": "canada",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "canada",
+      "target": "ca_boc",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "canada",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "xi",
+      "target": "china",
+      "type": "governanca",
+      "influence": 0.85,
+      "volatility": 0.31
+    },
+    {
+      "source": "cn_ndrc",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "china",
+      "target": "cn_ndrc",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "cn_pbc",
+      "target": "china",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "china",
+      "target": "cn_pbc",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "china",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "macron",
+      "target": "france",
+      "type": "governanca",
+      "influence": 0.64,
+      "volatility": 0.4
+    },
+    {
+      "source": "fr_finance",
+      "target": "france",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "france",
+      "target": "fr_finance",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "fr_bdf",
+      "target": "france",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "france",
+      "target": "fr_bdf",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "france",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "merz",
+      "target": "germany",
+      "type": "governanca",
+      "influence": 0.61,
+      "volatility": 0.39
+    },
+    {
+      "source": "de_finance",
+      "target": "germany",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "germany",
+      "target": "de_finance",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "de_buba",
+      "target": "germany",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "germany",
+      "target": "de_buba",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "germany",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "modi",
+      "target": "india",
+      "type": "governanca",
+      "influence": 0.79,
+      "volatility": 0.35
+    },
+    {
+      "source": "in_finance",
+      "target": "india",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "india",
+      "target": "in_finance",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "in_rbi",
+      "target": "india",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "india",
+      "target": "in_rbi",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
     },
     {
       "source": "g20",
       "target": "india",
       "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "prabowo",
+      "target": "indonesia",
+      "type": "governanca",
+      "influence": 0.68,
+      "volatility": 0.37
+    },
+    {
+      "source": "id_finance",
+      "target": "indonesia",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "indonesia",
+      "target": "id_finance",
+      "type": "governanca",
       "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "id_bi",
+      "target": "indonesia",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "indonesia",
+      "target": "id_bi",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "indonesia",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "meloni",
+      "target": "italy",
+      "type": "governanca",
+      "influence": 0.7,
+      "volatility": 0.38
+    },
+    {
+      "source": "it_mef",
+      "target": "italy",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "italy",
+      "target": "it_mef",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "it_bdi",
+      "target": "italy",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "italy",
+      "target": "it_bdi",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "italy",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "ishiba",
+      "target": "japan",
+      "type": "governanca",
+      "influence": 0.62,
+      "volatility": 0.37
+    },
+    {
+      "source": "jp_mof",
+      "target": "japan",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "japan",
+      "target": "jp_mof",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "jp_boj",
+      "target": "japan",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "japan",
+      "target": "jp_boj",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "japan",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "sheinbaum",
+      "target": "mexico",
+      "type": "governanca",
+      "influence": 0.67,
+      "volatility": 0.39
+    },
+    {
+      "source": "mx_hacienda",
+      "target": "mexico",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "mexico",
+      "target": "mx_hacienda",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "mx_banxico",
+      "target": "mexico",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "mexico",
+      "target": "mx_banxico",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "mexico",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "putin",
+      "target": "russia",
+      "type": "governanca",
+      "influence": 0.81,
+      "volatility": 0.33
+    },
+    {
+      "source": "ru_finance",
+      "target": "russia",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "russia",
+      "target": "ru_finance",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "ru_cbr",
+      "target": "russia",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "russia",
+      "target": "ru_cbr",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "russia",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "mbs",
+      "target": "saudi",
+      "type": "governanca",
+      "influence": 0.8,
+      "volatility": 0.32
+    },
+    {
+      "source": "sa_mof",
+      "target": "saudi",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "saudi",
+      "target": "sa_mof",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "sa_sama",
+      "target": "saudi",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "saudi",
+      "target": "sa_sama",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "saudi",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "ramaphosa",
+      "target": "southafrica",
+      "type": "governanca",
+      "influence": 0.62,
+      "volatility": 0.42
+    },
+    {
+      "source": "za_treasury",
+      "target": "southafrica",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "southafrica",
+      "target": "za_treasury",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "za_sarb",
+      "target": "southafrica",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "southafrica",
+      "target": "za_sarb",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "southafrica",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "leejm",
+      "target": "southkorea",
+      "type": "governanca",
+      "influence": 0.63,
+      "volatility": 0.4
+    },
+    {
+      "source": "kr_mof",
+      "target": "southkorea",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "southkorea",
+      "target": "kr_mof",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "kr_bok",
+      "target": "southkorea",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "southkorea",
+      "target": "kr_bok",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "southkorea",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "erdogan",
+      "target": "turkiye",
+      "type": "governanca",
+      "influence": 0.74,
+      "volatility": 0.38
+    },
+    {
+      "source": "tr_treasury",
+      "target": "turkiye",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "turkiye",
+      "target": "tr_treasury",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "tr_cbrt",
+      "target": "turkiye",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "turkiye",
+      "target": "tr_cbrt",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "turkiye",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "starmer",
+      "target": "uk",
+      "type": "governanca",
+      "influence": 0.62,
+      "volatility": 0.39
+    },
+    {
+      "source": "uk_hmt",
+      "target": "uk",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "uk",
+      "target": "uk_hmt",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "uk_boe",
+      "target": "uk",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "uk",
+      "target": "uk_boe",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "uk",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "trump",
+      "target": "us",
+      "type": "governanca",
+      "influence": 0.77,
+      "volatility": 0.45
+    },
+    {
+      "source": "us_treasury",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "us",
+      "target": "us_treasury",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "us_fed",
+      "target": "us",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "us",
+      "target": "us_fed",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "us",
+      "type": "cooperacao",
+      "influence": 0.46,
+      "volatility": 0.3
+    },
+    {
+      "source": "vonderleyen",
+      "target": "eu-country",
+      "type": "governanca",
+      "influence": 0.61,
+      "volatility": 0.4
+    },
+    {
+      "source": "ec",
+      "target": "eu-country",
+      "type": "dependencia",
+      "influence": 0.57,
+      "volatility": 0.31
+    },
+    {
+      "source": "eu-country",
+      "target": "ec",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "ecb",
+      "target": "eu-country",
+      "type": "dependencia",
+      "influence": 0.62,
+      "volatility": 0.31
+    },
+    {
+      "source": "eu-country",
+      "target": "ecb",
+      "type": "governanca",
+      "influence": 0.49,
+      "volatility": 0.34
+    },
+    {
+      "source": "g20",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "influence": 0.46,
       "volatility": 0.3
     },
     {
       "source": "us",
       "target": "china",
       "type": "rivalidade",
-      "influence": -0.72,
-      "volatility": 0.62
+      "influence": -0.74,
+      "volatility": 0.64
     },
     {
       "source": "us",
       "target": "russia",
       "type": "rivalidade",
-      "influence": -0.68,
-      "volatility": 0.59
+      "influence": -0.69,
+      "volatility": 0.6
     },
     {
       "source": "china",
       "target": "russia",
       "type": "cooperacao",
-      "influence": 0.41,
-      "volatility": 0.4
+      "influence": 0.43,
+      "volatility": 0.41
     },
     {
       "source": "india",
       "target": "china",
       "type": "rivalidade",
-      "influence": -0.49,
-      "volatility": 0.56
+      "influence": -0.5,
+      "volatility": 0.57
     },
     {
-      "source": "eu",
+      "source": "eu-country",
       "target": "russia",
       "type": "rivalidade",
-      "influence": -0.57,
-      "volatility": 0.58
+      "influence": -0.58,
+      "volatility": 0.59
     },
     {
       "source": "us",
-      "target": "eu",
+      "target": "eu-country",
       "type": "cooperacao",
-      "influence": 0.63,
-      "volatility": 0.33
+      "influence": 0.64,
+      "volatility": 0.34
     },
     {
       "source": "us",
       "target": "japan",
       "type": "cooperacao",
-      "influence": 0.58,
-      "volatility": 0.27
+      "influence": 0.59,
+      "volatility": 0.28
     },
     {
       "source": "us",
       "target": "southkorea",
       "type": "cooperacao",
-      "influence": 0.55,
+      "influence": 0.56,
       "volatility": 0.31
     },
     {
       "source": "china",
       "target": "indonesia",
       "type": "influencia",
-      "influence": 0.46,
-      "volatility": 0.39
+      "influence": 0.47,
+      "volatility": 0.4
     },
     {
       "source": "china",
       "target": "saudi",
       "type": "cooperacao",
-      "influence": 0.38,
-      "volatility": 0.33
+      "influence": 0.4,
+      "volatility": 0.34
     },
     {
       "source": "brazil",
       "target": "argentina",
       "type": "cooperacao",
-      "influence": 0.44,
-      "volatility": 0.35
+      "influence": 0.45,
+      "volatility": 0.36
     },
     {
       "source": "mexico",
       "target": "us",
       "type": "dependencia",
-      "influence": 0.67,
-      "volatility": 0.41
+      "influence": 0.68,
+      "volatility": 0.42
     },
     {
       "source": "canada",
       "target": "us",
       "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.28
+      "influence": 0.63,
+      "volatility": 0.29
     },
     {
       "source": "australia",
       "target": "china",
       "type": "dependencia",
-      "influence": 0.49,
-      "volatility": 0.46
-    },
-    {
-      "source": "trump",
-      "target": "us",
-      "type": "governanca",
-      "influence": 0.79,
-      "volatility": 0.52
-    },
-    {
-      "source": "xi",
-      "target": "china",
-      "type": "governanca",
-      "influence": 0.86,
-      "volatility": 0.33
-    },
-    {
-      "source": "modi",
-      "target": "india",
-      "type": "governanca",
-      "influence": 0.82,
-      "volatility": 0.36
-    },
-    {
-      "source": "putin",
-      "target": "russia",
-      "type": "governanca",
-      "influence": 0.84,
-      "volatility": 0.32
-    },
-    {
-      "source": "vonderleyen",
-      "target": "eu",
-      "type": "governanca",
-      "influence": 0.64,
-      "volatility": 0.29
-    },
-    {
-      "source": "guterres",
-      "target": "un",
-      "type": "governanca",
-      "influence": 0.58,
-      "volatility": 0.26
-    },
-    {
-      "source": "elon",
-      "target": "tesla",
-      "type": "governanca",
-      "influence": 0.78,
-      "volatility": 0.43
-    },
-    {
-      "source": "elon",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.43,
-      "volatility": 0.51
-    },
-    {
-      "source": "elon",
-      "target": "xcorp",
-      "type": "governanca",
-      "influence": 0.72,
-      "volatility": 0.46
-    },
-    {
-      "source": "samaltman",
-      "target": "openai",
-      "type": "governanca",
-      "influence": 0.74,
-      "volatility": 0.41
-    },
-    {
-      "source": "jensen",
-      "target": "nvidia",
-      "type": "governanca",
-      "influence": 0.77,
-      "volatility": 0.24
-    },
-    {
-      "source": "lagarde",
-      "target": "eu",
-      "type": "influencia",
-      "influence": 0.51,
-      "volatility": 0.31
-    },
-    {
-      "source": "apple",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.55
-    },
-    {
-      "source": "microsoft",
-      "target": "openai",
-      "type": "cooperacao",
-      "influence": 0.68,
-      "volatility": 0.37
-    },
-    {
-      "source": "alphabet",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.52,
-      "volatility": 0.48
-    },
-    {
-      "source": "amazon",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.49,
-      "volatility": 0.42
-    },
-    {
-      "source": "meta",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.41,
-      "volatility": 0.61
-    },
-    {
-      "source": "nvidia",
-      "target": "tsmc",
-      "type": "dependencia",
-      "influence": 0.73,
-      "volatility": 0.49
-    },
-    {
-      "source": "tsmc",
-      "target": "us",
-      "type": "dependencia",
-      "influence": 0.56,
-      "volatility": 0.44
-    },
-    {
-      "source": "samsung",
-      "target": "southkorea",
-      "type": "dependencia",
-      "influence": 0.65,
-      "volatility": 0.32
-    },
-    {
-      "source": "openai",
-      "target": "microsoft",
-      "type": "dependencia",
-      "influence": 0.59,
+      "influence": 0.5,
       "volatility": 0.47
-    },
-    {
-      "source": "aramco",
-      "target": "saudi",
-      "type": "governanca",
-      "influence": 0.79,
-      "volatility": 0.26
-    },
-    {
-      "source": "exxon",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.44,
-      "volatility": 0.39
-    },
-    {
-      "source": "shell",
-      "target": "eu",
-      "type": "influencia",
-      "influence": 0.42,
-      "volatility": 0.36
     },
     {
       "source": "saudi",
       "target": "india",
       "type": "dependencia",
-      "influence": 0.53,
-      "volatility": 0.38
+      "influence": 0.54,
+      "volatility": 0.39
     },
     {
-      "source": "lockheed",
-      "target": "us",
-      "type": "dependencia",
-      "influence": 0.66,
+      "source": "southafrica",
+      "target": "au",
+      "type": "governanca",
+      "influence": 0.44,
       "volatility": 0.33
     },
     {
-      "source": "bae",
-      "target": "uk",
-      "type": "dependencia",
-      "influence": 0.62,
-      "volatility": 0.3
-    },
-    {
-      "source": "norinco",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.68,
-      "volatility": 0.28
-    },
-    {
-      "source": "jpmorgan",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.54,
-      "volatility": 0.37
-    },
-    {
-      "source": "blackrock",
-      "target": "eu",
-      "type": "influencia",
-      "influence": 0.47,
-      "volatility": 0.35
-    },
-    {
-      "source": "icbc",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.61,
-      "volatility": 0.29
-    },
-    {
-      "source": "maersk",
-      "target": "eu",
-      "type": "dependencia",
-      "influence": 0.45,
-      "volatility": 0.31
-    },
-    {
-      "source": "dhl",
-      "target": "germany",
-      "type": "dependencia",
-      "influence": 0.54,
+      "source": "france",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "influence": 0.53,
       "volatility": 0.26
     },
     {
-      "source": "cosco",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.64,
-      "volatility": 0.36
+      "source": "germany",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "influence": 0.57,
+      "volatility": 0.24
     },
     {
-      "source": "disney",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.34,
-      "volatility": 0.43
+      "source": "italy",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "influence": 0.48,
+      "volatility": 0.28
     },
     {
-      "source": "comcast",
-      "target": "us",
-      "type": "influencia",
-      "influence": 0.31,
+      "source": "uk",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "influence": 0.38,
+      "volatility": 0.4
+    },
+    {
+      "source": "turkiye",
+      "target": "nato",
+      "type": "cooperacao",
+      "influence": 0.42,
       "volatility": 0.45
     },
     {
-      "source": "bytedance",
-      "target": "china",
-      "type": "dependencia",
-      "influence": 0.52,
-      "volatility": 0.58
-    },
-    {
       "source": "us",
-      "target": "nvidia",
+      "target": "nato",
       "type": "governanca",
-      "influence": 0.37,
-      "volatility": 0.49
+      "influence": 0.61,
+      "volatility": 0.33
     },
     {
-      "source": "china",
-      "target": "bytedance",
-      "type": "governanca",
-      "influence": 0.42,
-      "volatility": 0.53
+      "source": "eu-country",
+      "target": "ecb",
+      "type": "dependencia",
+      "influence": 0.72,
+      "volatility": 0.26
     },
     {
-      "source": "eu",
-      "target": "meta",
+      "source": "ecb",
+      "target": "eu-country",
       "type": "governanca",
-      "influence": 0.35,
-      "volatility": 0.47
+      "influence": 0.63,
+      "volatility": 0.25
     },
     {
-      "source": "india",
-      "target": "openai",
+      "source": "argentina",
+      "target": "imf",
+      "type": "dependencia",
+      "influence": 0.61,
+      "volatility": 0.48
+    },
+    {
+      "source": "imf",
+      "target": "argentina",
+      "type": "governanca",
+      "influence": 0.44,
+      "volatility": 0.43
+    },
+    {
+      "source": "indonesia",
+      "target": "wto",
       "type": "cooperacao",
-      "influence": 0.32,
-      "volatility": 0.41
+      "influence": 0.41,
+      "volatility": 0.29
     },
     {
-      "source": "g20",
-      "target": "jpmorgan",
+      "source": "japan",
+      "target": "wto",
       "type": "cooperacao",
-      "influence": 0.29,
-      "volatility": 0.34
+      "influence": 0.46,
+      "volatility": 0.24
     }
   ],
   "events": [
     {
-      "id": "covid-global-emergency-2020",
-      "name": "WHO declares COVID-19 global pandemic",
-      "category": "social",
-      "date": "2020-03",
-      "atStep": 1,
-      "scope": "social",
-      "intensity": 0.28,
-      "target": {
-        "players": [
-          "un",
-          "us",
-          "eu",
-          "china",
-          "india"
-        ],
-        "groups": [
-          "global-migrant",
-          "south-asia-workers",
-          "latam-informal"
-        ]
-      },
-      "effects": {
-        "macro.gdpTrend": -0.2,
-        "macro.tradeFlow": -0.16,
-        "macro.unemployment": 0.12,
-        "groups.grievance": 0.1,
-        "groups.trustInstitutions": -0.04,
-        "relations.volatility": 0.07
-      }
-    },
-    {
-      "id": "vaccine-rollout-2021",
-      "name": "Mass vaccination rollout in advanced and emerging economies",
-      "category": "social",
-      "date": "2021-04",
+      "id": "global-ai-compute-controls",
+      "name": "Global AI Compute Export Controls",
       "atStep": 2,
-      "scope": "social",
-      "intensity": 0.19,
-      "target": {
-        "players": [
-          "us",
-          "eu",
-          "india",
-          "china"
-        ],
-        "groups": [
-          "north-america-middle",
-          "eu-urban",
-          "south-asia-workers"
-        ]
-      },
+      "scope": "technology",
+      "intensity": 0.18,
       "effects": {
-        "macro.gdpTrend": 0.1,
-        "macro.investmentConfidence": 0.08,
-        "macro.unemployment": -0.06,
-        "groups.trustInstitutions": 0.06,
-        "groups.grievance": -0.04
+        "relations.volatility": 0.04,
+        "macro.tradeFlow": -0.03,
+        "players.economyInfluence": 0.01
       }
     },
     {
-      "id": "supply-chain-crunch-2021",
-      "name": "Global supply-chain bottlenecks and freight spike",
-      "category": "economic",
-      "date": "2021-10",
-      "atStep": 3,
+      "id": "red-sea-logistics-risk",
+      "name": "Red Sea Logistics Risk Persistence",
+      "atStep": 4,
       "scope": "economy",
-      "intensity": 0.18,
-      "target": {
-        "players": [
-          "china",
-          "us",
-          "eu",
-          "japan"
-        ],
-        "companies": [
-          "maersk",
-          "cosco",
-          "dhl",
-          "apple"
-        ]
-      },
+      "intensity": 0.2,
       "effects": {
-        "macro.inflation": 0.1,
+        "macro.inflation": 0.06,
         "macro.tradeFlow": -0.08,
-        "macro.investmentConfidence": -0.04,
-        "groups.economicExposure": 0.06,
+        "groups.grievance": 0.04
+      }
+    },
+    {
+      "id": "opec-supply-management",
+      "name": "OPEC+ Supply Management Cycle",
+      "atStep": 6,
+      "scope": "energy",
+      "intensity": 0.19,
+      "effects": {
+        "macro.inflation": 0.05,
+        "macro.investmentConfidence": -0.02,
+        "relations.influence": 0.01
+      }
+    },
+    {
+      "id": "g20-debt-coordination-window",
+      "name": "G20 Debt Coordination Window",
+      "atStep": 8,
+      "scope": "finance",
+      "intensity": 0.15,
+      "effects": {
+        "macro.fiscalSpace": 0.07,
+        "macro.investmentConfidence": 0.05,
+        "groups.trustInstitutions": 0.02
+      }
+    },
+    {
+      "id": "eu-industrial-policy-phase",
+      "name": "EU Industrial Policy Reinforcement",
+      "atStep": 10,
+      "scope": "institutional",
+      "intensity": 0.14,
+      "effects": {
+        "players.power": 0.01,
+        "macro.gdpTrend": 0.02,
+        "relations.volatility": -0.02
+      }
+    },
+    {
+      "id": "election-supercycle-pressure",
+      "name": "Election Supercycle Polarization Pressure",
+      "atStep": 12,
+      "scope": "political",
+      "intensity": 0.21,
+      "effects": {
+        "groups.mobilization": 0.05,
+        "groups.trustInstitutions": -0.03,
         "relations.volatility": 0.05
       }
     },
     {
-      "id": "russia-ukraine-invasion-2022",
-      "name": "Russia invades Ukraine",
-      "category": "geopolitical",
-      "date": "2022-02",
-      "atStep": 4,
-      "scope": "geopolitical",
-      "intensity": 0.27,
-      "target": {
-        "players": [
-          "russia",
-          "eu",
-          "us",
-          "un"
-        ],
-        "regions": [
-          "europe"
-        ]
-      },
+      "id": "argentina-fx-adjustment",
+      "name": "Argentina FX and Inflation Stabilization Push",
+      "atStep": 14,
+      "scope": "country",
+      "intensity": 0.19,
       "effects": {
-        "relations.volatility": 0.12,
-        "relations.influence": -0.06,
-        "macro.inflation": 0.09,
-        "macro.tradeFlow": -0.07,
-        "groups.grievance": 0.08,
-        "players.legitimacy": -0.03
+        "macro.inflation": -0.03,
+        "macro.investmentConfidence": 0.02,
+        "groups.grievance": -0.01
       }
     },
     {
-      "id": "energy-price-spike-2022",
-      "name": "European energy crisis and LNG scramble",
-      "category": "economic",
-      "date": "2022-09",
-      "atStep": 5,
-      "scope": "economy",
+      "id": "australia-critical-minerals",
+      "name": "Australia Critical Minerals Acceleration",
+      "atStep": 15,
+      "scope": "country",
+      "intensity": 0.13,
+      "effects": {
+        "macro.gdpTrend": 0.02,
+        "players.resourceBase": 0.01,
+        "relations.influence": 0.01
+      }
+    },
+    {
+      "id": "brazil-fiscal-anchor",
+      "name": "Brazil Fiscal Anchor Negotiation",
+      "atStep": 16,
+      "scope": "country",
+      "intensity": 0.17,
+      "effects": {
+        "macro.fiscalSpace": 0.03,
+        "macro.investmentConfidence": 0.03,
+        "groups.trustInstitutions": 0.01
+      }
+    },
+    {
+      "id": "canada-housing-productivity",
+      "name": "Canada Housing-Productivity Tradeoff",
+      "atStep": 17,
+      "scope": "country",
+      "intensity": 0.14,
+      "effects": {
+        "macro.inflation": 0.02,
+        "macro.gdpTrend": 0.01,
+        "groups.grievance": 0.02
+      }
+    },
+    {
+      "id": "china-property-rebalancing",
+      "name": "China Property Rebalancing Phase",
+      "atStep": 18,
+      "scope": "country",
       "intensity": 0.22,
-      "target": {
-        "players": [
-          "eu",
-          "germany",
-          "france",
-          "saudi"
-        ],
-        "companies": [
-          "aramco",
-          "shell",
-          "exxon"
-        ]
-      },
       "effects": {
-        "macro.inflation": 0.11,
-        "macro.fiscalSpace": -0.07,
-        "macro.investmentConfidence": -0.03,
-        "groups.grievance": 0.07,
-        "players.resourceBase": -0.02
-      }
-    },
-    {
-      "id": "chatgpt-breakout-2022",
-      "name": "Generative AI mainstream adoption after ChatGPT launch",
-      "category": "technological",
-      "date": "2022-11",
-      "atStep": 6,
-      "scope": "technology",
-      "intensity": 0.16,
-      "target": {
-        "players": [
-          "us",
-          "eu",
-          "china",
-          "india"
-        ],
-        "companies": [
-          "openai",
-          "microsoft",
-          "alphabet",
-          "nvidia"
-        ]
-      },
-      "effects": {
-        "macro.gdpTrend": 0.06,
-        "macro.investmentConfidence": 0.09,
-        "players.power": 0.03,
-        "groups.mobilization": 0.04,
+        "macro.gdpTrend": -0.02,
+        "macro.tradeFlow": 0.02,
         "relations.volatility": 0.03
       }
     },
     {
-      "id": "silicon-valley-bank-failure-2023",
-      "name": "SVB collapse and regional banking stress",
-      "category": "economic",
-      "date": "2023-03",
-      "atStep": 7,
-      "scope": "finance",
-      "intensity": 0.17,
-      "target": {
-        "players": [
-          "us",
-          "eu"
-        ],
-        "companies": [
-          "jpmorgan",
-          "blackrock"
-        ]
-      },
-      "effects": {
-        "macro.investmentConfidence": -0.09,
-        "macro.fiscalSpace": -0.04,
-        "relations.volatility": 0.05,
-        "groups.trustInstitutions": -0.03
-      }
-    },
-    {
-      "id": "india-g20-corridor-2023",
-      "name": "G20 New Delhi: India-Middle East-Europe Economic Corridor announcement",
-      "category": "geopolitical",
-      "date": "2023-09",
-      "atStep": 8,
-      "scope": "geopolitical",
-      "intensity": 0.13,
-      "target": {
-        "players": [
-          "india",
-          "eu",
-          "saudi",
-          "us",
-          "g20"
-        ]
-      },
-      "effects": {
-        "macro.tradeFlow": 0.07,
-        "macro.investmentConfidence": 0.04,
-        "relations.influence": 0.04,
-        "players.legitimacy": 0.02
-      }
-    },
-    {
-      "id": "hamas-israel-war-2023",
-      "name": "Israel-Hamas war and Red Sea shipping disruption",
-      "category": "geopolitical",
-      "date": "2023-10",
-      "atStep": 9,
-      "scope": "geopolitical",
-      "intensity": 0.24,
-      "target": {
-        "players": [
-          "us",
-          "eu",
-          "saudi",
-          "un"
-        ],
-        "companies": [
-          "maersk",
-          "dhl"
-        ]
-      },
-      "effects": {
-        "relations.volatility": 0.1,
-        "macro.tradeFlow": -0.08,
-        "macro.inflation": 0.05,
-        "groups.grievance": 0.07,
-        "groups.mobilization": 0.06
-      }
-    },
-    {
-      "id": "eu-ai-act-passage-2024",
-      "name": "EU AI Act approved",
-      "category": "technological",
-      "date": "2024-03",
-      "atStep": 10,
-      "scope": "institutional",
-      "intensity": 0.12,
-      "target": {
-        "players": [
-          "eu",
-          "us"
-        ],
-        "companies": [
-          "openai",
-          "microsoft",
-          "alphabet",
-          "meta"
-        ]
-      },
-      "effects": {
-        "players.legitimacy": 0.03,
-        "groups.trustInstitutions": 0.03,
-        "macro.investmentConfidence": 0.02,
-        "relations.volatility": -0.03
-      }
-    },
-    {
-      "id": "global-election-supercycle-2024",
-      "name": "Election supercycle (US, India, EU Parliament) heightens polarization",
-      "category": "social",
-      "date": "2024-06",
-      "atStep": 11,
-      "scope": "social",
-      "intensity": 0.18,
-      "target": {
-        "players": [
-          "us",
-          "india",
-          "eu"
-        ],
-        "groups": [
-          "digital-natives",
-          "north-america-middle",
-          "eu-urban"
-        ]
-      },
-      "effects": {
-        "groups.mobilization": 0.08,
-        "groups.identityPole": 0.06,
-        "relations.volatility": 0.06,
-        "players.cohesion": -0.03
-      }
-    },
-    {
-      "id": "suez-red-sea-rerouting-2024",
-      "name": "Extended Suez/Red Sea rerouting pressures logistics",
-      "category": "economic",
-      "date": "2024-07",
-      "atStep": 12,
-      "scope": "economy",
-      "intensity": 0.14,
-      "target": {
-        "players": [
-          "eu",
-          "india",
-          "china"
-        ],
-        "companies": [
-          "maersk",
-          "dhl",
-          "cosco"
-        ]
-      },
-      "effects": {
-        "macro.tradeFlow": -0.06,
-        "macro.inflation": 0.04,
-        "macro.investmentConfidence": -0.03,
-        "groups.economicExposure": 0.04
-      }
-    },
-    {
-      "id": "china-stimulus-property-2024",
-      "name": "China property support and targeted stimulus package",
-      "category": "economic",
-      "date": "2024-10",
-      "atStep": 13,
-      "scope": "economy",
+      "id": "france-budget-consolidation",
+      "name": "France Budget Consolidation Contest",
+      "atStep": 19,
+      "scope": "country",
       "intensity": 0.15,
-      "target": {
-        "players": [
-          "china"
-        ],
-        "companies": [
-          "icbc",
-          "bytedance"
-        ]
-      },
       "effects": {
-        "macro.gdpTrend": 0.05,
-        "macro.tradeFlow": 0.03,
+        "macro.fiscalSpace": 0.02,
+        "groups.mobilization": 0.03,
+        "players.legitimacy": -0.01
+      }
+    },
+    {
+      "id": "germany-industrial-demand-shift",
+      "name": "Germany Industrial Demand Shift",
+      "atStep": 20,
+      "scope": "country",
+      "intensity": 0.16,
+      "effects": {
+        "macro.gdpTrend": 0.01,
+        "macro.tradeFlow": 0.01,
+        "groups.grievance": 0.01
+      }
+    },
+    {
+      "id": "india-manufacturing-drive",
+      "name": "India Manufacturing and Infra Push",
+      "atStep": 21,
+      "scope": "country",
+      "intensity": 0.18,
+      "effects": {
+        "macro.gdpTrend": 0.03,
+        "players.power": 0.01,
+        "relations.influence": 0.01
+      }
+    },
+    {
+      "id": "indonesia-nickel-value-chain",
+      "name": "Indonesia Nickel Value-Chain Expansion",
+      "atStep": 22,
+      "scope": "country",
+      "intensity": 0.17,
+      "effects": {
+        "players.resourceBase": 0.02,
+        "macro.tradeFlow": 0.02,
+        "relations.volatility": 0.01
+      }
+    },
+    {
+      "id": "italy-debt-growth-balance",
+      "name": "Italy Debt-Growth Balance Stress",
+      "atStep": 23,
+      "scope": "country",
+      "intensity": 0.15,
+      "effects": {
+        "macro.fiscalSpace": -0.02,
+        "macro.investmentConfidence": 0.01,
+        "groups.grievance": 0.01
+      }
+    },
+    {
+      "id": "japan-yield-policy-normalization",
+      "name": "Japan Yield Policy Normalization",
+      "atStep": 24,
+      "scope": "country",
+      "intensity": 0.16,
+      "effects": {
+        "macro.investmentConfidence": 0.02,
+        "macro.inflation": 0.01,
+        "relations.volatility": 0.01
+      }
+    },
+    {
+      "id": "mexico-nearshoring-security",
+      "name": "Mexico Nearshoring and Security Friction",
+      "atStep": 25,
+      "scope": "country",
+      "intensity": 0.18,
+      "effects": {
+        "macro.gdpTrend": 0.02,
+        "groups.grievance": 0.02,
+        "relations.volatility": 0.02
+      }
+    },
+    {
+      "id": "russia-sanctions-adaptation",
+      "name": "Russia Sanctions Adaptation Cycle",
+      "atStep": 26,
+      "scope": "country",
+      "intensity": 0.21,
+      "effects": {
+        "macro.tradeFlow": -0.03,
+        "players.resourceBase": 0.01,
+        "relations.volatility": 0.04
+      }
+    },
+    {
+      "id": "saudi-vision-investment-cycle",
+      "name": "Saudi Vision 2030 Investment Cycle",
+      "atStep": 27,
+      "scope": "country",
+      "intensity": 0.17,
+      "effects": {
+        "macro.gdpTrend": 0.02,
         "macro.investmentConfidence": 0.03,
-        "players.cohesion": 0.02
+        "players.power": 0.01
       }
     },
     {
-      "id": "ai-chip-export-tightening-2025",
-      "name": "US expands advanced AI chip export controls",
-      "category": "technological",
-      "date": "2025-01",
-      "atStep": 14,
-      "scope": "technology",
+      "id": "southafrica-energy-grid-pressure",
+      "name": "South Africa Grid Reliability Pressure",
+      "atStep": 28,
+      "scope": "country",
+      "intensity": 0.19,
+      "effects": {
+        "macro.gdpTrend": -0.02,
+        "groups.grievance": 0.03,
+        "players.legitimacy": -0.02
+      }
+    },
+    {
+      "id": "southkorea-chip-cycle",
+      "name": "South Korea Semiconductor Cycle Rebound",
+      "atStep": 29,
+      "scope": "country",
+      "intensity": 0.17,
+      "effects": {
+        "macro.tradeFlow": 0.03,
+        "macro.gdpTrend": 0.02,
+        "relations.influence": 0.01
+      }
+    },
+    {
+      "id": "turkiye-disinflation-path",
+      "name": "Turkiye Disinflation and FX Stability Path",
+      "atStep": 30,
+      "scope": "country",
       "intensity": 0.2,
-      "target": {
-        "players": [
-          "us",
-          "china",
-          "southkorea",
-          "japan"
-        ],
-        "companies": [
-          "nvidia",
-          "tsmc",
-          "samsung"
-        ]
-      },
       "effects": {
-        "relations.influence": -0.05,
-        "relations.volatility": 0.07,
-        "macro.tradeFlow": -0.05,
-        "players.power": 0.02,
-        "macro.investmentConfidence": -0.02
+        "macro.inflation": -0.04,
+        "macro.investmentConfidence": 0.02,
+        "groups.trustInstitutions": 0.01
       }
     },
     {
-      "id": "fed-soft-landing-signal-2025",
-      "name": "Disinflation and soft-landing signal from major central banks",
-      "category": "economic",
-      "date": "2025-03",
-      "atStep": 15,
-      "scope": "finance",
-      "intensity": 0.14,
-      "target": {
-        "players": [
-          "us",
-          "eu",
-          "g20"
-        ],
-        "persons": [
-          "lagarde"
-        ]
-      },
+      "id": "uk-growth-fiscal-constraints",
+      "name": "UK Growth Under Fiscal Constraints",
+      "atStep": 31,
+      "scope": "country",
+      "intensity": 0.15,
       "effects": {
-        "macro.inflation": -0.06,
-        "macro.investmentConfidence": 0.07,
-        "macro.fiscalSpace": 0.04,
-        "groups.grievance": -0.03
+        "macro.gdpTrend": 0.01,
+        "macro.fiscalSpace": -0.01,
+        "groups.grievance": 0.01
       }
     },
     {
-      "id": "global-ai-regulation-wave-2025",
-      "name": "Coordinated AI safety and model transparency rules in G7/G20 forums",
-      "category": "technological",
-      "date": "2025-09",
-      "atStep": 16,
-      "scope": "institutional",
-      "intensity": 0.13,
-      "target": {
-        "players": [
-          "g20",
-          "eu",
-          "us",
-          "india",
-          "japan"
-        ],
-        "companies": [
-          "openai",
-          "microsoft",
-          "alphabet",
-          "meta"
-        ]
-      },
+      "id": "us-rate-cut-uncertainty",
+      "name": "US Rate-Cut Timing Uncertainty",
+      "atStep": 32,
+      "scope": "country",
+      "intensity": 0.18,
       "effects": {
-        "players.legitimacy": 0.03,
-        "groups.trustInstitutions": 0.03,
-        "relations.volatility": -0.04,
-        "macro.investmentConfidence": 0.03
+        "macro.investmentConfidence": 0.02,
+        "macro.inflation": 0.01,
+        "relations.volatility": 0.02
+      }
+    },
+    {
+      "id": "eu-competitiveness-compact",
+      "name": "EU Competitiveness and Strategic Autonomy Compact",
+      "atStep": 33,
+      "scope": "country",
+      "intensity": 0.16,
+      "effects": {
+        "macro.gdpTrend": 0.01,
+        "players.cohesion": 0.01,
+        "relations.influence": 0.01
       }
     }
   ],
   "macro": {
-    "gdpTrend": 0.035,
-    "inflation": 0.062,
-    "unemployment": 0.097,
-    "investmentConfidence": 0.52,
-    "tradeFlow": 0.63,
-    "fiscalSpace": 0.43
+    "gdpTrend": 0.034,
+    "inflation": 0.059,
+    "unemployment": 0.094,
+    "investmentConfidence": 0.54,
+    "tradeFlow": 0.65,
+    "fiscalSpace": 0.45
   }
 }
