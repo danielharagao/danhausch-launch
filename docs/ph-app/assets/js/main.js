@@ -19,7 +19,7 @@ async function bootstrap() {
 
   const apiClient = createApiClient(loadApiConfig());
   state.adapter = await createPHAdapter({
-    seedUrl: "./assets/sim/seed.v4.json",
+    seedUrl: "./assets/sim/seed.v5.json",
     rngSeed: 1337,
     apiClient
   });
