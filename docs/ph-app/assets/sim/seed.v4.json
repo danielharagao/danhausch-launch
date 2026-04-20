@@ -1,10 +1,11 @@
 {
   "meta": {
     "name": "Predictive History Seed Dataset V4 - G20 Full Coverage",
-    "version": "4.1.0",
+    "version": "4.1.1",
     "timeUnit": "month",
     "description": "Expanded baseline with full G20 coverage and conflict-events package (Iraq legacy, Ukraine war, India-Pakistan tensions, Taiwan Strait, and correlated maritime spillovers).",
-    "snapshotDate": "2026-04-20"
+    "snapshotDate": "2026-04-20",
+    "audit": "v4-network-normalized"
   },
   "players": [
     {
@@ -189,7 +190,7 @@
     },
     {
       "id": "lula",
-      "name": "Luiz In\u00e1cio Lula da Silva",
+      "name": "Luiz Inácio Lula da Silva",
       "type": "leader",
       "power": 0.74,
       "cohesion": 0.58,
@@ -739,7 +740,7 @@
     },
     {
       "id": "turkiye",
-      "name": "T\u00fcrkiye",
+      "name": "Türkiye",
       "type": "country",
       "power": 0.65,
       "cohesion": 0.56,
@@ -759,7 +760,7 @@
     },
     {
       "id": "tr_treasury",
-      "name": "T\u00fcrkiye Treasury and Finance",
+      "name": "Türkiye Treasury and Finance",
       "type": "institution",
       "power": 0.54,
       "cohesion": 0.56,
