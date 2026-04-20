@@ -240,7 +240,7 @@ function renderDetails(node, connected, connectedEdges = []) {
 }
 
 async function init() {
-  const seedUrl = '../ph-app/assets/sim/seed.json';
+  const seedUrl = '../ph-app/assets/sim/seed.v3.json';
   const seed = await fetch(seedUrl).then((r) => r.json());
   const data = buildGraphData(seed);
 
