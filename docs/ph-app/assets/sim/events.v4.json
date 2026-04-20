@@ -1,0 +1,454 @@
+{
+  "meta": {
+    "name": "Predictive History Events Pack V4 - Recent Years",
+    "version": "4.0.0",
+    "description": "Curated high-impact events (2020-2025) for denser temporal replay across geopolitical, economic, technological and social domains",
+    "timeUnit": "month",
+    "sourceSeed": "seed.v3.json"
+  },
+  "events": [
+    {
+      "id": "covid-global-emergency-2020",
+      "name": "WHO declares COVID-19 global pandemic",
+      "category": "social",
+      "date": "2020-03",
+      "atStep": 1,
+      "scope": "social",
+      "intensity": 0.28,
+      "target": {
+        "players": [
+          "un",
+          "us",
+          "eu",
+          "china",
+          "india"
+        ],
+        "groups": [
+          "global-migrant",
+          "south-asia-workers",
+          "latam-informal"
+        ]
+      },
+      "effects": {
+        "macro.gdpTrend": -0.2,
+        "macro.tradeFlow": -0.16,
+        "macro.unemployment": 0.12,
+        "groups.grievance": 0.1,
+        "groups.trustInstitutions": -0.04,
+        "relations.volatility": 0.07
+      }
+    },
+    {
+      "id": "vaccine-rollout-2021",
+      "name": "Mass vaccination rollout in advanced and emerging economies",
+      "category": "social",
+      "date": "2021-04",
+      "atStep": 2,
+      "scope": "social",
+      "intensity": 0.19,
+      "target": {
+        "players": [
+          "us",
+          "eu",
+          "india",
+          "china"
+        ],
+        "groups": [
+          "north-america-middle",
+          "eu-urban",
+          "south-asia-workers"
+        ]
+      },
+      "effects": {
+        "macro.gdpTrend": 0.1,
+        "macro.investmentConfidence": 0.08,
+        "macro.unemployment": -0.06,
+        "groups.trustInstitutions": 0.06,
+        "groups.grievance": -0.04
+      }
+    },
+    {
+      "id": "supply-chain-crunch-2021",
+      "name": "Global supply-chain bottlenecks and freight spike",
+      "category": "economic",
+      "date": "2021-10",
+      "atStep": 3,
+      "scope": "economy",
+      "intensity": 0.18,
+      "target": {
+        "players": [
+          "china",
+          "us",
+          "eu",
+          "japan"
+        ],
+        "companies": [
+          "maersk",
+          "cosco",
+          "dhl",
+          "apple"
+        ]
+      },
+      "effects": {
+        "macro.inflation": 0.1,
+        "macro.tradeFlow": -0.08,
+        "macro.investmentConfidence": -0.04,
+        "groups.economicExposure": 0.06,
+        "relations.volatility": 0.05
+      }
+    },
+    {
+      "id": "russia-ukraine-invasion-2022",
+      "name": "Russia invades Ukraine",
+      "category": "geopolitical",
+      "date": "2022-02",
+      "atStep": 4,
+      "scope": "geopolitical",
+      "intensity": 0.27,
+      "target": {
+        "players": [
+          "russia",
+          "eu",
+          "us",
+          "un"
+        ],
+        "regions": [
+          "europe"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.12,
+        "relations.influence": -0.06,
+        "macro.inflation": 0.09,
+        "macro.tradeFlow": -0.07,
+        "groups.grievance": 0.08,
+        "players.legitimacy": -0.03
+      }
+    },
+    {
+      "id": "energy-price-spike-2022",
+      "name": "European energy crisis and LNG scramble",
+      "category": "economic",
+      "date": "2022-09",
+      "atStep": 5,
+      "scope": "economy",
+      "intensity": 0.22,
+      "target": {
+        "players": [
+          "eu",
+          "germany",
+          "france",
+          "saudi"
+        ],
+        "companies": [
+          "aramco",
+          "shell",
+          "exxon"
+        ]
+      },
+      "effects": {
+        "macro.inflation": 0.11,
+        "macro.fiscalSpace": -0.07,
+        "macro.investmentConfidence": -0.03,
+        "groups.grievance": 0.07,
+        "players.resourceBase": -0.02
+      }
+    },
+    {
+      "id": "chatgpt-breakout-2022",
+      "name": "Generative AI mainstream adoption after ChatGPT launch",
+      "category": "technological",
+      "date": "2022-11",
+      "atStep": 6,
+      "scope": "technology",
+      "intensity": 0.16,
+      "target": {
+        "players": [
+          "us",
+          "eu",
+          "china",
+          "india"
+        ],
+        "companies": [
+          "openai",
+          "microsoft",
+          "alphabet",
+          "nvidia"
+        ]
+      },
+      "effects": {
+        "macro.gdpTrend": 0.06,
+        "macro.investmentConfidence": 0.09,
+        "players.power": 0.03,
+        "groups.mobilization": 0.04,
+        "relations.volatility": 0.03
+      }
+    },
+    {
+      "id": "silicon-valley-bank-failure-2023",
+      "name": "SVB collapse and regional banking stress",
+      "category": "economic",
+      "date": "2023-03",
+      "atStep": 7,
+      "scope": "finance",
+      "intensity": 0.17,
+      "target": {
+        "players": [
+          "us",
+          "eu"
+        ],
+        "companies": [
+          "jpmorgan",
+          "blackrock"
+        ]
+      },
+      "effects": {
+        "macro.investmentConfidence": -0.09,
+        "macro.fiscalSpace": -0.04,
+        "relations.volatility": 0.05,
+        "groups.trustInstitutions": -0.03
+      }
+    },
+    {
+      "id": "india-g20-corridor-2023",
+      "name": "G20 New Delhi: India-Middle East-Europe Economic Corridor announcement",
+      "category": "geopolitical",
+      "date": "2023-09",
+      "atStep": 8,
+      "scope": "geopolitical",
+      "intensity": 0.13,
+      "target": {
+        "players": [
+          "india",
+          "eu",
+          "saudi",
+          "us",
+          "g20"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": 0.07,
+        "macro.investmentConfidence": 0.04,
+        "relations.influence": 0.04,
+        "players.legitimacy": 0.02
+      }
+    },
+    {
+      "id": "hamas-israel-war-2023",
+      "name": "Israel-Hamas war and Red Sea shipping disruption",
+      "category": "geopolitical",
+      "date": "2023-10",
+      "atStep": 9,
+      "scope": "geopolitical",
+      "intensity": 0.24,
+      "target": {
+        "players": [
+          "us",
+          "eu",
+          "saudi",
+          "un"
+        ],
+        "companies": [
+          "maersk",
+          "dhl"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "macro.tradeFlow": -0.08,
+        "macro.inflation": 0.05,
+        "groups.grievance": 0.07,
+        "groups.mobilization": 0.06
+      }
+    },
+    {
+      "id": "eu-ai-act-passage-2024",
+      "name": "EU AI Act approved",
+      "category": "technological",
+      "date": "2024-03",
+      "atStep": 10,
+      "scope": "institutional",
+      "intensity": 0.12,
+      "target": {
+        "players": [
+          "eu",
+          "us"
+        ],
+        "companies": [
+          "openai",
+          "microsoft",
+          "alphabet",
+          "meta"
+        ]
+      },
+      "effects": {
+        "players.legitimacy": 0.03,
+        "groups.trustInstitutions": 0.03,
+        "macro.investmentConfidence": 0.02,
+        "relations.volatility": -0.03
+      }
+    },
+    {
+      "id": "global-election-supercycle-2024",
+      "name": "Election supercycle (US, India, EU Parliament) heightens polarization",
+      "category": "social",
+      "date": "2024-06",
+      "atStep": 11,
+      "scope": "social",
+      "intensity": 0.18,
+      "target": {
+        "players": [
+          "us",
+          "india",
+          "eu"
+        ],
+        "groups": [
+          "digital-natives",
+          "north-america-middle",
+          "eu-urban"
+        ]
+      },
+      "effects": {
+        "groups.mobilization": 0.08,
+        "groups.identityPole": 0.06,
+        "relations.volatility": 0.06,
+        "players.cohesion": -0.03
+      }
+    },
+    {
+      "id": "suez-red-sea-rerouting-2024",
+      "name": "Extended Suez/Red Sea rerouting pressures logistics",
+      "category": "economic",
+      "date": "2024-07",
+      "atStep": 12,
+      "scope": "economy",
+      "intensity": 0.14,
+      "target": {
+        "players": [
+          "eu",
+          "india",
+          "china"
+        ],
+        "companies": [
+          "maersk",
+          "dhl",
+          "cosco"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": -0.06,
+        "macro.inflation": 0.04,
+        "macro.investmentConfidence": -0.03,
+        "groups.economicExposure": 0.04
+      }
+    },
+    {
+      "id": "china-stimulus-property-2024",
+      "name": "China property support and targeted stimulus package",
+      "category": "economic",
+      "date": "2024-10",
+      "atStep": 13,
+      "scope": "economy",
+      "intensity": 0.15,
+      "target": {
+        "players": [
+          "china"
+        ],
+        "companies": [
+          "icbc",
+          "bytedance"
+        ]
+      },
+      "effects": {
+        "macro.gdpTrend": 0.05,
+        "macro.tradeFlow": 0.03,
+        "macro.investmentConfidence": 0.03,
+        "players.cohesion": 0.02
+      }
+    },
+    {
+      "id": "ai-chip-export-tightening-2025",
+      "name": "US expands advanced AI chip export controls",
+      "category": "technological",
+      "date": "2025-01",
+      "atStep": 14,
+      "scope": "technology",
+      "intensity": 0.2,
+      "target": {
+        "players": [
+          "us",
+          "china",
+          "southkorea",
+          "japan"
+        ],
+        "companies": [
+          "nvidia",
+          "tsmc",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "relations.influence": -0.05,
+        "relations.volatility": 0.07,
+        "macro.tradeFlow": -0.05,
+        "players.power": 0.02,
+        "macro.investmentConfidence": -0.02
+      }
+    },
+    {
+      "id": "fed-soft-landing-signal-2025",
+      "name": "Disinflation and soft-landing signal from major central banks",
+      "category": "economic",
+      "date": "2025-03",
+      "atStep": 15,
+      "scope": "finance",
+      "intensity": 0.14,
+      "target": {
+        "players": [
+          "us",
+          "eu",
+          "g20"
+        ],
+        "persons": [
+          "lagarde"
+        ]
+      },
+      "effects": {
+        "macro.inflation": -0.06,
+        "macro.investmentConfidence": 0.07,
+        "macro.fiscalSpace": 0.04,
+        "groups.grievance": -0.03
+      }
+    },
+    {
+      "id": "global-ai-regulation-wave-2025",
+      "name": "Coordinated AI safety and model transparency rules in G7/G20 forums",
+      "category": "technological",
+      "date": "2025-09",
+      "atStep": 16,
+      "scope": "institutional",
+      "intensity": 0.13,
+      "target": {
+        "players": [
+          "g20",
+          "eu",
+          "us",
+          "india",
+          "japan"
+        ],
+        "companies": [
+          "openai",
+          "microsoft",
+          "alphabet",
+          "meta"
+        ]
+      },
+      "effects": {
+        "players.legitimacy": 0.03,
+        "groups.trustInstitutions": 0.03,
+        "relations.volatility": -0.04,
+        "macro.investmentConfidence": 0.03
+      }
+    }
+  ]
+}
