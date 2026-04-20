@@ -1,18 +1,73 @@
 {
   "meta": {
     "name": "Predictive History Events Pack V4 - Recent Years",
-    "version": "4.0.0",
-    "description": "Curated high-impact events (2020-2025) for denser temporal replay across geopolitical, economic, technological and social domains",
+    "version": "4.1.0",
+    "description": "Curated high-impact events (2003-2025) with expanded geopolitical conflict package and mapped engine effects.",
     "timeUnit": "month",
     "sourceSeed": "seed.v3.json"
   },
   "events": [
     {
+      "id": "iraq-war-legacy-fragmentation-2003",
+      "name": "Iraq War structural legacy: regional fragmentation and militia entrenchment",
+      "category": "geopolitical",
+      "date": "2003-03",
+      "atStep": 1,
+      "scope": "geopolitical",
+      "intensity": 0.23,
+      "target": {
+        "players": [
+          "us",
+          "un",
+          "saudi",
+          "turkiye"
+        ],
+        "groups": [
+          "mena-youth",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.09,
+        "groups.grievance": 0.08,
+        "groups.trustInstitutions": -0.05,
+        "players.legitimacy": -0.03,
+        "macro.fiscalSpace": -0.02
+      }
+    },
+    {
+      "id": "isis-resurgence-legacy-2014",
+      "name": "ISIS territorial surge and long-tail security spillovers",
+      "category": "geopolitical",
+      "date": "2014-06",
+      "atStep": 2,
+      "scope": "security",
+      "intensity": 0.2,
+      "target": {
+        "players": [
+          "us",
+          "eu",
+          "turkiye",
+          "un"
+        ],
+        "groups": [
+          "mena-youth",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.08,
+        "groups.grievance": 0.07,
+        "groups.mobilization": 0.05,
+        "macro.investmentConfidence": -0.03
+      }
+    },
+    {
       "id": "covid-global-emergency-2020",
       "name": "WHO declares COVID-19 global pandemic",
       "category": "social",
       "date": "2020-03",
-      "atStep": 1,
+      "atStep": 3,
       "scope": "social",
       "intensity": 0.28,
       "target": {
@@ -39,11 +94,34 @@
       }
     },
     {
+      "id": "india-pakistan-loc-ceasefire-reset-2021",
+      "name": "India-Pakistan LoC ceasefire reset with persistent escalation risk",
+      "category": "geopolitical",
+      "date": "2021-02",
+      "atStep": 4,
+      "scope": "security",
+      "intensity": 0.14,
+      "target": {
+        "players": [
+          "india"
+        ],
+        "groups": [
+          "south-asia-youth"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.04,
+        "relations.influence": 0.02,
+        "groups.grievance": -0.01,
+        "groups.mobilization": 0.02
+      }
+    },
+    {
       "id": "vaccine-rollout-2021",
       "name": "Mass vaccination rollout in advanced and emerging economies",
       "category": "social",
       "date": "2021-04",
-      "atStep": 2,
+      "atStep": 5,
       "scope": "social",
       "intensity": 0.19,
       "target": {
@@ -72,7 +150,7 @@
       "name": "Global supply-chain bottlenecks and freight spike",
       "category": "economic",
       "date": "2021-10",
-      "atStep": 3,
+      "atStep": 6,
       "scope": "economy",
       "intensity": 0.18,
       "target": {
@@ -102,7 +180,7 @@
       "name": "Russia invades Ukraine",
       "category": "geopolitical",
       "date": "2022-02",
-      "atStep": 4,
+      "atStep": 7,
       "scope": "geopolitical",
       "intensity": 0.27,
       "target": {
@@ -126,11 +204,39 @@
       }
     },
     {
+      "id": "taiwan-strait-drills-after-pelosi-2022",
+      "name": "Taiwan Strait military drills after high-level U.S. visit",
+      "category": "geopolitical",
+      "date": "2022-08",
+      "atStep": 8,
+      "scope": "geopolitical",
+      "intensity": 0.22,
+      "target": {
+        "players": [
+          "china",
+          "us",
+          "japan",
+          "southkorea"
+        ],
+        "companies": [
+          "tsmc",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "relations.influence": -0.05,
+        "macro.tradeFlow": -0.04,
+        "macro.investmentConfidence": -0.03,
+        "players.power": 0.02
+      }
+    },
+    {
       "id": "energy-price-spike-2022",
       "name": "European energy crisis and LNG scramble",
       "category": "economic",
       "date": "2022-09",
-      "atStep": 5,
+      "atStep": 9,
       "scope": "economy",
       "intensity": 0.22,
       "target": {
@@ -159,7 +265,7 @@
       "name": "Generative AI mainstream adoption after ChatGPT launch",
       "category": "technological",
       "date": "2022-11",
-      "atStep": 6,
+      "atStep": 10,
       "scope": "technology",
       "intensity": 0.16,
       "target": {
@@ -189,7 +295,7 @@
       "name": "SVB collapse and regional banking stress",
       "category": "economic",
       "date": "2023-03",
-      "atStep": 7,
+      "atStep": 11,
       "scope": "finance",
       "intensity": 0.17,
       "target": {
@@ -214,7 +320,7 @@
       "name": "G20 New Delhi: India-Middle East-Europe Economic Corridor announcement",
       "category": "geopolitical",
       "date": "2023-09",
-      "atStep": 8,
+      "atStep": 12,
       "scope": "geopolitical",
       "intensity": 0.13,
       "target": {
@@ -234,11 +340,37 @@
       }
     },
     {
+      "id": "azerbaijan-armenia-karabakh-offensive-2023",
+      "name": "Nagorno-Karabakh 2023 offensive and forced displacement shock",
+      "category": "geopolitical",
+      "date": "2023-09",
+      "atStep": 13,
+      "scope": "geopolitical",
+      "intensity": 0.16,
+      "target": {
+        "players": [
+          "turkiye",
+          "russia",
+          "eu",
+          "un"
+        ],
+        "groups": [
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.06,
+        "groups.grievance": 0.05,
+        "groups.trustInstitutions": -0.02,
+        "macro.tradeFlow": -0.02
+      }
+    },
+    {
       "id": "hamas-israel-war-2023",
       "name": "Israel-Hamas war and Red Sea shipping disruption",
       "category": "geopolitical",
       "date": "2023-10",
-      "atStep": 9,
+      "atStep": 14,
       "scope": "geopolitical",
       "intensity": 0.24,
       "target": {
@@ -262,11 +394,93 @@
       }
     },
     {
+      "id": "ukraine-war-counteroffensive-stalemate-2023",
+      "name": "Ukraine counteroffensive stalls, war shifts to attritional phase",
+      "category": "geopolitical",
+      "date": "2023-11",
+      "atStep": 15,
+      "scope": "geopolitical",
+      "intensity": 0.23,
+      "target": {
+        "players": [
+          "russia",
+          "eu",
+          "us",
+          "nato"
+        ],
+        "groups": [
+          "eu-urban",
+          "food-insecure"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "macro.tradeFlow": -0.05,
+        "macro.inflation": 0.04,
+        "groups.grievance": 0.05,
+        "players.resourceBase": -0.02
+      }
+    },
+    {
+      "id": "taiwan-election-pressure-cycle-2024",
+      "name": "Taiwan election cycle with intensified PLA pressure and sanctions signaling",
+      "category": "geopolitical",
+      "date": "2024-01",
+      "atStep": 16,
+      "scope": "geopolitical",
+      "intensity": 0.19,
+      "target": {
+        "players": [
+          "china",
+          "us",
+          "japan"
+        ],
+        "groups": [
+          "east-asia-export"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.03,
+        "macro.investmentConfidence": -0.02,
+        "groups.economicExposure": 0.03
+      }
+    },
+    {
+      "id": "red-sea-houthi-shipping-attacks-2024",
+      "name": "Red Sea shipping attacks escalate insurance and routing costs",
+      "category": "geopolitical",
+      "date": "2024-02",
+      "atStep": 17,
+      "scope": "geopolitical",
+      "intensity": 0.18,
+      "target": {
+        "players": [
+          "eu",
+          "saudi",
+          "us",
+          "india"
+        ],
+        "companies": [
+          "maersk",
+          "cosco",
+          "dhl"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": -0.06,
+        "macro.inflation": 0.04,
+        "macro.investmentConfidence": -0.03,
+        "relations.volatility": 0.06,
+        "groups.economicExposure": 0.04
+      }
+    },
+    {
       "id": "eu-ai-act-passage-2024",
       "name": "EU AI Act approved",
       "category": "technological",
       "date": "2024-03",
-      "atStep": 10,
+      "atStep": 18,
       "scope": "institutional",
       "intensity": 0.12,
       "target": {
@@ -289,11 +503,39 @@
       }
     },
     {
+      "id": "ukraine-energy-infrastructure-strikes-2024",
+      "name": "Renewed strikes on Ukrainian energy infrastructure and Black Sea risk",
+      "category": "geopolitical",
+      "date": "2024-04",
+      "atStep": 19,
+      "scope": "geopolitical",
+      "intensity": 0.2,
+      "target": {
+        "players": [
+          "russia",
+          "eu",
+          "un",
+          "turkiye"
+        ],
+        "groups": [
+          "energy-consumers",
+          "food-insecure"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.08,
+        "macro.inflation": 0.05,
+        "macro.tradeFlow": -0.04,
+        "groups.economicExposure": 0.04,
+        "groups.grievance": 0.04
+      }
+    },
+    {
       "id": "global-election-supercycle-2024",
       "name": "Election supercycle (US, India, EU Parliament) heightens polarization",
       "category": "social",
       "date": "2024-06",
-      "atStep": 11,
+      "atStep": 20,
       "scope": "social",
       "intensity": 0.18,
       "target": {
@@ -320,7 +562,7 @@
       "name": "Extended Suez/Red Sea rerouting pressures logistics",
       "category": "economic",
       "date": "2024-07",
-      "atStep": 12,
+      "atStep": 21,
       "scope": "economy",
       "intensity": 0.14,
       "target": {
@@ -347,7 +589,7 @@
       "name": "China property support and targeted stimulus package",
       "category": "economic",
       "date": "2024-10",
-      "atStep": 13,
+      "atStep": 22,
       "scope": "economy",
       "intensity": 0.15,
       "target": {
@@ -371,7 +613,7 @@
       "name": "US expands advanced AI chip export controls",
       "category": "technological",
       "date": "2025-01",
-      "atStep": 14,
+      "atStep": 23,
       "scope": "technology",
       "intensity": 0.2,
       "target": {
@@ -400,7 +642,7 @@
       "name": "Disinflation and soft-landing signal from major central banks",
       "category": "economic",
       "date": "2025-03",
-      "atStep": 15,
+      "atStep": 24,
       "scope": "finance",
       "intensity": 0.14,
       "target": {
@@ -421,11 +663,38 @@
       }
     },
     {
+      "id": "india-pakistan-kashmir-attack-crisis-2025",
+      "name": "India-Pakistan crisis flare-up after Kashmir militant attack",
+      "category": "geopolitical",
+      "date": "2025-04",
+      "atStep": 25,
+      "scope": "security",
+      "intensity": 0.21,
+      "target": {
+        "players": [
+          "india",
+          "china",
+          "us"
+        ],
+        "groups": [
+          "south-asia-youth",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.09,
+        "macro.tradeFlow": -0.03,
+        "groups.mobilization": 0.06,
+        "groups.grievance": 0.05,
+        "players.cohesion": -0.02
+      }
+    },
+    {
       "id": "global-ai-regulation-wave-2025",
       "name": "Coordinated AI safety and model transparency rules in G7/G20 forums",
       "category": "technological",
       "date": "2025-09",
-      "atStep": 16,
+      "atStep": 26,
       "scope": "institutional",
       "intensity": 0.13,
       "target": {
