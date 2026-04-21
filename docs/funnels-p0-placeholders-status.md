@@ -30,4 +30,4 @@ Escopo: `launch-repo/docs` (LPs, páginas de apoio e materiais de workshop/copy)
 - [ ] Confirmar URL final de checkout Asaas — Workshop 3
 
 ## Critério de pronto restante
-- Fechar os 3 links Stripe pendentes e atualizar os pontos de publicação dos workshops assim que as URLs oficiais forem disponibilizadas.
+- Fechar os 3 links Asaas dedicados por workshop e atualizar os pontos de publicação assim que as URLs oficiais forem confirmadas.
