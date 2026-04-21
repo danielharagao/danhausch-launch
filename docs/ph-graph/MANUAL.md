@@ -56,6 +56,21 @@ Exemplos:
 - **Network**: estrutura, hubs e nós-ponte
 - **Drivers**: fatores que mais empurram risco no frame atual
 
+### Explainability v2 (aba Drivers)
+Use a aba **Drivers** para responder rapidamente “por que o risco mudou”:
+
+1. **Why risk moved**
+   - Cadeia causal: **Evento -> Macro -> Relações -> KPI**.
+   - Mostra o encadeamento principal em linguagem direta.
+
+2. **Top drivers com evidência**
+   - Ranking dos drivers por contribuição.
+   - Cada item traz evidência do frame (dados macro, volatilidade relacional, sinais de grupos).
+
+3. **Mini timeline causa-efeito**
+   - Últimos frames com variação de risco (em pontos), evento dominante e causa dominante.
+   - Ideal para briefing executivo rápido.
+
 ### Passo 5 — Compare cenários
 Faça 2–3 rodadas mudando premissas (tempo/filtro/recorte) e compare:
 - quais nós sobem influência

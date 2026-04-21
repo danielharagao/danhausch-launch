@@ -6,6 +6,17 @@ function adapterFrame() {
   return state.adapter.getFrame(state.frameIndex);
 }
 
+function compareFrame() {
+  const adapter = state.compareAdapters?.[state.compareTarget];
+  if (!adapter) return null;
+  return adapter.getFrame(state.frameIndex);
+}
+
+function signedDelta(base, candidate) {
+  const delta = Math.round((candidate - base) * 100);
+  return `${delta > 0 ? "+" : ""}${delta} pp`;
+}
+
 export function initTabs() {
   const tabs = document.querySelectorAll(".tab");
   tabs.forEach((tab) => {
@@ -69,6 +80,25 @@ export function initFilters() {
   });
 }
 
+export function initCompareMode() {
+  const toggle = $("#compareModeToggle");
+  const scenario = $("#compareScenario");
+  if (!toggle || !scenario) return;
+
+  toggle.addEventListener("click", () => {
+    state.compareMode = !state.compareMode;
+    toggle.classList.toggle("is-active", state.compareMode);
+    toggle.textContent = state.compareMode ? "Compare: ON" : "Compare: OFF";
+    document.body.classList.toggle("compare-on", state.compareMode);
+    renderAll();
+  });
+
+  scenario.addEventListener("change", () => {
+    state.compareTarget = scenario.value;
+    renderAll();
+  });
+}
+
 export function renderKpis() {
   const cards = state.adapter.getKpiCards(adapterFrame(), state.filters);
   $("#kpiRisk").textContent = cards.kpiRisk;
@@ -88,6 +118,7 @@ export function initTimeline() {
     renderNetwork();
     renderKpis();
     renderDrivers();
+    renderCompare();
   });
 
   $("#playBtn").addEventListener("click", () => {
@@ -100,6 +131,7 @@ export function initTimeline() {
       renderNetwork();
       renderKpis();
       renderDrivers();
+      renderCompare();
     }, 1400);
   });
 
@@ -188,17 +220,47 @@ export function renderNetwork() {
 }
 
 export function renderDrivers() {
+  const frame = adapterFrame();
+  const prev = state.adapter.getFrame(Math.max(0, state.frameIndex - 1));
+
+  const whyBox = $("#whyRiskMoved");
+  const why = state.adapter.getWhyRiskMoved(frame, prev);
+  if (whyBox) {
+    whyBox.innerHTML = `
+      <p><strong>${why.summary}</strong></p>
+      <div class="causal-chain">
+        ${why.chain.map((c) => `<article class="causal-step"><small>${c.stage}</small><p>${c.text}</p></article>`).join("")}
+      </div>
+    `;
+  }
+
   const container = $("#driversList");
-  const drivers = state.adapter.getDrivers(adapterFrame());
+  const drivers = state.adapter.getDrivers(frame, prev);
   container.innerHTML = drivers
     .map((d) => `
       <article class="driver-item">
         <header><strong>${d.label}</strong><span>${d.weight}% contribuição</span></header>
         <div class="bar"><span style="width:${d.weight}%"></span></div>
+        <p class="target">Impacto principal: ${d.target}</p>
         <p>${d.explanation}</p>
+        <p class="evidence">${d.evidence}</p>
       </article>
       `)
     .join("");
+
+  const timeline = $("#causalTimeline");
+  if (timeline) {
+    const points = state.adapter.getCausalTimeline(state.frameIndex);
+    timeline.innerHTML = points
+      .map((p) => `
+        <article class="timeline-cause-item">
+          <strong>${p.label}</strong> · risco ${p.risk}% (${p.delta >= 0 ? "+" : ""}${p.delta} pts)
+          <div><small>Evento: ${p.event}</small></div>
+          <div><small>Causa dominante: ${p.cause}</small></div>
+        </article>
+      `)
+      .join("");
+  }
 }
 
 export function renderMacroTrends() {
@@ -259,6 +321,83 @@ export function initPresets() {
 }
 
 // API config UI removed by design. Configuration now code-only.
+
+export function renderCompare() {
+  const panel = $("#comparePanel");
+  if (!panel) return;
+
+  if (!state.compareMode) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+
+  const base = adapterFrame();
+  const candidate = compareFrame();
+  if (!candidate) {
+    panel.hidden = false;
+    panel.innerHTML = "<p class='muted'>Cenário de comparação indisponível.</p>";
+    return;
+  }
+
+  const baseSnap = base.snapshot || {};
+  const candSnap = candidate.snapshot || {};
+  const baseDrivers = new Set((base.explainability?.topDrivers || []).map((d) => d.driver));
+  const candDrivers = new Set((candidate.explainability?.topDrivers || []).map((d) => d.driver));
+  const driverAdded = [...candDrivers].filter((d) => !baseDrivers.has(d));
+  const driverRemoved = [...baseDrivers].filter((d) => !candDrivers.has(d));
+
+  const baseK = base.kpis || {};
+  const candK = candidate.kpis || {};
+
+  const baseNodes = (baseSnap.groups?.length || 0) + (baseSnap.players?.length || 0);
+  const candNodes = (candSnap.groups?.length || 0) + (candSnap.players?.length || 0);
+  const baseEdges = baseSnap.relations?.length || 0;
+  const candEdges = candSnap.relations?.length || 0;
+
+  panel.hidden = false;
+  panel.innerHTML = `
+    <div class="compare-grid">
+      <article class="card compare-col">
+        <p class="eyebrow">Baseline</p>
+        <h3>Seed 1337 · ${base.label}</h3>
+        <ul>
+          <li>Risco conflito: <strong>${Math.round((baseK.riskConflict || 0) * 100)}%</strong></li>
+          <li>Estabilidade: <strong>${Math.round((baseK.institutionalStability || 0) * 100)}%</strong></li>
+          <li>Polarização: <strong>${Math.round((baseK.polarization || 0) * 100)}%</strong></li>
+          <li>Resiliência econômica: <strong>${Math.round((baseK.economicResilience || 0) * 100)}%</strong></li>
+        </ul>
+      </article>
+
+      <article class="card compare-col">
+        <p class="eyebrow">${state.compareTarget === "scenarioA" ? "Scenario A" : "Scenario B"}</p>
+        <h3>${state.compareTarget === "scenarioA" ? "Seed 2024" : "Seed 9090"} · ${candidate.label}</h3>
+        <ul>
+          <li>Risco conflito: <strong>${Math.round((candK.riskConflict || 0) * 100)}%</strong></li>
+          <li>Estabilidade: <strong>${Math.round((candK.institutionalStability || 0) * 100)}%</strong></li>
+          <li>Polarização: <strong>${Math.round((candK.polarization || 0) * 100)}%</strong></li>
+          <li>Resiliência econômica: <strong>${Math.round((candK.economicResilience || 0) * 100)}%</strong></li>
+        </ul>
+      </article>
+    </div>
+
+    <article class="card compare-deltas">
+      <h3>Deltas vs Baseline</h3>
+      <div class="delta-grid">
+        <div><small>Δ risco conflito</small><strong>${signedDelta(baseK.riskConflict || 0, candK.riskConflict || 0)}</strong></div>
+        <div><small>Δ estabilidade</small><strong>${signedDelta(baseK.institutionalStability || 0, candK.institutionalStability || 0)}</strong></div>
+        <div><small>Δ polarização</small><strong>${signedDelta(baseK.polarization || 0, candK.polarization || 0)}</strong></div>
+        <div><small>Δ resiliência econômica</small><strong>${signedDelta(baseK.economicResilience || 0, candK.economicResilience || 0)}</strong></div>
+        <div><small>Δ nós</small><strong>${candNodes - baseNodes > 0 ? "+" : ""}${candNodes - baseNodes}</strong></div>
+        <div><small>Δ arestas</small><strong>${candEdges - baseEdges > 0 ? "+" : ""}${candEdges - baseEdges}</strong></div>
+      </div>
+      <div class="compare-drivers row">
+        <div><small>Drivers novos</small><p>${driverAdded.length ? driverAdded.join(", ") : "Nenhum"}</p></div>
+        <div><small>Drivers que saíram</small><p>${driverRemoved.length ? driverRemoved.join(", ") : "Nenhum"}</p></div>
+      </div>
+    </article>
+  `;
+}
 
 export function initTutorial() {
   const overlay = $("#tutorialOverlay");
@@ -352,4 +491,5 @@ export function renderAll() {
   renderTimeline();
   renderNetwork();
   renderDrivers();
+  renderCompare();
 }

@@ -24,12 +24,63 @@ const DRIVER_LABELS = {
 const ENTITY_TYPES = ["country", "leader", "person", "company", "institution"];
 const MAX_NETWORK_RESULTS = 140;
 
+const SCENARIO_PRESETS = {
+  war: {
+    id: "war",
+    label: "War",
+    description: "Escalada militar, rupturas diplomáticas e choque de confiança institucional.",
+    profile: { riskConflict: 1, institutionalStability: -0.45, polarization: 0.7, economicResilience: -0.35 }
+  },
+  energy_shock: {
+    id: "energy_shock",
+    label: "Energy Shock",
+    description: "Disrupção de energia e cadeias de suprimento com impacto macroeconômico.",
+    profile: { riskConflict: 0.35, institutionalStability: -0.2, polarization: 0.35, economicResilience: -0.9 }
+  },
+  tech_sanctions: {
+    id: "tech_sanctions",
+    label: "Tech Sanctions",
+    description: "Sanções tecnológicas, desacoplamento de blocos e pressão industrial.",
+    profile: { riskConflict: 0.4, institutionalStability: -0.25, polarization: 0.45, economicResilience: -0.55 }
+  },
+  election_crisis: {
+    id: "election_crisis",
+    label: "Election Crisis",
+    description: "Crise eleitoral com contestação de legitimidade e aumento de polarização.",
+    profile: { riskConflict: 0.55, institutionalStability: -0.8, polarization: 1, economicResilience: -0.25 }
+  }
+};
+
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }
 
 function toPct(v) {
   return Math.round(clamp(v, 0, 1) * 100);
+}
+
+function normalizeScenarioScope(scope) {
+  const allowed = ["global", "americas", "europe", "asia", "middle-east", "africa"];
+  return allowed.includes(scope) ? scope : "global";
+}
+
+function scopeMatches(region, scope) {
+  if (!scope || scope === "global") return true;
+  const r = normalizeRegion(region);
+  if (scope === "americas") return /america|latam|north america|south america/.test(r);
+  if (scope === "europe") return /europe|eu|euro/.test(r);
+  if (scope === "asia") return /asia|indo-pacific|pacific/.test(r);
+  if (scope === "middle-east") return /middle east|mena|gulf/.test(r);
+  if (scope === "africa") return /africa/.test(r);
+  return true;
+}
+
+function buildScenarioEvent(scenario, frame) {
+  return {
+    time: frame.label,
+    title: `${scenario.label} · intensidade ${scenario.intensity}% · escopo ${scenario.scope}`,
+    impact: scenario.intensity >= 70 ? "+alto" : "+moderado"
+  };
 }
 
 function scoreGroup(g) {
@@ -148,6 +199,71 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     return ensureFrame(index);
   }
 
+  function buildScenario(input = {}) {
+    const preset = SCENARIO_PRESETS[input.presetId] || SCENARIO_PRESETS.war;
+    return {
+      name: input.name || preset.label,
+      presetId: preset.id,
+      label: preset.label,
+      description: preset.description,
+      intensity: clamp(Number(input.intensity ?? 50), 0, 100),
+      scope: normalizeScenarioScope(input.scope || "global"),
+      profile: { ...preset.profile }
+    };
+  }
+
+  function getFrameForScenario(index, scenarioInput) {
+    const base = getFrame(index);
+    if (!scenarioInput?.presetId) return base;
+
+    const scenario = buildScenario(scenarioInput);
+    const strength = scenario.intensity / 100;
+    const stepGain = 0.55 + Math.min(index, 12) / 12;
+
+    const applyDelta = (value, profileDelta) => clamp(value + profileDelta * 0.28 * strength * stepGain, 0, 1);
+
+    const kpis = {
+      riskConflict: applyDelta(base.kpis.riskConflict, scenario.profile.riskConflict),
+      institutionalStability: applyDelta(base.kpis.institutionalStability, scenario.profile.institutionalStability),
+      polarization: applyDelta(base.kpis.polarization, scenario.profile.polarization),
+      economicResilience: applyDelta(base.kpis.economicResilience, scenario.profile.economicResilience)
+    };
+
+    const scopedPlayers = (base.snapshot.players || []).map((p) => {
+      if (!scopeMatches(p.region || p.country || p.type, scenario.scope)) return p;
+      return {
+        ...p,
+        legitimacy: clamp(p.legitimacy - 0.2 * strength * Math.max(0, -scenario.profile.institutionalStability), 0, 1),
+        cohesion: clamp(p.cohesion - 0.16 * strength * Math.max(0, scenario.profile.polarization), 0, 1),
+        resourceBase: clamp(p.resourceBase - 0.18 * strength * Math.max(0, -scenario.profile.economicResilience), 0, 1)
+      };
+    });
+
+    const scopedGroups = (base.snapshot.groups || []).map((g) => {
+      if (!scopeMatches(g.region || g.country, scenario.scope)) return g;
+      return {
+        ...g,
+        grievance: clamp(g.grievance + 0.2 * strength * Math.max(0, scenario.profile.polarization), 0, 1),
+        mobilization: clamp(g.mobilization + 0.15 * strength * Math.max(0, scenario.profile.riskConflict), 0, 1),
+        trustInstitutions: clamp(g.trustInstitutions - 0.2 * strength * Math.max(0, -scenario.profile.institutionalStability), 0, 1)
+      };
+    });
+
+    const snapshot = {
+      ...base.snapshot,
+      players: scopedPlayers,
+      groups: scopedGroups
+    };
+
+    return {
+      ...base,
+      score: toPct((kpis.riskConflict + kpis.polarization + (1 - kpis.institutionalStability) + (1 - kpis.economicResilience)) / 4),
+      kpis,
+      snapshot,
+      events: [...(base.events || []), buildScenarioEvent(scenario, base)]
+    };
+  }
+
   function horizonToSteps(horizonDays) {
     if (horizonDays <= 7) return 3;
     if (horizonDays <= 30) return 8;
@@ -168,20 +284,131 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     };
   }
 
-  function getDrivers(frame) {
+  function explainDirection(target, signedImpact) {
+    const up = signedImpact >= 0;
+    if (target === "riskConflict" || target === "polarization") {
+      return up ? "puxou para cima" : "puxou para baixo";
+    }
+    return up ? "fortaleceu" : "enfraqueceu";
+  }
+
+  function contextualEvidence(driverKey, frame, prevFrame) {
+    const macro = frame?.snapshot?.macro || {};
+    const prevMacro = prevFrame?.snapshot?.macro || {};
+    const rels = frame?.snapshot?.relations || [];
+    const prevRels = prevFrame?.snapshot?.relations || [];
+
+    if (driverKey in macro) {
+      const now = toPct(macro[driverKey]);
+      const before = toPct(prevMacro[driverKey] ?? macro[driverKey]);
+      const delta = now - before;
+      const trend = delta === 0 ? "estável" : delta > 0 ? `+${delta} pts` : `${delta} pts`;
+      return `Macro: ${DRIVER_LABELS[driverKey] || driverKey} em ${now}% (${trend} vs frame anterior).`;
+    }
+
+    if (driverKey === "avgRelationVolatility") {
+      const now = toPct((rels.reduce((acc, r) => acc + Number(r.volatility || 0), 0) / Math.max(1, rels.length)) || 0);
+      const before = toPct((prevRels.reduce((acc, r) => acc + Number(r.volatility || 0), 0) / Math.max(1, prevRels.length)) || 0);
+      return `Relações: volatilidade média em ${now}% (${now - before >= 0 ? "+" : ""}${now - before} pts).`;
+    }
+
+    if (driverKey === "rivalryPressure") {
+      const hostile = rels.filter((r) => Number(r.influence || 0) < 0).length;
+      return `Relações: ${hostile} conexões com influência negativa no frame atual.`;
+    }
+
+    const groups = frame?.snapshot?.groups || [];
+    if (driverKey === "avgGroupMobilization") {
+      const v = toPct(groups.reduce((acc, g) => acc + Number(g.mobilization || 0), 0) / Math.max(1, groups.length));
+      return `Grupos: mobilização média em ${v}% neste frame.`;
+    }
+    if (driverKey === "avgGroupGrievance") {
+      const v = toPct(groups.reduce((acc, g) => acc + Number(g.grievance || 0), 0) / Math.max(1, groups.length));
+      return `Grupos: grievance média em ${v}% neste frame.`;
+    }
+    if (driverKey === "avgGroupTrust") {
+      const v = toPct(groups.reduce((acc, g) => acc + Number(g.trustInstitutions || 0), 0) / Math.max(1, groups.length));
+      return `Grupos: confiança institucional média em ${v}% neste frame.`;
+    }
+
+    return "Evidência contextual derivada do estado consolidado do frame.";
+  }
+
+  function getDrivers(frame, prevFrame = null) {
     const list = frame.explainability?.topDrivers || [];
     const total = list.reduce((acc, d) => acc + Math.abs(d.signedImpact || 0), 0) || 1;
 
     return list.map((d) => {
       const pct = Math.round((Math.abs(d.signedImpact || 0) / total) * 100);
+      const targetLabel = KPI_META[d.target]?.label || d.target;
       return {
         key: d.driver,
         label: DRIVER_LABELS[d.driver] || d.driver,
-        target: KPI_META[d.target]?.label || d.target,
+        target: targetLabel,
         weight: pct,
-        explanation: `Impacto em ${KPI_META[d.target]?.label || d.target}`
+        explanation: `${DRIVER_LABELS[d.driver] || d.driver} ${explainDirection(d.target, d.signedImpact || 0)} ${targetLabel.toLowerCase()}.`,
+        evidence: contextualEvidence(d.driver, frame, prevFrame)
       };
     });
+  }
+
+  function getWhyRiskMoved(frame, prevFrame = null) {
+    const previous = prevFrame || frame;
+    const mainEvent = frame.events?.[0] || null;
+    const top = getDrivers(frame, previous)[0] || null;
+    const macro = frame?.snapshot?.macro || {};
+    const prevMacro = previous?.snapshot?.macro || macro;
+    const macroDelta = ["inflation", "unemployment", "investmentConfidence", "tradeFlow", "fiscalSpace", "gdpTrend"]
+      .map((k) => ({ key: k, delta: toPct(macro[k]) - toPct(prevMacro[k] ?? macro[k]) }))
+      .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
+
+    const rels = frame?.snapshot?.relations || [];
+    const relVol = toPct((rels.reduce((acc, r) => acc + Number(r.volatility || 0), 0) / Math.max(1, rels.length)) || 0);
+
+    return {
+      summary: top
+        ? `O risco mudou porque ${top.label.toLowerCase()} teve maior peso neste frame.`
+        : "O risco mudou por combinação de eventos e dinâmica estrutural.",
+      chain: [
+        {
+          stage: "Evento",
+          text: mainEvent ? `${mainEvent.title} (${mainEvent.time})` : "Sem evento explícito; mudança veio da dinâmica interna do modelo."
+        },
+        {
+          stage: "Macro",
+          text: macroDelta ? `${DRIVER_LABELS[macroDelta.key] || macroDelta.key}: ${macroDelta.delta >= 0 ? "+" : ""}${macroDelta.delta} pts.` : "Sem variação macro relevante no frame."
+        },
+        {
+          stage: "Relações",
+          text: `Volatilidade média das relações em ${relVol}%, influenciando propagação de tensão/cooperação.`
+        },
+        {
+          stage: "KPI",
+          text: `Risco de conflito: ${toPct(frame.kpis?.riskConflict)}% (antes ${toPct(previous.kpis?.riskConflict)}%).`
+        }
+      ]
+    };
+  }
+
+  function getCausalTimeline(frameIndex) {
+    const start = Math.max(0, frameIndex - 3);
+    const points = [];
+    for (let i = start; i <= frameIndex; i += 1) {
+      const cur = getFrame(i);
+      const prev = getFrame(Math.max(0, i - 1));
+      const riskNow = toPct(cur.kpis?.riskConflict);
+      const riskPrev = toPct(prev.kpis?.riskConflict);
+      const delta = riskNow - riskPrev;
+      const top = getDrivers(cur, prev)[0];
+      points.push({
+        label: cur.label,
+        risk: riskNow,
+        delta,
+        cause: top ? `${top.label} (${top.weight}% do impacto)` : "Causa difusa",
+        event: cur.events?.[0]?.title || "Sem evento dominante"
+      });
+    }
+    return points;
   }
 
   function makePeople(groups) {
@@ -318,13 +545,20 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
   return {
     seed,
     getFrame,
+    getFrameForScenario,
     ensureFrame,
     getKpiCards,
     getDrivers,
+    getWhyRiskMoved,
+    getCausalTimeline,
     getNetwork,
     getRegions,
     getMacroTrends,
     getMacroTrendSeries,
+    getScenarioPresets() {
+      return Object.values(SCENARIO_PRESETS);
+    },
+    buildScenario,
     getStatus() {
       return { mode };
     }

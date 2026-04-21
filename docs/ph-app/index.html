@@ -10,22 +10,30 @@
   <link rel="stylesheet" href="./assets/css/components.css" />
 </head>
 <body>
+  <a class="skip-link" href="#mainContent">Pular para conteúdo principal</a>
   <div class="app-shell">
     <header class="topbar card">
       <div>
         <p class="eyebrow">Predictive History</p>
         <h1>War Room</h1>
+        <p class="muted">Monitore risco geopolítico por cenário, conexões e drivers explicáveis.</p>
       </div>
-      <div class="topbar-actions">
-        <button id="themeToggle" class="btn ghost" aria-label="Alternar tema">☾ Tema</button>
+      <div class="topbar-actions" aria-label="Ações principais">
+        <button id="themeToggle" class="btn ghost" aria-label="Alternar tema escuro ou claro">☾ Tema</button>
         <button id="tutorialBtn" class="btn ghost" aria-label="Abrir tutorial guiado">Tutorial</button>
+        <button id="compareModeToggle" class="btn ghost" aria-label="Alternar modo de comparação">Compare: OFF</button>
+        <select id="compareScenario" aria-label="Selecionar cenário para comparar">
+          <option value="scenarioA" selected>Comparar com Scenario A</option>
+          <option value="scenarioB">Comparar com Scenario B</option>
+        </select>
         <button id="savePresetBtn" class="btn">Salvar preset</button>
       </div>
     </header>
 
     <aside class="filters card">
       <h2>Filtros Avançados</h2>
-      <form id="filtersForm" class="stack">
+      <p class="muted">Aplique filtros para reduzir ruído e destacar entidades críticas.</p>
+      <form id="filtersForm" class="stack" aria-label="Filtros de análise">
         <label>Horizonte
           <select name="horizon">
             <option value="7">7 dias</option>
@@ -37,11 +45,11 @@
         <label>Tipo de entidade
           <select name="entityType">
             <option value="all" selected>Todas</option>
-            <option value="country">country</option>
-            <option value="leader">leader</option>
-            <option value="person">person</option>
-            <option value="company">company</option>
-            <option value="institution">institution</option>
+            <option value="country">País</option>
+            <option value="leader">Líder</option>
+            <option value="person">Pessoa</option>
+            <option value="company">Empresa</option>
+            <option value="institution">Instituição</option>
           </select>
         </label>
 
@@ -82,29 +90,29 @@
       </section>
     </aside>
 
-    <main class="main-content">
+    <main class="main-content" id="mainContent">
       <nav class="tabs card" id="tabs" role="tablist" aria-label="Visões">
-        <button class="tab is-active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
-        <button class="tab" data-tab="timeline" role="tab" aria-selected="false">Timeline & Playback</button>
-        <button class="tab" data-tab="network" role="tab" aria-selected="false">Network Explorer</button>
-        <button class="tab" data-tab="drivers" role="tab" aria-selected="false">Drivers de Risco</button>
+        <button id="tab-overview" class="tab is-active" data-tab="overview" role="tab" aria-controls="panel-overview" aria-selected="true" tabindex="0">Overview</button>
+        <button id="tab-timeline" class="tab" data-tab="timeline" role="tab" aria-controls="panel-timeline" aria-selected="false" tabindex="-1">Timeline & Playback</button>
+        <button id="tab-network" class="tab" data-tab="network" role="tab" aria-controls="panel-network" aria-selected="false" tabindex="-1">Network Explorer</button>
+        <button id="tab-drivers" class="tab" data-tab="drivers" role="tab" aria-controls="panel-drivers" aria-selected="false" tabindex="-1">Drivers de Risco</button>
       </nav>
 
-      <section class="panel-grid tab-panel is-active" data-panel="overview">
-        <article class="kpi card"><p>Risco médio</p><strong id="kpiRisk">--</strong></article>
-        <article class="kpi card"><p>Entidades críticas</p><strong id="kpiCritical">--</strong></article>
-        <article class="kpi card"><p>Supernós ativos</p><strong id="kpiSupernodes">--</strong></article>
-        <article class="kpi card"><p>Eventos em janela</p><strong id="kpiEvents">--</strong></article>
+      <section id="panel-overview" class="panel-grid tab-panel is-active" data-panel="overview" role="tabpanel" aria-labelledby="tab-overview">
+        <article class="kpi card"><p>Risco médio</p><strong id="kpiRisk" aria-live="polite">--</strong></article>
+        <article class="kpi card"><p>Entidades críticas</p><strong id="kpiCritical" aria-live="polite">--</strong></article>
+        <article class="kpi card"><p>Supernós ativos</p><strong id="kpiSupernodes" aria-live="polite">--</strong></article>
+        <article class="kpi card"><p>Eventos em janela</p><strong id="kpiEvents" aria-live="polite">--</strong></article>
       </section>
 
-      <section class="tab-panel is-active" data-panel="overview">
+      <section class="tab-panel is-active" data-panel="overview" role="tabpanel" aria-labelledby="tab-overview">
         <article class="card">
           <h2>Macrotrends</h2>
           <div id="macroTrends" class="macro-list"></div>
         </article>
       </section>
 
-      <section class="tab-panel" data-panel="timeline">
+      <section id="panel-timeline" class="tab-panel" data-panel="timeline" role="tabpanel" aria-labelledby="tab-timeline">
         <article class="card">
           <div class="row between">
             <h2>Timeline de cenários</h2>
@@ -122,7 +130,7 @@
         </article>
       </section>
 
-      <section class="tab-panel" data-panel="network">
+      <section id="panel-network" class="tab-panel" data-panel="network" role="tabpanel" aria-labelledby="tab-network">
         <article class="card">
           <div class="row between">
             <h2>Explorer de rede</h2>
@@ -133,10 +141,18 @@
         </article>
       </section>
 
-      <section class="tab-panel" data-panel="drivers">
+      <section id="panel-drivers" class="tab-panel" data-panel="drivers" role="tabpanel" aria-labelledby="tab-drivers">
         <article class="card">
-          <h2>Painel explicável: Drivers de risco</h2>
+          <h2>Painel explicável v2 · Why risk moved</h2>
+          <p class="muted">Explicação em linguagem simples: o que aconteceu, por que isso mudou os indicadores e qual foi o efeito no risco.</p>
+
+          <section id="whyRiskMoved" class="why-risk-panel"></section>
+
+          <h3>Top drivers com evidência contextual (frame atual)</h3>
           <div id="driversList" class="driver-list"></div>
+
+          <h3>Mini timeline causa → efeito</h3>
+          <div id="causalTimeline" class="causal-timeline"></div>
         </article>
       </section>
     </main>

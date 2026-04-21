@@ -72,11 +72,23 @@ input[type="range"] { padding: 0; }
   font-size: .78rem;
 }
 
+.why-risk-panel { margin-top: 12px; border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--bg-soft); display: grid; gap: 10px; }
+.causal-chain { display: grid; gap: 8px; }
+.causal-step { border: 1px dashed var(--line); border-radius: 10px; padding: 10px; }
+.causal-step p { margin: 0; }
+.causal-step small { color: var(--muted); }
+
 .driver-list { margin-top: 12px; display: grid; gap: 10px; }
 .driver-item { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--bg-soft); }
 .driver-item header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.driver-item .target { margin: 8px 0 4px; font-size: .85rem; color: var(--muted); }
+.driver-item .evidence { margin-top: 6px; color: var(--muted); font-size: .86rem; }
 .bar { height: 8px; border-radius: 999px; background: color-mix(in oklab, var(--line) 78%, transparent); overflow: hidden; }
 .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--warn), var(--danger)); }
+
+.causal-timeline { margin-top: 10px; display: grid; gap: 8px; }
+.timeline-cause-item { border-left: 3px solid var(--accent); padding: 8px 10px; background: color-mix(in oklab, var(--bg-soft) 86%, transparent); border-radius: 8px; }
+.timeline-cause-item small { color: var(--muted); }
 
 .macro-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:10px; }
 .macro-item { border:1px solid var(--line); border-radius:10px; padding:10px; background:var(--bg-soft); }
