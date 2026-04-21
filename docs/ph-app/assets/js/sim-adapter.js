@@ -102,11 +102,26 @@ function mapEvent(ev) {
   return {
     time: `Step ${ev.step}`,
     step: Number(ev.step || 0),
+    date: ev.date || null,
     title: `${ev.name} [${ev.scope}]`,
     impact: direction,
     source,
     confidence,
     category: String(ev.category || "geo").toLowerCase()
+  };
+}
+
+function mapSeedTimelineEvent(ev, currentStep = 0) {
+  const step = Number(ev.atStep || ev.step || 0);
+  const bucket = step < currentStep ? "past" : step === currentStep ? "today" : "future";
+  return {
+    step,
+    date: ev.date || null,
+    title: `${ev.name} [${ev.scope}]`,
+    category: String(ev.category || "geo").toLowerCase(),
+    source: ev.source || ev.sourceRef || ev.origin || "dataset",
+    confidence: String(ev.confidence || ev.confidenceLevel || "medium").toLowerCase(),
+    bucket
   };
 }
 
@@ -550,6 +565,14 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     return vals;
   }
 
+  function getTimelineEvents(currentStep = 0, category = "all") {
+    const all = [...(seed?.events || [])]
+      .map((e) => mapSeedTimelineEvent(e, currentStep))
+      .sort((a, b) => a.step - b.step || String(a.date || "").localeCompare(String(b.date || "")));
+    if (category && category !== "all") return all.filter((e) => e.category.includes(category));
+    return all;
+  }
+
   return {
     seed,
     getFrame,
@@ -563,6 +586,7 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     getRegions,
     getMacroTrends,
     getMacroTrendSeries,
+    getTimelineEvents,
     getMaxStep() {
       return Math.max(12, ...(seed?.events || []).map((e) => Number(e.atStep || e.step || 0)));
     },

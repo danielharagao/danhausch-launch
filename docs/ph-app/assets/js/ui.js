@@ -202,9 +202,9 @@ export function renderTimeline() {
   $("#timelineLabel").textContent = frame.label;
   $("#scenarioScore").textContent = `Score: ${frame.score}`;
   const cat = $("#eventCategoryFilter")?.value || "all";
-  const events = (frame.events || []).filter((ev) => cat === "all" || String(ev.category || "geo").includes(cat));
-  $("#timelineEvents").innerHTML = events
-    .map((ev) => `<li><strong>${ev.time}</strong> · ${ev.title} <em>(${ev.impact})</em><div class="event-meta"><span class="badge-source">Fonte: ${ev.source}</span><span class="badge-source">Categoria: ${ev.category}</span><span class="badge-confidence ${ev.confidence}">Confiança: ${ev.confidence}</span></div></li>`)
+  const timeline = state.adapter.getTimelineEvents(state.frameIndex, cat);
+  $("#timelineEvents").innerHTML = timeline
+    .map((ev) => `<li><strong>Step ${ev.step}</strong> · ${ev.title}${ev.date ? ` · <small>${ev.date}</small>` : ""}<div class="event-meta"><span class="badge-source">${ev.bucket}</span><span class="badge-source">Fonte: ${ev.source}</span><span class="badge-source">Categoria: ${ev.category}</span><span class="badge-confidence ${ev.confidence}">Confiança: ${ev.confidence}</span></div></li>`)
     .join("") || "<li><em>Sem eventos no filtro atual.</em></li>";
 }
 
