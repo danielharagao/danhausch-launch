@@ -204,9 +204,18 @@ export function renderDrivers() {
 export function renderMacroTrends() {
   const container = $("#macroTrends");
   if (!container) return;
+  const bars = "▁▂▃▄▅▆▇█";
+  const spark = (arr = []) => {
+    if (!arr.length) return "";
+    return arr.map((v) => bars[Math.max(0, Math.min(7, Math.round(v * 7)))]).join("");
+  };
+
   const trends = state.adapter.getMacroTrends(adapterFrame());
   container.innerHTML = trends
-    .map((t) => `<article class="macro-item"><p>${t.label}</p><strong>${t.value}</strong></article>`)
+    .map((t) => {
+      const series = state.adapter.getMacroTrendSeries(t.key, state.frameIndex || 12);
+      return `<article class="macro-item"><p>${t.label}</p><strong>${t.value}</strong><div class="spark">${spark(series)}</div></article>`;
+    })
     .join("");
 }
 

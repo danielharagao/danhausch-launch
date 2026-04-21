@@ -82,6 +82,7 @@ input[type="range"] { padding: 0; }
 .macro-item { border:1px solid var(--line); border-radius:10px; padding:10px; background:var(--bg-soft); }
 .macro-item p { margin:0; color:var(--muted); font-size:.85rem; }
 .macro-item strong { font-size:1.05rem; }
+.macro-item .spark { margin-top:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 1px; color: var(--acc); font-size: .95rem; }
 
 .tutorial-overlay {
   position: fixed;

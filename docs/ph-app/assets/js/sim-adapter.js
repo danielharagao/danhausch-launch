@@ -296,13 +296,23 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     const m = frame?.snapshot?.macro || {};
     const pct = (v) => `${Math.round(clamp(Number(v || 0), 0, 1) * 100)}%`;
     return [
-      { label: "Inflação global", value: pct(m.inflation) },
-      { label: "Desemprego global", value: pct(m.unemployment) },
-      { label: "Confiança investimento", value: pct(m.investmentConfidence) },
-      { label: "Fluxo comercial", value: pct(m.tradeFlow) },
-      { label: "Espaço fiscal", value: pct(m.fiscalSpace) },
-      { label: "Tendência do PIB", value: pct(m.gdpTrend) }
+      { key: "inflation", label: "Inflação global", value: pct(m.inflation) },
+      { key: "unemployment", label: "Desemprego global", value: pct(m.unemployment) },
+      { key: "investmentConfidence", label: "Confiança investimento", value: pct(m.investmentConfidence) },
+      { key: "tradeFlow", label: "Fluxo comercial", value: pct(m.tradeFlow) },
+      { key: "fiscalSpace", label: "Espaço fiscal", value: pct(m.fiscalSpace) },
+      { key: "gdpTrend", label: "Tendência do PIB", value: pct(m.gdpTrend) }
     ];
+  }
+
+  function getMacroTrendSeries(key, upToIndex = 12) {
+    const max = Math.max(0, Math.min(Number(upToIndex || 0), 12));
+    const vals = [];
+    for (let i = 0; i <= max; i += 1) {
+      const f = getFrame(i);
+      vals.push(clamp(Number(f?.snapshot?.macro?.[key] || 0), 0, 1));
+    }
+    return vals;
   }
 
   return {
@@ -314,6 +324,7 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     getNetwork,
     getRegions,
     getMacroTrends,
+    getMacroTrendSeries,
     getStatus() {
       return { mode };
     }
