@@ -1,7 +1,7 @@
 import { loadTheme, saveTheme, state } from "./state.js";
 import { createPHAdapter } from "./sim-adapter.js";
 import { createApiClient, loadApiConfig } from "./api-client.js";
-import { initFilters, initNetwork, initPresets, initTabs, initTimeline, initTutorial, renderAll } from "./ui.js";
+import { initCompareMode, initFilters, initNetwork, initPresets, initScenarioBuilder, initTabs, initTimeline, initTutorial, renderAll } from "./ui.js";
 
 function initTheme() {
   const root = document.documentElement;
@@ -24,6 +24,11 @@ async function bootstrap() {
     apiClient
   });
 
+  state.compareAdapters = {
+    scenarioA: await createPHAdapter({ seedUrl: "./assets/sim/seed.v5.json", rngSeed: 2024, apiClient }),
+    scenarioB: await createPHAdapter({ seedUrl: "./assets/sim/seed.v5.json", rngSeed: 9090, apiClient })
+  };
+
   initTabs();
   const tab = new URLSearchParams(window.location.search).get("tab");
   if (tab) {
@@ -31,9 +36,11 @@ async function bootstrap() {
     if (el) el.click();
   }
   initFilters();
+  initCompareMode();
   initTimeline();
   initNetwork();
   initPresets();
+  initScenarioBuilder();
   initTutorial();
   renderAll();
 }

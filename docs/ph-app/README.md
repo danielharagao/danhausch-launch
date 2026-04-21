@@ -17,12 +17,24 @@ App operacional de simulação e leitura de risco geopolítico.
 
 ## Como simular
 1. Abra `/ph-app/`
-2. Use **Timeline & Playback** para avançar no tempo
-3. Aplique filtros por tipo/região e quick views
-4. Leia:
+2. No bloco **Scenario Builder**, clique em **Novo cenário guiado**
+3. Selecione preset-base:
+   - `War`
+   - `Energy Shock`
+   - `Tech Sanctions`
+   - `Election Crisis`
+4. Ajuste **intensidade** (0–100) e **escopo** regional
+5. Salve/aplique o cenário e use **Timeline & Playback** para avançar no tempo
+6. Aplique filtros por tipo/região e quick views
+7. Leia:
    - **Overview** (KPI)
    - **Network** (estrutura e conectividade)
    - **Drivers** (fatores causais dominantes)
+
+## Persistência local
+- Cenários criados no wizard são salvos em `localStorage` (`phAppScenariosV1`)
+- Presets de filtros continuam em `localStorage` (`phAppPresetsV1`)
+- É possível reaplicar, limpar ou excluir cenários sem alterar a seed original
 
 ## Filtros e visões
 - Tipos: `country`, `leader`, `person`, `company`, `institution`

@@ -1,4 +1,5 @@
 const PRESET_KEY = "phAppPresetsV1";
+const SCENARIO_KEY = "phAppScenariosV1";
 const THEME_KEY = "phAppTheme";
 
 export const state = {
@@ -7,6 +8,9 @@ export const state = {
   playbackTimer: null,
   networkLevel: "supernodes",
   adapter: null,
+  compareAdapters: null,
+  compareMode: false,
+  compareTarget: "scenarioA",
   selectedNodeId: null,
   selectedNodeLevel: null,
   networkFocus: {
@@ -21,7 +25,8 @@ export const state = {
     quickView: "all",
     riskThreshold: 0,
     query: ""
-  }
+  },
+  activeScenario: null
 };
 
 export function saveTheme(theme) {
@@ -59,4 +64,33 @@ export function savePreset(name, filters) {
 export function deletePreset(name) {
   const presets = loadPresets().filter((p) => p.name !== name);
   storePresets(presets);
+}
+
+export function loadScenarios() {
+  try {
+    return JSON.parse(localStorage.getItem(SCENARIO_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+export function storeScenarios(scenarios) {
+  localStorage.setItem(SCENARIO_KEY, JSON.stringify(scenarios));
+}
+
+export function saveScenario(name, scenario) {
+  const cleanName = name?.trim();
+  if (!cleanName) return { ok: false, reason: "Nome vazio" };
+  const scenarios = loadScenarios();
+  const idx = scenarios.findIndex((s) => s.name === cleanName);
+  const record = { name: cleanName, ...scenario, savedAt: new Date().toISOString() };
+  if (idx >= 0) scenarios[idx] = record;
+  else scenarios.push(record);
+  storeScenarios(scenarios);
+  return { ok: true };
+}
+
+export function deleteScenario(name) {
+  const scenarios = loadScenarios().filter((s) => s.name !== name);
+  storeScenarios(scenarios);
 }
