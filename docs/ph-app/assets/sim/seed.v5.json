@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Predictive History Seed Dataset V6 - Economy & Technology Shock Pack",
-    "version": "6.0.0",
+    "version": "5.1.0",
     "timeUnit": "month",
     "description": "V5 expanded with focused 2021-2026 global economic/technology shocks: NVIDIA/AI chips/export controls, semiconductor chain, sanctions, energy-trade disruptions, and macro turning points with mapped simulation effects.",
     "snapshotDate": "2026-04-21"
@@ -5006,6 +5006,241 @@
         "relations.volatility": 0.09,
         "macro.tradeFlow": -0.04,
         "groups.trustInstitutions": -0.02
+      }
+    },
+    {
+      "id": "ukraine-war-grain-corridor-collapse-2023",
+      "name": "Black Sea Grain Corridor Collapse",
+      "date": "2023-07",
+      "atStep": 25,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.22,
+      "target": {
+        "players": [
+          "russia",
+          "uk",
+          "eu",
+          "un",
+          "turkiye"
+        ],
+        "groups": [
+          "food-insecure",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.09,
+        "macro.tradeFlow": -0.06,
+        "macro.inflation": 0.04,
+        "groups.economicExposure": 0.05,
+        "groups.grievance": 0.05
+      }
+    },
+    {
+      "id": "iran-proxy-escalation-regional-2023",
+      "name": "Iran Proxy Escalation Across Iraq-Syria-Red Sea",
+      "date": "2023-11",
+      "atStep": 26,
+      "scope": "security",
+      "category": "geopolitical",
+      "intensity": 0.23,
+      "target": {
+        "players": [
+          "iran",
+          "us",
+          "saudi",
+          "israel",
+          "uk"
+        ],
+        "groups": [
+          "mena-youth",
+          "energy-consumers"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "macro.tradeFlow": -0.04,
+        "groups.mobilization": 0.06,
+        "groups.grievance": 0.05,
+        "players.legitimacy": -0.02
+      }
+    },
+    {
+      "id": "us-uk-strikes-houthi-yemen-2024",
+      "name": "US-UK Strikes on Houthi Targets",
+      "date": "2024-01",
+      "atStep": 27,
+      "scope": "security",
+      "category": "geopolitical",
+      "intensity": 0.2,
+      "target": {
+        "players": [
+          "us",
+          "uk",
+          "iran",
+          "saudi",
+          "eu"
+        ],
+        "companies": [
+          "maersk",
+          "dhl",
+          "cosco"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.05,
+        "macro.inflation": 0.03,
+        "groups.economicExposure": 0.04,
+        "groups.grievance": 0.03
+      }
+    },
+    {
+      "id": "iran-israel-direct-strike-cycle-2024",
+      "name": "Iran-Israel Direct Strike Cycle",
+      "date": "2024-04",
+      "atStep": 28,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.27,
+      "target": {
+        "players": [
+          "iran",
+          "israel",
+          "us",
+          "eu",
+          "un"
+        ],
+        "groups": [
+          "mena-youth",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.12,
+        "relations.influence": -0.05,
+        "macro.investmentConfidence": -0.04,
+        "groups.mobilization": 0.06,
+        "groups.grievance": 0.06
+      }
+    },
+    {
+      "id": "hormuz-seizure-and-jamming-incidents-2024",
+      "name": "Hormuz Seizure and Jamming Incidents",
+      "date": "2024-04",
+      "atStep": 29,
+      "scope": "security",
+      "category": "geopolitical",
+      "intensity": 0.26,
+      "target": {
+        "players": [
+          "iran",
+          "saudi",
+          "uae",
+          "us",
+          "eu",
+          "india"
+        ],
+        "companies": [
+          "aramco",
+          "shell",
+          "exxon"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": -0.08,
+        "macro.inflation": 0.06,
+        "relations.volatility": 0.09,
+        "groups.economicExposure": 0.05,
+        "players.resourceBase": -0.02
+      }
+    },
+    {
+      "id": "taiwan-strait-joint-sword-2024",
+      "name": "Taiwan Strait Joint Sword Encirclement Drills",
+      "date": "2024-05",
+      "atStep": 30,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.24,
+      "target": {
+        "players": [
+          "china",
+          "us",
+          "japan",
+          "southkorea"
+        ],
+        "companies": [
+          "tsmc",
+          "samsung",
+          "apple"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "macro.tradeFlow": -0.05,
+        "macro.investmentConfidence": -0.04,
+        "players.power": 0.02,
+        "groups.economicExposure": 0.04
+      }
+    },
+    {
+      "id": "ukraine-russia-crossborder-escalation-2024",
+      "name": "Ukraine-Russia Cross-Border Escalation Phase",
+      "date": "2024-08",
+      "atStep": 31,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.24,
+      "target": {
+        "players": [
+          "russia",
+          "uk",
+          "eu",
+          "us",
+          "nato"
+        ],
+        "groups": [
+          "eu-urban",
+          "food-insecure"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.1,
+        "macro.tradeFlow": -0.04,
+        "macro.inflation": 0.03,
+        "groups.grievance": 0.05,
+        "players.cohesion": -0.02
+      }
+    },
+    {
+      "id": "lebanon-israel-frontier-war-risk-2024",
+      "name": "Israel-Lebanon Frontier War Risk",
+      "date": "2024-09",
+      "atStep": 32,
+      "scope": "security",
+      "category": "geopolitical",
+      "intensity": 0.21,
+      "target": {
+        "players": [
+          "israel",
+          "iran",
+          "us",
+          "eu",
+          "un"
+        ],
+        "groups": [
+          "levant-displaced",
+          "global-migrant"
+        ]
+      },
+      "effects": {
+        "relations.volatility": 0.09,
+        "groups.grievance": 0.06,
+        "groups.mobilization": 0.05,
+        "macro.investmentConfidence": -0.03,
+        "players.legitimacy": -0.02
       }
     }
   ],
