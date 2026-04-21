@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Funnels · Formulário de Pendências</title>
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0b1020;color:#e8eefc;margin:0}
+    .wrap{max-width:900px;margin:0 auto;padding:20px}
+    .card{background:#121933;border:1px solid #2a3762;border-radius:12px;padding:14px;margin-bottom:12px}
+    h1,h2{margin:0 0 10px}.muted{color:#a8b6df}
+    label{display:block;margin:10px 0 6px;color:#c9d6fb}
+    input,textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid #2a3762;background:#0f1630;color:#e8eefc}
+    textarea{min-height:90px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .btn{padding:10px 12px;border-radius:10px;border:1px solid #3f6bc4;background:#5ea6ff;color:#fff;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;border-color:#2a3762}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    @media(max-width:700px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <h1>Fechamento de Pendências do Funil</h1>
+      <p class="muted">Preencha este formulário para liberar tudo que ainda depende de decisão sua (links, checkout, owners, SLA, prova social e SEO).</p>
+    </section>
+
+    <form id="f" class="card">
+      <h2>1) Conversão / Checkout</h2>
+      <div class="row">
+        <div><label>Link checkout Workshop 1</label><input name="checkout_w1"></div>
+        <div><label>Link checkout Workshop 2</label><input name="checkout_w2"></div>
+      </div>
+      <div class="row">
+        <div><label>Link checkout Workshop 3</label><input name="checkout_w3"></div>
+        <div><label>Número WhatsApp oficial</label><input name="whatsapp"></div>
+      </div>
+      <label>PDF/Material oficial (URL)</label><input name="pdf_url">
+
+      <h2>2) Operação CRM</h2>
+      <div class="row">
+        <div><label>Owner Comercial</label><input name="owner_sales"></div>
+        <div><label>Owner Operação CRM</label><input name="owner_crm"></div>
+      </div>
+      <div class="row">
+        <div><label>SLA 1º resposta (min)</label><input name="sla_first_response" type="number"></div>
+        <div><label>SLA follow-up (horas)</label><input name="sla_followup" type="number"></div>
+      </div>
+
+      <h2>3) Conteúdo / Prova Social</h2>
+      <label>Depoimentos aprovados (cole links/textos)</label><textarea name="testimonials"></textarea>
+      <label>Cases/Resultados que podem ir para LP</label><textarea name="cases"></textarea>
+
+      <h2>4) SEO e Mensagem</h2>
+      <label>Título SEO institucional</label><input name="seo_title">
+      <label>Descrição SEO institucional</label><textarea name="seo_description"></textarea>
+      <label>Palavras-chave foco</label><input name="seo_keywords" placeholder="ex: workshop BA, business analysis...">
+
+      <h2>5) Regras de Oferta</h2>
+      <div class="row">
+        <div><label>Preço Workshop 1</label><input name="price_w1"></div>
+        <div><label>Preço Workshop 2</label><input name="price_w2"></div>
+      </div>
+      <div class="row">
+        <div><label>Preço Workshop 3</label><input name="price_w3"></div>
+        <div><label>Deadline do lote atual</label><input name="deadline" type="date"></div>
+      </div>
+
+      <h2>6) Observações finais</h2>
+      <textarea name="notes" placeholder="Qualquer restrição, decisão pendente, exceção..."></textarea>
+
+      <div class="actions" style="margin-top:12px">
+        <button type="button" class="btn" id="save">Salvar local</button>
+        <button type="button" class="btn ghost" id="copy">Copiar JSON</button>
+        <button type="button" class="btn ghost" id="clear">Limpar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const KEY='danhausch_funnels_missing_v1';
+    const form=document.getElementById('f');
+    const load=()=>{try{const d=JSON.parse(localStorage.getItem(KEY)||'{}');Object.entries(d).forEach(([k,v])=>{if(form.elements[k])form.elements[k].value=v});}catch{}};
+    const dump=()=>Object.fromEntries([...new FormData(form).entries()]);
+    document.getElementById('save').onclick=()=>{localStorage.setItem(KEY,JSON.stringify(dump()));alert('Salvo localmente ✅');};
+    document.getElementById('copy').onclick=async()=>{const txt=JSON.stringify(dump(),null,2);await navigator.clipboard.writeText(txt);alert('JSON copiado ✅');};
+    document.getElementById('clear').onclick=()=>{if(confirm('Limpar tudo?')){localStorage.removeItem(KEY);form.reset();}};
+    load();
+  </script>
+</body>
+</html>
