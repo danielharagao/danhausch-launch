@@ -1,10 +1,10 @@
 {
   "meta": {
-    "name": "Predictive History Seed Dataset V5 - Middle East + Russia Expansion",
-    "version": "5.0.0",
+    "name": "Predictive History Seed Dataset V5.1 - Brazil Specialist Pack + LATAM/MENA Layers",
+    "version": "5.1.0",
     "timeUnit": "month",
-    "description": "V4 baseline expanded with Middle East and Russia-centered state, leadership, institution and strategic relations (energy, security, alliances, rivalries), preserving engine/UI compatibility.",
-    "snapshotDate": "2026-04-20"
+    "description": "V5 baseline expanded with Brazil specialist package (domestic institutions, strategic sectors/companies, 2021-2026 events, and ties to G20/LATAM/China/US/EU) on top of existing LATAM/MENA layers, preserving engine/UI compatibility.",
+    "snapshotDate": "2026-04-21"
   },
   "players": [
     {
@@ -189,7 +189,7 @@
     },
     {
       "id": "lula",
-      "name": "Luiz In\u00e1cio Lula da Silva",
+      "name": "Luiz Inácio Lula da Silva",
       "type": "leader",
       "power": 0.74,
       "cohesion": 0.58,
@@ -755,7 +755,7 @@
     },
     {
       "id": "turkiye",
-      "name": "T\u00fcrkiye",
+      "name": "Türkiye",
       "type": "country",
       "power": 0.65,
       "cohesion": 0.56,
@@ -777,7 +777,7 @@
     },
     {
       "id": "tr_treasury",
-      "name": "T\u00fcrkiye Treasury and Finance",
+      "name": "Türkiye Treasury and Finance",
       "type": "institution",
       "power": 0.54,
       "cohesion": 0.56,
@@ -1206,6 +1206,355 @@
       "economyInfluence": 0.74,
       "resourceBase": 0.82,
       "region": "russia"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "type": "company",
+      "power": 0.74,
+      "cohesion": 0.78,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.88,
+      "resourceBase": 0.71,
+      "region": "north-america"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "type": "company",
+      "power": 0.72,
+      "cohesion": 0.76,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.84,
+      "resourceBase": 0.69,
+      "region": "asia"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "type": "company",
+      "power": 0.69,
+      "cohesion": 0.73,
+      "legitimacy": 0.67,
+      "economyInfluence": 0.79,
+      "resourceBase": 0.68,
+      "region": "asia"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "type": "company",
+      "power": 0.63,
+      "cohesion": 0.74,
+      "legitimacy": 0.71,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.62,
+      "region": "europe"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "company",
+      "power": 0.58,
+      "cohesion": 0.66,
+      "legitimacy": 0.61,
+      "economyInfluence": 0.72,
+      "resourceBase": 0.55,
+      "region": "north-america"
+    },
+    {
+      "id": "brazil_federal_state",
+      "name": "Brazil Federal Executive State",
+      "type": "institution",
+      "power": 0.68,
+      "cohesion": 0.57,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.63,
+      "resourceBase": 0.66,
+      "region": "latam"
+    },
+    {
+      "id": "haddad",
+      "name": "Fernando Haddad",
+      "type": "leader",
+      "power": 0.66,
+      "cohesion": 0.56,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.55,
+      "region": "latam"
+    },
+    {
+      "id": "galipolo",
+      "name": "Gabriel Galipolo",
+      "type": "leader",
+      "power": 0.58,
+      "cohesion": 0.61,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.65,
+      "resourceBase": 0.52,
+      "region": "latam"
+    },
+    {
+      "id": "br_congresso",
+      "name": "National Congress of Brazil",
+      "type": "institution",
+      "power": 0.64,
+      "cohesion": 0.44,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.52,
+      "resourceBase": 0.56,
+      "region": "latam"
+    },
+    {
+      "id": "br_stf",
+      "name": "Supreme Federal Court (STF)",
+      "type": "institution",
+      "power": 0.61,
+      "cohesion": 0.54,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.38,
+      "resourceBase": 0.5,
+      "region": "latam"
+    },
+    {
+      "id": "bndes",
+      "name": "BNDES",
+      "type": "institution",
+      "power": 0.56,
+      "cohesion": 0.62,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.67,
+      "resourceBase": 0.58,
+      "region": "latam"
+    },
+    {
+      "id": "petrobras",
+      "name": "Petrobras",
+      "type": "company",
+      "power": 0.63,
+      "cohesion": 0.59,
+      "legitimacy": 0.53,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.81,
+      "region": "latam"
+    },
+    {
+      "id": "vale",
+      "name": "Vale",
+      "type": "company",
+      "power": 0.55,
+      "cohesion": 0.58,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.69,
+      "resourceBase": 0.78,
+      "region": "latam"
+    },
+    {
+      "id": "embraer",
+      "name": "Embraer",
+      "type": "company",
+      "power": 0.49,
+      "cohesion": 0.64,
+      "legitimacy": 0.6,
+      "economyInfluence": 0.58,
+      "resourceBase": 0.52,
+      "region": "latam"
+    },
+    {
+      "id": "itau",
+      "name": "Itau Unibanco",
+      "type": "company",
+      "power": 0.48,
+      "cohesion": 0.63,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.62,
+      "resourceBase": 0.5,
+      "region": "latam"
+    },
+    {
+      "id": "br_agribusiness",
+      "name": "Brazil Agribusiness Complex",
+      "type": "institution",
+      "power": 0.6,
+      "cohesion": 0.61,
+      "legitimacy": 0.52,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.83,
+      "region": "latam"
+    },
+    {
+      "id": "mercosur",
+      "name": "MERCOSUR",
+      "type": "institution",
+      "power": 0.57,
+      "cohesion": 0.49,
+      "legitimacy": 0.56,
+      "economyInfluence": 0.61,
+      "resourceBase": 0.55,
+      "region": "latam"
+    },
+    {
+      "id": "sp_state",
+      "name": "Sao Paulo State Government",
+      "type": "institution",
+      "power": 0.52,
+      "cohesion": 0.63,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.66,
+      "resourceBase": 0.61,
+      "region": "latam"
+    },
+    {
+      "id": "rj_state",
+      "name": "Rio de Janeiro State Government",
+      "type": "institution",
+      "power": 0.46,
+      "cohesion": 0.45,
+      "legitimacy": 0.44,
+      "economyInfluence": 0.54,
+      "resourceBase": 0.5,
+      "region": "latam"
+    },
+    {
+      "id": "venezuela",
+      "name": "Venezuela",
+      "type": "country",
+      "power": 0.57,
+      "cohesion": 0.34,
+      "legitimacy": 0.29,
+      "economyInfluence": 0.48,
+      "resourceBase": 0.64
+    },
+    {
+      "id": "maduro",
+      "name": "Nicolás Maduro",
+      "type": "leader",
+      "power": 0.71,
+      "cohesion": 0.45,
+      "legitimacy": 0.24,
+      "economyInfluence": 0.44,
+      "resourceBase": 0.52
+    },
+    {
+      "id": "maria_corina",
+      "name": "María Corina Machado",
+      "type": "leader",
+      "power": 0.56,
+      "cohesion": 0.51,
+      "legitimacy": 0.55,
+      "economyInfluence": 0.23,
+      "resourceBase": 0.31
+    },
+    {
+      "id": "gonzalez_urrutia",
+      "name": "Edmundo González Urrutia",
+      "type": "leader",
+      "power": 0.49,
+      "cohesion": 0.46,
+      "legitimacy": 0.58,
+      "economyInfluence": 0.19,
+      "resourceBase": 0.28
+    },
+    {
+      "id": "cne_ve",
+      "name": "Venezuela National Electoral Council (CNE)",
+      "type": "institution",
+      "power": 0.63,
+      "cohesion": 0.47,
+      "legitimacy": 0.22,
+      "economyInfluence": 0.12,
+      "resourceBase": 0.39
+    },
+    {
+      "id": "pdvsa",
+      "name": "PDVSA",
+      "type": "company",
+      "power": 0.66,
+      "cohesion": 0.42,
+      "legitimacy": 0.31,
+      "economyInfluence": 0.76,
+      "resourceBase": 0.71
+    },
+    {
+      "id": "colombia",
+      "name": "Colombia",
+      "type": "country",
+      "power": 0.61,
+      "cohesion": 0.52,
+      "legitimacy": 0.57,
+      "economyInfluence": 0.55,
+      "resourceBase": 0.58
+    },
+    {
+      "id": "petro",
+      "name": "Gustavo Petro",
+      "type": "leader",
+      "power": 0.63,
+      "cohesion": 0.47,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.43,
+      "resourceBase": 0.42
+    },
+    {
+      "id": "guyana",
+      "name": "Guyana",
+      "type": "country",
+      "power": 0.44,
+      "cohesion": 0.56,
+      "legitimacy": 0.62,
+      "economyInfluence": 0.43,
+      "resourceBase": 0.67
+    },
+    {
+      "id": "ali",
+      "name": "Irfaan Ali",
+      "type": "leader",
+      "power": 0.52,
+      "cohesion": 0.59,
+      "legitimacy": 0.64,
+      "economyInfluence": 0.39,
+      "resourceBase": 0.46
+    },
+    {
+      "id": "caricom",
+      "name": "CARICOM",
+      "type": "institution",
+      "power": 0.41,
+      "cohesion": 0.52,
+      "legitimacy": 0.66,
+      "economyInfluence": 0.32,
+      "resourceBase": 0.37
+    },
+    {
+      "id": "oas",
+      "name": "Organization of American States (OAS)",
+      "type": "institution",
+      "power": 0.54,
+      "cohesion": 0.43,
+      "legitimacy": 0.51,
+      "economyInfluence": 0.28,
+      "resourceBase": 0.42
+    },
+    {
+      "id": "chevron",
+      "name": "Chevron",
+      "type": "company",
+      "power": 0.61,
+      "cohesion": 0.7,
+      "legitimacy": 0.46,
+      "economyInfluence": 0.74,
+      "resourceBase": 0.68
+    },
+    {
+      "id": "cuba",
+      "name": "Cuba",
+      "type": "country",
+      "power": 0.46,
+      "cohesion": 0.49,
+      "legitimacy": 0.38,
+      "economyInfluence": 0.31,
+      "resourceBase": 0.4
     }
   ],
   "groups": [
@@ -1384,6 +1733,116 @@
       "economicExposure": 0.55,
       "identityPole": 0.36,
       "region": "russia"
+    },
+    {
+      "id": "chip-supply-chain-workers",
+      "name": "Semiconductor Supply-Chain Workforce",
+      "size": 0.05,
+      "grievance": 0.46,
+      "mobilization": 0.41,
+      "trustInstitutions": 0.52,
+      "economicExposure": 0.78,
+      "identityPole": 0.08,
+      "region": "global"
+    },
+    {
+      "id": "energy-intensive-industry-workers",
+      "name": "Energy-Intensive Industry Workers",
+      "size": 0.06,
+      "grievance": 0.57,
+      "mobilization": 0.44,
+      "trustInstitutions": 0.4,
+      "economicExposure": 0.85,
+      "identityPole": 0.19,
+      "region": "global"
+    },
+    {
+      "id": "trade-exposed-smes",
+      "name": "Trade-Exposed SMEs",
+      "size": 0.06,
+      "grievance": 0.52,
+      "mobilization": 0.39,
+      "trustInstitutions": 0.46,
+      "economicExposure": 0.82,
+      "identityPole": 0.12,
+      "region": "global"
+    },
+    {
+      "id": "ai-knowledge-workers",
+      "name": "AI Knowledge Workers",
+      "size": 0.05,
+      "grievance": 0.36,
+      "mobilization": 0.45,
+      "trustInstitutions": 0.57,
+      "economicExposure": 0.64,
+      "identityPole": -0.14,
+      "region": "global"
+    },
+    {
+      "id": "brazil-urban-informal",
+      "name": "Brazil Urban Informal Workers",
+      "size": 0.07,
+      "grievance": 0.68,
+      "mobilization": 0.46,
+      "trustInstitutions": 0.34,
+      "economicExposure": 0.82,
+      "identityPole": 0.33,
+      "region": "latam"
+    },
+    {
+      "id": "brazil-agro-exporters",
+      "name": "Brazil Agro Export Producers",
+      "size": 0.05,
+      "grievance": 0.43,
+      "mobilization": 0.39,
+      "trustInstitutions": 0.49,
+      "economicExposure": 0.71,
+      "identityPole": 0.22,
+      "region": "latam"
+    },
+    {
+      "id": "brazil-evangelical-middle",
+      "name": "Brazil Evangelical Middle and Lower Middle Households",
+      "size": 0.06,
+      "grievance": 0.52,
+      "mobilization": 0.57,
+      "trustInstitutions": 0.37,
+      "economicExposure": 0.67,
+      "identityPole": 0.48,
+      "region": "latam"
+    },
+    {
+      "id": "ven-urban-opposition",
+      "name": "Venezuela Urban Opposition Base",
+      "size": 0.04,
+      "grievance": 0.82,
+      "mobilization": 0.71,
+      "trustInstitutions": 0.18,
+      "economicExposure": 0.74,
+      "identityPole": -0.71,
+      "region": "latin-america"
+    },
+    {
+      "id": "ven-public-dependent",
+      "name": "Venezuela Public-Sector Dependent Households",
+      "size": 0.05,
+      "grievance": 0.63,
+      "mobilization": 0.41,
+      "trustInstitutions": 0.44,
+      "economicExposure": 0.81,
+      "identityPole": 0.43,
+      "region": "latin-america"
+    },
+    {
+      "id": "border-migrant-andes",
+      "name": "Andean Border Migrant Communities",
+      "size": 0.03,
+      "grievance": 0.77,
+      "mobilization": 0.57,
+      "trustInstitutions": 0.24,
+      "economicExposure": 0.89,
+      "identityPole": 0.08,
+      "region": "latin-america"
     }
   ],
   "relations": [
@@ -3564,495 +4023,971 @@
       "influence": 0.58,
       "volatility": 0.34,
       "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "nvidia",
+      "type": "influencia",
+      "pairType": "country-company",
+      "influence": 0.62,
+      "volatility": 0.41,
+      "region": "north-america"
+    },
+    {
+      "source": "nvidia",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.55,
+      "volatility": 0.37,
+      "region": "north-america"
+    },
+    {
+      "source": "nvidia",
+      "target": "tsmc",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.71,
+      "volatility": 0.49,
+      "region": "global"
+    },
+    {
+      "source": "nvidia",
+      "target": "samsung",
+      "type": "cooperacao",
+      "pairType": "company-company",
+      "influence": 0.44,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "asml",
+      "target": "tsmc",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.63,
+      "volatility": 0.43,
+      "region": "global"
+    },
+    {
+      "source": "asml",
+      "target": "samsung",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.56,
+      "volatility": 0.39,
+      "region": "global"
+    },
+    {
+      "source": "eu-country",
+      "target": "asml",
+      "type": "influencia",
+      "pairType": "country-company",
+      "influence": 0.52,
+      "volatility": 0.34,
+      "region": "europe"
+    },
+    {
+      "source": "china",
+      "target": "nvidia",
+      "type": "rivalidade",
+      "pairType": "country-company",
+      "influence": -0.51,
+      "volatility": 0.62,
+      "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "tsmc",
+      "type": "cooperacao",
+      "pairType": "country-company",
+      "influence": 0.41,
+      "volatility": 0.35,
+      "region": "asia"
+    },
+    {
+      "source": "southkorea",
+      "target": "samsung",
+      "type": "governanca",
+      "pairType": "country-company",
+      "influence": 0.58,
+      "volatility": 0.33,
+      "region": "asia"
+    },
+    {
+      "source": "brazil",
+      "target": "brazil_federal_state",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.62,
+      "volatility": 0.34,
+      "region": "latam"
+    },
+    {
+      "source": "brazil_federal_state",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.64,
+      "volatility": 0.33,
+      "region": "latam"
+    },
+    {
+      "source": "haddad",
+      "target": "br_fazenda",
+      "type": "governanca",
+      "pairType": "leader-institution",
+      "influence": 0.69,
+      "volatility": 0.31,
+      "region": "latam"
+    },
+    {
+      "source": "galipolo",
+      "target": "br_bcb",
+      "type": "governanca",
+      "pairType": "leader-institution",
+      "influence": 0.61,
+      "volatility": 0.29,
+      "region": "latam"
+    },
+    {
+      "source": "br_congresso",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.47,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "br_congresso",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.52,
+      "volatility": 0.48,
+      "region": "latam"
+    },
+    {
+      "source": "br_stf",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.56,
+      "volatility": 0.42,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "br_stf",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.43,
+      "region": "latam"
+    },
+    {
+      "source": "bndes",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.32,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "bndes",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.33,
+      "region": "latam"
+    },
+    {
+      "source": "petrobras",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.67,
+      "volatility": 0.38,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "petrobras",
+      "type": "governanca",
+      "pairType": "country-company",
+      "influence": 0.59,
+      "volatility": 0.41,
+      "region": "latam"
+    },
+    {
+      "source": "vale",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.54,
+      "volatility": 0.36,
+      "region": "latam"
+    },
+    {
+      "source": "embraer",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "company-country",
+      "influence": 0.49,
+      "volatility": 0.29,
+      "region": "latam"
+    },
+    {
+      "source": "itau",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "company-country",
+      "influence": 0.47,
+      "volatility": 0.34,
+      "region": "latam"
+    },
+    {
+      "source": "br_agribusiness",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "institution-country",
+      "influence": 0.63,
+      "volatility": 0.37,
+      "region": "latam"
+    },
+    {
+      "source": "sp_state",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.32,
+      "region": "latam"
+    },
+    {
+      "source": "rj_state",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.46,
+      "volatility": 0.38,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "g20",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.55,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "mercosur",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.61,
+      "volatility": 0.33,
+      "region": "latam"
+    },
+    {
+      "source": "mercosur",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.35,
+      "region": "latam"
+    },
+    {
+      "source": "mercosur",
+      "target": "argentina",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.36,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "us",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.42,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "country-country",
+      "influence": 0.44,
+      "volatility": 0.39,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.47,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "eu-country",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.45,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "china",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.56,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "southafrica",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.41,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "india",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "maduro",
+      "target": "venezuela",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.84,
+      "volatility": 0.52,
+      "region": "latin-america"
+    },
+    {
+      "source": "cne_ve",
+      "target": "venezuela",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.67,
+      "region": "latin-america"
+    },
+    {
+      "source": "maria_corina",
+      "target": "gonzalez_urrutia",
+      "type": "coalizao",
+      "pairType": "leader-leader",
+      "influence": 0.73,
+      "volatility": 0.46,
+      "region": "latin-america"
+    },
+    {
+      "source": "maria_corina",
+      "target": "maduro",
+      "type": "rivalidade",
+      "pairType": "leader-leader",
+      "influence": -0.84,
+      "volatility": 0.79,
+      "region": "latin-america"
+    },
+    {
+      "source": "gonzalez_urrutia",
+      "target": "maduro",
+      "type": "rivalidade",
+      "pairType": "leader-leader",
+      "influence": -0.78,
+      "volatility": 0.76,
+      "region": "latin-america"
+    },
+    {
+      "source": "venezuela",
+      "target": "us",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.72,
+      "volatility": 0.72,
+      "region": "global"
+    },
+    {
+      "source": "us",
+      "target": "venezuela",
+      "type": "sancoes",
+      "pairType": "country-country",
+      "influence": -0.69,
+      "volatility": 0.74,
+      "region": "global"
+    },
+    {
+      "source": "venezuela",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.48,
+      "volatility": 0.53,
+      "region": "global"
+    },
+    {
+      "source": "venezuela",
+      "target": "china",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.49,
+      "region": "global"
+    },
+    {
+      "source": "venezuela",
+      "target": "iran",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.51,
+      "volatility": 0.57,
+      "region": "middle-east"
+    },
+    {
+      "source": "venezuela",
+      "target": "cuba",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.66,
+      "volatility": 0.44,
+      "region": "latin-america"
+    },
+    {
+      "source": "colombia",
+      "target": "venezuela",
+      "type": "fronteira",
+      "pairType": "country-country",
+      "influence": 0.22,
+      "volatility": 0.68,
+      "region": "latin-america"
+    },
+    {
+      "source": "petro",
+      "target": "maduro",
+      "type": "mediacao",
+      "pairType": "leader-leader",
+      "influence": 0.31,
+      "volatility": 0.62,
+      "region": "latin-america"
+    },
+    {
+      "source": "guyana",
+      "target": "venezuela",
+      "type": "disputa_territorial",
+      "pairType": "country-country",
+      "influence": -0.57,
+      "volatility": 0.83,
+      "region": "latin-america"
+    },
+    {
+      "source": "ali",
+      "target": "guyana",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.77,
+      "volatility": 0.36,
+      "region": "latin-america"
+    },
+    {
+      "source": "caricom",
+      "target": "guyana",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.44,
+      "volatility": 0.39,
+      "region": "latin-america"
+    },
+    {
+      "source": "oas",
+      "target": "venezuela",
+      "type": "pressao_diplomatica",
+      "pairType": "institution-country",
+      "influence": -0.34,
+      "volatility": 0.59,
+      "region": "latin-america"
+    },
+    {
+      "source": "pdvsa",
+      "target": "venezuela",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.74,
+      "volatility": 0.55,
+      "region": "latin-america"
+    },
+    {
+      "source": "pdvsa",
+      "target": "chevron",
+      "type": "joint_venture",
+      "pairType": "company-company",
+      "influence": 0.46,
+      "volatility": 0.64,
+      "region": "global"
+    },
+    {
+      "source": "chevron",
+      "target": "us",
+      "type": "lobby_energetico",
+      "pairType": "company-country",
+      "influence": 0.37,
+      "volatility": 0.51,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "venezuela",
+      "type": "mediacao",
+      "pairType": "country-country",
+      "influence": 0.28,
+      "volatility": 0.54,
+      "region": "latin-america"
+    },
+    {
+      "source": "lula",
+      "target": "maduro",
+      "type": "mediacao",
+      "pairType": "leader-leader",
+      "influence": 0.26,
+      "volatility": 0.58,
+      "region": "latin-america"
+    },
+    {
+      "source": "un",
+      "target": "venezuela",
+      "type": "assistencia_humanitaria",
+      "pairType": "institution-country",
+      "influence": 0.33,
+      "volatility": 0.47,
+      "region": "latin-america"
     }
   ],
   "events": [
     {
-      "id": "global-ai-compute-controls",
-      "name": "Global AI Compute Export Controls",
-      "atStep": 2,
-      "scope": "technology",
+      "id": "postcovid-supply-chain-shock-2021",
+      "name": "Post-COVID global supply-chain bottlenecks",
+      "date": "2021-10",
+      "atStep": 1,
+      "scope": "economy",
+      "category": "economic",
       "intensity": 0.18,
       "effects": {
-        "relations.volatility": 0.04,
-        "macro.tradeFlow": -0.03,
-        "players.economyInfluence": 0.01
-      }
-    },
-    {
-      "id": "red-sea-logistics-risk",
-      "name": "Red Sea Logistics Risk Persistence",
-      "atStep": 4,
-      "scope": "economy",
-      "intensity": 0.2,
-      "effects": {
-        "macro.inflation": 0.06,
-        "macro.tradeFlow": -0.08,
-        "groups.grievance": 0.04
-      }
-    },
-    {
-      "id": "opec-supply-management",
-      "name": "OPEC+ Supply Management Cycle",
-      "atStep": 6,
-      "scope": "energy",
-      "intensity": 0.19,
-      "effects": {
-        "macro.inflation": 0.05,
-        "macro.investmentConfidence": -0.02,
-        "relations.influence": 0.01
-      }
-    },
-    {
-      "id": "g20-debt-coordination-window",
-      "name": "G20 Debt Coordination Window",
-      "atStep": 8,
-      "scope": "finance",
-      "intensity": 0.15,
-      "effects": {
-        "macro.fiscalSpace": 0.07,
-        "macro.investmentConfidence": 0.05,
-        "groups.trustInstitutions": 0.02
-      }
-    },
-    {
-      "id": "eu-industrial-policy-phase",
-      "name": "EU Industrial Policy Reinforcement",
-      "atStep": 10,
-      "scope": "institutional",
-      "intensity": 0.14,
-      "effects": {
-        "players.power": 0.01,
-        "macro.gdpTrend": 0.02,
-        "relations.volatility": -0.02
-      }
-    },
-    {
-      "id": "election-supercycle-pressure",
-      "name": "Election Supercycle Polarization Pressure",
-      "atStep": 12,
-      "scope": "political",
-      "intensity": 0.21,
-      "effects": {
-        "groups.mobilization": 0.05,
-        "groups.trustInstitutions": -0.03,
+        "macro.inflation": 0.08,
+        "macro.tradeFlow": -0.07,
+        "groups.economicExposure": 0.05,
         "relations.volatility": 0.05
       }
     },
     {
-      "id": "argentina-fx-adjustment",
-      "name": "Argentina FX and Inflation Stabilization Push",
-      "atStep": 14,
-      "scope": "country",
+      "id": "global-semiconductor-shortage-2021",
+      "name": "Global semiconductor shortage across auto/industrial sectors",
+      "date": "2021-12",
+      "atStep": 2,
+      "scope": "technology",
+      "category": "technological",
       "intensity": 0.19,
       "effects": {
-        "macro.inflation": -0.03,
-        "macro.investmentConfidence": 0.02,
-        "groups.grievance": -0.01
+        "macro.gdpTrend": -0.03,
+        "macro.inflation": 0.04,
+        "macro.tradeFlow": -0.04,
+        "players.resourceBase": -0.01
+      },
+      "target": {
+        "companies": [
+          "tsmc",
+          "samsung",
+          "asml"
+        ]
       }
     },
     {
-      "id": "australia-critical-minerals",
-      "name": "Australia Critical Minerals Acceleration",
-      "atStep": 15,
-      "scope": "country",
-      "intensity": 0.13,
+      "id": "russia-ukraine-war-energy-trade-shock-2022",
+      "name": "Russia-Ukraine war triggers energy and trade shock",
+      "date": "2022-02",
+      "atStep": 3,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.27,
       "effects": {
-        "macro.gdpTrend": 0.02,
-        "players.resourceBase": 0.01,
-        "relations.influence": 0.01
+        "relations.volatility": 0.11,
+        "macro.inflation": 0.1,
+        "macro.tradeFlow": -0.08,
+        "groups.grievance": 0.07
       }
     },
     {
-      "id": "brazil-fiscal-anchor",
-      "name": "Brazil Fiscal Anchor Negotiation",
-      "atStep": 16,
-      "scope": "country",
-      "intensity": 0.17,
+      "id": "europe-energy-crisis-2022",
+      "name": "European energy crisis and gas market stress",
+      "date": "2022-09",
+      "atStep": 4,
+      "scope": "energy",
+      "category": "economic",
+      "intensity": 0.23,
       "effects": {
-        "macro.fiscalSpace": 0.03,
-        "macro.investmentConfidence": 0.03,
-        "groups.trustInstitutions": 0.01
-      }
-    },
-    {
-      "id": "canada-housing-productivity",
-      "name": "Canada Housing-Productivity Tradeoff",
-      "atStep": 17,
-      "scope": "country",
-      "intensity": 0.14,
-      "effects": {
-        "macro.inflation": 0.02,
-        "macro.gdpTrend": 0.01,
-        "groups.grievance": 0.02
-      }
-    },
-    {
-      "id": "china-property-rebalancing",
-      "name": "China Property Rebalancing Phase",
-      "atStep": 18,
-      "scope": "country",
-      "intensity": 0.22,
-      "effects": {
-        "macro.gdpTrend": -0.02,
-        "macro.tradeFlow": 0.02,
-        "relations.volatility": 0.03
-      }
-    },
-    {
-      "id": "france-budget-consolidation",
-      "name": "France Budget Consolidation Contest",
-      "atStep": 19,
-      "scope": "country",
-      "intensity": 0.15,
-      "effects": {
-        "macro.fiscalSpace": 0.02,
-        "groups.mobilization": 0.03,
-        "players.legitimacy": -0.01
-      }
-    },
-    {
-      "id": "germany-industrial-demand-shift",
-      "name": "Germany Industrial Demand Shift",
-      "atStep": 20,
-      "scope": "country",
-      "intensity": 0.16,
-      "effects": {
-        "macro.gdpTrend": 0.01,
-        "macro.tradeFlow": 0.01,
-        "groups.grievance": 0.01
-      }
-    },
-    {
-      "id": "india-manufacturing-drive",
-      "name": "India Manufacturing and Infra Push",
-      "atStep": 21,
-      "scope": "country",
-      "intensity": 0.18,
-      "effects": {
-        "macro.gdpTrend": 0.03,
-        "players.power": 0.01,
-        "relations.influence": 0.01
-      }
-    },
-    {
-      "id": "indonesia-nickel-value-chain",
-      "name": "Indonesia Nickel Value-Chain Expansion",
-      "atStep": 22,
-      "scope": "country",
-      "intensity": 0.17,
-      "effects": {
-        "players.resourceBase": 0.02,
-        "macro.tradeFlow": 0.02,
-        "relations.volatility": 0.01
-      }
-    },
-    {
-      "id": "italy-debt-growth-balance",
-      "name": "Italy Debt-Growth Balance Stress",
-      "atStep": 23,
-      "scope": "country",
-      "intensity": 0.15,
-      "effects": {
-        "macro.fiscalSpace": -0.02,
-        "macro.investmentConfidence": 0.01,
-        "groups.grievance": 0.01
-      }
-    },
-    {
-      "id": "japan-yield-policy-normalization",
-      "name": "Japan Yield Policy Normalization",
-      "atStep": 24,
-      "scope": "country",
-      "intensity": 0.16,
-      "effects": {
-        "macro.investmentConfidence": 0.02,
-        "macro.inflation": 0.01,
-        "relations.volatility": 0.01
-      }
-    },
-    {
-      "id": "mexico-nearshoring-security",
-      "name": "Mexico Nearshoring and Security Friction",
-      "atStep": 25,
-      "scope": "country",
-      "intensity": 0.18,
-      "effects": {
-        "macro.gdpTrend": 0.02,
-        "groups.grievance": 0.02,
-        "relations.volatility": 0.02
-      }
-    },
-    {
-      "id": "russia-sanctions-adaptation",
-      "name": "Russia Sanctions Adaptation Cycle",
-      "atStep": 26,
-      "scope": "country",
-      "intensity": 0.21,
-      "effects": {
-        "macro.tradeFlow": -0.03,
-        "players.resourceBase": 0.01,
-        "relations.volatility": 0.04
-      }
-    },
-    {
-      "id": "saudi-vision-investment-cycle",
-      "name": "Saudi Vision 2030 Investment Cycle",
-      "atStep": 27,
-      "scope": "country",
-      "intensity": 0.17,
-      "effects": {
-        "macro.gdpTrend": 0.02,
-        "macro.investmentConfidence": 0.03,
-        "players.power": 0.01
-      }
-    },
-    {
-      "id": "southafrica-energy-grid-pressure",
-      "name": "South Africa Grid Reliability Pressure",
-      "atStep": 28,
-      "scope": "country",
-      "intensity": 0.19,
-      "effects": {
-        "macro.gdpTrend": -0.02,
-        "groups.grievance": 0.03,
+        "macro.inflation": 0.09,
+        "macro.fiscalSpace": -0.06,
+        "groups.economicExposure": 0.06,
         "players.legitimacy": -0.02
       }
     },
     {
-      "id": "southkorea-chip-cycle",
-      "name": "South Korea Semiconductor Cycle Rebound",
-      "atStep": 29,
-      "scope": "country",
+      "id": "us-chip-export-controls-oct-2022",
+      "name": "US imposes advanced chip export controls on China (Oct 2022)",
+      "date": "2022-10",
+      "atStep": 5,
+      "scope": "technology",
+      "category": "technological",
+      "intensity": 0.22,
+      "effects": {
+        "relations.influence": -0.05,
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.04,
+        "macro.investmentConfidence": -0.02
+      },
+      "target": {
+        "players": [
+          "us",
+          "china"
+        ],
+        "companies": [
+          "nvidia",
+          "asml",
+          "tsmc"
+        ]
+      }
+    },
+    {
+      "id": "chatgpt-generative-ai-demand-shock-2022",
+      "name": "Generative AI demand shock after ChatGPT launch",
+      "date": "2022-11",
+      "atStep": 6,
+      "scope": "technology",
+      "category": "technological",
       "intensity": 0.17,
       "effects": {
-        "macro.tradeFlow": 0.03,
-        "macro.gdpTrend": 0.02,
-        "relations.influence": 0.01
+        "macro.gdpTrend": 0.05,
+        "macro.investmentConfidence": 0.08,
+        "players.power": 0.03,
+        "groups.mobilization": 0.03
+      },
+      "target": {
+        "companies": [
+          "openai",
+          "nvidia"
+        ]
       }
     },
     {
-      "id": "turkiye-disinflation-path",
-      "name": "Turkiye Disinflation and FX Stability Path",
-      "atStep": 30,
-      "scope": "country",
-      "intensity": 0.2,
-      "effects": {
-        "macro.inflation": -0.04,
-        "macro.investmentConfidence": 0.02,
-        "groups.trustInstitutions": 0.01
-      }
-    },
-    {
-      "id": "uk-growth-fiscal-constraints",
-      "name": "UK Growth Under Fiscal Constraints",
-      "atStep": 31,
-      "scope": "country",
-      "intensity": 0.15,
-      "effects": {
-        "macro.gdpTrend": 0.01,
-        "macro.fiscalSpace": -0.01,
-        "groups.grievance": 0.01
-      }
-    },
-    {
-      "id": "us-rate-cut-uncertainty",
-      "name": "US Rate-Cut Timing Uncertainty",
-      "atStep": 32,
-      "scope": "country",
-      "intensity": 0.18,
-      "effects": {
-        "macro.investmentConfidence": 0.02,
-        "macro.inflation": 0.01,
-        "relations.volatility": 0.02
-      }
-    },
-    {
-      "id": "eu-competitiveness-compact",
-      "name": "EU Competitiveness and Strategic Autonomy Compact",
-      "atStep": 33,
-      "scope": "country",
+      "id": "svb-and-global-financial-tightening-2023",
+      "name": "SVB stress episode under high-rate regime",
+      "date": "2023-03",
+      "atStep": 7,
+      "scope": "finance",
+      "category": "economic",
       "intensity": 0.16,
       "effects": {
-        "macro.gdpTrend": 0.01,
-        "players.cohesion": 0.01,
-        "relations.influence": 0.01
+        "macro.investmentConfidence": -0.08,
+        "macro.fiscalSpace": -0.03,
+        "groups.trustInstitutions": -0.02,
+        "relations.volatility": 0.04
       }
     },
     {
-      "id": "iraq-war-legacy-fragmentation",
-      "name": "Iraq War legacy and regional militia fragmentation pressure",
-      "atStep": 34,
-      "scope": "geopolitical",
-      "intensity": 0.2,
-      "effects": {
-        "relations.volatility": 0.05,
-        "groups.grievance": 0.03,
-        "players.legitimacy": -0.01
-      }
-    },
-    {
-      "id": "ukraine-war-attrition-shock",
-      "name": "Ukraine war attrition shock on Europe energy-security nexus",
-      "atStep": 35,
-      "scope": "geopolitical",
-      "intensity": 0.23,
-      "effects": {
-        "relations.volatility": 0.08,
-        "macro.inflation": 0.04,
-        "macro.tradeFlow": -0.04,
-        "groups.grievance": 0.03
-      }
-    },
-    {
-      "id": "ukraine-black-sea-corridor-friction",
-      "name": "Black Sea corridor friction and food-security spillover",
-      "atStep": 36,
-      "scope": "geopolitical",
-      "intensity": 0.18,
-      "effects": {
-        "macro.tradeFlow": -0.03,
-        "groups.economicExposure": 0.03,
-        "groups.grievance": 0.03,
-        "relations.volatility": 0.05
-      }
-    },
-    {
-      "id": "india-pakistan-crisis-cycle",
-      "name": "India-Pakistan crisis cycle with persistent LoC escalation risk",
-      "atStep": 37,
-      "scope": "security",
-      "intensity": 0.19,
-      "effects": {
-        "relations.volatility": 0.07,
-        "groups.mobilization": 0.04,
-        "groups.grievance": 0.03,
-        "players.cohesion": -0.01
-      }
-    },
-    {
-      "id": "india-pakistan-deescalation-window",
-      "name": "Backchannel India-Pakistan de-escalation window",
-      "atStep": 38,
-      "scope": "security",
-      "intensity": 0.12,
-      "effects": {
-        "relations.volatility": -0.04,
-        "groups.grievance": -0.01,
-        "macro.investmentConfidence": 0.01
-      }
-    },
-    {
-      "id": "taiwan-strait-drills-crisis",
-      "name": "Taiwan Strait military drills and deterrence signaling crisis",
-      "atStep": 39,
-      "scope": "geopolitical",
+      "id": "nvidia-ai-supercycle-2023",
+      "name": "NVIDIA AI compute supercycle reprices tech capex",
+      "date": "2023-05",
+      "atStep": 8,
+      "scope": "technology",
+      "category": "technological",
       "intensity": 0.21,
       "effects": {
-        "relations.volatility": 0.08,
-        "relations.influence": -0.03,
-        "macro.tradeFlow": -0.03,
-        "macro.investmentConfidence": -0.02
+        "macro.investmentConfidence": 0.09,
+        "macro.gdpTrend": 0.03,
+        "players.power": 0.03,
+        "players.economyInfluence": 0.02
+      },
+      "target": {
+        "companies": [
+          "nvidia",
+          "tsmc",
+          "samsung"
+        ]
       }
     },
     {
-      "id": "taiwan-chip-supply-risk",
-      "name": "Taiwan semiconductor chokepoint risk repricing",
-      "atStep": 40,
-      "scope": "technology",
+      "id": "g7-russia-sanctions-tightening-2023",
+      "name": "G7/EU tighten Russia sanctions and enforcement",
+      "date": "2023-12",
+      "atStep": 9,
+      "scope": "geopolitical",
+      "category": "geopolitical",
       "intensity": 0.2,
       "effects": {
-        "macro.tradeFlow": -0.04,
-        "macro.inflation": 0.03,
-        "players.power": 0.01,
-        "groups.economicExposure": 0.03
-      }
-    },
-    {
-      "id": "red-sea-maritime-insecurity-cycle",
-      "name": "Red Sea maritime insecurity cycle",
-      "atStep": 41,
-      "scope": "geopolitical",
-      "intensity": 0.17,
-      "effects": {
-        "macro.tradeFlow": -0.04,
-        "macro.inflation": 0.03,
-        "relations.volatility": 0.05,
-        "groups.economicExposure": 0.03
-      }
-    },
-    {
-      "id": "hormuz-shipping-risk-cycle",
-      "name": "Strait of Hormuz Shipping Risk Cycle",
-      "atStep": 34,
-      "scope": "security",
-      "intensity": 0.23,
-      "effects": {
-        "macro.tradeFlow": -0.09,
-        "macro.inflation": 0.05,
         "relations.volatility": 0.07,
-        "groups.grievance": 0.03
+        "macro.tradeFlow": -0.04,
+        "groups.grievance": 0.03,
+        "players.resourceBase": -0.01
       }
     },
     {
-      "id": "levant-ceasefire-negotiation-window",
-      "name": "Levant Ceasefire Negotiation Window",
-      "atStep": 35,
-      "scope": "diplomacy",
-      "intensity": 0.17,
+      "id": "red-sea-shipping-disruption-2024",
+      "name": "Red Sea disruptions raise shipping and insurance costs",
+      "date": "2024-01",
+      "atStep": 10,
+      "scope": "trade",
+      "category": "geopolitical",
+      "intensity": 0.19,
       "effects": {
-        "relations.volatility": -0.05,
+        "macro.tradeFlow": -0.07,
+        "macro.inflation": 0.04,
+        "groups.economicExposure": 0.05,
+        "relations.volatility": 0.06
+      }
+    },
+    {
+      "id": "us-tightens-ai-chip-rules-2023-2024",
+      "name": "US tightens AI chip restrictions and licensing pathways",
+      "date": "2024-01",
+      "atStep": 11,
+      "scope": "technology",
+      "category": "technological",
+      "intensity": 0.21,
+      "effects": {
+        "relations.influence": -0.05,
+        "relations.volatility": 0.07,
+        "macro.tradeFlow": -0.03,
+        "players.power": 0.02
+      },
+      "target": {
+        "companies": [
+          "nvidia",
+          "asml",
+          "samsung"
+        ]
+      }
+    },
+    {
+      "id": "eu-ai-act-governance-2024",
+      "name": "EU AI Act formalization and compliance burden",
+      "date": "2024-03",
+      "atStep": 12,
+      "scope": "institutional",
+      "category": "technological",
+      "intensity": 0.13,
+      "effects": {
+        "players.legitimacy": 0.03,
         "groups.trustInstitutions": 0.02,
-        "macro.investmentConfidence": 0.02
+        "macro.investmentConfidence": 0.01,
+        "relations.volatility": -0.02
       }
     },
     {
-      "id": "gcc-energy-investment-rotation",
-      "name": "GCC Energy Investment Rotation",
-      "atStep": 36,
+      "id": "global-power-grid-and-data-center-strain-2024",
+      "name": "AI data-center buildout strains power grids and permitting",
+      "date": "2024-06",
+      "atStep": 13,
       "scope": "energy",
-      "intensity": 0.18,
+      "category": "economic",
+      "intensity": 0.16,
       "effects": {
-        "players.resourceBase": 0.02,
-        "macro.gdpTrend": 0.01,
+        "macro.inflation": 0.03,
+        "macro.fiscalSpace": -0.02,
+        "groups.grievance": 0.02,
+        "players.resourceBase": -0.01
+      }
+    },
+    {
+      "id": "china-stimulus-and-property-stabilization-2024",
+      "name": "China launches targeted property and demand stabilization",
+      "date": "2024-10",
+      "atStep": 14,
+      "scope": "economy",
+      "category": "economic",
+      "intensity": 0.15,
+      "effects": {
+        "macro.gdpTrend": 0.04,
+        "macro.tradeFlow": 0.02,
+        "macro.investmentConfidence": 0.03,
         "relations.influence": 0.02
       }
     },
     {
-      "id": "russia-defense-budget-reprioritization",
-      "name": "Russia Defense Budget Reprioritization",
-      "atStep": 37,
-      "scope": "security",
-      "intensity": 0.2,
+      "id": "opec-supply-management-2024-2025",
+      "name": "OPEC+ supply management sustains oil price volatility",
+      "date": "2025-01",
+      "atStep": 15,
+      "scope": "energy",
+      "category": "economic",
+      "intensity": 0.18,
       "effects": {
+        "macro.inflation": 0.04,
+        "macro.tradeFlow": -0.02,
+        "groups.economicExposure": 0.03,
+        "relations.volatility": 0.04
+      }
+    },
+    {
+      "id": "deepseek-cost-shock-ai-2025",
+      "name": "Lower-cost frontier models trigger AI price/performance shock",
+      "date": "2025-01",
+      "atStep": 16,
+      "scope": "technology",
+      "category": "technological",
+      "intensity": 0.15,
+      "effects": {
+        "macro.gdpTrend": 0.03,
+        "macro.investmentConfidence": 0.05,
         "players.power": 0.02,
-        "macro.fiscalSpace": -0.03,
-        "groups.grievance": 0.02,
         "relations.volatility": 0.03
       }
     },
     {
-      "id": "eurasia-energy-corridor-adjustment",
-      "name": "Eurasia Energy Corridor Adjustment",
-      "atStep": 38,
-      "scope": "energy",
-      "intensity": 0.19,
+      "id": "us-chip-controls-expansion-2025",
+      "name": "US expands controls on advanced AI chips and related tooling",
+      "date": "2025-04",
+      "atStep": 17,
+      "scope": "technology",
+      "category": "technological",
+      "intensity": 0.22,
       "effects": {
-        "macro.tradeFlow": 0.03,
-        "macro.inflation": -0.02,
+        "relations.influence": -0.06,
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.05,
+        "groups.economicExposure": 0.03
+      },
+      "target": {
+        "companies": [
+          "nvidia",
+          "tsmc",
+          "asml",
+          "samsung"
+        ]
+      }
+    },
+    {
+      "id": "semiconductor-sovereignty-subsidy-wave-2025",
+      "name": "US/EU/Asia semiconductor subsidy race intensifies",
+      "date": "2025-06",
+      "atStep": 18,
+      "scope": "technology",
+      "category": "economic",
+      "intensity": 0.17,
+      "effects": {
+        "macro.fiscalSpace": -0.04,
+        "macro.gdpTrend": 0.03,
+        "players.power": 0.02,
         "relations.influence": 0.02
       }
     },
     {
-      "id": "eastmed-gas-financing-window",
-      "name": "EastMed Gas Financing Window",
-      "atStep": 39,
+      "id": "macro-disinflation-soft-landing-window-2025",
+      "name": "Broad disinflation enables soft-landing narrative",
+      "date": "2025-09",
+      "atStep": 19,
       "scope": "finance",
+      "category": "economic",
+      "intensity": 0.14,
+      "effects": {
+        "macro.inflation": -0.05,
+        "macro.investmentConfidence": 0.06,
+        "groups.grievance": -0.02,
+        "players.legitimacy": 0.01
+      }
+    },
+    {
+      "id": "taiwan-strait-tech-deterrence-cycle-2025",
+      "name": "Taiwan Strait deterrence cycle keeps semiconductor risk premium elevated",
+      "date": "2025-11",
+      "atStep": 20,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.2,
+      "effects": {
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.04,
+        "macro.investmentConfidence": -0.02,
+        "groups.economicExposure": 0.03
+      }
+    },
+    {
+      "id": "global-trade-fragmentation-tariff-wave-2026",
+      "name": "Renewed tariff and industrial policy fragmentation wave",
+      "date": "2026-02",
+      "atStep": 21,
+      "scope": "trade",
+      "category": "economic",
+      "intensity": 0.18,
+      "effects": {
+        "macro.tradeFlow": -0.06,
+        "macro.inflation": 0.03,
+        "relations.influence": -0.04,
+        "groups.grievance": 0.03
+      }
+    },
+    {
+      "id": "ai-capex-credit-cycle-risk-2026",
+      "name": "AI capex cycle faces financing discipline and credit repricing",
+      "date": "2026-03",
+      "atStep": 22,
+      "scope": "finance",
+      "category": "economic",
       "intensity": 0.16,
       "effects": {
-        "macro.investmentConfidence": 0.03,
-        "relations.volatility": -0.01,
-        "players.economyInfluence": 0.01
+        "macro.investmentConfidence": -0.04,
+        "macro.fiscalSpace": -0.02,
+        "players.economyInfluence": -0.01,
+        "relations.volatility": 0.03
+      }
+    },
+    {
+      "id": "critical-minerals-bottleneck-2026",
+      "name": "Critical minerals bottlenecks pressure battery/chip supply chains",
+      "date": "2026-04",
+      "atStep": 23,
+      "scope": "technology",
+      "category": "technological",
+      "intensity": 0.17,
+      "effects": {
+        "players.resourceBase": -0.02,
+        "macro.inflation": 0.03,
+        "macro.tradeFlow": -0.03,
+        "groups.economicExposure": 0.03
+      }
+    },
+    {
+      "id": "coordinated-tech-sanctions-countermeasures-2026",
+      "name": "Escalating tech sanctions and countermeasures among major blocs",
+      "date": "2026-05",
+      "atStep": 24,
+      "scope": "geopolitical",
+      "category": "geopolitical",
+      "intensity": 0.21,
+      "effects": {
+        "relations.influence": -0.06,
+        "relations.volatility": 0.09,
+        "macro.tradeFlow": -0.04,
+        "groups.trustInstitutions": -0.02
       }
     }
   ],
