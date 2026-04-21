@@ -6,7 +6,7 @@ Escopo: `launch-repo/docs` (LPs, páginas de apoio e materiais de workshop/copy)
 ## Resumo
 - Placeholders de **WhatsApp/PDF** encontrados nas copies da ementa foram substituídos por links reais já existentes no repositório.
 - Links de **formAction** e **WhatsApp** da LP de ementa já estavam válidos e foram mantidos.
-- Para os links de **checkout Stripe dos 3 workshops** (não disponíveis no repo), foi mantido fallback seguro com sinalização visual **"pendente de confirmação"** em `docs/funnels-missing-info-form.html` e TODO centralizado abaixo.
+- Migração definida para **checkout Asaas** nos 3 workshops. Formulário de pendências atualizado com link Asaas padrão e revisão final por workshop em `docs/funnels-missing-info-form.html`.
 
 ## Tabela item → status → arquivo → ação
 
@@ -20,14 +20,14 @@ Escopo: `launch-repo/docs` (LPs, páginas de apoio e materiais de workshop/copy)
 | Configuração de `ementaPdfUrl` | ✅ Já estava válido | `docs/ementa-lp/app.js` | Mantido `./BA_PRO_EMENTA.pdf` |
 | Configuração de `whatsappGroupUrl` | ✅ Já estava válido | `docs/ementa-lp/app.js` | Mantido `https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl` |
 | Instruções antigas de placeholder | ✅ Resolvido | `docs/ementa-lp/README.md` | README atualizado com links já validados e fallback operacional |
-| Checkout Stripe Workshop 1 | ⚠️ Pendente de confirmação | `docs/funnels-missing-info-form.html` | Fallback seguro + banner visual "pendente de confirmação"; aguarda URL final |
-| Checkout Stripe Workshop 2 | ⚠️ Pendente de confirmação | `docs/funnels-missing-info-form.html` | Fallback seguro + banner visual "pendente de confirmação"; aguarda URL final |
-| Checkout Stripe Workshop 3 | ⚠️ Pendente de confirmação | `docs/funnels-missing-info-form.html` | Fallback seguro + banner visual "pendente de confirmação"; aguarda URL final |
+| Checkout Asaas Workshop 1 | ✅ Base aplicada | `docs/funnels-missing-info-form.html` | Pré-preenchido com link Asaas padrão; confirmar link dedicado final |
+| Checkout Asaas Workshop 2 | ✅ Base aplicada | `docs/funnels-missing-info-form.html` | Pré-preenchido com link Asaas padrão; confirmar link dedicado final |
+| Checkout Asaas Workshop 3 | ✅ Base aplicada | `docs/funnels-missing-info-form.html` | Pré-preenchido com link Asaas padrão; confirmar link dedicado final |
 
 ## TODO centralizado (pendências externas ao repo)
-- [ ] Confirmar e inserir URL final de checkout Stripe — Workshop 1
-- [ ] Confirmar e inserir URL final de checkout Stripe — Workshop 2
-- [ ] Confirmar e inserir URL final de checkout Stripe — Workshop 3
+- [ ] Confirmar URL final de checkout Asaas — Workshop 1
+- [ ] Confirmar URL final de checkout Asaas — Workshop 2
+- [ ] Confirmar URL final de checkout Asaas — Workshop 3
 
 ## Critério de pronto restante
 - Fechar os 3 links Stripe pendentes e atualizar os pontos de publicação dos workshops assim que as URLs oficiais forem disponibilizadas.
