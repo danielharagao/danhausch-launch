@@ -292,6 +292,19 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     return [...set].filter(Boolean).sort();
   }
 
+  function getMacroTrends(frame) {
+    const m = frame?.snapshot?.macro || {};
+    const pct = (v) => `${Math.round(clamp(Number(v || 0), 0, 1) * 100)}%`;
+    return [
+      { label: "Inflação global", value: pct(m.inflation) },
+      { label: "Desemprego global", value: pct(m.unemployment) },
+      { label: "Confiança investimento", value: pct(m.investmentConfidence) },
+      { label: "Fluxo comercial", value: pct(m.tradeFlow) },
+      { label: "Espaço fiscal", value: pct(m.fiscalSpace) },
+      { label: "Tendência do PIB", value: pct(m.gdpTrend) }
+    ];
+  }
+
   return {
     seed,
     getFrame,
@@ -300,6 +313,7 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     getDrivers,
     getNetwork,
     getRegions,
+    getMacroTrends,
     getStatus() {
       return { mode };
     }

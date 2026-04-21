@@ -201,6 +201,15 @@ export function renderDrivers() {
     .join("");
 }
 
+export function renderMacroTrends() {
+  const container = $("#macroTrends");
+  if (!container) return;
+  const trends = state.adapter.getMacroTrends(adapterFrame());
+  container.innerHTML = trends
+    .map((t) => `<article class="macro-item"><p>${t.label}</p><strong>${t.value}</strong></article>`)
+    .join("");
+}
+
 export function initPresets() {
   const select = $("#presetSelect");
 
@@ -330,6 +339,7 @@ export function initTutorial() {
 
 export function renderAll() {
   renderKpis();
+  renderMacroTrends();
   renderTimeline();
   renderNetwork();
   renderDrivers();
