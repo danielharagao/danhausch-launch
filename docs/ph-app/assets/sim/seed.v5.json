@@ -1,9 +1,9 @@
 {
   "meta": {
-    "name": "Predictive History Seed Dataset V5.1 - Brazil Specialist Pack + LATAM/MENA Layers",
-    "version": "5.1.0",
+    "name": "Predictive History Seed Dataset V6 - Economy & Technology Shock Pack",
+    "version": "6.0.0",
     "timeUnit": "month",
-    "description": "V5 baseline expanded with Brazil specialist package (domestic institutions, strategic sectors/companies, 2021-2026 events, and ties to G20/LATAM/China/US/EU) on top of existing LATAM/MENA layers, preserving engine/UI compatibility.",
+    "description": "V5 expanded with focused 2021-2026 global economic/technology shocks: NVIDIA/AI chips/export controls, semiconductor chain, sanctions, energy-trade disruptions, and macro turning points with mapped simulation effects.",
     "snapshotDate": "2026-04-21"
   },
   "players": [
@@ -1856,6 +1856,15 @@
       "region": "global"
     },
     {
+      "source": "ali",
+      "target": "guyana",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.77,
+      "volatility": 0.36,
+      "region": "latin-america"
+    },
+    {
       "source": "arg_bcra",
       "target": "argentina",
       "type": "dependencia",
@@ -1919,6 +1928,24 @@
       "region": "global"
     },
     {
+      "source": "asml",
+      "target": "samsung",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.56,
+      "volatility": 0.39,
+      "region": "global"
+    },
+    {
+      "source": "asml",
+      "target": "tsmc",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.63,
+      "volatility": 0.43,
+      "region": "global"
+    },
+    {
       "source": "aus_rba",
       "target": "australia",
       "type": "dependencia",
@@ -1964,6 +1991,24 @@
       "region": "global"
     },
     {
+      "source": "bndes",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.58,
+      "volatility": 0.32,
+      "region": "latam"
+    },
+    {
+      "source": "br_agribusiness",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "institution-country",
+      "influence": 0.63,
+      "volatility": 0.37,
+      "region": "latam"
+    },
+    {
       "source": "br_bcb",
       "target": "brazil",
       "type": "dependencia",
@@ -1973,6 +2018,15 @@
       "region": "global"
     },
     {
+      "source": "br_congresso",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.6,
+      "volatility": 0.47,
+      "region": "latam"
+    },
+    {
       "source": "br_fazenda",
       "target": "brazil",
       "type": "dependencia",
@@ -1980,6 +2034,15 @@
       "influence": 0.58,
       "volatility": 0.33,
       "region": "global"
+    },
+    {
+      "source": "br_stf",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.56,
+      "volatility": 0.42,
+      "region": "latam"
     },
     {
       "source": "brazil",
@@ -1992,12 +2055,30 @@
     },
     {
       "source": "brazil",
+      "target": "bndes",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.51,
+      "volatility": 0.33,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
       "target": "br_bcb",
       "type": "governanca",
       "pairType": "country-institution",
       "influence": 0.53,
       "volatility": 0.31,
       "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "br_congresso",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.52,
+      "volatility": 0.48,
+      "region": "latam"
     },
     {
       "source": "brazil",
@@ -2010,12 +2091,120 @@
     },
     {
       "source": "brazil",
+      "target": "br_stf",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.49,
+      "volatility": 0.43,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "brazil_federal_state",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.62,
+      "volatility": 0.34,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
       "target": "china",
       "type": "cooperacao",
       "pairType": "country-country",
       "influence": 0.41,
       "volatility": 0.3,
       "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "china",
+      "type": "dependencia",
+      "pairType": "country-country",
+      "influence": 0.56,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "eu-country",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.47,
+      "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "g20",
+      "type": "cooperacao",
+      "pairType": "country-institution",
+      "influence": 0.55,
+      "volatility": 0.29,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "india",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.31,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "mercosur",
+      "type": "governanca",
+      "pairType": "country-institution",
+      "influence": 0.61,
+      "volatility": 0.33,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "petrobras",
+      "type": "governanca",
+      "pairType": "country-company",
+      "influence": 0.59,
+      "volatility": 0.41,
+      "region": "latam"
+    },
+    {
+      "source": "brazil",
+      "target": "southafrica",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.41,
+      "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "us",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.42,
+      "volatility": 0.37,
+      "region": "global"
+    },
+    {
+      "source": "brazil",
+      "target": "venezuela",
+      "type": "mediacao",
+      "pairType": "country-country",
+      "influence": 0.28,
+      "volatility": 0.54,
+      "region": "latin-america"
+    },
+    {
+      "source": "brazil_federal_state",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.64,
+      "volatility": 0.33,
+      "region": "latam"
     },
     {
       "source": "ca_boc",
@@ -2072,12 +2261,30 @@
       "region": "global"
     },
     {
+      "source": "caricom",
+      "target": "guyana",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.44,
+      "volatility": 0.39,
+      "region": "latin-america"
+    },
+    {
       "source": "carney",
       "target": "canada",
       "type": "governanca",
       "pairType": "leader-country",
       "influence": 0.68,
       "volatility": 0.32,
+      "region": "global"
+    },
+    {
+      "source": "chevron",
+      "target": "us",
+      "type": "lobby_energetico",
+      "pairType": "company-country",
+      "influence": 0.37,
+      "volatility": 0.51,
       "region": "global"
     },
     {
@@ -2154,6 +2361,15 @@
     },
     {
       "source": "china",
+      "target": "nvidia",
+      "type": "rivalidade",
+      "pairType": "country-company",
+      "influence": -0.51,
+      "volatility": 0.62,
+      "region": "global"
+    },
+    {
+      "source": "china",
       "target": "russia",
       "type": "cooperacao",
       "pairType": "country-country",
@@ -2214,6 +2430,24 @@
       "influence": 0.64,
       "volatility": 0.33,
       "region": "global"
+    },
+    {
+      "source": "cne_ve",
+      "target": "venezuela",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.62,
+      "volatility": 0.67,
+      "region": "latin-america"
+    },
+    {
+      "source": "colombia",
+      "target": "venezuela",
+      "type": "fronteira",
+      "pairType": "country-country",
+      "influence": 0.22,
+      "volatility": 0.68,
+      "region": "latin-america"
     },
     {
       "source": "de_buba",
@@ -2306,6 +2540,15 @@
       "region": "middle-east"
     },
     {
+      "source": "embraer",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "company-country",
+      "influence": 0.49,
+      "volatility": 0.29,
+      "region": "latam"
+    },
+    {
       "source": "erdogan",
       "target": "turkiye",
       "type": "governanca",
@@ -2321,6 +2564,24 @@
       "pairType": "institution-institution",
       "influence": 0.55,
       "volatility": 0.25,
+      "region": "global"
+    },
+    {
+      "source": "eu-country",
+      "target": "asml",
+      "type": "influencia",
+      "pairType": "country-company",
+      "influence": 0.52,
+      "volatility": 0.34,
+      "region": "europe"
+    },
+    {
+      "source": "eu-country",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.45,
+      "volatility": 0.31,
       "region": "global"
     },
     {
@@ -2648,6 +2909,15 @@
       "region": "global"
     },
     {
+      "source": "galipolo",
+      "target": "br_bcb",
+      "type": "governanca",
+      "pairType": "leader-institution",
+      "influence": 0.61,
+      "volatility": 0.29,
+      "region": "latam"
+    },
+    {
       "source": "gazprom",
       "target": "russia",
       "type": "dependencia",
@@ -2682,6 +2952,33 @@
       "influence": 0.58,
       "volatility": 0.28,
       "region": "global"
+    },
+    {
+      "source": "gonzalez_urrutia",
+      "target": "maduro",
+      "type": "rivalidade",
+      "pairType": "leader-leader",
+      "influence": -0.78,
+      "volatility": 0.76,
+      "region": "latin-america"
+    },
+    {
+      "source": "guyana",
+      "target": "venezuela",
+      "type": "disputa_territorial",
+      "pairType": "country-country",
+      "influence": -0.57,
+      "volatility": 0.83,
+      "region": "latin-america"
+    },
+    {
+      "source": "haddad",
+      "target": "br_fazenda",
+      "type": "governanca",
+      "pairType": "leader-institution",
+      "influence": 0.69,
+      "volatility": 0.31,
+      "region": "latam"
     },
     {
       "source": "id_bi",
@@ -3008,6 +3305,15 @@
       "region": "global"
     },
     {
+      "source": "itau",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "company-country",
+      "influence": 0.47,
+      "volatility": 0.34,
+      "region": "latam"
+    },
+    {
       "source": "japan",
       "target": "china",
       "type": "rivalidade",
@@ -3042,6 +3348,15 @@
       "influence": 0.35,
       "volatility": 0.34,
       "region": "global"
+    },
+    {
+      "source": "japan",
+      "target": "tsmc",
+      "type": "cooperacao",
+      "pairType": "country-company",
+      "influence": 0.41,
+      "volatility": 0.35,
+      "region": "asia"
     },
     {
       "source": "japan",
@@ -3125,6 +3440,15 @@
       "region": "global"
     },
     {
+      "source": "lula",
+      "target": "maduro",
+      "type": "mediacao",
+      "pairType": "leader-leader",
+      "influence": 0.26,
+      "volatility": 0.58,
+      "region": "latin-america"
+    },
+    {
       "source": "macron",
       "target": "france",
       "type": "governanca",
@@ -3132,6 +3456,33 @@
       "influence": 0.63,
       "volatility": 0.34,
       "region": "global"
+    },
+    {
+      "source": "maduro",
+      "target": "venezuela",
+      "type": "governanca",
+      "pairType": "leader-country",
+      "influence": 0.84,
+      "volatility": 0.52,
+      "region": "latin-america"
+    },
+    {
+      "source": "maria_corina",
+      "target": "gonzalez_urrutia",
+      "type": "coalizao",
+      "pairType": "leader-leader",
+      "influence": 0.73,
+      "volatility": 0.46,
+      "region": "latin-america"
+    },
+    {
+      "source": "maria_corina",
+      "target": "maduro",
+      "type": "rivalidade",
+      "pairType": "leader-leader",
+      "influence": -0.84,
+      "volatility": 0.79,
+      "region": "latin-america"
     },
     {
       "source": "mbs",
@@ -3159,6 +3510,24 @@
       "influence": 0.7,
       "volatility": 0.33,
       "region": "global"
+    },
+    {
+      "source": "mercosur",
+      "target": "argentina",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.36,
+      "region": "latam"
+    },
+    {
+      "source": "mercosur",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "institution-country",
+      "influence": 0.57,
+      "volatility": 0.35,
+      "region": "latam"
     },
     {
       "source": "merz",
@@ -3251,6 +3620,42 @@
       "region": "middle-east"
     },
     {
+      "source": "nvidia",
+      "target": "samsung",
+      "type": "cooperacao",
+      "pairType": "company-company",
+      "influence": 0.44,
+      "volatility": 0.36,
+      "region": "global"
+    },
+    {
+      "source": "nvidia",
+      "target": "tsmc",
+      "type": "dependencia",
+      "pairType": "company-company",
+      "influence": 0.71,
+      "volatility": 0.49,
+      "region": "global"
+    },
+    {
+      "source": "nvidia",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.55,
+      "volatility": 0.37,
+      "region": "north-america"
+    },
+    {
+      "source": "oas",
+      "target": "venezuela",
+      "type": "pressao_diplomatica",
+      "pairType": "institution-country",
+      "influence": -0.34,
+      "volatility": 0.59,
+      "region": "latin-america"
+    },
+    {
       "source": "opec",
       "target": "g20",
       "type": "influencia",
@@ -3258,6 +3663,51 @@
       "influence": 0.53,
       "volatility": 0.39,
       "region": "global"
+    },
+    {
+      "source": "openai",
+      "target": "us",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.49,
+      "volatility": 0.36,
+      "region": "north-america"
+    },
+    {
+      "source": "pdvsa",
+      "target": "chevron",
+      "type": "joint_venture",
+      "pairType": "company-company",
+      "influence": 0.46,
+      "volatility": 0.64,
+      "region": "global"
+    },
+    {
+      "source": "pdvsa",
+      "target": "venezuela",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.74,
+      "volatility": 0.55,
+      "region": "latin-america"
+    },
+    {
+      "source": "petro",
+      "target": "maduro",
+      "type": "mediacao",
+      "pairType": "leader-leader",
+      "influence": 0.31,
+      "volatility": 0.62,
+      "region": "latin-america"
+    },
+    {
+      "source": "petrobras",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.67,
+      "volatility": 0.38,
+      "region": "latam"
     },
     {
       "source": "prabowo",
@@ -3348,6 +3798,15 @@
       "influence": 0.62,
       "volatility": 0.35,
       "region": "global"
+    },
+    {
+      "source": "rj_state",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.46,
+      "volatility": 0.38,
+      "region": "latam"
     },
     {
       "source": "ru_cbr",
@@ -3648,12 +4107,30 @@
     },
     {
       "source": "southkorea",
+      "target": "samsung",
+      "type": "governanca",
+      "pairType": "country-company",
+      "influence": 0.58,
+      "volatility": 0.33,
+      "region": "asia"
+    },
+    {
+      "source": "southkorea",
       "target": "us",
       "type": "cooperacao",
       "pairType": "country-country",
       "influence": 0.6,
       "volatility": 0.29,
       "region": "global"
+    },
+    {
+      "source": "sp_state",
+      "target": "brazil",
+      "type": "cooperacao",
+      "pairType": "institution-country",
+      "influence": 0.54,
+      "volatility": 0.32,
+      "region": "latam"
     },
     {
       "source": "starmer",
@@ -3863,6 +4340,24 @@
       "region": "global"
     },
     {
+      "source": "un",
+      "target": "venezuela",
+      "type": "assistencia_humanitaria",
+      "pairType": "institution-country",
+      "influence": 0.33,
+      "volatility": 0.47,
+      "region": "latin-america"
+    },
+    {
+      "source": "us",
+      "target": "brazil",
+      "type": "influencia",
+      "pairType": "country-country",
+      "influence": 0.44,
+      "volatility": 0.39,
+      "region": "global"
+    },
+    {
       "source": "us",
       "target": "canada",
       "type": "cooperacao",
@@ -3927,6 +4422,24 @@
     },
     {
       "source": "us",
+      "target": "nvidia",
+      "type": "influencia",
+      "pairType": "country-company",
+      "influence": 0.62,
+      "volatility": 0.41,
+      "region": "north-america"
+    },
+    {
+      "source": "us",
+      "target": "openai",
+      "type": "influencia",
+      "pairType": "country-company",
+      "influence": 0.57,
+      "volatility": 0.39,
+      "region": "north-america"
+    },
+    {
+      "source": "us",
       "target": "russia",
       "type": "rivalidade",
       "pairType": "country-country",
@@ -3962,6 +4475,15 @@
       "region": "global"
     },
     {
+      "source": "us",
+      "target": "venezuela",
+      "type": "sancoes",
+      "pairType": "country-country",
+      "influence": -0.69,
+      "volatility": 0.74,
+      "region": "global"
+    },
+    {
       "source": "us_fed",
       "target": "us",
       "type": "dependencia",
@@ -3977,6 +4499,60 @@
       "pairType": "institution-country",
       "influence": 0.59,
       "volatility": 0.33,
+      "region": "global"
+    },
+    {
+      "source": "vale",
+      "target": "brazil",
+      "type": "dependencia",
+      "pairType": "company-country",
+      "influence": 0.54,
+      "volatility": 0.36,
+      "region": "latam"
+    },
+    {
+      "source": "venezuela",
+      "target": "china",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.43,
+      "volatility": 0.49,
+      "region": "global"
+    },
+    {
+      "source": "venezuela",
+      "target": "cuba",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.66,
+      "volatility": 0.44,
+      "region": "latin-america"
+    },
+    {
+      "source": "venezuela",
+      "target": "iran",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.51,
+      "volatility": 0.57,
+      "region": "middle-east"
+    },
+    {
+      "source": "venezuela",
+      "target": "russia",
+      "type": "cooperacao",
+      "pairType": "country-country",
+      "influence": 0.48,
+      "volatility": 0.53,
+      "region": "global"
+    },
+    {
+      "source": "venezuela",
+      "target": "us",
+      "type": "rivalidade",
+      "pairType": "country-country",
+      "influence": -0.72,
+      "volatility": 0.72,
       "region": "global"
     },
     {
@@ -4023,564 +4599,6 @@
       "influence": 0.58,
       "volatility": 0.34,
       "region": "global"
-    },
-    {
-      "source": "us",
-      "target": "nvidia",
-      "type": "influencia",
-      "pairType": "country-company",
-      "influence": 0.62,
-      "volatility": 0.41,
-      "region": "north-america"
-    },
-    {
-      "source": "nvidia",
-      "target": "us",
-      "type": "dependencia",
-      "pairType": "company-country",
-      "influence": 0.55,
-      "volatility": 0.37,
-      "region": "north-america"
-    },
-    {
-      "source": "nvidia",
-      "target": "tsmc",
-      "type": "dependencia",
-      "pairType": "company-company",
-      "influence": 0.71,
-      "volatility": 0.49,
-      "region": "global"
-    },
-    {
-      "source": "nvidia",
-      "target": "samsung",
-      "type": "cooperacao",
-      "pairType": "company-company",
-      "influence": 0.44,
-      "volatility": 0.36,
-      "region": "global"
-    },
-    {
-      "source": "asml",
-      "target": "tsmc",
-      "type": "dependencia",
-      "pairType": "company-company",
-      "influence": 0.63,
-      "volatility": 0.43,
-      "region": "global"
-    },
-    {
-      "source": "asml",
-      "target": "samsung",
-      "type": "dependencia",
-      "pairType": "company-company",
-      "influence": 0.56,
-      "volatility": 0.39,
-      "region": "global"
-    },
-    {
-      "source": "eu-country",
-      "target": "asml",
-      "type": "influencia",
-      "pairType": "country-company",
-      "influence": 0.52,
-      "volatility": 0.34,
-      "region": "europe"
-    },
-    {
-      "source": "china",
-      "target": "nvidia",
-      "type": "rivalidade",
-      "pairType": "country-company",
-      "influence": -0.51,
-      "volatility": 0.62,
-      "region": "global"
-    },
-    {
-      "source": "japan",
-      "target": "tsmc",
-      "type": "cooperacao",
-      "pairType": "country-company",
-      "influence": 0.41,
-      "volatility": 0.35,
-      "region": "asia"
-    },
-    {
-      "source": "southkorea",
-      "target": "samsung",
-      "type": "governanca",
-      "pairType": "country-company",
-      "influence": 0.58,
-      "volatility": 0.33,
-      "region": "asia"
-    },
-    {
-      "source": "brazil",
-      "target": "brazil_federal_state",
-      "type": "governanca",
-      "pairType": "country-institution",
-      "influence": 0.62,
-      "volatility": 0.34,
-      "region": "latam"
-    },
-    {
-      "source": "brazil_federal_state",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.64,
-      "volatility": 0.33,
-      "region": "latam"
-    },
-    {
-      "source": "haddad",
-      "target": "br_fazenda",
-      "type": "governanca",
-      "pairType": "leader-institution",
-      "influence": 0.69,
-      "volatility": 0.31,
-      "region": "latam"
-    },
-    {
-      "source": "galipolo",
-      "target": "br_bcb",
-      "type": "governanca",
-      "pairType": "leader-institution",
-      "influence": 0.61,
-      "volatility": 0.29,
-      "region": "latam"
-    },
-    {
-      "source": "br_congresso",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.6,
-      "volatility": 0.47,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "br_congresso",
-      "type": "governanca",
-      "pairType": "country-institution",
-      "influence": 0.52,
-      "volatility": 0.48,
-      "region": "latam"
-    },
-    {
-      "source": "br_stf",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.56,
-      "volatility": 0.42,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "br_stf",
-      "type": "governanca",
-      "pairType": "country-institution",
-      "influence": 0.49,
-      "volatility": 0.43,
-      "region": "latam"
-    },
-    {
-      "source": "bndes",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.58,
-      "volatility": 0.32,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "bndes",
-      "type": "governanca",
-      "pairType": "country-institution",
-      "influence": 0.51,
-      "volatility": 0.33,
-      "region": "latam"
-    },
-    {
-      "source": "petrobras",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "company-country",
-      "influence": 0.67,
-      "volatility": 0.38,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "petrobras",
-      "type": "governanca",
-      "pairType": "country-company",
-      "influence": 0.59,
-      "volatility": 0.41,
-      "region": "latam"
-    },
-    {
-      "source": "vale",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "company-country",
-      "influence": 0.54,
-      "volatility": 0.36,
-      "region": "latam"
-    },
-    {
-      "source": "embraer",
-      "target": "brazil",
-      "type": "cooperacao",
-      "pairType": "company-country",
-      "influence": 0.49,
-      "volatility": 0.29,
-      "region": "latam"
-    },
-    {
-      "source": "itau",
-      "target": "brazil",
-      "type": "influencia",
-      "pairType": "company-country",
-      "influence": 0.47,
-      "volatility": 0.34,
-      "region": "latam"
-    },
-    {
-      "source": "br_agribusiness",
-      "target": "brazil",
-      "type": "influencia",
-      "pairType": "institution-country",
-      "influence": 0.63,
-      "volatility": 0.37,
-      "region": "latam"
-    },
-    {
-      "source": "sp_state",
-      "target": "brazil",
-      "type": "cooperacao",
-      "pairType": "institution-country",
-      "influence": 0.54,
-      "volatility": 0.32,
-      "region": "latam"
-    },
-    {
-      "source": "rj_state",
-      "target": "brazil",
-      "type": "cooperacao",
-      "pairType": "institution-country",
-      "influence": 0.46,
-      "volatility": 0.38,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "g20",
-      "type": "cooperacao",
-      "pairType": "country-institution",
-      "influence": 0.55,
-      "volatility": 0.29,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "mercosur",
-      "type": "governanca",
-      "pairType": "country-institution",
-      "influence": 0.61,
-      "volatility": 0.33,
-      "region": "latam"
-    },
-    {
-      "source": "mercosur",
-      "target": "brazil",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.57,
-      "volatility": 0.35,
-      "region": "latam"
-    },
-    {
-      "source": "mercosur",
-      "target": "argentina",
-      "type": "cooperacao",
-      "pairType": "institution-country",
-      "influence": 0.54,
-      "volatility": 0.36,
-      "region": "latam"
-    },
-    {
-      "source": "brazil",
-      "target": "us",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.42,
-      "volatility": 0.37,
-      "region": "global"
-    },
-    {
-      "source": "us",
-      "target": "brazil",
-      "type": "influencia",
-      "pairType": "country-country",
-      "influence": 0.44,
-      "volatility": 0.39,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "eu-country",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.47,
-      "volatility": 0.32,
-      "region": "global"
-    },
-    {
-      "source": "eu-country",
-      "target": "brazil",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.45,
-      "volatility": 0.31,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "china",
-      "type": "dependencia",
-      "pairType": "country-country",
-      "influence": 0.56,
-      "volatility": 0.36,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "southafrica",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.41,
-      "volatility": 0.33,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "india",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.43,
-      "volatility": 0.31,
-      "region": "global"
-    },
-    {
-      "source": "maduro",
-      "target": "venezuela",
-      "type": "governanca",
-      "pairType": "leader-country",
-      "influence": 0.84,
-      "volatility": 0.52,
-      "region": "latin-america"
-    },
-    {
-      "source": "cne_ve",
-      "target": "venezuela",
-      "type": "dependencia",
-      "pairType": "institution-country",
-      "influence": 0.62,
-      "volatility": 0.67,
-      "region": "latin-america"
-    },
-    {
-      "source": "maria_corina",
-      "target": "gonzalez_urrutia",
-      "type": "coalizao",
-      "pairType": "leader-leader",
-      "influence": 0.73,
-      "volatility": 0.46,
-      "region": "latin-america"
-    },
-    {
-      "source": "maria_corina",
-      "target": "maduro",
-      "type": "rivalidade",
-      "pairType": "leader-leader",
-      "influence": -0.84,
-      "volatility": 0.79,
-      "region": "latin-america"
-    },
-    {
-      "source": "gonzalez_urrutia",
-      "target": "maduro",
-      "type": "rivalidade",
-      "pairType": "leader-leader",
-      "influence": -0.78,
-      "volatility": 0.76,
-      "region": "latin-america"
-    },
-    {
-      "source": "venezuela",
-      "target": "us",
-      "type": "rivalidade",
-      "pairType": "country-country",
-      "influence": -0.72,
-      "volatility": 0.72,
-      "region": "global"
-    },
-    {
-      "source": "us",
-      "target": "venezuela",
-      "type": "sancoes",
-      "pairType": "country-country",
-      "influence": -0.69,
-      "volatility": 0.74,
-      "region": "global"
-    },
-    {
-      "source": "venezuela",
-      "target": "russia",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.48,
-      "volatility": 0.53,
-      "region": "global"
-    },
-    {
-      "source": "venezuela",
-      "target": "china",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.43,
-      "volatility": 0.49,
-      "region": "global"
-    },
-    {
-      "source": "venezuela",
-      "target": "iran",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.51,
-      "volatility": 0.57,
-      "region": "middle-east"
-    },
-    {
-      "source": "venezuela",
-      "target": "cuba",
-      "type": "cooperacao",
-      "pairType": "country-country",
-      "influence": 0.66,
-      "volatility": 0.44,
-      "region": "latin-america"
-    },
-    {
-      "source": "colombia",
-      "target": "venezuela",
-      "type": "fronteira",
-      "pairType": "country-country",
-      "influence": 0.22,
-      "volatility": 0.68,
-      "region": "latin-america"
-    },
-    {
-      "source": "petro",
-      "target": "maduro",
-      "type": "mediacao",
-      "pairType": "leader-leader",
-      "influence": 0.31,
-      "volatility": 0.62,
-      "region": "latin-america"
-    },
-    {
-      "source": "guyana",
-      "target": "venezuela",
-      "type": "disputa_territorial",
-      "pairType": "country-country",
-      "influence": -0.57,
-      "volatility": 0.83,
-      "region": "latin-america"
-    },
-    {
-      "source": "ali",
-      "target": "guyana",
-      "type": "governanca",
-      "pairType": "leader-country",
-      "influence": 0.77,
-      "volatility": 0.36,
-      "region": "latin-america"
-    },
-    {
-      "source": "caricom",
-      "target": "guyana",
-      "type": "cooperacao",
-      "pairType": "institution-country",
-      "influence": 0.44,
-      "volatility": 0.39,
-      "region": "latin-america"
-    },
-    {
-      "source": "oas",
-      "target": "venezuela",
-      "type": "pressao_diplomatica",
-      "pairType": "institution-country",
-      "influence": -0.34,
-      "volatility": 0.59,
-      "region": "latin-america"
-    },
-    {
-      "source": "pdvsa",
-      "target": "venezuela",
-      "type": "dependencia",
-      "pairType": "company-country",
-      "influence": 0.74,
-      "volatility": 0.55,
-      "region": "latin-america"
-    },
-    {
-      "source": "pdvsa",
-      "target": "chevron",
-      "type": "joint_venture",
-      "pairType": "company-company",
-      "influence": 0.46,
-      "volatility": 0.64,
-      "region": "global"
-    },
-    {
-      "source": "chevron",
-      "target": "us",
-      "type": "lobby_energetico",
-      "pairType": "company-country",
-      "influence": 0.37,
-      "volatility": 0.51,
-      "region": "global"
-    },
-    {
-      "source": "brazil",
-      "target": "venezuela",
-      "type": "mediacao",
-      "pairType": "country-country",
-      "influence": 0.28,
-      "volatility": 0.54,
-      "region": "latin-america"
-    },
-    {
-      "source": "lula",
-      "target": "maduro",
-      "type": "mediacao",
-      "pairType": "leader-leader",
-      "influence": 0.26,
-      "volatility": 0.58,
-      "region": "latin-america"
-    },
-    {
-      "source": "un",
-      "target": "venezuela",
-      "type": "assistencia_humanitaria",
-      "pairType": "institution-country",
-      "influence": 0.33,
-      "volatility": 0.47,
-      "region": "latin-america"
     }
   ],
   "events": [
