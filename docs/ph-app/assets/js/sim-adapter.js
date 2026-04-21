@@ -97,10 +97,14 @@ function scoreRelation(r) {
 
 function mapEvent(ev) {
   const direction = ev.intensity >= 0.18 ? "+alto" : "+moderado";
+  const source = ev.source || ev.sourceRef || ev.origin || "dataset";
+  const confidence = String(ev.confidence || ev.confidenceLevel || "medium").toLowerCase();
   return {
     time: `Step ${ev.step}`,
     title: `${ev.name} [${ev.scope}]`,
-    impact: direction
+    impact: direction,
+    source,
+    confidence
   };
 }
 

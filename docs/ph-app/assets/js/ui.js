@@ -179,7 +179,7 @@ export function renderTimeline() {
   $("#timelineLabel").textContent = frame.label;
   $("#scenarioScore").textContent = `Score: ${frame.score}`;
   $("#timelineEvents").innerHTML = (frame.events || [])
-    .map((ev) => `<li><strong>${ev.time}</strong> · ${ev.title} <em>(${ev.impact})</em></li>`)
+    .map((ev) => `<li><strong>${ev.time}</strong> · ${ev.title} <em>(${ev.impact})</em><div class="event-meta"><span class="badge-source">Fonte: ${ev.source}</span><span class="badge-confidence ${ev.confidence}">Confiança: ${ev.confidence}</span></div></li>`)
     .join("") || "<li><em>Sem eventos no frame.</em></li>";
 }
 

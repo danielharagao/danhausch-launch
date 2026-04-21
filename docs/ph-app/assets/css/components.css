@@ -57,6 +57,11 @@ button, select, input { min-height: 40px; }
 #timelineSlider { width: 100%; margin: 10px 0; }
 .event-list { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 8px; color: var(--muted); }
 .event-list li strong { color: var(--text); }
+.event-meta { margin-top: 4px; display:flex; gap:6px; flex-wrap:wrap; }
+.badge-source, .badge-confidence { font-size:.75rem; padding:2px 7px; border:1px solid var(--line); border-radius:999px; }
+.badge-confidence.high { color:#6fe3a1; border-color:#2f7d50; }
+.badge-confidence.medium { color:#ffd166; border-color:#8b6d20; }
+.badge-confidence.low { color:#ff8a8a; border-color:#8b3a3a; }
 
 .network-canvas {
   margin-top: 12px;
