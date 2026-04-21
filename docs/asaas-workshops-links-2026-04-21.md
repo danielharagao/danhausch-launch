@@ -1,26 +1,24 @@
-# Asaas Checkout Links — Workshops (gerados em 2026-04-21)
+# Asaas Checkout Links — Workshops PRO (gerados em 2026-04-21)
 
 Configuração aplicada:
+- Valor: **R$ 697,00** para os 3 workshops
 - Vencimento: **1 dia** (`dueDateLimitDays=1`)
-- Formas de pagamento: **todas exceto boleto** (via `billingType=UNDEFINED` em link de pagamento)
+- Pagamento: **sem boleto**
 - Parcelamento: até **12x**
 
-## Links
+## Links finais (1 por workshop)
 
-1. **Workshop 1 — Fundamentos BA Pro**
-   - Valor: **R$ 497,00**
-   - URL: https://www.asaas.com/c/jd6odtrr5fk1yx9q
-   - id: `jd6odtrr5fk1yx9q`
+1. **Workshop Pro de BA**
+   - URL: https://www.asaas.com/c/zm0ell5ax9gjb3zc
+   - id: `zm0ell5ax9gjb3zc`
 
-2. **Workshop 2 — Prática BA Pro**
-   - Valor: **R$ 697,00**
-   - URL: https://www.asaas.com/c/5gft6o16lqddms11
-   - id: `5gft6o16lqddms11`
+2. **Workshop Pro de Gestão de Projetos**
+   - URL: https://www.asaas.com/c/rqc26fu9w0gddpab
+   - id: `rqc26fu9w0gddpab`
 
-3. **Workshop 3 — Estratégia BA Pro**
-   - Valor: **R$ 997,00**
-   - URL: https://www.asaas.com/c/ya4ke1pnx91khc9s
-   - id: `ya4ke1pnx91khc9s`
+3. **Workshop Pro de IA**
+   - URL: https://www.asaas.com/c/eu0di2a6lu5wjguz
+   - id: `eu0di2a6lu5wjguz`
 
 ## Observação
-Se quiser, eu ajusto os valores e regerei os links sem problema.
+Estes são os links canônicos para publicação nas LPs e no CRM.
