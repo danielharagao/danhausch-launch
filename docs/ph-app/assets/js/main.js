@@ -25,6 +25,11 @@ async function bootstrap() {
   });
 
   initTabs();
+  const tab = new URLSearchParams(window.location.search).get("tab");
+  if (tab) {
+    const el = document.querySelector(`.tab[data-tab="${tab}"]`);
+    if (el) el.click();
+  }
   initFilters();
   initTimeline();
   initNetwork();
