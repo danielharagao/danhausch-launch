@@ -34,7 +34,11 @@ body {
   color: var(--text);
   background: radial-gradient(circle at top right, rgba(89, 162, 255, 0.18), transparent 32%), var(--bg);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
 }
+
+html { -webkit-text-size-adjust: 100%; }
 
 h1,h2,h3,p { margin: 0; }
 small { color: var(--muted); }

@@ -34,9 +34,18 @@
 }
 
 @media (max-width: 680px) {
-  .app-shell { padding: 10px; gap: 10px; }
+  .app-shell {
+    padding: calc(10px + env(safe-area-inset-top, 0px)) 10px calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+  }
   .topbar, .filters { padding: 12px; }
-  .topbar { position: sticky; top: 0; z-index: 30; backdrop-filter: blur(6px); }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(6px);
+    margin-top: max(0px, env(safe-area-inset-top, 0px));
+  }
   .filters { border-radius: 12px; }
   .panel-grid { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: 1fr; }
@@ -44,7 +53,7 @@
 
   .tabs {
     position: sticky;
-    bottom: 6px;
+    bottom: calc(6px + env(safe-area-inset-bottom, 0px));
     z-index: 25;
     background: color-mix(in oklab, var(--panel) 90%, transparent);
     border: 1px solid var(--line);
@@ -52,5 +61,5 @@
     padding: 6px;
   }
 
-  .main-content { padding-bottom: 78px; }
+  .main-content { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
 }
