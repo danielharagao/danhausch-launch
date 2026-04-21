@@ -109,6 +109,9 @@
       const f3 = adapter.getFrame(3);
       const drivers = adapter.getDrivers(f3);
       const net = adapter.getNetwork(f3, 'people', { riskThreshold: 0, query: '' });
+      const why = adapter.getWhyRiskMoved(f3, f0);
+      const causal = adapter.getCausalTimeline(3);
+      const scenarioFrame = adapter.getFrameForScenario(3, { presetId: 'war', intensity: 80, scope: 'global' });
 
       const seedV3 = makeV3SeedFromV1(seed);
       const simV3 = PHSim.createSimulator(seedV3, { rngSeed: 11 });
@@ -120,9 +123,18 @@
         assert(Array.isArray(f3.events), 'events inválido');
       });
 
-      report('Adapter expõe drivers e rede', () => {
+      report('Adapter expõe drivers, explainability e rede', () => {
         assert(Array.isArray(drivers) && drivers.length > 0, 'drivers vazio');
         assert(Array.isArray(net) && net.length > 0, 'rede vazia');
+        assert(why && typeof why.summary === 'string' && why.summary.length > 0, 'whyRiskMoved inválido');
+        assert(Array.isArray(why.chain) && why.chain.length >= 1, 'cadeia causal inválida');
+        assert(Array.isArray(causal) && causal.length >= 1, 'causal timeline vazia');
+      });
+
+      report('Adapter aplica cenário/compare frame', () => {
+        assert(scenarioFrame && scenarioFrame.kpis, 'scenarioFrame ausente');
+        assert(in01(scenarioFrame.kpis.riskConflict), 'scenario riskConflict fora de faixa');
+        assert((scenarioFrame.events || []).length >= (f3.events || []).length, 'cenário não adicionou evento');
       });
 
       report('Engine aceita seed V3 (entities/layers)', () => {
