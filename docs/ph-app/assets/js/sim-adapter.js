@@ -189,6 +189,7 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
 
   const sim = window.PHSim.createSimulator(seed, { rngSeed });
   const frames = [baselineFrame(sim)];
+  const maxStep = Math.max(12, ...(seed?.events || []).map((e) => Number(e.atStep || e.step || 0)));
 
   function ensureFrame(index) {
     while (frames.length <= index) {
@@ -537,7 +538,8 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
   }
 
   function getMacroTrendSeries(key, upToIndex = 12) {
-    const max = Math.max(0, Math.min(Number(upToIndex || 0), 12));
+    const absoluteMax = Math.max(12, ...(seed?.events || []).map((e) => Number(e.atStep || e.step || 0)));
+    const max = Math.max(0, Math.min(Number(upToIndex || 0), absoluteMax));
     const vals = [];
     for (let i = 0; i <= max; i += 1) {
       const f = getFrame(i);
@@ -559,6 +561,9 @@ export async function createPHAdapter({ seedUrl = "./assets/sim/seed.json", rngS
     getRegions,
     getMacroTrends,
     getMacroTrendSeries,
+    getMaxStep() {
+      return Math.max(12, ...(seed?.events || []).map((e) => Number(e.atStep || e.step || 0)));
+    },
     getScenarioPresets() {
       return Object.values(SCENARIO_PRESETS);
     },

@@ -128,7 +128,7 @@ export function initTimeline() {
   const slider = $("#timelineSlider");
   const playBtn = $("#playBtn");
   const pauseBtn = $("#pauseBtn");
-  slider.max = "12";
+  slider.max = String(state.adapter.getMaxStep?.() || 12);
 
   const syncPlaybackButtons = () => {
     const isPlaying = Boolean(state.playbackTimer);
@@ -151,7 +151,8 @@ export function initTimeline() {
   playBtn.addEventListener("click", () => {
     if (state.playbackTimer) return;
     state.playbackTimer = window.setInterval(() => {
-      state.frameIndex = (state.frameIndex + 1) % 13;
+      const maxStep = Number(slider.max || 12);
+      state.frameIndex = (state.frameIndex + 1) % (maxStep + 1);
       state.adapter.ensureFrame(state.frameIndex);
       slider.value = String(state.frameIndex);
       renderTimeline();
