@@ -1,0 +1,20 @@
+:root{
+  --dk-bg:#0b1020;
+  --dk-panel:#121933;
+  --dk-line:#2a3762;
+  --dk-text:#e8eefc;
+  --dk-muted:#a8b6df;
+  --dk-primary:#5ea6ff;
+  --dk-success:#6fe3a1;
+  --dk-radius:12px;
+}
+*{box-sizing:border-box}
+body.dk{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--dk-bg);color:var(--dk-text);margin:0}
+.dk-wrap{max-width:980px;margin:0 auto;padding:24px}
+.dk-card{background:var(--dk-panel);border:1px solid var(--dk-line);border-radius:var(--dk-radius);padding:16px;margin-bottom:12px}
+.dk-btn{display:inline-block;text-decoration:none;background:var(--dk-primary);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+.dk-btn.ghost{background:transparent;border:1px solid var(--dk-line);color:var(--dk-text)}
+.dk-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:840px){.dk-grid.cols-3{grid-template-columns:1fr 1fr 1fr}.dk-grid.cols-2{grid-template-columns:1fr 1fr}}
+.dk-slot{border:1px dashed var(--dk-line);border-radius:10px;padding:10px;color:var(--dk-muted);font-size:.9rem}
+.dk-slot img{width:100%;border-radius:8px;display:block}

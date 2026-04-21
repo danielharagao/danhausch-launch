@@ -1,0 +1,12 @@
+{
+  "updatedAt": "2026-04-21",
+  "slots": [
+    {"id":"hero-ba-pro","page":"workshop-ba-pro.html","selector":"[data-slot='hero-ba-pro']","status":"pending","url":null},
+    {"id":"hero-gestao-projetos","page":"workshop-gestao-projetos-pro.html","selector":"[data-slot='hero-gestao-projetos']","status":"pending","url":null},
+    {"id":"hero-ia-pro","page":"workshop-ia-pro.html","selector":"[data-slot='hero-ia-pro']","status":"pending","url":null},
+    {"id":"dan-profile-main","page":"lp.html","selector":"[data-slot='dan-profile-main']","status":"pending","url":null},
+    {"id":"proof-result-1","page":"workshop-ba-pro.html","selector":"[data-slot='proof-result-1']","status":"pending","url":null},
+    {"id":"proof-result-2","page":"workshop-gestao-projetos-pro.html","selector":"[data-slot='proof-result-2']","status":"pending","url":null},
+    {"id":"proof-result-3","page":"workshop-ia-pro.html","selector":"[data-slot='proof-result-3']","status":"pending","url":null}
+  ]
+}
