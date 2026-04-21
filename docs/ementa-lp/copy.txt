@@ -73,8 +73,8 @@ Enquanto isso, entre no nosso grupo de WhatsApp de Business Analysts para recebe
 ## CTA WhatsApp (botão)
 **Entrar no grupo de WhatsApp**
 
-## Link do botão (placeholder)
-`[INSERIR_LINK_WHATSAPP_AQUI]`
+## Link do botão
+`https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl`
 
 ## Texto de apoio abaixo do botão
 No grupo, você recebe atualizações da turma, materiais úteis e lembretes importantes sobre o lançamento.
@@ -99,7 +99,7 @@ Olá, {{first_name | default:'tudo bem?'}},
 
 Aqui está a **ementa completa da formação BA Pro**:
 
-👉 **[INSERIR_LINK_DA_EMENTA_AQUI]**
+👉 **https://danielharagao.github.io/danhausch-launch/ementa-lp/BA_PRO_EMENTA.pdf**
 
 O BA Pro foi desenhado para quem quer parar de improvisar e atuar com método de BA sênior — com mais estrutura, consistência e confiança nas entregas.
 
@@ -129,7 +129,7 @@ Olá, {{first_name | default:'tudo bem?'}},
 
 Aqui está a ementa completa do BA Pro:
 
-👉 **[INSERIR_LINK_DA_EMENTA_AQUI]**
+👉 **https://danielharagao.github.io/danhausch-launch/ementa-lp/BA_PRO_EMENTA.pdf**
 
 No final da ementa você encontra o link de matrícula.
 
@@ -138,9 +138,9 @@ Dan
 
 ---
 
-## 5) Placeholders a substituir antes de publicar
-- `[INSERIR_LINK_WHATSAPP_AQUI]`
-- `[INSERIR_LINK_DA_EMENTA_AQUI]`
+## 5) Links já validados para publicação
+- `https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl`
+- `https://danielharagao.github.io/danhausch-launch/ementa-lp/BA_PRO_EMENTA.pdf`
 
 ---
 

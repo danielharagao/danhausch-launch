@@ -7,16 +7,14 @@
 - `styles.css` → estilos compartilhados
 - `app.js` → comportamento do formulário/links
 
-## Ajustes obrigatórios antes de publicar
-Edite `app.js` e troque:
-- `formAction`
-- `ementaPdfUrl`
-- `whatsappGroupUrl`
-
-No `email-ementa.html`, troque:
-- `[INSERIR_LINK_DA_EMENTA_AQUI]`
+## Status dos links de conversão (P0)
+Já configurados no pacote atual:
+- `formAction`: `https://api.danhausch.cloud/api/capture`
+- `ementaPdfUrl`: `./BA_PRO_EMENTA.pdf`
+- `whatsappGroupUrl`: `https://chat.whatsapp.com/G56Z6bR2hlKDVNKeNYMxgl`
+- Link público da ementa (e-mail/copy): `https://danielharagao.github.io/danhausch-launch/ementa-lp/BA_PRO_EMENTA.pdf`
 
 ## Teste local rápido
-Abra `ementa.html` no navegador.
+Abra `index.html` no navegador.
 
-> Dica: se não quiser enviar para backend agora, deixe `formAction` com placeholder e o formulário só redirecionará para `obrigado.html`.
+> Fallback seguro: caso algum link de checkout workshop ainda não esteja definido, usar a página `docs/funnels-missing-info-form.html` e sinalizar como **pendente de confirmação** no relatório central `docs/funnels-p0-placeholders-status.md`.
