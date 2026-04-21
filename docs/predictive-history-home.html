@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predictive History · Home</title>
+  <style>
+    :root{--bg:#0b1020;--card:#121933;--line:#2a3762;--txt:#e8eefc;--muted:#a8b6df;--acc:#5ea6ff;--ok:#6fe3a1}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(1000px 480px at 20% -10%,#1c2a59 0,#0b1020 55%);color:var(--txt)}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px}
+    .hero,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .hero{margin-bottom:14px}
+    h1,h2{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+    .btn{display:inline-block;text-decoration:none;color:#fff;background:var(--acc);padding:11px 14px;border-radius:10px;border:1px solid #8dc0ff;font-weight:600}
+    .btn.ghost{background:transparent;border-color:var(--line);color:var(--txt)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ok);font-size:.8rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <span class="pill">V5 ativo</span>
+      <h1>Predictive History</h1>
+      <p class="muted">Central operacional para simulações geopolíticas com países, líderes, empresas estratégicas e eventos marcantes.</p>
+      <div class="actions">
+        <a class="btn" href="/predictive-history/ph-app/">Entrar no War Room</a>
+        <a class="btn ghost" href="/predictive-history/ph-graph/">Abrir Grafo</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>War Room</h2>
+        <p class="muted">Simulação temporal, KPIs de risco, drivers causais e exploração operacional para tomada de decisão.</p>
+        <a class="btn" href="/predictive-history/ph-app/">Abrir War Room</a>
+      </article>
+      <article class="card">
+        <h2>Graph Explorer</h2>
+        <p class="muted">Visualização de rede por tipo de entidade e região, com conexões críticas e camadas de análise.</p>
+        <a class="btn" href="/predictive-history/ph-graph/">Abrir Grafo</a>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
