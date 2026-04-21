@@ -77,3 +77,25 @@ input[type="range"] { padding: 0; }
 .driver-item header { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .bar { height: 8px; border-radius: 999px; background: color-mix(in oklab, var(--line) 78%, transparent); overflow: hidden; }
 .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--warn), var(--danger)); }
+
+.tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.72);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 14px;
+}
+.tutorial-card {
+  width: min(560px, 96vw);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
+.tutorial-highlight {
+  outline: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 20%, transparent);
+  border-radius: 10px;
+}

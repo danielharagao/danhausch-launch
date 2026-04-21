@@ -1,5 +1,4 @@
 import { state, loadPresets, savePreset, deletePreset } from "./state.js";
-import { createApiClient, loadApiConfig, saveApiConfig } from "./api-client.js";
 
 const $ = (s) => document.querySelector(s);
 
@@ -241,46 +240,73 @@ export function initPresets() {
   fill();
 }
 
-export function initApiConfig() {
-  const form = $("#apiConfigForm");
-  if (!form) return;
+// API config UI removed by design. Configuration now code-only.
 
-  const status = $("#apiStatus");
-  const cfg = loadApiConfig();
-  form.elements.apiBaseUrl.value = cfg.baseUrl || "";
-  form.elements.apiToken.value = cfg.token || "";
-  form.elements.apiTimeoutMs.value = String(cfg.timeoutMs || 6000);
+export function initTutorial() {
+  const overlay = $("#tutorialOverlay");
+  const openBtn = $("#tutorialBtn");
+  if (!overlay || !openBtn) return;
 
-  const mode = state.adapter?.getStatus?.().mode || "local";
-  status.textContent = `Modo atual: ${mode === "api" ? "API (hardcoded)" : "Local (fallback)"}`;
+  const steps = [
+    { selector: "#filtersForm", title: "1) Defina o recorte", text: "Escolha tipo de entidade, região e risco mínimo para limitar o universo da simulação." },
+    { selector: "#tabs", title: "2) Navegue por visões", text: "Overview mostra KPIs; Timeline mostra evolução; Network mostra estrutura; Drivers explica causas." },
+    { selector: "#timelineSlider", title: "3) Simule no tempo", text: "Arraste o slider ou clique em Play para avançar os steps e observar mudanças de risco." },
+    { selector: "#networkCanvas", title: "4) Explore o grafo", text: "Clique em um nó para ver papel, afiliações e conexões críticas." },
+    { selector: "#driversList", title: "5) Entenda o porquê", text: "Drivers mostram os fatores que mais empurram o risco no frame atual." },
+  ];
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    saveApiConfig({
-      baseUrl: String(data.get("apiBaseUrl") || ""),
-      token: String(data.get("apiToken") || ""),
-      timeoutMs: Number(data.get("apiTimeoutMs") || 6000)
-    });
-    status.textContent = "Config salva. Recarregue para aplicar.";
+  let idx = 0;
+  const stepEl = $("#tutorialStep");
+  const titleEl = $("#tutorialTitle");
+  const textEl = $("#tutorialText");
+  const prevBtn = $("#tutorialPrev");
+  const nextBtn = $("#tutorialNext");
+  const skipBtn = $("#tutorialSkip");
+
+  function clearHighlights() {
+    document.querySelectorAll(".tutorial-highlight").forEach((el) => el.classList.remove("tutorial-highlight"));
+  }
+
+  function renderStep() {
+    const step = steps[idx];
+    stepEl.textContent = `Passo ${idx + 1}/${steps.length}`;
+    titleEl.textContent = step.title;
+    textEl.textContent = step.text;
+    prevBtn.disabled = idx === 0;
+    nextBtn.textContent = idx === steps.length - 1 ? "Concluir" : "Próximo";
+
+    clearHighlights();
+    const target = document.querySelector(step.selector);
+    if (target) {
+      target.classList.add("tutorial-highlight");
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  function openTutorial() {
+    idx = 0;
+    overlay.hidden = false;
+    renderStep();
+  }
+
+  function closeTutorial() {
+    overlay.hidden = true;
+    clearHighlights();
+  }
+
+  openBtn.addEventListener("click", openTutorial);
+  skipBtn.addEventListener("click", closeTutorial);
+  prevBtn.addEventListener("click", () => {
+    idx = Math.max(0, idx - 1);
+    renderStep();
   });
-
-  $("#apiTestBtn").addEventListener("click", async () => {
-    const testClient = createApiClient({
-      baseUrl: form.elements.apiBaseUrl.value,
-      token: form.elements.apiToken.value,
-      timeoutMs: Number(form.elements.apiTimeoutMs.value || 6000)
-    });
-    if (!testClient.isEnabled()) {
-      status.textContent = "API desativada (base URL vazia).";
+  nextBtn.addEventListener("click", () => {
+    if (idx >= steps.length - 1) {
+      closeTutorial();
       return;
     }
-    try {
-      await testClient.health();
-      status.textContent = "Conexão OK.";
-    } catch (err) {
-      status.textContent = `Falha: ${err.message}`;
-    }
+    idx += 1;
+    renderStep();
   });
 }
 

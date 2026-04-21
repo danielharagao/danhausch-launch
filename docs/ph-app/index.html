@@ -18,6 +18,7 @@
       </div>
       <div class="topbar-actions">
         <button id="themeToggle" class="btn ghost" aria-label="Alternar tema">☾ Tema</button>
+        <button id="tutorialBtn" class="btn ghost" aria-label="Abrir tutorial guiado">Tutorial</button>
         <button id="savePresetBtn" class="btn">Salvar preset</button>
       </div>
     </header>
@@ -132,6 +133,21 @@
         </article>
       </section>
     </main>
+  </div>
+
+  <div id="tutorialOverlay" class="tutorial-overlay" hidden>
+    <div class="tutorial-card">
+      <p class="eyebrow" id="tutorialStep">Passo 1/5</p>
+      <h3 id="tutorialTitle">Bem-vindo</h3>
+      <p id="tutorialText"></p>
+      <div class="row between">
+        <button id="tutorialSkip" class="btn ghost">Pular</button>
+        <div class="row">
+          <button id="tutorialPrev" class="btn ghost">Voltar</button>
+          <button id="tutorialNext" class="btn">Próximo</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="./assets/sim/engine.js"></script>
