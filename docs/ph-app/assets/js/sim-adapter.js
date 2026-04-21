@@ -101,10 +101,12 @@ function mapEvent(ev) {
   const confidence = String(ev.confidence || ev.confidenceLevel || "medium").toLowerCase();
   return {
     time: `Step ${ev.step}`,
+    step: Number(ev.step || 0),
     title: `${ev.name} [${ev.scope}]`,
     impact: direction,
     source,
-    confidence
+    confidence,
+    category: String(ev.category || "geo").toLowerCase()
   };
 }
 

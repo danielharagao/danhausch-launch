@@ -133,6 +133,15 @@
           <div class="row between">
             <h2>Timeline de cenários</h2>
             <div class="row">
+              <select id="eventCategoryFilter" aria-label="Filtrar categoria de evento">
+                <option value="all" selected>Todas categorias</option>
+                <option value="war">War</option>
+                <option value="econ">Econ</option>
+                <option value="tech">Tech</option>
+                <option value="social">Social</option>
+                <option value="geo">Geo</option>
+              </select>
+              <button id="jumpLastEventBtn" class="btn ghost">Último evento</button>
               <button id="playBtn" class="btn">▶ Play</button>
               <button id="pauseBtn" class="btn ghost">⏸ Pause</button>
             </div>

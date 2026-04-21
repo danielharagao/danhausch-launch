@@ -128,6 +128,8 @@ export function initTimeline() {
   const slider = $("#timelineSlider");
   const playBtn = $("#playBtn");
   const pauseBtn = $("#pauseBtn");
+  const categoryFilter = $("#eventCategoryFilter");
+  const jumpLastBtn = $("#jumpLastEventBtn");
   slider.max = String(state.adapter.getMaxStep?.() || 12);
 
   const syncPlaybackButtons = () => {
@@ -170,6 +172,26 @@ export function initTimeline() {
     syncPlaybackButtons();
   });
 
+  categoryFilter?.addEventListener("change", () => renderTimeline());
+
+  jumpLastBtn?.addEventListener("click", () => {
+    const maxStep = Number(slider.max || 12);
+    let lastStep = 0;
+    for (let i = maxStep; i >= 0; i -= 1) {
+      const f = state.adapter.getFrame(i);
+      if ((f.events || []).length) {
+        lastStep = i;
+        break;
+      }
+    }
+    state.frameIndex = lastStep;
+    slider.value = String(lastStep);
+    renderTimeline();
+    renderNetwork();
+    renderKpis();
+    renderDrivers();
+  });
+
   state.adapter.ensureFrame(0);
   renderTimeline();
   syncPlaybackButtons();
@@ -179,9 +201,11 @@ export function renderTimeline() {
   const frame = adapterFrame();
   $("#timelineLabel").textContent = frame.label;
   $("#scenarioScore").textContent = `Score: ${frame.score}`;
-  $("#timelineEvents").innerHTML = (frame.events || [])
-    .map((ev) => `<li><strong>${ev.time}</strong> · ${ev.title} <em>(${ev.impact})</em><div class="event-meta"><span class="badge-source">Fonte: ${ev.source}</span><span class="badge-confidence ${ev.confidence}">Confiança: ${ev.confidence}</span></div></li>`)
-    .join("") || "<li><em>Sem eventos no frame.</em></li>";
+  const cat = $("#eventCategoryFilter")?.value || "all";
+  const events = (frame.events || []).filter((ev) => cat === "all" || String(ev.category || "geo").includes(cat));
+  $("#timelineEvents").innerHTML = events
+    .map((ev) => `<li><strong>${ev.time}</strong> · ${ev.title} <em>(${ev.impact})</em><div class="event-meta"><span class="badge-source">Fonte: ${ev.source}</span><span class="badge-source">Categoria: ${ev.category}</span><span class="badge-confidence ${ev.confidence}">Confiança: ${ev.confidence}</span></div></li>`)
+    .join("") || "<li><em>Sem eventos no filtro atual.</em></li>";
 }
 
 export function initNetwork() {
