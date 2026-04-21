@@ -116,24 +116,6 @@ export function initFilters() {
   });
 }
 
-export function initCompareMode() {
-  const toggle = $("#compareModeToggle");
-  const scenario = $("#compareScenario");
-  if (!toggle || !scenario) return;
-
-  toggle.addEventListener("click", () => {
-    state.compareMode = !state.compareMode;
-    toggle.classList.toggle("is-active", state.compareMode);
-    toggle.textContent = state.compareMode ? "Compare: ON" : "Compare: OFF";
-    renderAll();
-  });
-
-  scenario.addEventListener("change", () => {
-    state.compareTarget = scenario.value;
-    renderAll();
-  });
-}
-
 export function renderKpis() {
   const cards = state.adapter.getKpiCards(adapterFrame(), state.filters);
   $("#kpiRisk").textContent = cards.kpiRisk;

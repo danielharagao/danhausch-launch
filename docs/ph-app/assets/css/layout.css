@@ -37,4 +37,6 @@
   .app-shell { padding: 10px; gap: 10px; }
   .topbar, .filters { padding: 12px; }
   .panel-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .delta-grid { grid-template-columns: 1fr 1fr; }
 }
