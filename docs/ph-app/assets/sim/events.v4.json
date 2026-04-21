@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "Predictive History Events Pack V4 - Recent Years",
-    "version": "4.2.0",
-    "description": "Curated high-impact events (2003-2025) with expanded war/conflict package (Ukraine, Iran/proxy escalations, Hormuz, Taiwan Strait) and mapped engine effects.",
+    "version": "4.3.0",
+    "description": "Curated high-impact events (2003-2026) with expanded geopolitical wars plus economy/technology shocks (NVIDIA, AI chips/export controls, semiconductors, sanctions, energy and trade disruptions).",
     "timeUnit": "month",
     "sourceSeed": "seed.v3.json"
   },
@@ -979,6 +979,208 @@
         "relations.influence": -0.03,
         "players.power": 0.02,
         "macro.investmentConfidence": -0.02,
+        "groups.economicExposure": 0.03
+      }
+    },
+    {
+      "id": "global-semiconductor-shortage-2021-v4",
+      "name": "Global semiconductor shortage disrupts autos and industrial supply chains",
+      "category": "technological",
+      "date": "2021-12",
+      "atStep": 36,
+      "scope": "technology",
+      "intensity": 0.19,
+      "target": {
+        "players": [
+          "us",
+          "china",
+          "japan",
+          "southkorea"
+        ],
+        "companies": [
+          "tsmc",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "macro.gdpTrend": -0.03,
+        "macro.inflation": 0.04,
+        "macro.tradeFlow": -0.04,
+        "groups.economicExposure": 0.05,
+        "relations.volatility": 0.05
+      }
+    },
+    {
+      "id": "us-oct-2022-chip-controls-v4",
+      "name": "US October 2022 advanced chip export controls against China",
+      "category": "technological",
+      "date": "2022-10",
+      "atStep": 37,
+      "scope": "technology",
+      "intensity": 0.22,
+      "target": {
+        "players": [
+          "us",
+          "china"
+        ],
+        "companies": [
+          "nvidia",
+          "asml",
+          "tsmc",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "relations.influence": -0.05,
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.04,
+        "macro.investmentConfidence": -0.02,
+        "players.power": 0.02
+      }
+    },
+    {
+      "id": "nvidia-ai-supercycle-2023-v4",
+      "name": "NVIDIA AI supercycle accelerates global compute capex",
+      "category": "technological",
+      "date": "2023-05",
+      "atStep": 38,
+      "scope": "technology",
+      "intensity": 0.21,
+      "target": {
+        "companies": [
+          "nvidia",
+          "openai",
+          "microsoft"
+        ]
+      },
+      "effects": {
+        "macro.investmentConfidence": 0.09,
+        "macro.gdpTrend": 0.03,
+        "players.power": 0.03,
+        "players.economyInfluence": 0.02,
+        "relations.volatility": 0.03
+      }
+    },
+    {
+      "id": "red-sea-shipping-cost-shock-2024-v4",
+      "name": "Red Sea shipping disruptions create trade and inflation shock",
+      "category": "geopolitical",
+      "date": "2024-01",
+      "atStep": 39,
+      "scope": "geopolitical",
+      "intensity": 0.19,
+      "target": {
+        "players": [
+          "eu",
+          "us",
+          "india",
+          "saudi"
+        ],
+        "companies": [
+          "maersk",
+          "cosco",
+          "dhl"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": -0.07,
+        "macro.inflation": 0.04,
+        "groups.economicExposure": 0.05,
+        "relations.volatility": 0.06
+      }
+    },
+    {
+      "id": "us-ai-chip-rule-tightening-2024-v4",
+      "name": "US tightens AI chip licensing pathways and compliance",
+      "category": "technological",
+      "date": "2024-01",
+      "atStep": 40,
+      "scope": "technology",
+      "intensity": 0.2,
+      "target": {
+        "companies": [
+          "nvidia",
+          "asml",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "relations.influence": -0.05,
+        "relations.volatility": 0.07,
+        "macro.tradeFlow": -0.03,
+        "macro.investmentConfidence": -0.02
+      }
+    },
+    {
+      "id": "opec-plus-supply-management-2025-v4",
+      "name": "OPEC+ supply management cycle sustains energy-price volatility",
+      "category": "economic",
+      "date": "2025-01",
+      "atStep": 41,
+      "scope": "energy",
+      "intensity": 0.18,
+      "target": {
+        "players": [
+          "saudi",
+          "russia",
+          "opec"
+        ]
+      },
+      "effects": {
+        "macro.inflation": 0.04,
+        "macro.tradeFlow": -0.02,
+        "groups.economicExposure": 0.03,
+        "relations.volatility": 0.04
+      }
+    },
+    {
+      "id": "us-chip-controls-expansion-2025-v4",
+      "name": "US expands controls on advanced AI chips and semiconductor tooling",
+      "category": "technological",
+      "date": "2025-04",
+      "atStep": 42,
+      "scope": "technology",
+      "intensity": 0.22,
+      "target": {
+        "players": [
+          "us",
+          "china"
+        ],
+        "companies": [
+          "nvidia",
+          "tsmc",
+          "asml",
+          "samsung"
+        ]
+      },
+      "effects": {
+        "relations.influence": -0.06,
+        "relations.volatility": 0.08,
+        "macro.tradeFlow": -0.05,
+        "groups.economicExposure": 0.03
+      }
+    },
+    {
+      "id": "global-trade-fragmentation-wave-2026-v4",
+      "name": "Renewed tariff and industrial-policy fragmentation wave",
+      "category": "economic",
+      "date": "2026-02",
+      "atStep": 43,
+      "scope": "economy",
+      "intensity": 0.18,
+      "target": {
+        "players": [
+          "us",
+          "china",
+          "eu",
+          "g20"
+        ]
+      },
+      "effects": {
+        "macro.tradeFlow": -0.06,
+        "macro.inflation": 0.03,
+        "relations.influence": -0.04,
+        "groups.grievance": 0.03,
         "groups.economicExposure": 0.03
       }
     }
