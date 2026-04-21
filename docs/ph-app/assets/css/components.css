@@ -19,10 +19,13 @@ button, select, input { min-height: 40px; }
   border: 1px solid color-mix(in oklab, var(--accent) 70%, #fff 20%);
   padding: 9px 12px;
   cursor: pointer;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
 }
 .btn.ghost { background: transparent; color: var(--text); }
 .btn.danger { background: var(--danger); border-color: transparent; }
-.btn:hover { filter: brightness(1.06); }
+.btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 75%, white); outline-offset: 2px; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
@@ -79,8 +82,9 @@ button, select, input { min-height: 40px; }
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  transition: transform .14s ease, border-color .14s ease, box-shadow .14s ease;
 }
-.network-node:hover { border-color: var(--accent); }
+.network-node:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.22); }
 .network-node .meta { color: var(--muted); font-size: .82rem; }
 .detail-box { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }
 
