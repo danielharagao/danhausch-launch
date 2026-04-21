@@ -286,27 +286,45 @@ export function initTutorial() {
   function openTutorial() {
     idx = 0;
     overlay.hidden = false;
+    overlay.style.display = "grid";
     renderStep();
   }
 
   function closeTutorial() {
     overlay.hidden = true;
+    overlay.style.display = "none";
     clearHighlights();
   }
 
-  openBtn.addEventListener("click", openTutorial);
-  skipBtn.addEventListener("click", closeTutorial);
-  prevBtn.addEventListener("click", () => {
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openTutorial();
+  });
+  skipBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeTutorial();
+  });
+  prevBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     idx = Math.max(0, idx - 1);
     renderStep();
   });
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     if (idx >= steps.length - 1) {
       closeTutorial();
       return;
     }
     idx += 1;
     renderStep();
+  });
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeTutorial();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (!overlay.hidden && e.key === "Escape") closeTutorial();
   });
 }
 
