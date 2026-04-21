@@ -80,8 +80,22 @@
         </div>
       </form>
 
+      <section class="scenario-box">
+        <h3>Scenario Builder</h3>
+        <p id="activeScenarioBadge" class="muted">Cenário ativo: base (sem choque)</p>
+        <button id="openScenarioWizardBtn" class="btn">Novo cenário guiado</button>
+        <div class="row">
+          <select id="scenarioSelect"></select>
+          <button id="applyScenarioBtn" class="btn ghost">Aplicar</button>
+        </div>
+        <div class="row">
+          <button id="clearScenarioBtn" class="btn ghost">Limpar cenário</button>
+          <button id="deleteScenarioBtn" class="btn danger">Excluir salvo</button>
+        </div>
+      </section>
+
       <section class="preset-box">
-        <h3>Presets locais</h3>
+        <h3>Presets locais (filtros)</h3>
         <div class="row">
           <select id="presetSelect"></select>
           <button id="loadPresetBtn" class="btn ghost">Carregar</button>
@@ -110,6 +124,8 @@
           <h2>Macrotrends</h2>
           <div id="macroTrends" class="macro-list"></div>
         </article>
+
+        <article id="comparePanel" class="compare-panel" hidden></article>
       </section>
 
       <section id="panel-timeline" class="tab-panel" data-panel="timeline" role="tabpanel" aria-labelledby="tab-timeline">
@@ -121,10 +137,11 @@
               <button id="pauseBtn" class="btn ghost">⏸ Pause</button>
             </div>
           </div>
-          <input id="timelineSlider" type="range" min="0" max="0" step="1" value="0" />
+          <label for="timelineSlider" class="sr-only">Controle o frame da timeline</label>
+          <input id="timelineSlider" type="range" min="0" max="0" step="1" value="0" aria-describedby="timelineLabel scenarioScore" />
           <div class="row between">
-            <small id="timelineLabel">--</small>
-            <small id="scenarioScore">Score: --</small>
+            <small id="timelineLabel" aria-live="polite">--</small>
+            <small id="scenarioScore" aria-live="polite">Score: --</small>
           </div>
           <ul id="timelineEvents" class="event-list"></ul>
         </article>
@@ -136,8 +153,8 @@
             <h2>Explorer de rede</h2>
             <small id="networkBreadcrumb">Nível: rede completa</small>
           </div>
-          <div id="networkCanvas" class="network-canvas"></div>
-          <aside id="networkDetail" class="detail-box"></aside>
+          <div id="networkCanvas" class="network-canvas" role="list" aria-label="Nós da rede no recorte atual"></div>
+          <aside id="networkDetail" class="detail-box" aria-live="polite"></aside>
         </article>
       </section>
 
@@ -170,6 +187,47 @@
           <button id="tutorialNext" class="btn">Próximo</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="scenarioWizardOverlay" class="tutorial-overlay" hidden>
+    <div class="tutorial-card wizard-card">
+      <div class="row between">
+        <p class="eyebrow">Scenario Builder</p>
+        <button id="closeScenarioWizard" class="btn ghost">Fechar</button>
+      </div>
+      <h3>Criar cenário guiado</h3>
+      <form id="scenarioWizardForm" class="stack">
+        <label>Nome do cenário
+          <input type="text" name="name" placeholder="Ex: War · Europa alta intensidade" required />
+        </label>
+
+        <label>Preset-base
+          <select id="scenarioPreset" name="presetId"></select>
+        </label>
+
+        <p id="scenarioPresetDescription" class="muted"></p>
+
+        <label>Intensidade: <strong id="scenarioIntensityValue">50%</strong>
+          <input id="scenarioIntensity" type="range" name="intensity" min="0" max="100" value="50" />
+        </label>
+
+        <label>Escopo
+          <select id="scenarioScope" name="scope">
+            <option value="global">Global</option>
+            <option value="americas">Américas</option>
+            <option value="europe">Europa</option>
+            <option value="asia">Ásia</option>
+            <option value="middle-east">Oriente Médio</option>
+            <option value="africa">África</option>
+          </select>
+        </label>
+
+        <div class="row between">
+          <button id="cancelScenarioWizard" type="button" class="btn ghost">Cancelar</button>
+          <button type="submit" class="btn">Salvar e aplicar</button>
+        </div>
+      </form>
     </div>
   </div>
 

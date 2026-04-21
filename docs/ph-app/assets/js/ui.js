@@ -163,6 +163,7 @@ export function initTimeline() {
     renderNetwork();
     renderKpis();
     renderDrivers();
+    renderCompare();
   });
 
   playBtn.addEventListener("click", () => {
@@ -175,6 +176,7 @@ export function initTimeline() {
       renderNetwork();
       renderKpis();
       renderDrivers();
+      renderCompare();
     }, 1400);
     syncPlaybackButtons();
   });
@@ -473,7 +475,89 @@ export function initScenarioBuilder() {
 // API config UI removed by design. Configuration now code-only.
 
 export function initCompareMode() {
-  // Mantido para compatibilidade com versões anteriores da UI.
+  const toggle = $("#compareModeToggle");
+  const scenario = $("#compareScenario");
+  if (!toggle || !scenario) return;
+
+  toggle.addEventListener("click", () => {
+    state.compareMode = !state.compareMode;
+    toggle.classList.toggle("is-active", state.compareMode);
+    toggle.textContent = state.compareMode ? "Compare: ON" : "Compare: OFF";
+    renderAll();
+  });
+
+  scenario.addEventListener("change", () => {
+    state.compareTarget = scenario.value;
+    renderAll();
+  });
+}
+
+export function renderCompare() {
+  const panel = $("#comparePanel");
+  if (!panel) return;
+  if (!state.compareMode) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+
+  const base = adapterFrame();
+  const candidate = compareFrame();
+  if (!candidate) return;
+
+  const baseK = base.kpis || {};
+  const candK = candidate.kpis || {};
+  const baseSnap = base.snapshot || {};
+  const candSnap = candidate.snapshot || {};
+
+  const baseDrivers = new Set((base.explainability?.topDrivers || []).map((d) => d.driver));
+  const candDrivers = new Set((candidate.explainability?.topDrivers || []).map((d) => d.driver));
+
+  const baseNodes = (baseSnap.groups?.length || 0) + (baseSnap.players?.length || 0);
+  const candNodes = (candSnap.groups?.length || 0) + (candSnap.players?.length || 0);
+  const baseEdges = baseSnap.relations?.length || 0;
+  const candEdges = candSnap.relations?.length || 0;
+
+  panel.hidden = false;
+  panel.innerHTML = `
+    <div class="compare-grid">
+      <article class="card compare-col">
+        <p class="eyebrow">Baseline</p>
+        <h3>${base.label}</h3>
+        <ul>
+          <li>Risco conflito: <strong>${Math.round((baseK.riskConflict || 0) * 100)}%</strong></li>
+          <li>Estabilidade: <strong>${Math.round((baseK.institutionalStability || 0) * 100)}%</strong></li>
+          <li>Polarização: <strong>${Math.round((baseK.polarization || 0) * 100)}%</strong></li>
+          <li>Resiliência econômica: <strong>${Math.round((baseK.economicResilience || 0) * 100)}%</strong></li>
+        </ul>
+      </article>
+      <article class="card compare-col">
+        <p class="eyebrow">${state.compareTarget === "scenarioA" ? "Scenario A" : "Scenario B"}</p>
+        <h3>${candidate.label}</h3>
+        <ul>
+          <li>Risco conflito: <strong>${Math.round((candK.riskConflict || 0) * 100)}%</strong></li>
+          <li>Estabilidade: <strong>${Math.round((candK.institutionalStability || 0) * 100)}%</strong></li>
+          <li>Polarização: <strong>${Math.round((candK.polarization || 0) * 100)}%</strong></li>
+          <li>Resiliência econômica: <strong>${Math.round((candK.economicResilience || 0) * 100)}%</strong></li>
+        </ul>
+      </article>
+    </div>
+    <article class="card compare-deltas">
+      <h3>Deltas vs Baseline</h3>
+      <div class="delta-grid">
+        <div><small>Δ risco conflito</small><strong>${signedDelta(baseK.riskConflict || 0, candK.riskConflict || 0)}</strong></div>
+        <div><small>Δ estabilidade</small><strong>${signedDelta(baseK.institutionalStability || 0, candK.institutionalStability || 0)}</strong></div>
+        <div><small>Δ polarização</small><strong>${signedDelta(baseK.polarization || 0, candK.polarization || 0)}</strong></div>
+        <div><small>Δ resiliência econômica</small><strong>${signedDelta(baseK.economicResilience || 0, candK.economicResilience || 0)}</strong></div>
+        <div><small>Δ nós</small><strong>${candNodes - baseNodes > 0 ? "+" : ""}${candNodes - baseNodes}</strong></div>
+        <div><small>Δ arestas</small><strong>${candEdges - baseEdges > 0 ? "+" : ""}${candEdges - baseEdges}</strong></div>
+      </div>
+      <div class="compare-drivers row">
+        <div><small>Drivers novos</small><p>${[...candDrivers].filter((d) => !baseDrivers.has(d)).join(", ") || "Nenhum"}</p></div>
+        <div><small>Drivers que saíram</small><p>${[...baseDrivers].filter((d) => !candDrivers.has(d)).join(", ") || "Nenhum"}</p></div>
+      </div>
+    </article>
+  `;
 }
 
 export function initTutorial() {
@@ -570,4 +654,5 @@ export function renderAll() {
   renderTimeline();
   renderNetwork();
   renderDrivers();
+  renderCompare();
 }
