@@ -1,93 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfred Command Center - BA Pro</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
-        header { background: #1a1a1a; color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; text-align: center; }
-        h1 { margin: 0; font-size: 2.2em; letter-spacing: -1px; }
-        h2 { color: #007aff; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-top: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
-        .card:hover { transform: translateY(-5px); }
-        .card.estrategia { border-top: 6px solid #ff2d55; }
-        .card.curso { border-top: 6px solid #007aff; }
-        .card.conteudo { border-top: 6px solid #ff9500; }
-        .card.financeiro { border-top: 6px solid #28a745; }
-        .card.tech { border-top: 6px solid #5856d6; }
-        .card.operacional { border-top: 6px solid #8e8e93; }
-        .card h3 { margin-top: 0; display: flex; align-items: center; gap: 10px; }
-        .date { color: #8e8e93; font-size: 0.9em; margin-top: 5px; }
-        footer { margin-top: 60px; padding: 20px; font-size: 0.85em; color: #8e8e93; text-align: center; border-top: 1px solid #ddd; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan Hausch | Hub de Workshops</title>
+  <meta name="description" content="Escolha seu workshop: BA, Gestão de Projetos ou IA." />
+  <style>
+    :root{--bg:#0b1020;--card:#121933;--line:#2a3762;--text:#e8eefc;--muted:#a8b6df;--acc:#5ea6ff}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1000px 480px at 20% -10%,#1c2a59 0,#0b1020 55%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px}
+    h1,h2,p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr 1fr}}
+    .btn{display:inline-block;text-decoration:none;background:var(--acc);color:#fff;padding:11px 14px;border-radius:10px;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:#9ed1ff;font-size:.8rem}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>🤵 Alfred Command Center</h1>
-        <p>Estratégia Global: Daniel Hausch (@danhausch) - BA Pro</p>
-        <div class="date">Atualizado em: 12 de Fevereiro de 2026</div>
-    </header>
+  <div class="wrap">
+    <section class="card">
+      <span class="pill">Hub oficial</span>
+      <h1>Dan Hausch · Workshops Pro</h1>
+      <p class="muted">Escolha sua trilha e avance para a página de pagamento dedicada.</p>
+      <div class="actions">
+        <a class="btn ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn ghost" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </section>
 
-    <div class="grid">
-        <a href="estrategia.html" class="card estrategia">
-            <h3>🎯 Estratégia & Fundamentos</h3>
-            <p>Branding (CREATE), Persona e Posicionamento de Mercado.</p>
-        </a>
-
-        <a href="curso.html" class="card curso">
-            <h3>🎓 Hub do Curso</h3>
-            <p>Ementa, Mentor e ativos educacionais do treinamento.</p>
-        </a>
-
-        <a href="marketing.html" class="card conteudo" style="border-top: 6px solid #ff2d55;">
-            <h3>📣 Marketing & Copy</h3>
-            <p>Sequências de e-mails, anúncios e ativos de conversão.</p>
-        </a>
-
-        <a href="conteudo.html" class="card conteudo">
-            <h3>🎬 Conteúdo & Autoridade</h3>
-            <p>Planejamento de YouTube, Redes Sociais e Funis.</p>
-        </a>
-
-        <a href="financeiro.html" class="card financeiro">
-            <h3>💰 Gestão Financeira</h3>
-            <p>Budget, ROI e metas de faturamento.</p>
-        </a>
-
-        <a href="tech.html" class="card tech">
-            <h3>💻 Infraestrutura & Tech</h3>
-            <p>Requirements da plataforma e ferramentas de automação.</p>
-        </a>
-
-        <a href="action-plan.html" class="card operacional">
-            <h3>⚙️ Plano de Lançamento (15/03)</h3>
-            <p>Estratégia completa: Aquecimento, Carrinho e Pós-Venda.</p>
-        </a>
-
-        <a href="tasks.html" class="card operacional" style="border-top: 6px solid #8e8e93;">
-            <h3>📋 Checklist Operacional</h3>
-            <p>Rotina diária de execução e tasks técnicas.</p>
-        </a>
-    </div>
-
-    <div style="margin-top: 40px;" class="card">
-        <h3>🚀 Ativos Rápidos & Branding</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
-            <a href="inventario.html" style="text-decoration: none; color: #fff; background: #007aff; font-weight: bold; padding: 10px; border-radius: 8px;">🗂️ Inventário de Assets</a>
-            <a href="https://danhausch.meublog.net/" target="_blank" style="text-decoration: none; color: #2ecc71; font-weight: bold; padding: 10px; background: #f0fff4; border-radius: 8px;">📝 Blog do BA</a>
-            <a href="blueprint-funil.html" style="text-decoration: none; color: #ff9500; font-weight: bold; padding: 10px; background: #fff8f0; border-radius: 8px;">📊 Blueprint do Funil</a>
-            <a href="lp.html" style="text-decoration: none; color: #007aff; font-weight: bold; padding: 10px; background: #f0f7ff; border-radius: 8px;">🌐 Landing Page</a>
-            <a href="../../danhausch-branding/pages/ba-presale/index.html" style="text-decoration: none; color: #5856d6; font-weight: bold; padding: 10px; background: #f5f5ff; border-radius: 8px;">🎟️ Pré-Venda Branding</a>
-            <a href="../../danhausch-branding/pages/home/index.html" style="text-decoration: none; color: #5856d6; font-weight: bold; padding: 10px; background: #f5f5ff; border-radius: 8px;">🏠 Home Branding</a>
-            <a href="../../danhausch-branding/pages/links/index.html" style="text-decoration: none; color: #5856d6; font-weight: bold; padding: 10px; background: #f5f5ff; border-radius: 8px;">🔗 Linktree Branding</a>
-        </div>
-    </div>
-
-    <footer>
-        Gerado por Alfred (OpenClaw) para Daniel Hausch. <br>
-        Repositório: <a href="https://github.com/danielharagao/danhausch-launch" style="color: #007aff; text-decoration: none;">danielharagao/danhausch-launch</a>
-    </footer>
+    <section class="grid">
+      <article class="card">
+        <h2>Workshop Pro de BA</h2>
+        <p class="muted">Método para análise de negócios com clareza, estrutura e entrega.</p>
+        <a class="btn" href="workshop-ba-pro.html">Entrar</a>
+      </article>
+      <article class="card">
+        <h2>Workshop Pro de Gestão de Projetos</h2>
+        <p class="muted">Execução previsível, gestão de risco e comunicação executiva.</p>
+        <a class="btn" href="workshop-gestao-projetos-pro.html">Entrar</a>
+      </article>
+      <article class="card">
+        <h2>Workshop Pro de IA</h2>
+        <p class="muted">IA aplicada para acelerar análise, decisão e produtividade real.</p>
+        <a class="btn" href="workshop-ia-pro.html">Entrar</a>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
