@@ -13,9 +13,13 @@ class Settings(BaseSettings):
             "http://localhost:3000",
             "http://localhost:5173",
             "https://danielharagao.github.io",
+            "https://danhausch.cloud",
         ]
     )
     cors_origin_regex: str = r"https://.*\.github\.io"
+
+    admin_delete_token: str = ""
+    docs_root_path: str = "/root/.openclaw/workspace/launch-repo/docs"
 
 
 settings = Settings()

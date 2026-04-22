@@ -1,10 +1,13 @@
+from pathlib import Path
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
+from fastapi import APIRouter, Depends, Header, HTTPException, Query, Response, status
+from pydantic import BaseModel
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.db.session import get_db
 from app.schemas import (
     ExplainTopDriversResponse,
@@ -17,6 +20,10 @@ from app.schemas import (
 )
 
 router = APIRouter()
+
+
+class DeleteDocsRequest(BaseModel):
+    paths: list[str]
 
 
 @router.get("/health")
@@ -232,3 +239,35 @@ def delete_preset(preset_id: UUID, db: Session = Depends(get_db)) -> Response:
     if result.rowcount == 0:
         raise HTTPException(status_code=404, detail="preset not found")
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@router.post("/api/admin/docs/delete")
+def delete_docs(payload: DeleteDocsRequest, x_admin_token: str | None = Header(default=None)) -> dict:
+    if not settings.admin_delete_token:
+        raise HTTPException(status_code=503, detail="admin delete token not configured")
+    if x_admin_token != settings.admin_delete_token:
+        raise HTTPException(status_code=401, detail="invalid admin token")
+
+    root = Path(settings.docs_root_path).resolve()
+    deleted: list[str] = []
+    skipped: list[str] = []
+
+    for rel in payload.paths:
+        rel = (rel or "").strip().lstrip("/")
+        if not rel or rel.endswith("/"):
+            skipped.append(rel)
+            continue
+        candidate = (root / rel).resolve()
+        if root not in candidate.parents:
+            skipped.append(rel)
+            continue
+        if candidate.name in {"docs-catalog.html"}:
+            skipped.append(rel)
+            continue
+        if candidate.exists() and candidate.is_file():
+            candidate.unlink(missing_ok=True)
+            deleted.append(rel)
+        else:
+            skipped.append(rel)
+
+    return {"deleted": deleted, "skipped": skipped, "count": len(deleted)}

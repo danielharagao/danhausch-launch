@@ -19,6 +19,10 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-predictive_history}
       APP_ENV: ${APP_ENV:-dev}
+      ADMIN_DELETE_TOKEN: ${ADMIN_DELETE_TOKEN:-change-me}
+      DOCS_ROOT_PATH: ${DOCS_ROOT_PATH:-/root/.openclaw/workspace/launch-repo/docs}
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:3000","http://localhost:5173","https://danielharagao.github.io","https://danhausch.cloud"]}
+      CORS_ORIGIN_REGEX: ${CORS_ORIGIN_REGEX:-https://.*\\.github\\.io}
     ports:
       - "${API_PORT:-8000}:8000"
     depends_on:
