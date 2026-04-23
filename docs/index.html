@@ -10,115 +10,159 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);} 
     gtag('js', new Date());
     gtag('config', 'G-KQY9Y5HJGZ');
   </script>
 
   <style>
     :root{
-      --bg:#0a0f1d;
-      --panel:#111a2f;
-      --line:#2a385f;
+      --bg:#0b1020;
+      --bg-soft:#111831;
       --text:#eaf0ff;
-      --muted:#a9b8df;
-      --blue:#0f4c6b;
-      --orange:#ea6a1b;
-      --white:#f3f6ff;
+      --muted:#aeb9dc;
+      --primary:#0f4c6b;
+      --accent:#ea6a1b;
+      --max:1080px;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0a0f1d,#0b1326);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px 16px 50px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
-    .hero{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
-    .mood-band{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0d1427}
-    .mood-band img{display:block;width:100%;height:100%;object-fit:cover}
-    .pill{display:inline-block;font-size:.78rem;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:#9fd3ff}
-    h1{font-size:2rem;line-height:1.1;margin:.45rem 0}
-    h2{margin:0 0 8px}
-    p{margin:0 0 10px}
-    .muted{color:var(--muted)}
-    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .btn{display:inline-block;text-decoration:none;font-weight:800;padding:11px 15px;border-radius:10px;border:1px solid transparent}
-    .btn.primary{background:var(--orange);color:#fff}
-    .btn.secondary{background:transparent;border-color:var(--line);color:var(--text)}
-    .kpis{display:grid;grid-template-columns:1fr;gap:10px}
-    @media(min-width:760px){.kpis{grid-template-columns:repeat(3,1fr)}}
-    .kpi{background:#0d1630;border:1px solid var(--line);border-radius:12px;padding:12px}
-    .kpi strong{font-size:1.3rem}
-    .grid{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-    .workshop{border-top:4px solid var(--orange)}
-    .workshop h3{margin:0 0 8px}
-    ul{margin:8px 0 0;padding-left:18px}
-    .note{background:#0e2740;border:1px solid #24557e}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 10% -10%, #1a2550 0%, var(--bg) 55%);
+      line-height:1.55;
+    }
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    section{padding:56px 0}
+
+    .hero{padding:74px 0 46px}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+    @media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:34px}}
+
+    .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd3ff;margin-bottom:10px}
+    h1{font-size:clamp(2rem,4.8vw,3.4rem);line-height:1.08;margin:0 0 14px}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:62ch}
+
+    .hero-media{border-radius:18px;overflow:hidden;min-height:320px;background:#0f1730}
+    .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{border:1px solid rgba(255,255,255,.16);color:var(--text)}
+
+    .strip{padding:18px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .strip-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    @media(min-width:760px){.strip-grid{grid-template-columns:repeat(3,1fr)}}
+    .strip-item{color:var(--muted)}
+    .strip-item strong{display:block;color:var(--text);font-size:1.2rem}
+
+    h2{font-size:clamp(1.4rem,2.4vw,2rem);margin:0 0 10px}
+    .sub{color:var(--muted);max-width:70ch}
+
+    .workshops{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+    @media(min-width:980px){.workshops{grid-template-columns:repeat(3,1fr)}}
+    .workshop{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      padding:18px;
+      border-radius:14px;
+      min-height:240px;
+    }
+    .workshop h3{margin:0 0 8px;font-size:1.18rem}
+    .workshop p{margin:0 0 8px;color:var(--muted)}
+    .workshop ul{margin:10px 0 14px;padding-left:18px;color:var(--muted)}
+
+    .about{background:rgba(255,255,255,.02)}
+    .about p{max-width:76ch;color:var(--muted)}
+
+    .note{margin-top:14px;color:#d7e3ff;font-weight:600}
+
+    footer{padding:34px 0 50px;color:var(--muted);font-size:.92rem}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="card hero">
-      <div>
-        <span class="pill">Dan Hausch · Consultoria & Workshops</span>
-        <h1>Do caos para clareza:<br>entregas com método, sem improviso sob pressão.</h1>
-        <p class="muted">Eu ajudo analistas de negócios a sair do medo e da insegurança para conduzir entregas com confiança. Formado em Administração, MBA em inovação, pós em produtos de IA no MIT, 10 anos de experiência e liderança em IA Generativa.</p>
-        <div class="cta-row">
-          <a class="btn primary w-link" data-w="ba" href="workshop-ba-pro.html">Garantir vaga · Workshop BA</a>
-          <a class="btn secondary" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn secondary" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Dan Hausch · Consultoria & Workshops</span>
+          <h1>Do caos para clareza.<br>Sem improviso sob pressão.</h1>
+          <p class="lead">Eu ajudo analistas de negócios a sair do medo e da insegurança para conduzir entregas com estrutura, método e confiança em ambientes de alta exigência.</p>
+          <div class="actions">
+            <a class="btn btn-primary w-link" data-w="ba" href="workshop-ba-pro.html">Garantir minha vaga</a>
+            <a class="btn btn-ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop" alt="Dan em contexto executivo" />
         </div>
       </div>
-      <div class="mood-band">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop" alt="Dan em contexto corporativo" />
+    </section>
+
+    <section class="strip">
+      <div class="container strip-grid">
+        <div class="strip-item"><strong>10 vagas</strong>por workshop (ao vivo)</div>
+        <div class="strip-item"><strong>R$ 697</strong>por trilha</div>
+        <div class="strip-item"><strong>10+ anos</strong>de experiência prática</div>
       </div>
     </section>
 
-    <section class="kpis">
-      <article class="kpi"><p class="muted">Vagas por workshop</p><strong>10</strong><p class="muted">ao vivo, sem replay de turma</p></article>
-      <article class="kpi"><p class="muted">Investimento</p><strong>R$ 697</strong><p class="muted">por workshop</p></article>
-      <article class="kpi"><p class="muted">Expertise</p><strong>10+ anos</strong><p class="muted">BA, projetos e IA aplicada</p></article>
+    <section class="about">
+      <div class="container">
+        <h2>Quem é Dan Hausch</h2>
+        <p>Formado em Administração, MBA em inovação e pós em produtos de IA no MIT. Atua há 10 anos com análise de negócios e atualmente lidera iniciativas de IA Generativa no maior operador de saúde do Brasil. Já trabalhou com Apple, Lenovo, Ambev, M&T Bank e Hapvida.</p>
+        <p class="note">Conceitos complexos, explicações simples — diretas e com humor.</p>
+      </div>
     </section>
 
-    <section class="card note">
-      <h2>Oferta & Urgência</h2>
-      <p>Turmas ao vivo. <strong>Perdeu a data, perdeu a turma.</strong> Abertura limitada para manter qualidade e acompanhamento.</p>
+    <section>
+      <div class="container">
+        <h2>Escolha sua trilha</h2>
+        <p class="sub">Workshops ao vivo para profissionais que querem mais resultado com método. Perdeu a data, perdeu a turma.</p>
+
+        <div class="workshops">
+          <article class="workshop">
+            <h3>Workshop Pro de BA</h3>
+            <p>Para analistas que querem estrutura para decidir e entregar sob pressão.</p>
+            <ul>
+              <li>Diagnóstico e priorização sem caos</li>
+              <li>Requisitos com menos retrabalho</li>
+              <li>Comunicação de sênior com negócio e tech</li>
+            </ul>
+            <a class="btn btn-primary w-link" data-w="ba" href="workshop-ba-pro.html">Entrar</a>
+          </article>
+
+          <article class="workshop">
+            <h3>Workshop Pro de Gestão de Projetos</h3>
+            <p>Execução previsível, risco sob controle e comunicação executiva.</p>
+            <ul>
+              <li>Planejamento executável</li>
+              <li>Status e risco com clareza</li>
+              <li>Governança orientada a resultado</li>
+            </ul>
+            <a class="btn btn-primary w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Entrar</a>
+          </article>
+
+          <article class="workshop">
+            <h3>Workshop Pro de IA</h3>
+            <p>Para experientes que não querem ficar para trás na aplicação prática de IA.</p>
+            <ul>
+              <li>Fluxos e prompts realmente úteis</li>
+              <li>Produtividade com qualidade</li>
+              <li>IA aplicada à decisão e execução</li>
+            </ul>
+            <a class="btn btn-primary w-link" data-w="ia" href="workshop-ia-pro.html">Entrar</a>
+          </article>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section class="grid cols-3">
-      <article class="card workshop">
-        <h3>Workshop Pro de BA</h3>
-        <p class="muted">Para analistas que querem estrutura para decidir e entregar sob pressão.</p>
-        <ul>
-          <li>Diagnóstico e priorização sem caos</li>
-          <li>Requisitos com menos retrabalho</li>
-          <li>Comunicação de sênior com negócio e tech</li>
-        </ul>
-        <p class="cta-row"><a class="btn primary w-link" data-w="ba" href="workshop-ba-pro.html">Entrar</a></p>
-      </article>
-
-      <article class="card workshop">
-        <h3>Workshop Pro de Gestão de Projetos</h3>
-        <p class="muted">Para analistas e líderes que precisam de previsibilidade e governança na execução.</p>
-        <ul>
-          <li>Planejamento executável</li>
-          <li>Risco e status com clareza</li>
-          <li>Entrega com menos ruído</li>
-        </ul>
-        <p class="cta-row"><a class="btn primary w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Entrar</a></p>
-      </article>
-
-      <article class="card workshop">
-        <h3>Workshop Pro de IA</h3>
-        <p class="muted">Para profissionais experientes que não querem ficar para trás na aplicação prática de IA.</p>
-        <ul>
-          <li>IA aplicada ao dia a dia de decisão</li>
-          <li>Fluxos e prompts úteis de verdade</li>
-          <li>Produtividade sem perder qualidade</li>
-        </ul>
-        <p class="cta-row"><a class="btn primary w-link" data-w="ia" href="workshop-ia-pro.html">Entrar</a></p>
-      </article>
-    </section>
-  </div>
+  <footer>
+    <div class="container">© Dan Hausch — Workshops Pro</div>
+  </footer>
 
   <script>
     const incoming = new URLSearchParams(window.location.search);
@@ -126,7 +170,7 @@
       utm_source: incoming.get('utm_source') || 'meta_ads',
       utm_medium: incoming.get('utm_medium') || 'paid_social',
       utm_campaign: incoming.get('utm_campaign') || 'workshops_pro_hub',
-      utm_content: incoming.get('utm_content') || 'lp_v1',
+      utm_content: incoming.get('utm_content') || 'lp_v1_1_clean'
     };
 
     document.querySelectorAll('.w-link').forEach((a) => {
@@ -137,7 +181,6 @@
       a.setAttribute('href', u.pathname + u.search);
     });
 
-    // analytics events
     try {
       gtag('event', 'lp_view', { page_path: location.pathname });
       document.addEventListener('click', (e) => {
