@@ -21,6 +21,14 @@
     .pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:#9ed1ff;font-size:.8rem}
     ul{padding-left:18px;margin:0}
   </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KQY9Y5HJGZ');
+</script>
 </head>
 <body>
   <div class="wrap">
@@ -107,5 +115,35 @@
       a.setAttribute('href', u.pathname + u.search);
     });
   </script>
+<script>
+  // Basic funnel tracking
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a');
+    if(!a) return;
+    const href = a.getAttribute('href') || '';
+    const text = (a.textContent || '').trim();
+    try {
+      if (typeof gtag === 'function') {
+        if (href.includes('checkout-') || href.includes('asaas.com/c/')) {
+          gtag('event', 'checkout_click', { link_url: href, link_text: text, page_path: location.pathname });
+        } else if (href.includes('workshop-')) {
+          gtag('event', 'cta_click', { link_url: href, link_text: text, page_path: location.pathname });
+        } else {
+          gtag('event', 'outbound_click', { link_url: href, link_text: text, page_path: location.pathname });
+        }
+      }
+    } catch(_) {}
+  }, true);
+
+  // page semantic tagging
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', 'lp_view', { page_path: location.pathname });
+      if (location.pathname.includes('checkout-')) {
+        gtag('event', 'purchase_started', { page_path: location.pathname });
+      }
+    }
+  } catch(_) {}
+</script>
 </body>
 </html>

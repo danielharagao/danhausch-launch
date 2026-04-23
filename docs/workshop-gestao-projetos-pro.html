@@ -1,1 +1,39 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Workshop Pro de Gestão de Projetos</title><meta name="description" content="Conduza projetos complexos com previsibilidade, governança e confiança executiva."/><link rel="stylesheet" href="assets/design-kit.css"/></head><body class="dk"><div class="dk-wrap"><section class="dk-card"><h1>Workshop Pro de Gestão de Projetos</h1><p>Conduza projetos complexos com previsibilidade, governança e confiança executiva.</p><div class="dk-slot" data-slot="hero-gestao-projetos">[SLOT IMAGEM HERO: hero-gestao-projetos]</div><ul><li>Estruture planejamento realista com foco em entrega.</li><li>Aumente visibilidade de riscos e decisões críticas.</li><li>Melhore comunicação de status para liderança.</li></ul><p><strong>Investimento:</strong> R$ 697,00 · vencimento em 1 dia · sem boleto.</p><p><a class="dk-btn" href="checkout-gestao-projetos-pro.html">Garantir minha vaga</a> <a class="dk-btn ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Ver no Instagram</a></p></section><section class="dk-card"><h2>Prova social</h2><div class="dk-slot" data-slot="proof-result-2">[SLOT PROVA SOCIAL: proof-result-2]</div></section></div></body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Workshop Pro de Gestão de Projetos</title><meta name="description" content="Conduza projetos complexos com previsibilidade, governança e confiança executiva."/><link rel="stylesheet" href="assets/design-kit.css"/><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KQY9Y5HJGZ');
+</script>
+</head><body class="dk"><div class="dk-wrap"><section class="dk-card"><h1>Workshop Pro de Gestão de Projetos</h1><p>Conduza projetos complexos com previsibilidade, governança e confiança executiva.</p><div class="dk-slot" data-slot="hero-gestao-projetos">[SLOT IMAGEM HERO: hero-gestao-projetos]</div><ul><li>Estruture planejamento realista com foco em entrega.</li><li>Aumente visibilidade de riscos e decisões críticas.</li><li>Melhore comunicação de status para liderança.</li></ul><p><strong>Investimento:</strong> R$ 697,00 · vencimento em 1 dia · sem boleto.</p><p><a class="dk-btn" href="checkout-gestao-projetos-pro.html">Garantir minha vaga</a> <a class="dk-btn ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Ver no Instagram</a></p></section><section class="dk-card"><h2>Prova social</h2><div class="dk-slot" data-slot="proof-result-2">[SLOT PROVA SOCIAL: proof-result-2]</div></section></div><script>
+  // Basic funnel tracking
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a');
+    if(!a) return;
+    const href = a.getAttribute('href') || '';
+    const text = (a.textContent || '').trim();
+    try {
+      if (typeof gtag === 'function') {
+        if (href.includes('checkout-') || href.includes('asaas.com/c/')) {
+          gtag('event', 'checkout_click', { link_url: href, link_text: text, page_path: location.pathname });
+        } else if (href.includes('workshop-')) {
+          gtag('event', 'cta_click', { link_url: href, link_text: text, page_path: location.pathname });
+        } else {
+          gtag('event', 'outbound_click', { link_url: href, link_text: text, page_path: location.pathname });
+        }
+      }
+    } catch(_) {}
+  }, true);
+
+  // page semantic tagging
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', 'lp_view', { page_path: location.pathname });
+      if (location.pathname.includes('checkout-')) {
+        gtag('event', 'purchase_started', { page_path: location.pathname });
+      }
+    }
+  } catch(_) {}
+</script>
+</body></html>
