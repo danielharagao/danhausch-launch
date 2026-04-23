@@ -79,6 +79,16 @@
     .note{margin-top:14px;color:#d7e3ff;font-weight:600}
 
     footer{padding:34px 0 50px;color:var(--muted);font-size:.92rem}
+  
+    .footer-premium{padding:46px 0 56px;border-top:1px solid rgba(255,255,255,.09);margin-top:18px}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:900px){.footer-grid{grid-template-columns:1.2fr .8fr .8fr}}
+    .footer-title{font-size:1.02rem;margin:0 0 8px}
+    .footer-premium p{margin:0 0 8px;color:var(--muted)}
+    .footer-links a{color:var(--text);text-decoration:none;display:block;margin:0 0 6px;opacity:.9}
+    .footer-links a:hover{opacity:1}
+    .footer-meta{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.9rem}
+
   </style>
 </head>
 <body>
@@ -180,12 +190,25 @@
     </section>
   </main>
 
-  <footer>
+    <footer class="footer-premium">
     <div class="container">
-      <p><strong>Daniel Hauschild de Aragão Consultoria e Treinamento LTDA.</strong></p>
-      <p class="muted">Danhausch é marca registrada desta empresa.</p>
-      <p class="muted">Contato: <a href="mailto:daniel@danhausch.com">daniel@danhausch.com</a></p>
-      <p class="muted">Redes: <a href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a></p>
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-title">Danhausch</h3>
+          <p>Workshops ao vivo para profissionais que querem sair do caos e conduzir entregas com clareza.</p>
+          <p><strong>Daniel Hauschild de Aragão Consultoria e Treinamento LTDA.</strong></p>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Contato</h3>
+          <a href="mailto:daniel@danhausch.com">daniel@danhausch.com</a>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Redes</h3>
+          <a href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-meta">© Danhausch. Danhausch é marca registrada de Daniel Hauschild de Aragão Consultoria e Treinamento LTDA.</div>
     </div>
   </footer>
 
