@@ -95,7 +95,7 @@
 
   </style>
 </head>
-<body>
+<body data-page-type="lp">
   <main>
     <section class="hero">
       <div class="container hero-grid">
@@ -133,19 +133,22 @@
     <section>
       <div class="container">
         <h2>Depoimentos</h2>
-        <p class="sub">Provas sociais iniciais (placeholder) — em breve com vídeo.</p>
+        <p class="sub">Blocos estruturados para prova social (placeholder validado para futura troca por casos reais/vídeos).</p>
         <div class="workshops">
           <article class="workshop">
-            <h3>Mariana</h3>
-            <p>“[Placeholder] Antes eu travava sob pressão. Depois do workshop, consegui conduzir entregas com muito mais clareza.”</p>
+            <h3>Mariana · BA Pleno</h3>
+            <p>“[Placeholder] Eu era forte no operacional, mas travava em priorização com diretoria. Depois do método, conduzi uma frente crítica com clareza e segurança.”</p>
+            <p class="sub">Contexto: fintech em crescimento • Resultado: liderança de iniciativa estratégica</p>
           </article>
           <article class="workshop">
-            <h3>Isabela</h3>
-            <p>“[Placeholder] O método me tirou do improviso. Passei a estruturar melhor as decisões e comunicar com confiança.”</p>
+            <h3>Isabela · PO/BA</h3>
+            <p>“[Placeholder] Eu sofria com requisitos voltando toda sprint. Com o framework, reduzi retrabalho e alinhei melhor negócio + tech.”</p>
+            <p class="sub">Contexto: squad de produto • Resultado: menos ruído e mais previsibilidade</p>
           </article>
           <article class="workshop">
-            <h3>Eric Marçal</h3>
-            <p>“[Placeholder] Conteúdo direto e aplicável. Já usei no dia a dia e senti ganho real de produtividade.”</p>
+            <h3>Eric · Analista Sênior</h3>
+            <p>“[Placeholder] Conteúdo direto e aplicável. A conversa com stakeholders ficou objetiva e a tomada de decisão acelerou.”</p>
+            <p class="sub">Contexto: operações corporativas • Resultado: decisões mais rápidas e mais claras</p>
           </article>
         </div>
       </div>
@@ -154,7 +157,7 @@
     <section>
       <div class="container">
         <h2>Escolha sua trilha</h2>
-        <p class="sub">Workshops ao vivo para profissionais que querem mais resultado com método. Perdeu a data, perdeu a turma.</p>
+        <p class="sub">Workshops ao vivo para profissionais que querem mais resultado com método. Turma enxuta: encerramento em 24h ou ao preencher as vagas (o que vier primeiro).</p>
 
         <div class="workshops">
           <article class="workshop">
@@ -165,7 +168,7 @@
               <li>Requisitos com menos retrabalho</li>
               <li>Comunicação de sênior com negócio e tech</li>
             </ul>
-            <a class="btn btn-primary w-link" data-w="ba" href="workshop-ba-pro.html">Entrar</a>
+            <a class="btn btn-primary w-link" data-w="ba" href="workshop-ba-pro.html">Garantir minha vaga agora</a>
           </article>
 
           <article class="workshop">
@@ -176,7 +179,7 @@
               <li>Status e risco com clareza</li>
               <li>Governança orientada a resultado</li>
             </ul>
-            <a class="btn btn-primary w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Entrar</a>
+            <a class="btn btn-primary w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Garantir minha vaga agora</a>
           </article>
 
           <article class="workshop">
@@ -187,7 +190,7 @@
               <li>Produtividade com qualidade</li>
               <li>IA aplicada à decisão e execução</li>
             </ul>
-            <a class="btn btn-primary w-link" data-w="ia" href="workshop-ia-pro.html">Entrar</a>
+            <a class="btn btn-primary w-link" data-w="ia" href="workshop-ia-pro.html">Garantir minha vaga agora</a>
           </article>
         </div>
       </div>
@@ -225,35 +228,6 @@
     </div>
   </footer>
 
-  <script>
-    const incoming = new URLSearchParams(window.location.search);
-    const utm = {
-      utm_source: incoming.get('utm_source') || 'meta_ads',
-      utm_medium: incoming.get('utm_medium') || 'paid_social',
-      utm_campaign: incoming.get('utm_campaign') || 'workshops_pro_hub',
-      utm_content: incoming.get('utm_content') || 'lp_v1_1_clean'
-    };
-
-    document.querySelectorAll('.w-link').forEach((a) => {
-      const w = a.dataset.w || 'workshop';
-      const u = new URL(a.getAttribute('href'), window.location.origin + window.location.pathname);
-      Object.entries(utm).forEach(([k,v]) => u.searchParams.set(k,v));
-      u.searchParams.set('utm_term', w);
-      a.setAttribute('href', u.pathname + u.search);
-    });
-
-    try {
-      gtag('event', 'lp_view', { page_path: location.pathname });
-      document.addEventListener('click', (e) => {
-        const a = e.target.closest('a');
-        if (!a) return;
-        const href = a.getAttribute('href') || '';
-        const label = (a.textContent || '').trim();
-        if (href.includes('workshop-')) {
-          gtag('event', 'cta_click', { link_url: href, link_text: label, page_path: location.pathname });
-        }
-      }, true);
-    } catch(_) {}
-  </script>
+    <script src="assets/tracking.js"></script>
 </body>
 </html>

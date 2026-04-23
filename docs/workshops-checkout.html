@@ -24,7 +24,7 @@
     .social-icons{display:flex;gap:12px;align-items:center}.icon-link{display:grid;place-items:center;text-decoration:none;color:var(--text);opacity:.95;transition:all .15s ease;padding:2px}.icon-link:hover{opacity:1;transform:translateY(-1px)}.icon-link svg{width:30px;height:30px;fill:currentColor}
     .footer-meta{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.9rem}
   </style>
-</head><body><main><section class="hero"><div class="container"><span class="eyebrow">Hub de trilhas</span><h1>Escolha seu Workshop Pro</h1><p class="lead">Três trilhas práticas para destravar execução com método.</p><div class="actions"><a class="btn btn-primary" href="workshop-ba-pro.html">BA</a><a class="btn btn-primary" href="workshop-gestao-projetos-pro.html">Gestão de Projetos</a><a class="btn btn-primary" href="workshop-ia-pro.html">IA</a></div></div></section></main>
+</head><body data-page-type="lp"><main><section class="hero"><div class="container"><span class="eyebrow">Hub de trilhas</span><h1>Escolha seu Workshop Pro</h1><p class="lead">Três trilhas práticas para destravar execução com método.</p><div class="actions"><a class="btn btn-primary" href="workshop-ba-pro.html">BA</a><a class="btn btn-primary" href="workshop-gestao-projetos-pro.html">Gestão de Projetos</a><a class="btn btn-primary" href="workshop-ia-pro.html">IA</a></div></div></section></main>
   <footer class="footer-premium">
     <div class="container">
       <div class="footer-grid">
@@ -50,7 +50,5 @@
     </div>
   </footer>
 
-  <script>
-    try{gtag('event','lp_view',{page_path:location.pathname});document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';const t=(a.textContent||'').trim();if(href.includes('checkout-')||href.includes('asaas.com/c/')){gtag('event','checkout_click',{link_url:href,link_text:t,page_path:location.pathname});}else if(href.includes('workshop-')){gtag('event','cta_click',{link_url:href,link_text:t,page_path:location.pathname});}} ,true);}catch(_){ }
-  </script>
+    <script src="assets/tracking.js"></script>
 </body></html>
