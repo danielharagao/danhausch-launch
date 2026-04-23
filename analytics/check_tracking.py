@@ -136,7 +136,9 @@ def run() -> dict[str, Any]:
 
         # Check propagation on workshop CTA.
         workshop_href = page.get_attribute('a[href*="workshop-ba-pro.html"]', 'href') or ""
-        ok_attrs = all(f"{k}={v}" in workshop_href for k, v in ATTRS.items())
+        from urllib.parse import urlparse, parse_qs
+        q1 = parse_qs(urlparse(workshop_href).query)
+        ok_attrs = all((q1.get(k) or [None])[0] == v for k, v in ATTRS.items())
         checks.append(CheckResult(
             "index workshop link has attribution query",
             ok_attrs,
@@ -161,7 +163,8 @@ def run() -> dict[str, Any]:
         ))
 
         checkout_href = page.get_attribute('a[href*="checkout-ba-pro.html"]', 'href') or ""
-        checkout_has_attrs = all(f"{k}={v}" in checkout_href for k, v in ATTRS.items())
+        q2 = parse_qs(urlparse(checkout_href).query)
+        checkout_has_attrs = all((q2.get(k) or [None])[0] == v for k, v in ATTRS.items())
         checks.append(CheckResult(
             "workshop checkout link has attribution query",
             checkout_has_attrs,
@@ -171,7 +174,13 @@ def run() -> dict[str, Any]:
         page.click('a[href*="checkout-ba-pro.html"]')
         page.wait_for_url(re.compile(r".*/docs/checkout-ba-pro\.html.*"))
         events = page.evaluate("window.__events")
-        checkout_open = [e for e in events if len(e) and e[0][0] == "event" and e[0][1] == "checkout_open"]
+        checkout_open = []
+        for e in events:
+            if not e:
+                continue
+            first = e[0]
+            if isinstance(first, dict) and first.get("0") == "event" and first.get("1") == "checkout_open":
+                checkout_open.append(first)
         checks.append(CheckResult(
             "checkout emits checkout_open",
             bool(checkout_open),
@@ -179,7 +188,8 @@ def run() -> dict[str, Any]:
         ))
 
         asaas_href = page.get_attribute('a[href*="asaas.com/c/"]', 'href') or ""
-        asaas_has_attrs = all(f"{k}={v}" in asaas_href for k, v in ATTRS.items())
+        q3 = parse_qs(urlparse(asaas_href).query)
+        asaas_has_attrs = all((q3.get(k) or [None])[0] == v for k, v in ATTRS.items())
         checks.append(CheckResult(
             "asaas checkout link has attribution query",
             asaas_has_attrs,
