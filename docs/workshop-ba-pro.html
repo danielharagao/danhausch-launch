@@ -1,39 +1,56 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Workshop Pro de BA</title><meta name="description" content="Vire o BA que traduz estratégia em entrega — com método, clareza e visão de negócio."/><link rel="stylesheet" href="assets/design-kit.css"/><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KQY9Y5HJGZ');
-</script>
-</head><body class="dk"><div class="dk-wrap"><section class="dk-card"><h1>Workshop Pro de BA</h1><p>Vire o BA que traduz estratégia em entrega — com método, clareza e visão de negócio.</p><div class="dk-slot" data-slot="hero-ba-pro">[SLOT IMAGEM HERO: hero-ba-pro]</div><ul><li>Estruture problemas de negócio antes de abrir solução.</li><li>Melhore a qualidade de requisitos e reduza retrabalho.</li><li>Facilite alinhamento entre negócio, produto e tecnologia.</li></ul><p><strong>Investimento:</strong> R$ 697,00 · vencimento em 1 dia · sem boleto.</p><p><a class="dk-btn" href="checkout-ba-pro.html">Garantir minha vaga</a> <a class="dk-btn ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Ver no Instagram</a></p></section><section class="dk-card"><h2>Prova social</h2><div class="dk-slot" data-slot="proof-result-1">[SLOT PROVA SOCIAL: proof-result-1]</div></section></div><script>
-  // Basic funnel tracking
-  document.addEventListener('click', function(e){
-    const a = e.target.closest('a');
-    if(!a) return;
-    const href = a.getAttribute('href') || '';
-    const text = (a.textContent || '').trim();
-    try {
-      if (typeof gtag === 'function') {
-        if (href.includes('checkout-') || href.includes('asaas.com/c/')) {
-          gtag('event', 'checkout_click', { link_url: href, link_text: text, page_path: location.pathname });
-        } else if (href.includes('workshop-')) {
-          gtag('event', 'cta_click', { link_url: href, link_text: text, page_path: location.pathname });
-        } else {
-          gtag('event', 'outbound_click', { link_url: href, link_text: text, page_path: location.pathname });
-        }
-      }
-    } catch(_) {}
-  }, true);
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Workshop Pro de BA</title><meta name="description" content="Método para análise de negócios com clareza, estrutura e entrega."/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-KQY9Y5HJGZ');
+  </script>
 
-  // page semantic tagging
-  try {
-    if (typeof gtag === 'function') {
-      gtag('event', 'lp_view', { page_path: location.pathname });
-      if (location.pathname.includes('checkout-')) {
-        gtag('event', 'purchase_started', { page_path: location.pathname });
-      }
-    }
-  } catch(_) {}
-</script>
+  <style>
+    :root{--bg:#0b1020;--bg-soft:#111831;--text:#eaf0ff;--muted:#aeb9dc;--primary:#0f4c6b;--accent:#ea6a1b;--max:1080px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:radial-gradient(1200px 700px at 10% -10%,#1a2550 0%,var(--bg) 55%);line-height:1.55}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px} section{padding:56px 0}
+    .hero{padding:70px 0 30px}.hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}@media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:34px}}
+    .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd3ff;margin-bottom:10px}
+    h1{font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.08;margin:0 0 14px} h2{font-size:clamp(1.3rem,2.2vw,1.9rem);margin:0 0 10px}
+    .lead,.muted{color:var(--muted)} .hero-media{border-radius:18px;overflow:hidden;min-height:300px;background:#0f1730}.hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}.btn-primary{background:var(--accent);color:#fff}.btn-ghost{border:1px solid rgba(255,255,255,.16);color:var(--text)}
+    .panel{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+    .footer-premium{padding:46px 0 56px;border-top:1px solid rgba(255,255,255,.09);margin-top:18px}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:18px}@media(min-width:900px){.footer-grid{grid-template-columns:1.2fr .8fr .8fr}}
+    .footer-title{font-size:1.02rem;margin:0 0 8px}.footer-premium p{margin:0 0 8px;color:var(--muted)}
+    .footer-links a{color:var(--text);text-decoration:none;display:block;margin:0 0 6px;opacity:.9}.footer-links a:hover{opacity:1}
+    .social-icons{display:flex;gap:12px;align-items:center}.icon-link{display:grid;place-items:center;text-decoration:none;color:var(--text);opacity:.95;transition:all .15s ease;padding:2px}.icon-link:hover{opacity:1;transform:translateY(-1px)}.icon-link svg{width:30px;height:30px;fill:currentColor}
+    .footer-meta{margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.9rem}
+  </style>
+</head><body><main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Dan Hausch · Workshops Pro</span><h1>Workshop Pro de BA</h1><p class="lead">Método para análise de negócios com clareza, estrutura e entrega.</p><div class="panel"><p><strong>Investimento:</strong> R$ 697 · vencimento em 1 dia · sem boleto.</p><ul><li>Diagnóstico e priorização sem caos</li><li>Requisitos com menos retrabalho</li><li>Comunicação de sênior com negócio e tech</li></ul><div class="actions"><a class="btn btn-primary" href="checkout-ba-pro.html">Garantir minha vaga</a><a class="btn btn-ghost" href="index.html">Voltar ao hub</a></div></div></div><div class="hero-media"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop" alt="Workshop"/></div></div></section></main>
+  <footer class="footer-premium">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-title">Danhausch</h3>
+          <p>Workshops ao vivo para profissionais que querem sair do caos e conduzir entregas com clareza.</p>
+          <p><strong>Daniel Hauschild de Aragão Consultoria e Treinamento LTDA.</strong></p>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Contato</h3>
+          <a href="mailto:daniel@danhausch.com">daniel@danhausch.com</a>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Redes</h3>
+          <div class="social-icons">
+            <a class="icon-link" href="https://instagram.com/danhausch" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"/></svg></a>
+            <a class="icon-link" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12c0 2.2-.3 4.3-.6 5.2a3.2 3.2 0 0 1-2.2 2.2c-1 .3-4.2.6-8.2.6s-7.2-.3-8.2-.6a3.2 3.2 0 0 1-2.2-2.2C1.3 16.3 1 14.2 1 12s.3-4.3.6-5.2A3.2 3.2 0 0 1 3.8 4.6C4.8 4.3 8 4 12 4s7.2.3 8.2.6a3.2 3.2 0 0 1 2.2 2.2c.3.9.6 3 .6 5.2Zm-13.2-3v6l5.2-3-5.2-3Z"/></svg></a>
+            <a class="icon-link" href="https://www.linkedin.com/in/danielharagao" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.7 2.4 4.7 5.6V21h-4v-5.7c0-1.4 0-3.1-2-3.1s-2.2 1.5-2.2 3V21h-4V9Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-meta">© Danhausch. Danhausch é marca registrada de Daniel Hauschild de Aragão Consultoria e Treinamento LTDA.</div>
+    </div>
+  </footer>
+
+  <script>
+    try{gtag('event','lp_view',{page_path:location.pathname});document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';const t=(a.textContent||'').trim();if(href.includes('checkout-')||href.includes('asaas.com/c/')){gtag('event','checkout_click',{link_url:href,link_text:t,page_path:location.pathname});}else if(href.includes('workshop-')){gtag('event','cta_click',{link_url:href,link_text:t,page_path:location.pathname});}} ,true);}catch(_){ }
+  </script>
 </body></html>
