@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analytics Dashboard - Moscow</title>
+  <style>
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:24px;background:#0b1020;color:#e8eefc}
+    h1,h2{margin:.2rem 0 .8rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{background:#151c33;padding:14px;border-radius:10px;border:1px solid #293252}
+    .k{font-size:12px;opacity:.8} .v{font-size:24px;font-weight:700}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border:1px solid #2a355a;padding:8px;font-size:14px}
+    th{background:#1a2340;text-align:left}
+    ul{line-height:1.6}
+  </style>
+</head>
+<body>
+  <h1>Analytics Dashboard — Moscow (Static Scaffold)</h1>
+  <p>Gerado em: 2026-04-23T13:56:33.651040+00:00</p>
+  <div class="grid">
+    <div class="card"><div class="k">Funnel records (QA)</div><div class="v">12</div></div>
+    <div class="card"><div class="k">LP success rate</div><div class="v">100.00%</div></div>
+    <div class="card"><div class="k">Checkout success rate</div><div class="v">100.00%</div></div>
+    <div class="card"><div class="k">Asaas reach rate</div><div class="v">100.00%</div></div>
+    <div class="card"><div class="k">CRM total leads</div><div class="v">1</div></div>
+    <div class="card"><div class="k">CRM won conversion</div><div class="v">N/D%</div></div>
+  </div>
+
+  <h2>Breakdown por ambiente</h2>
+  <table>
+    <thead><tr><th>Ambiente</th><th>Amostras</th><th>LP %</th><th>Checkout %</th><th>Asaas %</th><th>LP mediana (ms)</th><th>Checkout mediana (ms)</th><th>Asaas mediana (ms)</th></tr></thead>
+    <tbody>
+      <tr><td>gh</td><td>6</td><td>100.00%</td><td>100.00%</td><td>100.00%</td><td>94.00</td><td>94.50</td><td>984.50</td></tr><tr><td>prod</td><td>6</td><td>100.00%</td><td>100.00%</td><td>100.00%</td><td>18.50</td><td>19.00</td><td>1025.50</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Gaps explícitos</h2>
+  <ul>
+    <li>crm_lead_status.json sem campo 'status' padronizado em parte dos registros</li><li>Sem dados comportamentais reais do pixel/GA4 no repositório</li>
+  </ul>
+</body>
+</html>

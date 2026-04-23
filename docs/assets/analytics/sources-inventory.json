@@ -1,0 +1,59 @@
+{
+  "generated_at_utc": "2026-04-23T13:55:04.335890+00:00",
+  "sources": [
+    {
+      "path": "/root/.openclaw/workspace/launch-repo/tmp/qa-e2e-artifacts/results.json",
+      "exists": true,
+      "size_bytes": 7172,
+      "modified_at_utc": "2026-04-21T20:06:11.587250+00:00",
+      "sample": "[\n  {\n    \"env\": \"prod\",\n    \"viewport\": \"desktop\",\n    \"flow\": \"ba\",\n    \"lpStatus\": 200,\n    \"lpLoadMs\": 235,\n    \"lpTitle\": \"Workshop Pro de BA\",\n    \"lpCtaText\": \"Ir para pagamento\",\n    \"lpCtaHref\": \"checkout-ba-pro.html\",\n    \"ckStatus\": 200,\n    \"ckLoadMs\": 33,\n    \"ckTitle\": \"Workshop Pro de BA | Pagamento\",\n    \"ckCtaText\": \"Ir para pagamento\",\n    \"ckAsaasHref\": \"https://www.asaas.com/c/"
+    },
+    {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_interactions.json",
+      "exists": true,
+      "size_bytes": 288982,
+      "modified_at_utc": "2026-04-23T10:42:28.289871+00:00",
+      "sample": "[\n  {\n    \"id\": \"crm-int-1772897096142-40\",\n    \"leadId\": 40,\n    \"channel\": \"email\",\n    \"event_type\": \"contact_email\",\n    \"event_at\": \"2026-03-07T15:24:56.142007+00:00\",\n    \"message\": \"Email quick action opened from lead board card.\",\n    \"createdAt\": \"2026-03-07T15:24:56.142007+00:00\"\n  },\n  {\n    \"id\": \"crm-int-1772899931090-42\",\n    \"leadId\": 42,\n    \"channel\": \"email\",\n    \"event_type\": \"c"
+    },
+    {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_lead_events.json",
+      "exists": true,
+      "size_bytes": 374,
+      "modified_at_utc": "2026-03-14T16:31:31.405251+00:00",
+      "sample": "[\n  {\n    \"id\": \"lead-evt-1773505891407-166-tags\",\n    \"leadId\": 166,\n    \"eventType\": \"lead_tags_updated\",\n    \"eventAt\": \"2026-03-14T16:31:31.407452+00:00\",\n    \"source\": \"cockpit-ui\",\n    \"actor\": \"operator\",\n    \"message\": \"Tags do lead atualizadas\",\n    \"data\": {\n      \"tags\": [\n        \"amigo\"\n      ]\n    },\n    \"createdAt\": \"2026-03-14T16:31:31.407452+00:00\"\n  }\n]\n"
+    },
+    {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_lead_status.json",
+      "exists": true,
+      "size_bytes": 154,
+      "modified_at_utc": "2026-03-14T16:31:31.405251+00:00",
+      "sample": "{\n  \"166\": {\n    \"tags\": [\n      \"amigo\"\n    ],\n    \"leadId\": 166,\n    \"updatedAt\": \"2026-03-14T16:31:31.407452+00:00\",\n    \"updatedBy\": \"operator\"\n  }\n}\n"
+    },
+    {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/chat_conversations_cache.json",
+      "exists": true,
+      "size_bytes": 40126,
+      "modified_at_utc": "2026-04-23T11:37:49.748095+00:00",
+      "sample": "[\n  {\n    \"id\": \"5595981200218@s.whatsapp.net\",\n    \"aliases\": [\n      \"5595981200218@s.whatsapp.net\"\n    ],\n    \"name\": \"+5595981200218\",\n    \"phone\": \"+5595981200218\",\n    \"lastMessage\": \"Bom noite Eduardo, consigo te ajudar de alguma forma? Abs Daniel\",\n    \"lastAt\": \"2026-04-22T22:21:54+00:00\",\n    \"lastAtMs\": 1776896514000,\n    \"lastAtLabel\": \"22:21\",\n    \"unreadCount\": 0,\n    \"lead\": {\n     "
+    },
+    {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/docs/crm",
+      "exists": true,
+      "size_bytes": 4096,
+      "modified_at_utc": "2026-04-17T02:07:56.160354+00:00",
+      "sample": {
+        "files": [
+          "followup-playbook-v1.md",
+          "mentoria-estrategia.md",
+          "mentoria-inscricao.md",
+          "mentoria-spin-playbook.md",
+          "mission-kb-index.json",
+          "oferta-unica-3600-cubo-alex.md",
+          "ofertas-escada-valor.md",
+          "persona-dream-outcome.md"
+        ],
+        "file_count": 8
+      }
+    }
+  ]
+}

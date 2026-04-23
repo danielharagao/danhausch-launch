@@ -1,0 +1,76 @@
+{
+  "generated_at_utc": "2026-04-23T13:56:33.651040+00:00",
+  "funnel": {
+    "records": 12,
+    "lp_success_rate_pct": 100.0,
+    "checkout_success_rate_pct": 100.0,
+    "payment_link_success_rate_pct": 100.0,
+    "env_breakdown": {
+      "prod": {
+        "count": 6,
+        "lp_success_rate_pct": 100.0,
+        "checkout_success_rate_pct": 100.0,
+        "asaas_success_rate_pct": 100.0,
+        "lp_median_load_ms": 18.5,
+        "checkout_median_load_ms": 19.0,
+        "asaas_median_load_ms": 1025.5
+      },
+      "gh": {
+        "count": 6,
+        "lp_success_rate_pct": 100.0,
+        "checkout_success_rate_pct": 100.0,
+        "asaas_success_rate_pct": 100.0,
+        "lp_median_load_ms": 94.0,
+        "checkout_median_load_ms": 94.5,
+        "asaas_median_load_ms": 984.5
+      }
+    },
+    "flows": {
+      "ba": 4,
+      "gestao": 4,
+      "ia": 4
+    }
+  },
+  "crm": {
+    "total_leads": 1,
+    "new_leads": null,
+    "qualified_leads": null,
+    "won_leads": null,
+    "conversion_rate_pct": null,
+    "events_count": 1,
+    "interactions_count": 502,
+    "active_leads_from_interactions": 14
+  },
+  "simulation_events_count": 43,
+  "gaps": [
+    "crm_lead_status.json sem campo 'status' padronizado em parte dos registros",
+    "Sem dados comportamentais reais do pixel/GA4 no repositório"
+  ],
+  "source_health": {
+    "funnel_qa_results": {
+      "path": "/root/.openclaw/workspace/launch-repo/tmp/qa-e2e-artifacts/results.json",
+      "exists": true,
+      "size_bytes": 7172
+    },
+    "sim_events_pack": {
+      "path": "/root/.openclaw/workspace/launch-repo/docs/ph-app/assets/sim/events.v4.json",
+      "exists": true,
+      "size_bytes": 29202
+    },
+    "crm_interactions": {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_interactions.json",
+      "exists": true,
+      "size_bytes": 288982
+    },
+    "crm_lead_events": {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_lead_events.json",
+      "exists": true,
+      "size_bytes": 374
+    },
+    "crm_lead_status": {
+      "path": "/root/.openclaw/workspace/apps/openclaw-cockpit/data/crm_lead_status.json",
+      "exists": true,
+      "size_bytes": 154
+    }
+  }
+}
