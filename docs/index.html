@@ -4,146 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dan Hausch | Workshops Pro</title>
-  <meta name="description" content="Hub institucional dos Workshops Pro de Dan Hausch: BA, Gestão de Projetos e IA." />
+  <meta name="description" content="Saia do caos, medo e insegurança e conduza entregas com clareza. Workshops ao vivo com Dan Hausch." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KQY9Y5HJGZ');
+  </script>
+
   <style>
-    :root{--bg:#0b1020;--card:#121933;--line:#2a3762;--text:#e8eefc;--muted:#a8b6df;--acc:#5ea6ff}
+    :root{
+      --bg:#0a0f1d;
+      --panel:#111a2f;
+      --line:#2a385f;
+      --text:#eaf0ff;
+      --muted:#a9b8df;
+      --blue:#0f4c6b;
+      --orange:#ea6a1b;
+      --white:#f3f6ff;
+    }
     *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(1000px 480px at 20% -10%,#1c2a59 0,#0b1020 55%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-    .wrap{max-width:1080px;margin:0 auto;padding:28px 18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px}
-    h1,h2,p,li{margin:0 0 10px}
+    body{margin:0;background:linear-gradient(180deg,#0a0f1d,#0b1326);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px 16px 50px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+    .hero{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
+    .mood-band{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0d1427}
+    .mood-band img{display:block;width:100%;height:100%;object-fit:cover}
+    .pill{display:inline-block;font-size:.78rem;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:#9fd3ff}
+    h1{font-size:2rem;line-height:1.1;margin:.45rem 0}
+    h2{margin:0 0 8px}
+    p{margin:0 0 10px}
     .muted{color:var(--muted)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{display:inline-block;text-decoration:none;font-weight:800;padding:11px 15px;border-radius:10px;border:1px solid transparent}
+    .btn.primary{background:var(--orange);color:#fff}
+    .btn.secondary{background:transparent;border-color:var(--line);color:var(--text)}
+    .kpis{display:grid;grid-template-columns:1fr;gap:10px}
+    @media(min-width:760px){.kpis{grid-template-columns:repeat(3,1fr)}}
+    .kpi{background:#0d1630;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .kpi strong{font-size:1.3rem}
     .grid{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr 1fr}.grid.cols-2{grid-template-columns:1fr 1fr}}
-    .btn{display:inline-block;text-decoration:none;background:var(--acc);color:#fff;padding:11px 14px;border-radius:10px;font-weight:700}
-    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:#9ed1ff;font-size:.8rem}
-    ul{padding-left:18px;margin:0}
+    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .workshop{border-top:4px solid var(--orange)}
+    .workshop h3{margin:0 0 8px}
+    ul{margin:8px 0 0;padding-left:18px}
+    .note{background:#0e2740;border:1px solid #24557e}
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQY9Y5HJGZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KQY9Y5HJGZ');
-</script>
 </head>
 <body>
   <div class="wrap">
-    <section class="card">
-      <span class="pill">Hub institucional oficial</span>
-      <h1>Dan Hausch · Workshops Pro</h1>
-      <p class="muted">Formações práticas para profissionais que querem sair do improviso e elevar execução em Business Analysis, Gestão de Projetos e IA aplicada.</p>
-      <div class="actions">
-        <a class="btn ghost" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn ghost" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+    <section class="card hero">
+      <div>
+        <span class="pill">Dan Hausch · Consultoria & Workshops</span>
+        <h1>Do caos para clareza:<br>entregas com método, sem improviso sob pressão.</h1>
+        <p class="muted">Eu ajudo analistas de negócios a sair do medo e da insegurança para conduzir entregas com confiança. Formado em Administração, MBA em inovação, pós em produtos de IA no MIT, 10 anos de experiência e liderança em IA Generativa.</p>
+        <div class="cta-row">
+          <a class="btn primary w-link" data-w="ba" href="workshop-ba-pro.html">Garantir vaga · Workshop BA</a>
+          <a class="btn secondary" href="https://instagram.com/danhausch" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn secondary" href="https://www.youtube.com/@danhausch" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="mood-band">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop" alt="Dan em contexto corporativo" />
       </div>
     </section>
 
-    <section class="card">
-      <h2>Quem é Dan Hausch</h2>
-      <p class="muted">Especialista em análise de negócios e execução corporativa, com experiência em ambientes de alta exigência e foco em resultado real. A proposta aqui é simples: método claro, aplicação prática e evolução de carreira com entrega.</p>
+    <section class="kpis">
+      <article class="kpi"><p class="muted">Vagas por workshop</p><strong>10</strong><p class="muted">ao vivo, sem replay de turma</p></article>
+      <article class="kpi"><p class="muted">Investimento</p><strong>R$ 697</strong><p class="muted">por workshop</p></article>
+      <article class="kpi"><p class="muted">Expertise</p><strong>10+ anos</strong><p class="muted">BA, projetos e IA aplicada</p></article>
+    </section>
+
+    <section class="card note">
+      <h2>Oferta & Urgência</h2>
+      <p>Turmas ao vivo. <strong>Perdeu a data, perdeu a turma.</strong> Abertura limitada para manter qualidade e acompanhamento.</p>
     </section>
 
     <section class="grid cols-3">
-      <article class="card">
-        <h2>Workshop Pro de BA</h2>
-        <p class="muted">Método para análise de negócios com clareza, estrutura e entrega.</p>
+      <article class="card workshop">
+        <h3>Workshop Pro de BA</h3>
+        <p class="muted">Para analistas que querem estrutura para decidir e entregar sob pressão.</p>
         <ul>
-          <li>Diagnóstico e priorização</li>
+          <li>Diagnóstico e priorização sem caos</li>
           <li>Requisitos com menos retrabalho</li>
-          <li>Comunicação entre negócio e tech</li>
+          <li>Comunicação de sênior com negócio e tech</li>
         </ul>
-        <p><a class="btn w-link" data-w="ba" href="workshop-ba-pro.html">Entrar</a></p>
+        <p class="cta-row"><a class="btn primary w-link" data-w="ba" href="workshop-ba-pro.html">Entrar</a></p>
       </article>
-      <article class="card">
-        <h2>Workshop Pro de Gestão de Projetos</h2>
-        <p class="muted">Execução previsível, gestão de risco e comunicação executiva.</p>
-        <ul>
-          <li>Planejamento com previsibilidade</li>
-          <li>Controle de riscos e status</li>
-          <li>Governança orientada a resultado</li>
-        </ul>
-        <p><a class="btn w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Entrar</a></p>
-      </article>
-      <article class="card">
-        <h2>Workshop Pro de IA</h2>
-        <p class="muted">IA aplicada para acelerar análise, decisão e produtividade real.</p>
-        <ul>
-          <li>Fluxos e prompts aplicáveis</li>
-          <li>Velocidade com qualidade</li>
-          <li>Uso responsável e validado</li>
-        </ul>
-        <p><a class="btn w-link" data-w="ia" href="workshop-ia-pro.html">Entrar</a></p>
-      </article>
-    </section>
 
-    <section class="card">
-      <h2>Como funciona</h2>
-      <div class="grid cols-2">
-        <div>
-          <p class="muted">1) Você escolhe a trilha.</p>
-          <p class="muted">2) Acessa a página do workshop.</p>
-          <p class="muted">3) Conclui o pagamento no checkout dedicado.</p>
-        </div>
-        <div>
-          <p class="muted">Investimento por workshop: <strong>R$ 697,00</strong></p>
-          <p class="muted">Pagamento sem boleto, vencimento padrão em 1 dia.</p>
-        </div>
-      </div>
+      <article class="card workshop">
+        <h3>Workshop Pro de Gestão de Projetos</h3>
+        <p class="muted">Para analistas e líderes que precisam de previsibilidade e governança na execução.</p>
+        <ul>
+          <li>Planejamento executável</li>
+          <li>Risco e status com clareza</li>
+          <li>Entrega com menos ruído</li>
+        </ul>
+        <p class="cta-row"><a class="btn primary w-link" data-w="gp" href="workshop-gestao-projetos-pro.html">Entrar</a></p>
+      </article>
+
+      <article class="card workshop">
+        <h3>Workshop Pro de IA</h3>
+        <p class="muted">Para profissionais experientes que não querem ficar para trás na aplicação prática de IA.</p>
+        <ul>
+          <li>IA aplicada ao dia a dia de decisão</li>
+          <li>Fluxos e prompts úteis de verdade</li>
+          <li>Produtividade sem perder qualidade</li>
+        </ul>
+        <p class="cta-row"><a class="btn primary w-link" data-w="ia" href="workshop-ia-pro.html">Entrar</a></p>
+      </article>
     </section>
   </div>
 
   <script>
-    // UTM auto-append for workshop links.
-    // Preserves incoming utm_* when present; otherwise applies defaults.
     const incoming = new URLSearchParams(window.location.search);
-    const baseDefaults = {
+    const utm = {
       utm_source: incoming.get('utm_source') || 'meta_ads',
       utm_medium: incoming.get('utm_medium') || 'paid_social',
       utm_campaign: incoming.get('utm_campaign') || 'workshops_pro_hub',
-      utm_content: incoming.get('utm_content') || 'hub_cta'
+      utm_content: incoming.get('utm_content') || 'lp_v1',
     };
 
     document.querySelectorAll('.w-link').forEach((a) => {
       const w = a.dataset.w || 'workshop';
       const u = new URL(a.getAttribute('href'), window.location.origin + window.location.pathname);
-      Object.entries(baseDefaults).forEach(([k,v]) => u.searchParams.set(k, v));
+      Object.entries(utm).forEach(([k,v]) => u.searchParams.set(k,v));
       u.searchParams.set('utm_term', w);
       a.setAttribute('href', u.pathname + u.search);
     });
-  </script>
-<script>
-  // Basic funnel tracking
-  document.addEventListener('click', function(e){
-    const a = e.target.closest('a');
-    if(!a) return;
-    const href = a.getAttribute('href') || '';
-    const text = (a.textContent || '').trim();
-    try {
-      if (typeof gtag === 'function') {
-        if (href.includes('checkout-') || href.includes('asaas.com/c/')) {
-          gtag('event', 'checkout_click', { link_url: href, link_text: text, page_path: location.pathname });
-        } else if (href.includes('workshop-')) {
-          gtag('event', 'cta_click', { link_url: href, link_text: text, page_path: location.pathname });
-        } else {
-          gtag('event', 'outbound_click', { link_url: href, link_text: text, page_path: location.pathname });
-        }
-      }
-    } catch(_) {}
-  }, true);
 
-  // page semantic tagging
-  try {
-    if (typeof gtag === 'function') {
+    // analytics events
+    try {
       gtag('event', 'lp_view', { page_path: location.pathname });
-      if (location.pathname.includes('checkout-')) {
-        gtag('event', 'purchase_started', { page_path: location.pathname });
-      }
-    }
-  } catch(_) {}
-</script>
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (!a) return;
+        const href = a.getAttribute('href') || '';
+        const label = (a.textContent || '').trim();
+        if (href.includes('workshop-')) {
+          gtag('event', 'cta_click', { link_url: href, link_text: label, page_path: location.pathname });
+        }
+      }, true);
+    } catch(_) {}
+  </script>
 </body>
 </html>
