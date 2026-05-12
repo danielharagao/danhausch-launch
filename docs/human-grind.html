@@ -3,39 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Human Grind — Registro</title>
+  <title>Human Grind | Triplique sua produtividade em menos de 3 horas</title>
+  <meta name="description" content="Evento Human Grind: triplique sua produtividade em menos de 3 horas. Turmas com vagas limitadas." />
   <style>
-    :root{--bg:#0b0b0f;--card:#14141c;--text:#f5f7ff;--muted:#a3a9bd;--accent:#ff7a18}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#24243a 0%,var(--bg) 50%);color:var(--text)}
-    .wrap{min-height:100svh;display:grid;place-items:center;padding:24px}
-    .card{width:min(960px,100%);background:var(--card);border:1px solid #252534;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr}
-    .photo{width:100%;height:100%;object-fit:cover;min-height:420px}
-    .content{padding:34px}
-    h1{margin:0 0 10px;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1}
-    p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.55}
-    .badge{display:inline-block;margin-bottom:14px;padding:7px 12px;border-radius:999px;background:rgba(255,122,24,.12);color:#ffb178;border:1px solid rgba(255,122,24,.35);font-weight:700;font-size:.82rem}
-    .footer{padding:14px 20px;border-top:1px solid #252534;color:#8d93a9;font-size:.86rem}
-    @media (max-width:800px){.hero{grid-template-columns:1fr}.photo{min-height:360px}.content{padding:24px}}
+    :root{--bg:#0b1020;--text:#eaf0ff;--muted:#aeb9dc;--accent:#ea6a1b;--max:980px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:radial-gradient(1200px 700px at 10% -10%,#1a2550 0%,var(--bg) 55%);line-height:1.55}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    section{padding:52px 0}
+    h1{font-size:clamp(2rem,4.8vw,3.1rem);line-height:1.08;margin:8px 0 14px}
+    h2{font-size:clamp(1.2rem,2.4vw,1.8rem);margin:0 0 10px}
+    .lead,.muted{color:var(--muted)}
+    .panel,.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px}
+    .grid{display:grid;gap:14px}.grid-2{grid-template-columns:1fr}@media(min-width:860px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;background:var(--accent);color:#fff}
+    .date{font-size:1.05rem;font-weight:700}
+    .price{font-size:1.05rem}
+    .top-space{margin-top:12px}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="hero">
-        <img class="photo" src="./assets/img/encontro-human-grind.jpg" alt="Foto do encontro Human Grind" />
-        <div class="content">
-          <span class="badge">Momento Especial</span>
-          <h1>Human Grind — Pessoas que fazem acontecer</h1>
-          <p>
-            Um registro de conexão, energia e comunidade. Essa página foi criada para celebrar o encontro
-            e manter viva a memória desse momento com o time.
-          </p>
-        </div>
+  <section>
+    <div class="container">
+      <p class="muted">Dan Hausch apresenta</p>
+      <h1>Human Grind</h1>
+      <p class="lead"><strong>Triplique sua produtividade em menos de 3 horas.</strong><br>Um workshop direto ao ponto para quem precisa produzir mais, com clareza e execução, sem caos e sem improviso.</p>
+      <div class="panel top-space">
+        <p class="price"><strong>Investimento promocional:</strong> R$ 420</p>
+        <p class="muted">Oferta válida até 13/05 às 02:00 (horário de Brasília).</p>
       </div>
-      <div class="footer">© Dan Hausch • BA Pro</div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Próximas 4 datas</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <p class="date">Terça-feira • 19/05 • 19:00</p>
+          <p class="muted">Human Grind — turma ao vivo</p>
+          <a class="btn" href="https://www.asaas.com/c/lr4hv1gumdaobkxb" target="_blank" rel="noopener">Garantir minha vaga (R$ 420)</a>
+        </article>
+        <article class="card">
+          <p class="date">Sábado • 23/05 • 10:30</p>
+          <p class="muted">Human Grind — turma ao vivo</p>
+          <a class="btn" href="https://www.asaas.com/c/lr4hv1gumdaobkxb" target="_blank" rel="noopener">Garantir minha vaga (R$ 420)</a>
+        </article>
+        <article class="card">
+          <p class="date">Quarta-feira • 27/05 • 19:00</p>
+          <p class="muted">Human Grind — turma ao vivo</p>
+          <a class="btn" href="https://www.asaas.com/c/lr4hv1gumdaobkxb" target="_blank" rel="noopener">Garantir minha vaga (R$ 420)</a>
+        </article>
+        <article class="card">
+          <p class="date">Sábado • 30/05 • 10:30</p>
+          <p class="muted">Human Grind — turma ao vivo</p>
+          <a class="btn" href="https://www.asaas.com/c/lr4hv1gumdaobkxb" target="_blank" rel="noopener">Garantir minha vaga (R$ 420)</a>
+        </article>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
